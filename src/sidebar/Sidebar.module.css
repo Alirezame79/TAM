@@ -1,0 +1,18 @@
+.container {
+  width: 20%;
+  background-color: #19376d;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.sidebarTopic {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+
+  border-bottom: #576cbc 2px solid;
+}
+/* Limit for sidebar width under a specific number exp. 200px */

@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Sidebar from "./sidebar/Sidebar";
+import classes from './App.module.css';
+import DemoCourse from "./course/DemoCourse";
+import MiniCourse from "./course/MiniCourse";
+// import ContextHooks from "./context/ContextHooks";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    // const text = <ContextHooks />;
+    return (
+        <div className={classes.mainBody}>
+            <Sidebar />
+            <div className={classes.containerBody}>
+                {/* <DemoCourse /> */}
+                <MiniCourse />
+                <MiniCourse />
+                <MiniCourse />
+                <MiniCourse />
+                <MiniCourse />
+                <MiniCourse />
+                <MiniCourse />
+                <MiniCourse />
+                <MiniCourse />
+            </div>
+        </div>
+    );
 }
 
 export default App;
