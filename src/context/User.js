@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 
 const UserContext = createContext();
-function Provider({ children }) {
+function UserProvider({ children }) {
     const [text, setText] = useState('Hello World');
 
     const valueToShare = (text);
@@ -13,5 +13,5 @@ function Provider({ children }) {
     )
 }
 
-export { Provider };
+export { UserProvider };
 export default UserContext;

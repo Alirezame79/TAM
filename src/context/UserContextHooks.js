@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import UserContext from './User';
 
-function ContextHooks() {
+function UserContextHooks() {
     const text = useContext(UserContext);
     return text;
 }
 
-export default ContextHooks;
+export default UserContextHooks;

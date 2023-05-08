@@ -1,26 +1,37 @@
+import React, { useContext, useEffect } from "react";
 import Sidebar from "./sidebar/Sidebar";
 import classes from './App.module.css';
-import DemoCourse from "./course/DemoCourse";
 import MiniCourse from "./course/MiniCourse";
-// import ContextHooks from "./context/ContextHooks";
+import { Routes, Route } from 'react-router-dom';
+import LoginModalPage from "./loginPortal/LoginModalPage";
+import Blue from "./test/Blue";
+import Brown from "./test/Brown";
+import Yellow from "./test/Yellow";
 
 function App() {
+    if (localStorage.getItem('login') !== '1') {
+        localStorage.setItem('login', '0');
+    }
 
-    // const text = <ContextHooks />;
     return (
         <div className={classes.mainBody}>
             <Sidebar />
+            <LoginModalPage />
             <div className={classes.containerBody}>
-                {/* <DemoCourse /> */}
-                <MiniCourse />
-                <MiniCourse />
-                <MiniCourse />
-                <MiniCourse />
-                <MiniCourse />
-                <MiniCourse />
-                <MiniCourse />
-                <MiniCourse />
-                <MiniCourse />
+                <div className={classes.miniCourseContainer}>
+                    <MiniCourse />
+                    <MiniCourse />
+                    <MiniCourse />
+                    <MiniCourse />
+                    <MiniCourse />
+                </div>
+                <div>
+                    <Routes>
+                        <Route path="/blue" Component={Blue} />
+                        <Route path="/brown" Component={Brown} />
+                        <Route path="/yellow" Component={Yellow} />
+                    </Routes>
+                </div>
             </div>
         </div>
     );

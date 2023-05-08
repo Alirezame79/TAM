@@ -5,3 +5,7 @@ Color Palette {
     #576CBC
     #A5D7E8
 }
+
+Local Storage {
+    Login => 0, 1
+}

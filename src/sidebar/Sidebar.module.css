@@ -16,3 +16,21 @@
   border-bottom: #576cbc 2px solid;
 }
 /* Limit for sidebar width under a specific number exp. 200px */
+
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 10px;
+  gap: 5px;
+}
+
+.routerLinks {
+  text-decoration: none;
+}
+
+.routerLinks:hover {
+  background-color: #ee0000;
+}
