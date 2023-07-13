@@ -42,8 +42,10 @@ function App() {
                 <div>
                     <Routes>
                         {/* <Route path="course/:id" element={<DemoCourse data={":id"} />} /> */}
-                        <Route path="course/185d00f7-2007-11ee-a795-d2c5d3c26729" element={<DemoCourse courseId={"185d00f7-2007-11ee-a795-d2c5d3c26729"} />} />
-                        <Route path="course/1b66dd45-2007-11ee-b1e1-d2c5d3c26729" element={<DemoCourse courseId={"1b66dd45-2007-11ee-b1e1-d2c5d3c26729"} />} />
+                        <Route path="course/14021000001" element={<DemoCourse courseId={"14021000001"} />} />
+                        <Route path="course/14021000002" element={<DemoCourse courseId={"14021000002"} />} />
+                        <Route path="course/14021000003" element={<DemoCourse courseId={"14021000003"} />} />
+                        <Route path="course/14021000004" element={<DemoCourse courseId={"14021000004"} />} />
                     </Routes>
                 </div>
             </div>
