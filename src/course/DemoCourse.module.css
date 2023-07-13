@@ -1,3 +1,35 @@
 .demoCourseContainer {
-  text-align: right;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(18, 142, 32, 0.855);
+  margin: 100px 300px;
+  padding: 50px;
+  font-weight: lighter;
+  height: 350px;
+  border: 2px solid black;
+}
+h1 {
+  margin-bottom: 50px;
+}
+
+.teacherCard {
+  border: 5px solid white;
+  width: 200px;
+  height: 20px;
+  font-weight: lighter;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.informationCard {
+  border: 5px solid white;
+  width: 200px;
+  height: 120px;
+  font-weight: lighter;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.information {
+  padding-bottom: 20px;
 }

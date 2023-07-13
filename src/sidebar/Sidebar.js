@@ -23,12 +23,18 @@ function Sidebar() {
             <BeforeLogin />
             <div className={classes.linkContainer}>
                 {/* <Link className={classes.routerLinks} to={"/blue"}><RouterCourse /></Link> */}
-                {courses.map((course) => {
-                    return (
-                        <Link key={course.id} className={classes.routerLinks} to={"/course/" + course.id}>
-                            <RouterCourse name={course.name} />
-                        </Link>)
-                })}
+
+                <div className={classes.courses}>
+                    {courses.map((course) => {
+                        return (
+                            <Link key={course.id} className={classes.routerLinks} to={"/course/" + course.id}>
+                                <RouterCourse name={course.name} />
+                            </Link>)
+                    })}
+                    {/* <RouterCourse name = {"ساختمان داده"}/>
+                <RouterCourse name = {"مدار الکترونیکی"}/>
+                <RouterCourse name = {"برنامه سازی پیشرفته"}/> */}
+                </div>
             </div>
         </div >
     );

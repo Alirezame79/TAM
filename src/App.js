@@ -29,14 +29,15 @@ function App() {
     return (
         <div className={classes.mainBody}>
             <Sidebar />
-            {/* <LoginModalPage /> */}
+            {/* <LoginModalPage />  */}
             <div className={classes.containerBody}>
                 <div className={classes.miniCourseContainer}>
                     {/* <MiniCourse />
                     <MiniCourse />
                     <MiniCourse />
                     <MiniCourse />
-                    <MiniCourse /> */}
+                    <MiniCourse /> 
+                    <MiniCourse />  */}
                     {/* <DemoCourse data={course} /> */}
                 </div>
                 <div>

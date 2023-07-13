@@ -3,6 +3,8 @@
   background-color: #19376d;
 
   position: absolute;
+  padding: auto;
+  padding-bottom: 100%;
   top: 0;
   bottom: 0;
   right: 0;
@@ -12,12 +14,12 @@
   padding-top: 25px;
   padding-bottom: 25px;
   text-align: center;
-
+  color: white;
   border-bottom: #576cbc 2px solid;
 }
 /* Limit for sidebar width under a specific number exp. 200px */
 
-.linkContainer {
+/*.linkContainer {
   display: flex;
   flex-direction: column;
   background-color: #eee;
@@ -25,7 +27,8 @@
   margin: 15px;
   border-radius: 10px;
   gap: 5px;
-}
+  height: 20px;
+}*/
 
 .routerLinks {
   text-decoration: none;
@@ -33,4 +36,15 @@
 
 .routerLinks:hover {
   background-color: #aaa;
+}
+
+.courses{
+
+  width: 150px;
+  margin: 55px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-top: 80px;
+  background-color:#55ff55 ;
+  padding: 20px;
 }

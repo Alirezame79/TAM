@@ -8,7 +8,7 @@
 }
 
 .frontPortal {
-  background-color: wheat;
+  background-color: #19376d;
   position: absolute;
   top: 15%;
   bottom: 15%;
@@ -19,11 +19,13 @@
   text-align: center;
 
   border-radius: 50px;
-  border: 3px #bb0202cb solid;
+  border: 3px #576cbc solid;
 }
 
 .loginPortalTitle {
-  margin: 25px;
+ 
+  margin-top: 50%;
+  margin-bottom: 10%;
 }
 
 .inputContainers {
