@@ -31,9 +31,7 @@ function Sidebar() {
                                 <RouterCourse name={course.name} />
                             </Link>)
                     })}
-                    {/* <RouterCourse name = {"ساختمان داده"}/>
-                <RouterCourse name = {"مدار الکترونیکی"}/>
-                <RouterCourse name = {"برنامه سازی پیشرفته"}/> */}
+
                 </div>
             </div>
         </div >

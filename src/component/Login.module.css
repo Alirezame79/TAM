@@ -1,0 +1,25 @@
+.container {
+  background-color: blue;
+}
+
+.header {
+  background-color: lightblue;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img {
+  background-color: pink;
+}
+
+.loginBox {
+  width: 30%;
+  background-color: orange;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
