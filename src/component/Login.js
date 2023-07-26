@@ -3,29 +3,46 @@ import Input from '../ui/Input';
 import Button from '../ui/Button';
 import { Checkbox, FormControlLabel } from '@mui/material';
 import { blue, pink } from "@mui/material/colors";
+import { useEffect, useRef } from 'react';
+import axios from 'axios';
 
 export default function Login() {
+    const username = useRef("");
+    const password = useRef("");
 
-    // <h1 className={classes.loginPortalTitle}>ورود</h1>
-    //         <div className={classes.loginPortalBody}>
-    //             <div className={classes.inputContainers}>
-    //                 <Input id="username" />
-    //                 <label className={classes.labelInput} htmlFor="username">نام کاربری</label>
-    //             </div>
-    //             <div className={classes.inputContainers}>
-    //                 <Input id="password" type={'password'} />
-    //                 <label className={classes.labelInput} htmlFor="password">رمز عبور</label>
-    //             </div>
-    //             <div className={classes.checkBoxContainer}>
-    //                 <FormControlLabel control={<Checkbox sx={{
-    //                     color: pink[500],
-    //                     '&.Mui-checked': {
-    //                         color: pink[200],
-    //                     },
-    //                 }} />} label="مدرس هستم" labelPlacement="start" />
-    //             </div>
-    //             <Button>ورود</Button>
-    //         </div>
+    function loginClicked() {
+        let user = {
+            username: username.current.value,
+            password: password.current.value
+        }
+
+        console.log(user)
+
+        fetch('http://127.0.0.1:8000/login', {
+            method: 'POST',
+            body: JSON.stringify(user),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then((response) => {
+            console.log(response)
+            return response.json;
+        }).then((data) => {
+            console.log(data);
+        });
+
+        // axios.post('http://127.0.0.1:8000/login/', { user })
+        //     .then(function (response) {
+        //         console.log(response);
+        //     })
+
+        // fetch('http://127.0.0.1:8000/login/' + user).then((response) => {
+        //     console.log("1 ", response);
+        //     return response.json();
+        // }).then((data) => {
+        //     console.log("2 ", data);
+        // })
+    }
 
     return (
         <div className={classes.container}>
@@ -39,16 +56,16 @@ export default function Login() {
             </div>
             <div className={classes.loginBox}>
                 <label htmlFor="username">نام کاربری</label>
-                <Input id="username" />
+                <Input innerRef={username} id="username" />
                 <label htmlFor="password" type='password'>رمز عبور</label>
-                <Input id="password" />
+                <Input innerRef={password} id="password" />
                 <FormControlLabel control={<Checkbox sx={{
                     color: pink[500],
                     '&.Mui-checked': {
                         color: pink[200],
                     },
                 }} />} label="استاد هستم" labelPlacement="start" />
-                <Button>ورود</Button>
+                <Button click={loginClicked}>ورود</Button>
             </div>
         </div>
     )
