@@ -4,6 +4,7 @@ import { StudentCoursesSlice, setStudentCourses } from './slices/StudentCoursesS
 import { AssistantCoursesSlice, setAssistantCourses } from './slices/AssistantCoursesSlice'
 import { TeacherCoursesSlice, setTeacherCourses } from './slices/TeacherCoursesSlice'
 import { ProfileSlice, setProfile } from './slices/ProfileSlices'
+import { SelectedCourseSlice, setCourse } from './slices/SelectedCourseSlice'
 import reset from './actions/ProfileCourseActions'
 
 const store = configureStore({
@@ -12,8 +13,9 @@ const store = configureStore({
         studentCourses: StudentCoursesSlice.reducer,
         assistantCourses: AssistantCoursesSlice.reducer,
         teacherCourses: TeacherCoursesSlice.reducer,
-        profile: ProfileSlice.reducer
+        profile: ProfileSlice.reducer,
+        course: SelectedCourseSlice.reducer
     }
 });
 
-export { store, setVerification, setStudentCourses, setAssistantCourses, setTeacherCourses, setProfile, reset }
+export { store, setVerification, setStudentCourses, setAssistantCourses, setTeacherCourses, setProfile, setCourse, reset }

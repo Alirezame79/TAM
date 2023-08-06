@@ -1,4 +1,4 @@
-import classes from './Login.module.css';
+import classes from './style/Login.module.css';
 import Input from '../ui/Input';
 import Button from '../ui/Button';
 import { Checkbox, FormControlLabel } from '@mui/material';

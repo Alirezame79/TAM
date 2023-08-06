@@ -3,10 +3,12 @@ import { useDispatch } from "react-redux";
 import { setToken } from '../store/index'
 import { useSignIn } from 'react-auth-kit'
 import { setStudentCourses, setAssistantCourses, setTeacherCourses, setProfile } from '../store/index'
+// import { useNavigate } from 'react-router-dom';
 
 const useLogin = (user) => {
     const signIn = useSignIn()
     const dispatch = useDispatch();
+    // const navigate = useNavigate();
 
     console.log(user);
     if (Object.keys(user).length === 0) { // At start it refuse the request
@@ -60,18 +62,19 @@ const useLogin = (user) => {
             console.log(data);
             if (data.profile.student_tag) {
                 console.log(data.studentCourses)
-                dispatch(setStudentCourses(data.studentCourses))
+                dispatch(setStudentCourses(data.student_courses))
             }
             if (data.profile.ta_tag) {
                 console.log(data.taCourses)
-                dispatch(setAssistantCourses(data.taCourses))
+                dispatch(setAssistantCourses(data.assistant_courses))
             }
             if (data.profile.teacher_tag) {
                 console.log(data.teacherCourses)
-                dispatch(setTeacherCourses(data.teacherCourses))
+                dispatch(setTeacherCourses(data.teacher_courses))
             }
             dispatch(setProfile(data.profile))
 
+            // navigate('/profile');
         });
     })
 

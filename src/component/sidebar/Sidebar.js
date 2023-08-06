@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
-import classes from './Sidebar.module.css';
+import classes from './style/Sidebar.module.css';
 import { useSignOut } from 'react-auth-kit'
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import RouterCourse from './RouterCourse';
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 
 function Sidebar() {
-    const [courses, setCourses] = useState([]);
     const signOut = useSignOut()
     const studentCourses = useSelector((state) => {
         return state.studentCourses
@@ -17,6 +17,7 @@ function Sidebar() {
     const teacherCourses = useSelector((state) => {
         return state.teacherCourses
     })
+    const navigate = useNavigate();
 
     // console.log(studentCourses)
 
@@ -29,7 +30,7 @@ function Sidebar() {
                     {studentCourses.map((course) => {
                         return (
                             <Link key={course.id} className={classes.routerLinks} to={"/course/" + course.id}>
-                                <RouterCourse name={course.name} />
+                                <RouterCourse course={course} />
                             </Link>)
                     })}
                 </div>
@@ -37,7 +38,7 @@ function Sidebar() {
                     {assistantCourses.map((course) => {
                         return (
                             <Link key={course.id} className={classes.routerLinks} to={"/course/" + course.id}>
-                                <RouterCourse name={course.name} />
+                                <RouterCourse course={course} />
                             </Link>)
                     })}
                 </div>
@@ -45,11 +46,14 @@ function Sidebar() {
                     {teacherCourses.map((course) => {
                         return (
                             <Link key={course.id} className={classes.routerLinks} to={"/course/" + course.id}>
-                                <RouterCourse name={course.name} />
+                                <RouterCourse course={course} />
                             </Link>)
                     })}
                 </div>
-                <button onClick={() => signOut()}>Signed Out</button>
+                <button onClick={() => {
+                    navigate('/');
+                    signOut()
+                }}>Signed Out</button>
             </div>
         </div >
     );

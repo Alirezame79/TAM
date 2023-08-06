@@ -20,15 +20,15 @@ const useInitial = () => {
             console.log(data);
             if (data.profile.student_tag) {
                 console.log(data.studentCourses)
-                dispatch(setStudentCourses(data.studentCourses))
+                dispatch(setStudentCourses(data.student_courses))
             }
             if (data.profile.ta_tag) {
                 console.log(data.taCourses)
-                dispatch(setAssistantCourses(data.taCourses))
+                dispatch(setAssistantCourses(data.assistant_courses))
             }
             if (data.profile.teacher_tag) {
                 console.log(data.teacherCourses)
-                dispatch(setTeacherCourses(data.teacherCourses))
+                dispatch(setTeacherCourses(data.teacher_courses))
             }
             dispatch(setProfile(data.profile))
 

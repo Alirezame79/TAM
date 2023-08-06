@@ -1,4 +1,4 @@
-import classes from './Input.module.css';
+import classes from './style/Input.module.css';
 
 export default function Input({ type, innerRef }) {
 
