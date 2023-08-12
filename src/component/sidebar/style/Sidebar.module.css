@@ -1,8 +1,9 @@
 .container {
   width: 20%;
-  background-color: #19376d;
-
-  position: absolute;
+  background-color: #121285;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
   padding: auto;
   padding-bottom: 100%;
   top: 0;
@@ -11,40 +12,53 @@
 }
 
 .sidebarTopic {
+  background-color: #020258;
   padding-top: 25px;
   padding-bottom: 25px;
   text-align: center;
   color: white;
   border-bottom: #576cbc 2px solid;
+  height: 2rem;
+  width: 100%;
+  box-shadow: 8px -2px 10px 1px #3333e3;
 }
-/* Limit for sidebar width under a specific number exp. 200px */
-
-/*.linkContainer {
-  display: flex;
-  flex-direction: column;
-  background-color: #eee;
-  padding: 10px;
-  margin: 15px;
-  border-radius: 10px;
-  gap: 5px;
-  height: 20px;
-}*/
 
 .routerLinks {
   text-decoration: none;
+  width: 100%;
+
 }
 
 .routerLinks:hover {
   background-color: #aaa;
 }
 
-.courses{
+.studentCourses{
+  margin-top: 3%;
+}
+.courseIcon{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-right: 2%;
+  margin-bottom: 4%;
+}
+.role{
+  margin-left: 66%;
+}
+.roleTA{
+  margin-left: 56%;
+}
+.role,.roleTA{  
+  color: white;
+  font-size: 1.2rem;
 
-  width: 150px;
-  margin: 55px;
-  border: 2px solid black;
-  border-radius: 5px;
-  margin-top: 80px;
-  background-color:#55ff55 ;
-  padding: 20px;
+}
+.roleIcon{
+  color: white;
+  transform: scale(1.2);
+}
+
+.assistantCourses{
+  margin-top: 20%;
 }

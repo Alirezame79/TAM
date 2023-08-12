@@ -7,14 +7,56 @@
   cursor: pointer;
 }
 
+.loginBtn{
+  position: absolute;
+  right: 36%;
+  top: 76%;
+  border: 3px solid #ad722a;
+  background-color: #FFC130;
+  padding: 3% 9%;
+  font-weight: bolder;
+  font-size: 1rem;
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8)
+}
+.loginBtn:link, .loginBtn:visited{
+transition: all .2s;
+
+}
+.loginBtn:hover{
+background-color: #fdb711;
+transform: scale(1.1) translateY(-3px);
+font-size: large;
+}
+
+.loginBtn:active{
+transform: translateY(-1px);
+box-shadow: 5px 5px 10px 2px rgba(0,0,0,.5)
+}
+
+
 .success {
   background-color: #55ff55;
 }
 
-.danger {
-  background-color: #ff5555;
+.success {
+  background-color: #55ff55;
 }
 
-.custome {
-  background-color: #eeff55;
+.success {
+  background-color: #55ff55;
+}
+
+@keyframes btnMove{
+  0%{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80%{
+    transform: translateX(20px);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(o);
+  }
 }

@@ -5,6 +5,7 @@ import Login from './component/Login'
 import Sidebar from "./component/sidebar/Sidebar";
 import { useIsAuthenticated } from 'react-auth-kit';
 import Profile from "./component/routePages/Profile";
+import Header from "./component/header/Header";
 import { useDispatch } from 'react-redux';
 import { reset } from './store/index'
 import Course from './component/routePages/Course'
@@ -27,7 +28,9 @@ function App() {
         localStorage.setItem('login', '1');
         return (
             <>
+            {/* <Login /> */}
                 <div className={classes.mainBody}>
+                    <Header/>
                     <Sidebar />
                     <div className={classes.containerBody}>
                         <Routes>

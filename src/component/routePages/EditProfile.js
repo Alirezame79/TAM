@@ -17,13 +17,27 @@ export default function EditProfile() {
         githubLink.current.value = profile.social_github
         linkedinLink.current.value = profile.social_linkedin
     }, [profile])
-    const [file, setFile] = useState('')
+    const [data, setData] = useState({
+        title: "",
+        description: "",
+        image_url: "",
+    });
+
+    let form_data = new FormData();
+
+
+
     function setNewImage(e) {
         console.log(e.target.files);
         const newImage = URL.createObjectURL(e.target.files[0])
+        let newData;
         if (newImage !== null) {
-            setFile(newImage);
+            newData["Image"] = newImage
+            setData(newData);
         }
+        form_data.append("title", data.title)
+        form_data.append("description", data.description)
+        form_data.append("image url", data.image_url)
     }
 
 
@@ -38,7 +52,7 @@ export default function EditProfile() {
             <br />
             <h2>Add Image:</h2>
             <input type="file" onChange={setNewImage} />
-            <img src={file} alt={'newImage'} width='150px' />
+            <img src={data.image_url} alt={'newImage'} width='150px' />
             <Button >Browse Image</Button>
             <br />
             <label htmlFor="githubLink">گیت هاب</label>

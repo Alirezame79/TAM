@@ -1,8 +1,12 @@
 .courseName {
   text-align: center;
-  color:black;
-  margin-bottom: 20px;
+  color: black;
+  border: 1px solid white;
+  margin-bottom: 0;
+ 
+  padding: .7rem;
+  justify-content: center;
+  align-items: center;
+  
 }
-.courseName:hover{
-  color: rgb(112, 112, 225);
-}
+
