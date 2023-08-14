@@ -21,6 +21,9 @@
     /* padding: 14% 9%; */
     height: 11rem;
     width: 10rem;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
     position: absolute;
     right: 9%;
     top: 5%;
