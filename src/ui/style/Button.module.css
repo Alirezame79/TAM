@@ -1,7 +1,6 @@
 .btn {
   padding: 15px 25px;
   font-size: 18px;
-
   border-radius: 10px;
   border: none;
   cursor: pointer;
@@ -33,19 +32,6 @@ transform: translateY(-1px);
 box-shadow: 5px 5px 10px 2px rgba(0,0,0,.5)
 }
 
-
-.success {
-  background-color: #55ff55;
-}
-
-.success {
-  background-color: #55ff55;
-}
-
-.success {
-  background-color: #55ff55;
-}
-
 @keyframes btnMove{
   0%{
     opacity: 0;
@@ -59,4 +45,18 @@ box-shadow: 5px 5px 10px 2px rgba(0,0,0,.5)
     opacity: 1;
     transform: translate(o);
   }
+}
+
+.editProfile{
+color: white;
+border: 1px solid #8282b8;
+  background-color: #121285;
+  padding: 3% 9%;
+  font-weight: bolder;
+  font-size: 1rem;
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+  width: 12rem;
+  height: 4rem;
+  margin: 13% 26% 8%;
+
 }

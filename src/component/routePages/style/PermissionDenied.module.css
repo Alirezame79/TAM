@@ -1,0 +1,24 @@
+.main{
+   
+    height: 29rem;
+    width: 34rem;
+    border: 2px solid #ed7070;
+    margin: 32% 62% 2%;
+    box-shadow: 13px 18px 13px -9px #ed7070;
+    background-color: #fffefea6;
+   
+}
+
+.permission{
+    padding-top: 4%;
+    color:#d93636; 
+    text-align: center;
+}
+.img{
+    background-image: url(../../../images/images.jpg)  ;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 23rem;
+    width: 100%;
+}
+

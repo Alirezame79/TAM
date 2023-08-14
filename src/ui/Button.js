@@ -1,11 +1,9 @@
 import classes from './style/Button.module.css';
 
-function Button({ children, danger, custome, success, click, loginBtn }) {
+function Button({ children, click, loginBtn, editProfile }) {
     let btnClasses = classes.btn;
-    if (danger) btnClasses = btnClasses + ' ' + classes.danger;
-    if (custome) btnClasses = btnClasses + ' ' + classes.custome;
-    if (success) btnClasses = btnClasses + ' ' + classes.success;
     if (loginBtn) btnClasses = btnClasses + ' ' + classes.loginBtn;
+    if (editProfile) btnClasses = btnClasses + ' ' + classes.editProfile;
     return <button className={btnClasses} onClick={click}>{children}</button>
 }
 

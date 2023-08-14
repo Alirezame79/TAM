@@ -43,23 +43,29 @@ export default function EditProfile() {
 
     return (
         <div>
-            <h3>{profile.name}</h3>
-            <label htmlFor="email">ایمیل</label>
-            <Input innerRef={email} id="email" />
-            <h3>{profile.id}</h3>
-            <h3>{profile.national_id}</h3>
-            <img src={BaseURL + profile.profile_image} alt={'profile'} width='200px' />
-            <br />
-            <h2>Add Image:</h2>
-            <input type="file" onChange={setNewImage} />
-            <img src={data.image_url} alt={'newImage'} width='150px' />
-            <Button >Browse Image</Button>
-            <br />
-            <label htmlFor="githubLink">گیت هاب</label>
-            <Input innerRef={githubLink} id="githubLink" />
-            <br />
-            <label htmlFor="linkedinLink">لینکدین</label>
-            <Input innerRef={linkedinLink} id="linkedinLink" />
+            <div className={classes.profil}>
+                <h3 className={classes.name} >{profile.name}</h3>
+                <img  className={classes.image} src={BaseURL + profile.profile_image} alt={'profile'} width='200px' />
+            </div>
+            <div className={classes.main}>
+                {/* <h3>{profile.id}</h3>
+                <h3>{profile.national_id}</h3> */}
+                <h2>:Add Image</h2>
+                <div className={classes.chosePhoto}>
+                    <label for="inputTag"className={classes.inputPhoto}>Select Image
+                        <input type="file" onChange={setNewImage}/>
+                    </label>
+                    {/* <input type="file" onChange={setNewImage} /> */}
+                    <img src={data.image_url} alt={'newImage'} width='150px' />
+                </div>
+                <Button editProfile>Browse Image</Button>
+                <label htmlFor="email">:ایمیل</label>
+                <Input innerRef={email} id="email" />
+                <label htmlFor="githubLink">:گیت هاب</label>
+                <Input innerRef={githubLink} id="githubLink" />
+                <label htmlFor="linkedinLink">:لینکدین</label>
+                <Input innerRef={linkedinLink} id="linkedinLink" />
+            </div>
         </div>
     )
 }

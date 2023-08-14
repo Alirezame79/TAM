@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  text-align: right;
 }
 
 .mainBody {
@@ -9,7 +10,10 @@
 
 .containerBody {
   position: absolute;
-  
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100vh;
 }
 
 .miniCourseContainer {

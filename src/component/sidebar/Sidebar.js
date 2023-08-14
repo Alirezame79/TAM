@@ -24,6 +24,7 @@ var bgColors = {
 
 function Sidebar() {
     const signOut = useSignOut()
+    const navigate = useNavigate();
     const studentCourses = useSelector((state) => {
         return state.studentCourses
     })
@@ -33,12 +34,11 @@ function Sidebar() {
     const teacherCourses = useSelector((state) => {
         return state.teacherCourses
     })
-    const navigate = useNavigate();
+
 
     // console.log(studentCourses)
 
     return (
-
         <div className={classes.container}>
             <h1 className={classes.sidebarTopic}>سامانه تام</h1>
             <div className={classes.linkContainer}>
@@ -60,7 +60,7 @@ function Sidebar() {
 
                 {/* <FaBookOpenReader/> <FaReadme/> jozve  */}
 
-                <div className={classes.studentCourses}>
+                {Object.keys(studentCourses).length !== 0 && <div className={classes.studentCourses}>
                     <div className={classes.courseIcon}>
                         <AiOutlineCaretLeft className={classes.roleIcon} />
                         <p className={classes.role}>دانشجو</p>
@@ -72,8 +72,8 @@ function Sidebar() {
                                 <RouterCourse student course={course} backgroundColors={bgColors.pink} hoverColor={bgColors.pinkHover} />
                             </Link>)
                     })}
-                </div>
-                <div className={classes.assistantCourses}>
+                </div>}
+                {Object.keys(assistantCourses).length !== 0 && <div className={classes.assistantCourses}>
                     <div className={classes.courseIcon}>
                         <AiOutlineCaretLeft className={classes.roleIcon} />
                         <p className={classes.roleTA}>دستیار استاد</p>
@@ -85,8 +85,8 @@ function Sidebar() {
                                 <RouterCourse course={course} backgroundColors={bgColors.orangeTa} hoverColor={bgColors.orangeTaHover} />
                             </Link>)
                     })}
-                </div>
-                <div className={classes.teacherCourses}>
+                </div>}
+                {Object.keys(teacherCourses).length !== 0 && <div className={classes.teacherCourses}>
                     <div className={classes.courseIcon}>
                         <AiOutlineCaretLeft className={classes.roleIcon} />
                         <p className={classes.role}> استاد</p>
@@ -98,11 +98,7 @@ function Sidebar() {
                                 <RouterCourse course={course} backgroundColors={bgColors.orangeTeacher} hoverColor={bgColors.orangeTeacherHover} />
                             </Link>)
                     })}
-                </div>
-                {/* <button onClick={() => {
-                    navigate('/');
-                    signOut()
-                }}>Signed Out</button> */}
+                </div>}
             </div>
         </div >
     );
