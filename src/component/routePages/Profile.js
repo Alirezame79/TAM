@@ -18,6 +18,7 @@ export default function Profile() {
 
     return (
         <div className={classes.body}>
+<<<<<<< HEAD
             <FaCog custome onClick={editProfile} className={classes.edit} />
             <img src={BaseURL + profile.profile_image} alt={'profile'} className={classes.profileImg} />
             <h1 className={classes.profileName}>{profile.name || "کتایون غمگسار"}</h1>
@@ -36,6 +37,27 @@ export default function Profile() {
                     <FaLinkedin className={`${classes.Fa} ${classes.Linkedin}`} />
                 </div>
             </div>
+=======
+            <img src={BaseURL + profile.profile_image} alt={'profile'} className={classes.profileImg} />
+            <h1 className={classes.profileName}>{profile.name || "کتایون غمگسار"}</h1>
+
+            <h3 className={classes.profileId}>{profile.id || "katygh"}</h3>
+            <h3 className={classes.profileNationalID}>{profile.nationalID || "0023245506"}</h3>
+            <div className={classes.icons}>
+                <FaEnvelope className={`${classes.Fa} ${classes.email}`} />
+                <h3 className={classes.profileEmail}>{profile.email || "katatayoungh@gmail.com"}</h3>
+            </div>
+            <div className={classes.icons}>
+                <FaGithub className={`${classes.Fa} ${classes.github}`} />
+                <h3 className={classes.profileGithub}>{profile.social_github || "katayoungh"}</h3>
+            </div>
+            <div className={classes.icons}>
+                <FaLinkedin className={`${classes.Fa} ${classes.Linkedin}`} />
+                <h3 className={classes.profileLinkedIn}>{profile.social_linkedIn || "katayounghamgoar"}</h3>
+            </div>
+            <FaCog custome onClick={editProfile} className={classes.edit} />
+
+>>>>>>> c3ccb4a6e5abd2165d4309248ee2c30b2e55f9eb
         </div>
     )
 }

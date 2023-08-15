@@ -1,14 +1,23 @@
+<<<<<<< HEAD
 .name {
+=======
+.courseName {
+>>>>>>> c3ccb4a6e5abd2165d4309248ee2c30b2e55f9eb
   text-align: center;
   color: black;
   border: 1px solid white;
   margin-bottom: 0;
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> c3ccb4a6e5abd2165d4309248ee2c30b2e55f9eb
   padding: .7rem;
   justify-content: center;
   align-items: center;
   
 }
 
+<<<<<<< HEAD
 .teacher{
   background-color: #FFCF5D;
 }
@@ -33,3 +42,5 @@
 
 
    
+=======
+>>>>>>> c3ccb4a6e5abd2165d4309248ee2c30b2e55f9eb
