@@ -1,16 +1,30 @@
-.courseName {
+.routerCourseClass {
   text-align: center;
   color: black;
-  border: 1px solid white;
+  border: none;
   margin-bottom: 0;
- 
-  padding: .7rem;
+  padding: 0.7rem;
   justify-content: center;
   align-items: center;
-  
+  margin: 1px 0;
 }
 
-.teacherColor{}
-.taColor{}
-.studentColor{}
+.teacher {
+  background-color: #ffcf5d;
+}
+.assistant {
+  background-color: #ffc038;
+}
+.student {
+  background-color: #f26768;
+}
 
+.teacher:hover {
+  background-color: #edab12;
+}
+.assistant:hover {
+  background-color: #f1a900;
+}
+.student:hover {
+  background-color: #d93b3c;
+}

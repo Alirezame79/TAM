@@ -1,14 +1,13 @@
 .body {
   border: 2px solid #ffc038;
-
   box-shadow: 6px 9px 9px 1px #bcad8d;
   height: 60%;
   width: 50%;
   margin: auto auto;
-
   padding: 20px;
-
-  position: relative;
+  position: fixed;
+  top: 22%;
+  right: 34%;
 }
 
 .profileImg {
@@ -39,6 +38,8 @@ h1 {
 
 .profileName {
   margin-top: 25px;
+  text-align: right;
+  margin-right: 1%;
 }
 
 .githubLogo {

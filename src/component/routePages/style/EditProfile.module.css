@@ -1,49 +1,56 @@
-.main{
-    margin-top: 23%;
-    margin-left: 83%; 
-    height: 34rem;
-    padding: 10%;
-    width: 26rem;
-    border: 2px solid #121285;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 6px 7px 19px -3px #7373f0bd;
-}
-.profil{
-    margin-top: 1%;
-    position: absolute;
-    right: -181%;
-    display: flex;
-}
-.image{
-    object-fit: cover;
-    border-radius: 50%;
-    width: 6rem;
-    height: 6rem;
-}
-.name{
-    margin-top: 12%;
-    margin-right: 6%;
-    width: 10rem;
+.body {
+  height: 60%;
+  width: 50%;
+  margin: auto auto;
+  position: fixed;
+  top: 15%;
+  right: 30%;
 }
 
-.chosePhoto{
-    display: flex;
-    margin-top: 5%;
+.main {
+  height: 29rem;
+  padding: 9%;
+  width: 26rem;
+  border: 2px solid #121285;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 6px 7px 19px -3px #7373f0bd;
+}
 
+.profile {
+  position: fixed;
+  right: 22%;
+  display: flex;
 }
-.inputPhoto{
-    width: 9rem;
-    border-radius: 49%;
-    background-color: #9FDBD1;
-    text-align: center;
-    padding: 3% 4%;
-    border: 2px solid #121285;
-    color: white;
-    font-weight: bolder;
-    margin-right: 20%;
-    cursor: pointer;
+.image {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
 }
-input[type="file"]{
-    display: none;
+.name {
+  margin-top: 12%;
+  margin-right: 6%;
+  width: 10rem;
+}
+
+.choosePhoto {
+  display: flex;
+  margin-top: 5%;
+  background-color: orange;
+}
+.inputPhoto {
+  width: 9rem;
+  border-radius: 49%;
+  background-color: #9fdbd1;
+  text-align: center;
+  padding: 3% 4%;
+  border: 2px solid #121285;
+  color: white;
+  font-weight: bolder;
+  margin-right: 20%;
+  cursor: pointer;
+}
+input[type="file"] {
+  display: none;
 }

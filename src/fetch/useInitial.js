@@ -22,8 +22,8 @@ const useInitial = () => {
                 console.log(data.studentCourses)
                 dispatch(setStudentCourses(data.student_courses))
             }
-            if (data.profile.ta_tag) {
-                console.log(data.taCourses)
+            if (data.profile.assistant_tag) {
+                console.log(data.assistant_courses)
                 dispatch(setAssistantCourses(data.assistant_courses))
             }
             if (data.profile.teacher_tag) {

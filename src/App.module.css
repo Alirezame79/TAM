@@ -6,6 +6,7 @@
 
 .mainBody {
   display: flex;
+  position: relative;
 }
 
 .containerBody {

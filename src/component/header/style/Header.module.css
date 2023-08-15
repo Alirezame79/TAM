@@ -2,9 +2,10 @@
   background-color: #9fdbd1;
   display: flex;
   justify-content: space-between;
-
-  padding: 15px 0;
-  box-shadow: 8px 2px 10px 1px #145e51b8;
+  padding: 2.1% 0;
+  box-shadow: 0px 2px 10px 1px #145e51b8;
+  width: 80%;
+  position: fixed;
 }
 
 .logos {
@@ -14,14 +15,12 @@
 }
 
 .notifLogo {
-  margin-right: 22%;
-  transform: scale(1.8);
+  transform: scale(2) translateX(-35%);
   color: #121285;
 }
 
 .outLogo {
-  margin-right: 2%;
-  transform: scale(1.8);
+  transform: scale(2) translateX(-83%);
   color: #121285;
 }
 

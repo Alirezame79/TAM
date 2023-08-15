@@ -8,7 +8,7 @@ import Profile from "./component/routePages/Profile";
 import Header from "./component/header/Header";
 import { useDispatch } from 'react-redux';
 import { reset } from './store/index'
-import Course from './component/routePages/Course'
+import Course from './component/routePages/course/Course'
 import useInitial from "./fetch/useInitial";
 import NotFound from "./component/routePages/NotFound";
 import EditProfile from "./component/routePages/EditProfile";

@@ -26,39 +26,45 @@
 .routerLinks {
   text-decoration: none;
   width: 100%;
-
 }
 
 .routerLinks:hover {
   background-color: #aaa;
 }
 
-.studentCourses{
+.studentCourses {
   margin-top: 3%;
 }
-.courseIcon{
+
+.courseIcon {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin-right: 2%;
-  margin-bottom: 4%;
+  justify-content: space-between;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
-.role{
-  margin-left: 66%;
+
+.roleContainer {
+  display: flex;
+  gap: 10px;
 }
-.roleTA{
-  margin-left: 56%;
+
+.role {
+  /* margin-left: 66%; */
 }
-.role,.roleTA{  
+.roleTA {
+  /* margin-left: 56%; */
+}
+.role,
+.roleTA {
   color: white;
   font-size: 1.2rem;
-
 }
-.roleIcon{
+.roleIcon {
   color: white;
   transform: scale(1.2);
 }
 
-.assistantCourses{
-  margin-top: 20%;
+.assistantCourses {
+  margin-top: 25px;
 }
