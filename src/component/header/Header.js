@@ -16,10 +16,11 @@ export default function Header() {
 
     return (
         <div className={classes.body}>
-
             <img src="TamLogo.png" alt="Tam Logo" className={classes.tamLogoHeader} />
-            <BiLogOutCircle className={classes.outLogo} onClick={signoutClicked} />
-            <AiTwotoneBell className={classes.notifLogo} />
+            <div className={classes.logos}>
+                <BiLogOutCircle className={classes.outLogo} onClick={signoutClicked} />
+                <AiTwotoneBell className={classes.notifLogo} />
+            </div>
         </div>
     )
 }

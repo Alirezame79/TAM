@@ -18,25 +18,24 @@ export default function Profile() {
 
     return (
         <div className={classes.body}>
+            <FaCog custome onClick={editProfile} className={classes.edit} />
             <img src={BaseURL + profile.profile_image} alt={'profile'} className={classes.profileImg} />
             <h1 className={classes.profileName}>{profile.name || "کتایون غمگسار"}</h1>
 
-            <h3 className={classes.profileId}>{profile.id || "katygh"}</h3>
-            <h3 className={classes.profileNationalID}>{profile.nationalID || "0023245506"}</h3>
-            <div className={classes.icons}>
-                <FaEnvelope className={`${classes.Fa} ${classes.email}`} />
-                <h3 className={classes.profileEmail}>{profile.email || "katatayoungh@gmail.com"}</h3>
+            <div className={classes.profileLinks}>
+                <div className={classes.icons}>
+                    <h3 className={classes.profileEmail}>{profile.email || "katatayoungh@gmail.com"}</h3>
+                    <FaEnvelope className={`${classes.Fa} ${classes.email}`} />
+                </div>
+                <div className={classes.icons}>
+                    <h3 className={classes.profileGithub}>{profile.social_github || "katayoungh"}</h3>
+                    <FaGithub className={`${classes.Fa} ${classes.github}`} />
+                </div>
+                <div className={classes.icons}>
+                    <h3 className={classes.profileLinkedIn}>{profile.social_linkedIn || "katayounghamgoar"}</h3>
+                    <FaLinkedin className={`${classes.Fa} ${classes.Linkedin}`} />
+                </div>
             </div>
-            <div className={classes.icons}>
-                <FaGithub className={`${classes.Fa} ${classes.github}`} />
-                <h3 className={classes.profileGithub}>{profile.social_github || "katayoungh"}</h3>
-            </div>
-            <div className={classes.icons}>
-                <FaLinkedin className={`${classes.Fa} ${classes.Linkedin}`} />
-                <h3 className={classes.profileLinkedIn}>{profile.social_linkedIn || "katayounghamgoar"}</h3>
-            </div>
-            <FaCog custome onClick={editProfile} className={classes.edit} />
-
         </div>
     )
 }

@@ -12,15 +12,7 @@ import { FaCalendarAlt, FaCircle, FaEdit, FaFileAlt, FaIdCard, FaIdCardAlt, FaSt
 import { FaReadme, FaBookOpenReader } from "react-icons/fa6";
 
 
-var bgColors = {
-    "pink": "#F26768",
-    "pinkHover": "#D93B3C",
-    "orangeTa": "#FFC038",
-    "orangeTaHover": "F1A900",
-    "orangeTeacher": "#FFCF5D",
-    "orangeTeacherHover": "#EDAB12"
 
-};
 
 function Sidebar() {
     const signOut = useSignOut()
@@ -34,12 +26,11 @@ function Sidebar() {
     const teacherCourses = useSelector((state) => {
         return state.teacherCourses
     })
-    
+
 
     // console.log(studentCourses)
 
     return (
-
         <div className={classes.container}>
             <h1 className={classes.sidebarTopic}>سامانه تام</h1>
             <div className={classes.linkContainer}>
@@ -61,7 +52,7 @@ function Sidebar() {
 
                 {/* <FaBookOpenReader/> <FaReadme/> jozve  */}
 
-                <div className={classes.studentCourses}>
+                {Object.keys(studentCourses).length !== 0 && <div className={classes.studentCourses}>
                     <div className={classes.courseIcon}>
                         <AiOutlineCaretLeft className={classes.roleIcon} />
                         <p className={classes.role}>دانشجو</p>
@@ -70,11 +61,11 @@ function Sidebar() {
                     {studentCourses.map((course) => {
                         return (
                             <Link key={course.id} className={classes.routerLinks} to={"/course/" + course.id}>
-                                <RouterCourse student course={course} backgroundColors={bgColors.pink} hoverColor={bgColors.pinkHover} />
+                                <RouterCourse student course={course}  />
                             </Link>)
                     })}
-                </div>
-                <div className={classes.assistantCourses}>
+                </div>}
+                {Object.keys(assistantCourses).length !== 0 && <div className={classes.assistantCourses}>
                     <div className={classes.courseIcon}>
                         <AiOutlineCaretLeft className={classes.roleIcon} />
                         <p className={classes.roleTA}>دستیار استاد</p>
@@ -83,11 +74,11 @@ function Sidebar() {
                     {assistantCourses.map((course) => {
                         return (
                             <Link key={course.id} className={classes.routerLinks} to={"/course/" + course.id}>
-                                <RouterCourse course={course} backgroundColors={bgColors.orangeTa} hoverColor={bgColors.orangeTaHover} />
+                                <RouterCourse course={course} ta />
                             </Link>)
                     })}
-                </div>
-                <div className={classes.teacherCourses}>
+                </div>}
+                {Object.keys(teacherCourses).length !== 0 && <div className={classes.teacherCourses}>
                     <div className={classes.courseIcon}>
                         <AiOutlineCaretLeft className={classes.roleIcon} />
                         <p className={classes.role}> استاد</p>
@@ -96,14 +87,10 @@ function Sidebar() {
                     {teacherCourses.map((course) => {
                         return (
                             <Link key={course.id} className={classes.routerLinks} to={"/course/" + course.id} >
-                                <RouterCourse course={course} backgroundColors={bgColors.orangeTeacher} hoverColor={bgColors.orangeTeacherHover} />
+                                <RouterCourse course={course} teacher />
                             </Link>)
                     })}
-                </div>
-                {/* <button onClick={() => {
-                    navigate('/');
-                    signOut()
-                }}>Signed Out</button> */}
+                </div>}
             </div>
         </div >
     );

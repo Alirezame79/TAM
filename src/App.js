@@ -28,11 +28,11 @@ function App() {
         localStorage.setItem('login', '1');
         return (
             <>
-            {/* <Login /> */}
+                {/* <Login /> */}
                 <div className={classes.mainBody}>
-                    <Header/>
                     <Sidebar />
                     <div className={classes.containerBody}>
+                        <Header />
                         <Routes>
                             <Route path="/" element={<Profile />} />
                             <Route path="/profile" element={<Profile />} />

@@ -42,7 +42,7 @@ export default function EditProfile() {
 
 
     return (
-        <div>
+        <div className={classes.body}>
             <div className={classes.profil}>
                 <h3 className={classes.name} >{profile.name}</h3>
                 <img  className={classes.image} src={BaseURL + profile.profile_image} alt={'profile'} width='200px' />

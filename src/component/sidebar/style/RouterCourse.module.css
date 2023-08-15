@@ -1,16 +1,35 @@
-.courseName {
+.name {
   text-align: center;
   color: black;
   border: 1px solid white;
   margin-bottom: 0;
- 
   padding: .7rem;
   justify-content: center;
   align-items: center;
   
 }
 
-.teacherColor{}
-.taColor{}
-.studentColor{}
+.teacher{
+  background-color: #FFCF5D;
+}
+.ta{ 
+  background-color: #FFC038;
 
+}
+.student{
+  background-color: #F26768;
+}
+
+.teacher:hover{
+  background-color: #EDAB12;
+}
+.ta:hover{ 
+  background-color: #F1A900;
+
+}
+.student:hover{
+  background-color: #D93B3C;
+}
+
+
+   

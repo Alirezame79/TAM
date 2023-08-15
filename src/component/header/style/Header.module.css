@@ -1,28 +1,29 @@
-.body{
-    background-color: #9FDBD1;
-    display: flex;
-    justify-content: right;
-    
-    width: 100%;
-    padding-bottom: 2.1%;
-    padding-top: 2.1%;
-    box-shadow: 8px 2px 10px 1px #145e51b8;
+.body {
+  background-color: #9fdbd1;
+  display: flex;
+  justify-content: space-between;
+  padding: 2.1% 0;
+  box-shadow: 0px 2px 10px 1px #145e51b8;
+  width: 80%;
+  position: fixed;
 }
 
-.notifLogo{
-    margin-right: 22%;
-    transform: scale(1.8);
-    color: #121285;
-    
+.logos {
+  margin-right: 10px;
+  display: flex;
+  gap: 15px;
 }
 
-.outLogo{
-    margin-right: 2%;
-    transform: scale(1.8);
-    color: #121285;
+.notifLogo {
+  transform: scale(2) translateX(-35%);
+  color: #121285;
 }
 
-.tamLogoHeader{
-    position: absolute;
-    left: 2%;
+.outLogo {
+  transform: scale(2) translateX(-83%);
+  color: #121285;
+}
+
+.tamLogoHeader {
+  margin: 0 10px;
 }
