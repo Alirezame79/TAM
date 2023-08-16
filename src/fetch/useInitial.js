@@ -14,20 +14,20 @@ const useInitial = () => {
                 'Authorization': 'Bearer ' + localStorage.getItem("token")
             }
         }).then((response) => {
-            console.log(response)
+            // console.log(response)
             return response.json();
         }).then((data) => {
-            console.log(data);
+            // console.log(data);
             if (data.profile.student_tag) {
-                console.log(data.studentCourses)
+                // console.log(data.studentCourses)
                 dispatch(setStudentCourses(data.student_courses))
             }
             if (data.profile.assistant_tag) {
-                console.log(data.assistant_courses)
+                // console.log(data.assistant_courses)
                 dispatch(setAssistantCourses(data.assistant_courses))
             }
             if (data.profile.teacher_tag) {
-                console.log(data.teacherCourses)
+                // console.log(data.teacherCourses)
                 dispatch(setTeacherCourses(data.teacher_courses))
             }
             dispatch(setProfile(data.profile))

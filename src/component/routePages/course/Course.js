@@ -6,7 +6,7 @@ import { BiSolidGroup } from "react-icons/bi";
 import { FaCalendarAlt, FaFileAlt, FaUsers } from "react-icons/fa";
 import { FaBookOpenReader } from "react-icons/fa6";
 
-export default function Course({ courseId }) {
+export default function Course() {
     const { id } = useParams();
     useCourse(id)
     const course = useSelector((state) => {
@@ -14,7 +14,6 @@ export default function Course({ courseId }) {
     })
 
     if (Object.keys(course).length === 0) return
-    // console.log(course)
 
     return (
         <div className={classes.container}>
@@ -29,7 +28,6 @@ export default function Course({ courseId }) {
 
             <div className={classes.centarPage}>
                 <div className={classes.main}>
-                    <h4>{course.id} : آیدی درس</h4> {/* che niazi hast ke in bashe */}
                     <h4>{course.class_location} : مکان </h4>
                     <h4>   زمان : {course.class_time}</h4>
                     <h4> {course.exam_time} : امتحان</h4>
@@ -39,11 +37,6 @@ export default function Course({ courseId }) {
                                 return <li key={assistant.id}>{assistant.name}</li>
                             })}</ul></h4>
                 </div>
-
-                {/* <h3> : دانشجو ها  <ul>
-                {course.student_profiles.map((student) => {
-                    return <li key={student.id}>{student.name}</li>
-                })}</ul></h3> */}
 
                 <div className={classes.bodyCircleBtn}>
                     <div className={classes.CircleBtn}> <BiSolidGroup className={classes.place} /> <p className={classes.CircleBtnText}> اعضا </p></div>

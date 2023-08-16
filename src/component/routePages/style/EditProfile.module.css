@@ -37,8 +37,8 @@
 .choosePhoto {
   display: flex;
   margin-top: 5%;
-  background-color: orange;
 }
+
 .inputPhoto {
   width: 9rem;
   border-radius: 49%;
@@ -51,6 +51,11 @@
   margin-right: 20%;
   cursor: pointer;
 }
-input[type="file"] {
+
+/* input[type="file"] {
   display: none;
+} */
+
+.input {
+  /* background-color: #121285; */
 }

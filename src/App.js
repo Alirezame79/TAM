@@ -13,11 +13,25 @@ import useInitial from "./fetch/useInitial";
 import NotFound from "./component/routePages/NotFound";
 import EditProfile from "./component/routePages/EditProfile";
 import PermissionDenied from "./component/routePages/PermissionDenied";
+import StudentCourse from "./component/routePages/course/StudentCourse";
+import AssistantCourse from "./component/routePages/course/AssistantCourse";
+import TeacherCourse from "./component/routePages/course/TeacherCourse";
+// import { useSelector } from 'react-redux'
 
 function App() {
     const isAuthenticated = useIsAuthenticated()
     const dispatch = useDispatch()
     useInitial()
+
+    // const studentCourses = useSelector((state) => {
+    //     return state.studentCourses
+    // })
+    // const assistantCourses = useSelector((state) => {
+    //     return state.assistantCourses
+    // })
+    // const teacherCourses = useSelector((state) => {
+    //     return state.teacherCourses
+    // })
 
     if (!isAuthenticated()) {
         localStorage.setItem('login', '0');
@@ -28,7 +42,6 @@ function App() {
         localStorage.setItem('login', '1');
         return (
             <>
-                {/* <Login /> */}
                 <div className={classes.mainBody}>
                     <Sidebar />
                     <div className={classes.containerBody}>
@@ -36,7 +49,7 @@ function App() {
                         <Routes>
                             <Route path="/" element={<Profile />} />
                             <Route path="/profile" element={<Profile />} />
-                            <Route path="/course/:id" element={<Course />} />
+                            <Route path="/course/:id" element={<StudentCourse />} />
                             <Route path="/profile/edit" element={<EditProfile />} />
                             <Route path="/permissionDenied" element={<PermissionDenied />} />
                             <Route path="*" element={<NotFound />} />

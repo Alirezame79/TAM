@@ -20,19 +20,19 @@ export default function Profile() {
         <div className={classes.body}>
             <FaCog custome onClick={editProfile} className={classes.edit} />
             <img src={BaseURL + profile.profile_image} alt={'profile'} className={classes.profileImg} />
-            <h1 className={classes.profileName}>{profile.name || "کتایون غمگسار"}</h1>
+            <h1 className={classes.profileName}>{profile.name || "نام"}</h1>
 
             <div className={classes.profileLinks}>
                 <div className={classes.icons}>
-                    <h3 className={classes.profileEmail}>{profile.email || "katatayoungh@gmail.com"}</h3>
+                    <h3 className={classes.profileEmail}>{profile.email || "Email"}</h3>
                     <FaEnvelope className={`${classes.Fa} ${classes.email}`} />
                 </div>
                 <div className={classes.icons}>
-                    <h3 className={classes.profileGithub}>{profile.social_github || "katayoungh"}</h3>
+                    <h3 className={classes.profileGithub}>{profile.social_github || "Github"}</h3>
                     <FaGithub className={`${classes.Fa} ${classes.github}`} />
                 </div>
                 <div className={classes.icons}>
-                    <h3 className={classes.profileLinkedIn}>{profile.social_linkedIn || "katayounghamgoar"}</h3>
+                    <h3 className={classes.profileLinkedIn}>{profile.social_linkedin || "LinkedIn"}</h3>
                     <FaLinkedin className={`${classes.Fa} ${classes.Linkedin}`} />
                 </div>
             </div>
