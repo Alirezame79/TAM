@@ -25,7 +25,7 @@ function Sidebar() {
     })
 
 
-    console.log(assistantCourses)
+    // console.log(assistantCourses)
 
     return (
         <div className={classes.container}>

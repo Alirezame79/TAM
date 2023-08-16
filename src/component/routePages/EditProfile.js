@@ -7,6 +7,7 @@ import Button from '../../ui/Button'
 import useUpdateProfile from '../../fetch/useUpdateProfile'
 
 export default function EditProfile() {
+    let bio = useRef("");
     let email = useRef("");
     let githubLink = useRef("");
     let linkedinLink = useRef("");
@@ -19,12 +20,12 @@ export default function EditProfile() {
     useUpdateProfile(data)
 
     useEffect(() => {
+        bio.current.value = profile.bio
         email.current.value = profile.email
         githubLink.current.value = profile.social_github
         linkedinLink.current.value = profile.social_linkedin
         setShowImage(BaseURL + profile.profile_image)
     }, [profile])
-
 
     function setNewImage(e) {
         console.log(e.target.files);
@@ -37,6 +38,7 @@ export default function EditProfile() {
         let form_data = new FormData();
         form_data.append('name', "Alireza Form");
         form_data.append('email', email.current.value);
+        form_data.append('bio', bio.current.value);
         form_data.append('profile_image', file, file.name);
         form_data.append('social_github', githubLink.current.value);
         form_data.append('social_linkedin', linkedinLink.current.value);
@@ -48,11 +50,6 @@ export default function EditProfile() {
 
     return (
         <div className={classes.body}>
-            {/* <div className={classes.profile}>
-                <h3 className={classes.name} >{profile.name}</h3>
-                <img className={classes.image} src={BaseURL + profile.profile_image} alt={'profile'} width='200px' />
-            </div> */}
-
             <div className={classes.main}>
                 <div className={classes.choosePhoto}>
                     <h2>Add Image:</h2>
@@ -60,6 +57,8 @@ export default function EditProfile() {
                     <img src={showImage} className={classes.image} alt={'newImage'} width='150px' />
                 </div>
 
+                <label htmlFor="bio">بیوگرافی:</label>
+                <Input innerRef={bio} id="bio" />
                 <label htmlFor="email">:ایمیل</label>
                 <Input innerRef={email} id="email" />
                 <label htmlFor="githubLink">:گیت هاب</label>

@@ -16,11 +16,21 @@ export default function Profile() {
         navigate('/profile/edit');
     }
 
+    function changePasswordBtnClicked() {
+        navigate('/profile/changePassword');
+    }
+
+    console.log(profile)
+
     return (
         <div className={classes.body}>
             <FaCog custome onClick={editProfile} className={classes.edit} />
+            <button onClick={changePasswordBtnClicked}>Change Password</button>
             <img src={BaseURL + profile.profile_image} alt={'profile'} className={classes.profileImg} />
             <h1 className={classes.profileName}>{profile.name || "نام"}</h1>
+            <h2>Bio: {profile.bio}</h2>
+            <h2>National ID: {profile.national_id}</h2>
+            <h2>Student ID: {profile.id}</h2>
 
             <div className={classes.profileLinks}>
                 <div className={classes.icons}>

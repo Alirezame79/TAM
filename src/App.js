@@ -16,22 +16,13 @@ import PermissionDenied from "./component/routePages/PermissionDenied";
 import StudentCourse from "./component/routePages/course/StudentCourse";
 import AssistantCourse from "./component/routePages/course/AssistantCourse";
 import TeacherCourse from "./component/routePages/course/TeacherCourse";
+import ChangePassword from "./component/routePages/ChangePassword";
 // import { useSelector } from 'react-redux'
 
 function App() {
     const isAuthenticated = useIsAuthenticated()
     const dispatch = useDispatch()
     useInitial()
-
-    // const studentCourses = useSelector((state) => {
-    //     return state.studentCourses
-    // })
-    // const assistantCourses = useSelector((state) => {
-    //     return state.assistantCourses
-    // })
-    // const teacherCourses = useSelector((state) => {
-    //     return state.teacherCourses
-    // })
 
     if (!isAuthenticated()) {
         localStorage.setItem('login', '0');
@@ -51,6 +42,7 @@ function App() {
                             <Route path="/profile" element={<Profile />} />
                             <Route path="/course/:id" element={<StudentCourse />} />
                             <Route path="/profile/edit" element={<EditProfile />} />
+                            <Route path="/profile/changePassword" element={<ChangePassword />} />
                             <Route path="/permissionDenied" element={<PermissionDenied />} />
                             <Route path="*" element={<NotFound />} />
                         </Routes>
