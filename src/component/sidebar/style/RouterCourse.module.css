@@ -1,12 +1,12 @@
 .routerCourseClass {
   text-align: center;
   color: black;
-  border: none;
+  border: 1px solid white;
   margin-bottom: 0;
   padding: 0.7rem;
   justify-content: center;
   align-items: center;
-  margin: 1px 0;
+  
 }
 
 .teacher {
