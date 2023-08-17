@@ -8,55 +8,36 @@
 
 .loginBtn{
   position: absolute;
-  right: 36%;
+  right: 21%;
   top: 76%;
   border: 3px solid #ad722a;
   background-color: #FFC130;
   padding: 3% 9%;
   font-weight: bolder;
   font-size: 1rem;
-  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8)
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+  width: 59%;
+  text-align: center
 }
-.loginBtn:link, .loginBtn:visited{
-transition: all .2s;
 
-}
 .loginBtn:hover{
-background-color: #fdb711;
-transform: scale(1.1) translateY(-3px);
-font-size: large;
+background-color: #ffcd57;
 }
-
-.loginBtn:active{
-transform: translateY(-1px);
-box-shadow: 5px 5px 10px 2px rgba(0,0,0,.5)
-}
-
-@keyframes btnMove{
-  0%{
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-
-  80%{
-    transform: translateX(20px);
-  }
-  100%{
-    opacity: 1;
-    transform: translate(o);
-  }
-}
-
 .editProfile{
-color: white;
-border: 1px solid #8282b8;
+  color: white;
+  border: 1px solid #8282b8;
   background-color: #121285;
   padding: 3% 9%;
   font-weight: bolder;
   font-size: 1rem;
   box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-  width: 12rem;
+  width: 18rem;
   height: 4rem;
-  margin: 13% 26% 8%;
+  margin: 13% 14% 8%;
+  text-align: center;
 
+}
+
+.editProfile:hover{
+  background-color: #4646eb;
 }

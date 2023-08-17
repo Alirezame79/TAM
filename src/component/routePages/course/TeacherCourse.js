@@ -1,7 +1,7 @@
 import classes from './style/TeacherCourse.module.css'
 import { BiSolidGroup } from "react-icons/bi";
-import { FaCalendarAlt, FaFileAlt, FaUsers } from "react-icons/fa";
-import { FaBookOpenReader } from "react-icons/fa6";
+import { FaCalendarAlt, FaFileAlt, FaUsers,FaEdit, FaFileSignature  } from "react-icons/fa";
+import { FaLaptopCode, FaBookOpenReader} from "react-icons/fa6";
 import { useSelector } from 'react-redux'
 import { useParams } from "react-router-dom";
 import useCourse from '../../../fetch/useCourse';
@@ -42,11 +42,11 @@ export default function TeacherCourse() {
                 <div className={classes.bodyCircleBtn}>
                     <div className={classes.CircleBtn}> <BiSolidGroup className={classes.place} /> <p className={classes.CircleBtnText}> اعضا </p></div>
                     <div className={classes.CircleBtn}> <FaUsers className={classes.place1} /> <p className={classes.CircleBtnText}> لیست گروه ها</p></div>
-                    <div className={classes.CircleBtn}> <FaBookOpenReader className={classes.place} /> <p className={classes.CircleBtnText}> پروژه ها </p></div>
-                    <div className={classes.CircleBtn}> <FaCalendarAlt className={classes.place} /> <p className={classes.CircleBtnText}> تمرین </p></div>
+                    <div className={classes.CircleBtn}> <FaLaptopCode className={classes.place} /> <p className={classes.CircleBtnText}> پروژه ها </p></div>
+                    <div className={classes.CircleBtn}> <FaFileSignature className={classes.place} /> <p className={classes.CircleBtnText}> تمرین </p></div>
                     <div className={classes.CircleBtn}> <FaBookOpenReader className={classes.place} /><p className={classes.CircleBtnText}> جزوه </p></div>
                     <div className={classes.CircleBtn}> <FaFileAlt className={classes.place} /> <p className={classes.CircleBtnText}> نمره </p></div>
-                    <div className={classes.CircleBtn}> <BiSolidGroup className={classes.place1} /> <p className={classes.CircleBtnText}> انتخاب دستیار </p></div>
+                    <div className={classes.CircleBtn}> <FaEdit className={classes.place1} /> <p className={classes.CircleBtnText}> ویرایش درس </p></div>
                 </div>
             </div>
         </div >

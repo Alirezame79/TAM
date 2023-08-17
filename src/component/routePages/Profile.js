@@ -4,7 +4,7 @@ import BaseURL from '../../fetch/BaseURL'
 import Button from '../../ui/Button'
 import NotFound from './NotFound'
 import { useNavigate } from 'react-router-dom';
-import { FaGithub, FaLinkedin, FaEnvelope, FaCog } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaCog , FaLock} from "react-icons/fa";
 
 export default function Profile() {
     const profile = useSelector((state) => {
@@ -24,13 +24,16 @@ export default function Profile() {
 
     return (
         <div className={classes.body}>
-            <FaCog custome onClick={editProfile} className={classes.edit} />
-            <button onClick={changePasswordBtnClicked}>Change Password</button>
+            <div className={classes.settindIcon}>
+                <FaCog custome onClick={editProfile} className={classes.edit} />
+                <FaLock className={classes.editPass} onClick={changePasswordBtnClicked}/>
+            </div>
+           
             <img src={BaseURL + profile.profile_image} alt={'profile'} className={classes.profileImg} />
             <h1 className={classes.profileName}>{profile.name || "نام"}</h1>
-            <h2>Bio: {profile.bio}</h2>
-            <h2>National ID: {profile.national_id}</h2>
-            <h2>Student ID: {profile.id}</h2>
+            {/* <h2>Bio: {profile.bio}</h2> */}
+            <h4>{profile.national_id} : کد ملی </h4>
+            <h4> {profile.id} : شماره دانشجویی</h4>
 
             <div className={classes.profileLinks}>
                 <div className={classes.icons}>

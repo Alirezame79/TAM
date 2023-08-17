@@ -56,16 +56,22 @@ export default function EditProfile() {
                     <input type="file" className={classes.input} onChange={setNewImage} />
                     <img src={showImage} className={classes.image} alt={'newImage'} width='150px' />
                 </div>
-
-                <label htmlFor="bio">بیوگرافی:</label>
-                <Input innerRef={bio} id="bio" />
-                <label htmlFor="email">:ایمیل</label>
-                <Input innerRef={email} id="email" />
-                <label htmlFor="githubLink">:گیت هاب</label>
-                <Input innerRef={githubLink} id="githubLink" />
-                <label htmlFor="linkedinLink">:لینکدین</label>
-                <Input innerRef={linkedinLink} id="linkedinLink" />
-
+                <div className={classes.editProfileInput}>
+                    <label htmlFor="bio">بیوگرافی   </label>
+                    <Input innerRef={bio} id="bio" editProfile />
+                </div>
+                <div className={classes.editProfileInput}>
+                    <label htmlFor="email">:ایمیل</label>
+                    <Input innerRef={email} id="email" editProfile />
+                </div>
+                <div className={classes.editProfileInput}>
+                    <label htmlFor="githubLink">:گیت هاب</label>
+                    <Input innerRef={githubLink} id="githubLink" editProfile />
+                </div>
+                <div className={classes.editProfileInput}>
+                    <label htmlFor="linkedinLink">:لینکدین</label>
+                    <Input innerRef={linkedinLink} id="linkedinLink"editProfile />
+                </div>
                 <Button editProfile click={sendRequest}>Submit</Button>
             </div>
         </div>

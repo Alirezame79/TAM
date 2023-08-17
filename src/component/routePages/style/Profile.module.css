@@ -1,7 +1,7 @@
 .body {
   border: 2px solid #ffc038;
   box-shadow: 6px 9px 9px 1px #bcad8d;
-  height: 60%;
+  height: 64%;
   width: 50%;
   margin: auto auto;
   padding: 20px;
@@ -13,8 +13,8 @@
 .profileImg {
   border: 2px solid #ffc038;
   /* padding: 14% 9%; */
-  height: 11rem;
-  width: 11rem;
+  height: 9rem;
+  width: 9rem;
   border-radius: 50%;
   background-position: center;
   background-size: cover;
@@ -73,11 +73,23 @@ h1 {
 .github {
   color: #000;
 }
-
-.edit {
+.settindIcon{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   position: absolute;
-  top: 25px;
-  left: 25px;
+  top: 38px;
+  left: 45px;
+  width: 8%;
+    
+}
+.edit {
   transform: scale(1.2);
   color: #121285;
 }
+.editPass{
+  transform: scale(1.2);
+  color: #121285;
+ 
+}
+
