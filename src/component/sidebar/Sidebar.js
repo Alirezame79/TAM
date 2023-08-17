@@ -5,7 +5,7 @@ import { Link, Navigate } from 'react-router-dom';
 import RouterCourse from './RouterCourse';
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
-import { AiOutlineCaretLeft } from "react-icons/ai";
+import { AiOutlineCaretLeft, AiFillCaretDown} from "react-icons/ai";
 import { BsFillPersonFill, BsMortarboardFill } from "react-icons/bs";
 import { BiSolidCalendar, BiSolidGroup } from "react-icons/bi";
 import { FaCalendarAlt, FaCircle, FaEdit, FaFileAlt, FaIdCard, FaIdCardAlt, FaStar, FaUserFriends, FaUserGraduate, FaUsers } from "react-icons/fa";
@@ -35,6 +35,7 @@ function Sidebar() {
                 {Object.keys(studentCourses).length !== 0 && <div className={classes.studentCourses}>
                     <div className={classes.courseIcon}>
                         <AiOutlineCaretLeft className={classes.roleIcon} />
+                        {/* <AiFillCaretDown/> icon felesh paiyn*/}
                         <div className={classes.roleContainer}>
                             <p className={classes.role}>دانشجو</p>
                             <BsMortarboardFill className={classes.roleIcon} />
@@ -51,6 +52,7 @@ function Sidebar() {
                 {Object.keys(assistantCourses).length !== 0 && <div className={classes.assistantCourses}>
                     <div className={classes.courseIcon}>
                         <AiOutlineCaretLeft className={classes.roleIcon} />
+                        {/* <AiFillCaretDown/> icon felesh paiyn*/}
                         <div className={classes.roleContainer}>
                             <p className={classes.roleTA}>دستیار استاد</p>
                             <FaStar className={classes.roleIcon} />
@@ -67,6 +69,7 @@ function Sidebar() {
                 {Object.keys(teacherCourses).length !== 0 && <div className={classes.teacherCourses}>
                     <div className={classes.courseIcon}>
                         <AiOutlineCaretLeft className={classes.roleIcon} />
+                        {/* <AiFillCaretDown/> icon felesh paiyn*/}
                         <div className={classes.roleContainer}>
                             <p className={classes.role}> استاد</p>
                             <FaIdCard className={classes.roleIcon} />

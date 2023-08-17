@@ -36,9 +36,12 @@
 
 .choosePhoto {
   display: flex;
-  margin-top: 5%;
+  justify-content: space-between;
+ 
 }
-
+label{
+  padding-top:3%;
+}
 .inputPhoto {
   width: 9rem;
   border-radius: 49%;
@@ -52,10 +55,9 @@
   cursor: pointer;
 }
 
-/* input[type="file"] {
-  display: none;
-} */
-
-.input {
-  /* background-color: #121285; */
+.editProfileInput{
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 8%;
+  margin-bottom: 2%;
 }

@@ -20,11 +20,14 @@
 }
 
 .teacher:hover {
-  background-color: #edab12;
+  background-color: #ffd87fe6;
+/* #edab12; */
 }
 .assistant:hover {
-  background-color: #f1a900;
+  background-color:#ffd87fe6;
+   /* #f1a900; */
 }
 .student:hover {
-  background-color: #d93b3c;
+  background-color: #fb9091fa;
+  /* #d93b3c; */
 }

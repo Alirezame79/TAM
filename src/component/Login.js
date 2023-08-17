@@ -45,10 +45,14 @@ export default function Login() {
                 
             </div>
             <div className={classes.loginBox}>
-                <label htmlFor="username" className={classes.labelText}>نام کاربری</label>
-                <Input innerRef={username} id="username" className={classes.myInputs} />
-                <label htmlFor="password" type='password' className={classes.labelText}>رمز عبور</label>
-                <Input innerRef={password} id="password" className={classes.myInputs} />
+                <div className={classes.inputsLocation}>
+                    <label htmlFor="username" className={classes.labelText}>نام کاربری</label>
+                    <Input innerRef={username} id="username" className={classes.myInputs} login/>
+                </div>
+                <div className={classes.inputsLocation}>
+                    <label htmlFor="password" type='password' className={classes.labelText}>رمز عبور</label>
+                    <Input innerRef={password} id="password" className={classes.myInputs} login/>
+                </div>
                 {/* <FormControlLabel className={classes.fullCheckBox} control={<Checkbox className={classes.checkBox} />} label="استاد هستم" labelPlacement="start" /> */}
                 <Button loginBtn click={loginClicked}>ورود</Button>
             </div>

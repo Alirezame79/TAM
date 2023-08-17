@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { BiSolidGroup } from "react-icons/bi";
 import { FaCalendarAlt, FaFileAlt, FaUsers } from "react-icons/fa";
 import { FaBookOpenReader } from "react-icons/fa6";
-
+// FaClipboard , FaFileSignature tamrin
 export default function Course() {
     const { id } = useParams();
     useCourse(id)
