@@ -5,48 +5,55 @@ import { useParams } from "react-router-dom";
 import { BiSolidGroup } from "react-icons/bi";
 import { FaCalendarAlt, FaFileAlt, FaUsers } from "react-icons/fa";
 import { FaBookOpenReader } from "react-icons/fa6";
-// FaClipboard , FaFileSignature tamrin
+import { useEffect, useState } from 'react';
+import StudentCourse from './StudentCourse';
+import AssistantCourse from './AssistantCourse';
+import TeacherCourse from './TeacherCourse';
+
+
 export default function Course() {
     const { id } = useParams();
-    useCourse(id)
-    const course = useSelector((state) => {
-        return state.course
+    const [course, setCourse] = useState()
+    const studentCourses = useSelector((state) => {
+        return state.studentCourses
+    })
+    const assistantCourses = useSelector((state) => {
+        return state.assistantCourses
+    })
+    const teacherCourses = useSelector((state) => {
+        return state.teacherCourses
     })
 
-    if (Object.keys(course).length === 0) return
+    useEffect(() => {
+        for (const x of studentCourses) {
+            if (x.id == id) {
+                console.log('student')
+                setCourse('student')
+                break
+            }
+        }
+        for (const x of assistantCourses) {
+            if (x.id == id) {
+                console.log('assistant')
+                setCourse('assistant')
+                break
+            }
+        }
+        for (const x of teacherCourses) {
+            if (x.id == id) {
+                console.log('teacher')
+                setCourse('teacher')
+                break
+            }
+        }
+    })
+
 
     return (
-        <div className={classes.container}>
-            <div className={classes.name}>
-                <h1>   {course.name} </h1>
-            </div>
-
-            <div className={classes.teacher}>
-                <img alt={'profile'} />
-                <h2>{course.owner.name} : استاد درس</h2>
-            </div>
-
-            <div className={classes.centarPage}>
-                <div className={classes.main}>
-                    <h4>{course.class_location} : مکان </h4>
-                    <h4>   زمان : {course.class_time}</h4>
-                    <h4> {course.exam_time} : امتحان</h4>
-                    <h4> :دستیاران
-                        <ul>
-                            {course.assistant_profiles.map((assistant) => {
-                                return <li key={assistant.id}>{assistant.name}</li>
-                            })}</ul></h4>
-                </div>
-
-                <div className={classes.bodyCircleBtn}>
-                    <div className={classes.CircleBtn}> <BiSolidGroup className={classes.place} /> <p className={classes.CircleBtnText}> اعضا </p></div>
-                    <div className={classes.CircleBtn}> <FaUsers className={classes.place1} /> <p className={classes.CircleBtnText}> لیست گروه ها</p></div>
-                    <div className={classes.CircleBtn}> <FaBookOpenReader className={classes.place} /> <p className={classes.CircleBtnText}> پروژه ها </p></div>
-                    <div className={classes.CircleBtn}> <FaCalendarAlt className={classes.place} /> <p className={classes.CircleBtnText}> تقویم </p></div>
-                    <div className={classes.CircleBtn}> <FaBookOpenReader className={classes.place} /><p className={classes.CircleBtnText}> جزوه </p></div>
-                    <div className={classes.CircleBtn}> <FaFileAlt className={classes.place} /> <p className={classes.CircleBtnText}> نمره </p></div>
-                </div>
-            </div>
-        </div >
+        <>
+            {course === 'student' && <StudentCourse id={id} />}
+            {course === 'assistant' && <AssistantCourse id={id} />}
+            {course === 'teacher' && <TeacherCourse id={id} />}
+        </>
     )
 }

@@ -40,7 +40,7 @@ function App() {
                         <Routes>
                             <Route path="/" element={<Profile />} />
                             <Route path="/profile" element={<Profile />} />
-                            <Route path="/course/:id" element={<StudentCourse />} />
+                            <Route path="/course/:id" element={<Course />} />
                             <Route path="/profile/edit" element={<EditProfile />} />
                             <Route path="/profile/changePassword" element={<ChangePassword />} />
                             <Route path="/permissionDenied" element={<PermissionDenied />} />

@@ -14,7 +14,7 @@ export default function EditProfile() {
     const profile = useSelector((state) => {
         return state.profile
     })
-    const [file, setFile] = useState()
+    const [file, setFile] = useState(null)
     const [showImage, setShowImage] = useState()
     const [data, setData] = useState(null)
     useUpdateProfile(data)
@@ -36,10 +36,13 @@ export default function EditProfile() {
 
     function sendRequest() {
         let form_data = new FormData();
-        form_data.append('name', "Alireza Form");
         form_data.append('email', email.current.value);
         form_data.append('bio', bio.current.value);
-        form_data.append('profile_image', file, file.name);
+        if (file !== null) {
+            form_data.append('profile_image', file, file.name);
+        } else {
+            form_data.append('profile_image', BaseURL + profile.profile_image);
+        }
         form_data.append('social_github', githubLink.current.value);
         form_data.append('social_linkedin', linkedinLink.current.value);
 
@@ -70,7 +73,7 @@ export default function EditProfile() {
                 </div>
                 <div className={classes.editProfileInput}>
                     <label htmlFor="linkedinLink">:لینکدین</label>
-                    <Input innerRef={linkedinLink} id="linkedinLink"editProfile />
+                    <Input innerRef={linkedinLink} id="linkedinLink" editProfile />
                 </div>
                 <Button editProfile click={sendRequest}>Submit</Button>
             </div>

@@ -1,7 +1,8 @@
+import { useState } from "react";
 
 export default function useChangePassword(data) {
 
-    if (data === null) return
+    if (data === null) return [null]
 
     fetch('http://127.0.0.1:8000/change-password/', {
         method: 'POST',
@@ -16,4 +17,5 @@ export default function useChangePassword(data) {
     }).then((data) => {
         console.log(data)
     });
+
 }

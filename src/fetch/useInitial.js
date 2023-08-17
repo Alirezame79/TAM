@@ -17,7 +17,7 @@ const useInitial = () => {
             // console.log(response)
             return response.json();
         }).then((data) => {
-            // console.log(data);
+            console.log(data);
             if (data.profile.student_tag) {
                 // console.log(data.studentCourses)
                 dispatch(setStudentCourses(data.student_courses))

@@ -41,7 +41,8 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
-  border-top: 2px #020258 solid;
+  border: 1px solid white;
+  cursor: pointer;
 }
 
 .courseIcon:hover {
@@ -65,4 +66,9 @@
 
 .assistantCourses {
   margin-top: 25px;
+}
+
+.profileContainer {
+  background-color: gray;
+  margin-top: 100px;
 }

@@ -44,25 +44,24 @@ export default function ChangePassword() {
     }
 
     return (
-        <div>
-            <Card>
-                <h2>Chnage Password</h2>
-                <div>
-                    <label htmlFor="currentPassowrd">پسوورد کنونی</label>
-                    <Input innerRef={currentPassword} id="currentPassword" change={inputChnaged} />
-                </div>
-                <div>
-                    <label htmlFor="newPassowrd">پسوورد جدید</label>
-                    <Input innerRef={newPassword} id="newPassword" change={inputChnaged} />
-                </div>
-                <div>
-                    <label htmlFor="repeatNewPassowrd">تکرار پسوورد جدید</label>
-                    <Input innerRef={repeatNewPassword} id="repeatNewPassword" change={inputChnaged} />
-                </div>
+        <div className={classes.body}>
+            <h2>Chnage Password</h2>
+            <div>
+                <label htmlFor="currentPassowrd">پسوورد کنونی</label>
+                <Input innerRef={currentPassword} id="currentPassword" change={inputChnaged} />
+            </div>
+            <div>
+                <label htmlFor="newPassowrd">پسوورد جدید</label>
+                <Input type='password' innerRef={newPassword} id="newPassword" change={inputChnaged} />
+            </div>
+            <div>
+                <label htmlFor="repeatNewPassowrd">تکرار پسوورد جدید</label>
+                <Input type='password' innerRef={repeatNewPassword} id="repeatNewPassword" change={inputChnaged} />
+            </div>
 
-                {(error.length !== 0) && <p>{error}</p>}
-                <Button click={sendRequest}>Submit</Button>
-            </Card>
+            {/* {res} */}
+            {(error.length !== 0) && <p>{error}</p>}
+            <Button click={sendRequest}>Submit</Button>
 
         </div>
     )
