@@ -1,19 +1,25 @@
 import classes from './style/AssistantCourse.module.css'
 import { BiSolidGroup } from "react-icons/bi";
-import { FaCalendarAlt, FaFileAlt, FaUsers,FaFileSignature } from "react-icons/fa";
-import { FaBookOpenReader  ,FaLaptopCode} from "react-icons/fa6";
+import { FaCalendarAlt, FaFileAlt, FaUsers, FaFileSignature } from "react-icons/fa";
+import { FaBookOpenReader, FaLaptopCode } from "react-icons/fa6";
 import { useSelector } from 'react-redux'
 import { useParams } from "react-router-dom";
 import useCourse from '../../../fetch/useCourse';
+import { useNavigate } from 'react-router-dom';
 
-export default function AssistantCourse() {
-    const { id } = useParams();
+export default function AssistantCourse({ id }) {
+    // const { id } = useParams();
     useCourse(id)
     const course = useSelector((state) => {
         return state.course
     })
+    const navigate = useNavigate();
 
     if (Object.keys(course).length === 0) return
+
+    function courseMemberClicked() {
+        navigate('members/');
+    }
 
     return (
         <div className={classes.container}>
@@ -40,7 +46,7 @@ export default function AssistantCourse() {
                 </div>
 
                 <div className={classes.bodyCircleBtn}>
-                    <div className={classes.CircleBtn}> <BiSolidGroup className={classes.place} /> <p className={classes.CircleBtnText}> اعضا </p></div>
+                    <div className={classes.CircleBtn} onClick={courseMemberClicked}> <BiSolidGroup className={classes.place} /> <p className={classes.CircleBtnText}> اعضا </p></div>
                     <div className={classes.CircleBtn}> <FaUsers className={classes.place1} /> <p className={classes.CircleBtnText}> لیست گروه ها</p></div>
                     <div className={classes.CircleBtn}> <FaLaptopCode className={classes.place} /> <p className={classes.CircleBtnText}> پروژه ها </p></div>
                     <div className={classes.CircleBtn}> <FaFileSignature className={classes.place} /> <p className={classes.CircleBtnText}> تمرین </p></div>

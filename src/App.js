@@ -17,6 +17,7 @@ import StudentCourse from "./component/routePages/course/StudentCourse";
 import AssistantCourse from "./component/routePages/course/AssistantCourse";
 import TeacherCourse from "./component/routePages/course/TeacherCourse";
 import ChangePassword from "./component/routePages/ChangePassword";
+import CourseMember from "./component/routePages/course/CourseMember";
 // import { useSelector } from 'react-redux'
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
                             <Route path="/" element={<Profile />} />
                             <Route path="/profile" element={<Profile />} />
                             <Route path="/course/:id" element={<Course />} />
+                            <Route path="/course/:id/members" element={<CourseMember />} />
                             <Route path="/profile/edit" element={<EditProfile />} />
                             <Route path="/profile/changePassword" element={<ChangePassword />} />
                             <Route path="/permissionDenied" element={<PermissionDenied />} />

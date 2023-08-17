@@ -25,27 +25,28 @@ export default function Course() {
     })
 
     useEffect(() => {
-        for (const x of studentCourses) {
+        for (const x of teacherCourses) {
             if (x.id == id) {
-                console.log('student')
-                setCourse('student')
-                break
+                console.log('teacher')
+                setCourse('teacher')
+                return
             }
         }
         for (const x of assistantCourses) {
             if (x.id == id) {
                 console.log('assistant')
                 setCourse('assistant')
-                break
+                return
             }
         }
-        for (const x of teacherCourses) {
+        for (const x of studentCourses) {
             if (x.id == id) {
-                console.log('teacher')
-                setCourse('teacher')
-                break
+                console.log('student')
+                setCourse('student')
+                return
             }
         }
+        setCourse('student')
     })
 
 

@@ -9,9 +9,7 @@
   padding: 2% 2%;
   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
   position: absolute;
-  
   left: 8%;
-
 }
 
 .inputLogin:focus {
@@ -22,7 +20,7 @@
 .inputEdirProfile {
   background-color: #d1ece8;
   width: 33%;
-  height: .6rem;
+  height: 0.6rem;
   border: 3px solid #697d7a;
   margin-bottom: 14%;
   color: #0d0d34c2;
@@ -31,8 +29,6 @@
   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
   left: 6%;
   position: absolute;
-  
-
 }
 
 .inputEdirProfile:focus {

@@ -99,9 +99,6 @@ function Sidebar() {
                     })}
                 </div>}
             </div>
-            <div className={classes.profileContainer}>
-                <h5>Profile</h5>
-            </div>
         </div >
     );
 }
