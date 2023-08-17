@@ -5,7 +5,7 @@ import Button from '../../ui/Button'
 import NotFound from './NotFound'
 import { useNavigate } from 'react-router-dom';
 import { FaGithub, FaLinkedin, FaEnvelope, FaCog, FaLock } from "react-icons/fa";
-
+import Card from '../../ui/Card'
 export default function Profile() {
     const profile = useSelector((state) => {
         return state.profile
@@ -23,7 +23,7 @@ export default function Profile() {
     console.log(profile)
 
     return (
-        <div className={classes.body}>
+        <Card profile>
             <div className={classes.settindIcon}>
                 <FaCog custome onClick={editProfile} className={classes.edit} />
                 <FaLock className={classes.editPass} onClick={changePasswordBtnClicked} />
@@ -49,6 +49,6 @@ export default function Profile() {
                     <FaLinkedin className={`${classes.Fa} ${classes.Linkedin}`} />
                 </div>
             </div>
-        </div>
+        </Card>
     )
 }

@@ -10,7 +10,7 @@
   position: absolute;
   right: 21%;
   top: 76%;
-  border: 3px solid #ad722a;
+  border: 2px solid #ad722a;
   background-color: #FFC130;
   padding: 3% 9%;
   font-weight: bolder;
@@ -23,10 +23,12 @@
 .loginBtn:hover{
 background-color: #ffcd57;
 }
-.editProfile{
+.submit{
   color: white;
-  border: 1px solid #8282b8;
-  background-color: #121285;
+  border: 2px solid #1b461b; 
+  /* #8282b8; */
+  background-color: #00a800; 
+  /* #121285; */
   padding: 3% 9%;
   font-weight: bolder;
   font-size: 1rem;
@@ -38,6 +40,6 @@ background-color: #ffcd57;
 
 }
 
-.editProfile:hover{
-  background-color: #4646eb;
+.submit:hover{
+  background-color: #02ce02;
 }
