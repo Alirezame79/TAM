@@ -1,13 +1,11 @@
 .body {
   margin: auto auto;
-  padding: 2% 4%;
+  padding: 30px 60px;;
   height: 70%;
   position: fixed;
   top: 10%;
   right: 20%;
   left: 0;
-  border-radius: 25px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,8 +77,8 @@
   flex-direction: row;
   justify-content: space-around;
   position: absolute;
-  top: 38px;
-  left: 45px;
+  top: 6%;
+  left: 4%;
   width: 8%;
 }
 .edit {

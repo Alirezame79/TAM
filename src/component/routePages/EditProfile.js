@@ -53,7 +53,7 @@ export default function EditProfile() {
     }
 
     return (
-        <div className={classes.body}>
+       
             <Card editProfile>
                 <div className={classes.choosePhoto}>
                     <div className={classes.choosePhotoInput}>
@@ -66,19 +66,19 @@ export default function EditProfile() {
                     <Input placeholder="بیوگرافی" innerRef={bio} id="bio" editProfile />
                 </div>
                 <div className={classes.editProfileInput}>
-                    <label htmlFor="email">:ایمیل</label>
+                    <label htmlFor="email">ایمیل</label>
                     <Input placeholder="ایمیل" innerRef={email} id="email" editProfile />
                 </div>
                 <div className={classes.editProfileInput}>
-                    <label htmlFor="githubLink">:گیت هاب</label>
+                    <label htmlFor="githubLink">گیت هاب</label>
                     <Input placeholder="گیت هاب" innerRef={githubLink} id="githubLink" editProfile />
                 </div>
                 <div className={classes.editProfileInput}>
-                    <label htmlFor="linkedinLink">:لینکدین</label>
+                    <label htmlFor="linkedinLink">لینکدین</label>
                     <Input placeholder="لینکدین" innerRef={linkedinLink} id="linkedinLink" editProfile />
                 </div>
                 <Button submit click={sendRequest}>Submit</Button>
             </Card>
-        </div>
+       
     )
 }

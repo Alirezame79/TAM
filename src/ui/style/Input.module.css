@@ -17,7 +17,7 @@
   border: 3px solid #7a6d6d;
 }
 
-.inputEditProfile {
+.inputEditProfile ,.inputChangePass {
   background-color: #d1ece8;
   width: 80%;
   height: 0.8rem;
@@ -29,11 +29,23 @@
   border-radius: 15px;
 }
 
-.inputEditProfile:focus {
+.inputEditProfile:focus , .inputChangePass:focus{
   background-color: white;
   border: 3px solid #7a6d6d;
+}
+
+.inputChangePass::placeholder{
+  text-align: right;
+}
+
+.inputChangePass::placeholder:focus{
+  
+
 }
 
 .inputEditProfileBio {
   height: 0.6rem;
 }
+
+
+

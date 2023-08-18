@@ -1,8 +1,6 @@
 .profileStyle {
   border: 2px solid #121285;
   box-shadow: 6px 9px 9px 1px #bcad8d;
-  /* height: 80%; */
-  /* width: 40%; */
   margin: auto auto;
   padding: 20px;
   position: fixed;
@@ -14,42 +12,46 @@
 }
 
 .editProfileStyle {
-  height: 100%;
-  padding: 5% 10%;
-  width: 50%;
+  height: 80%;
+  padding: 25px 60px;
+  width: 30%;
   border: 2px solid #121285;
   border-radius: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 6px 7px 19px -3px #7373f0bd;
+  margin: auto auto;
+  position: fixed;
+  top: 10%;
+  right: 20%;
+  left: 0;
+  bottom: 1%;
 }
 
 .courseStyle {
   text-align: right;
   border: 2px solid #9fdbd1;
-  padding: 2% 2% 2%;
+  padding: 25px ;
   box-shadow: 5px 9px 11px -2px #1e5a50;
-  height: 25%;
-  width: 23%;
+  height: 22%;
+  width: 20%;
   margin: auto auto;
   position: fixed;
   top: 42%;
-  right: 22%;
+  right: 24%;
 }
 
 .changePassStyle {
-  height: 60%;
-  width: 50%;
+  height: 75%;
+  padding: 25px 60px;
+  width: 28%;
   margin: auto auto;
   position: fixed;
   top: 10%;
   right: 20%;
   left: 0;
   bottom: 0;
-  /* height: 26rem; */
-  padding: 5%;
-  /* width: 53%; */
   border: 2px solid #121285;
   border-radius: 25px;
   display: flex;
