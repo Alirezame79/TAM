@@ -23,32 +23,33 @@ export default function Profile() {
     console.log(profile)
 
     return (
-        <Card profile>
+        <div className={classes.body}>
             <div className={classes.settindIcon}>
                 <FaCog custome onClick={editProfile} className={classes.edit} />
                 <FaLock className={classes.editPass} onClick={changePasswordBtnClicked} />
             </div>
 
-            <img src={BaseURL + profile.profile_image} alt={'profile'} className={classes.profileImg} />
-            <h1 className={classes.profileName}>{profile.name || "نام"}</h1>
-            <h4>بیوگرافی: {profile.bio}</h4>
-            {/* <h4>{profile.national_id} : کد ملی </h4> */}
-            <h4> {profile.id} : شماره دانشجویی</h4>
+            <div className={classes.profileTopics}>
+                <img src={BaseURL + profile.profile_image} alt={'profile'} className={classes.profileImg} />
+                <h1>{profile.name || "نام"}</h1>
+                <h2>بیوگرافی: {profile.bio}</h2>
+                <h2> {profile.id} : شماره دانشجویی</h2>
+            </div>
 
             <div className={classes.profileLinks}>
                 <div className={classes.icons}>
-                    <h3 className={classes.profileEmail}>{profile.email || "Email"}</h3>
                     <FaEnvelope className={`${classes.Fa} ${classes.email}`} />
+                    <h2 className={classes.profileEmail}>{profile.email || "Email"}</h2>
                 </div>
                 <div className={classes.icons}>
-                    <h3 className={classes.profileGithub}>{profile.social_github || "Github"}</h3>
                     <FaGithub className={`${classes.Fa} ${classes.github}`} />
+                    <h2 className={classes.profileGithub}>{profile.social_github || "Github"}</h2>
                 </div>
                 <div className={classes.icons}>
-                    <h3 className={classes.profileLinkedIn}>{profile.social_linkedin || "LinkedIn"}</h3>
                     <FaLinkedin className={`${classes.Fa} ${classes.Linkedin}`} />
+                    <h2 className={classes.profileLinkedIn}>{profile.social_linkedin || "LinkedIn"}</h2>
                 </div>
             </div>
-        </Card>
+        </div>
     )
 }

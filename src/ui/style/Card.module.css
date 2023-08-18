@@ -1,26 +1,31 @@
-.loginStyle{
-  border: 2px solid #ffc038;
+.profileStyle {
+  border: 2px solid #121285;
   box-shadow: 6px 9px 9px 1px #bcad8d;
-  height: 64%;
-  width: 50%;
+  /* height: 80%; */
+  /* width: 40%; */
   margin: auto auto;
   padding: 20px;
   position: fixed;
-  top: 22%;
-  right: 34%;
-
+  top: 10%;
+  bottom: 0;
+  right: 20%;
+  left: 0;
+  border-radius: 25px;
 }
 
-.edirProfileStyle{
-  height: 29rem;
-  padding: 5% 9% 10%;width: 26rem;
+.editProfileStyle {
+  height: 100%;
+  padding: 5% 10%;
+  width: 50%;
   border: 2px solid #121285;
+  border-radius: 25px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   box-shadow: 6px 7px 19px -3px #7373f0bd;
 }
 
-.courseStyle{
+.courseStyle {
   text-align: right;
   border: 2px solid #9fdbd1;
   padding: 2% 2% 2%;
@@ -31,15 +36,25 @@
   position: fixed;
   top: 42%;
   right: 22%;
-
 }
 
-.changePassStyle{
-  height: 26rem;
-  padding: 9%;
-  width: 53%;
+.changePassStyle {
+  height: 60%;
+  width: 50%;
+  margin: auto auto;
+  position: fixed;
+  top: 10%;
+  right: 20%;
+  left: 0;
+  bottom: 0;
+  /* height: 26rem; */
+  padding: 5%;
+  /* width: 53%; */
   border: 2px solid #121285;
+  border-radius: 25px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   box-shadow: 6px 7px 19px -3px #7373f0bd;
 }

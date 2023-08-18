@@ -8,24 +8,49 @@ export default function CourseMember() {
     const { id } = useParams();
     const { res } = useCourseMember(id);
 
-    console.log(res)
+    if (res === null) return
+
+    // console.log(res)
 
     return (
         <div className={classes.body}>
-            {res.student_profiles !== null && <div>
-                <h1>Test</h1>
-                {/* {res.student_profiles.map((profile) => {
-                    return (
-                        <div className={classes.memberContainer}>
-                            <h3>دانشجو</h3>
-                            <div className={classes.eachMember}>
-                                <h2>{profile.name}</h2>
-                                <h2>icon</h2>
-                            </div>
+            <Card>
+                {res.owner !== null && <>
+                    <div className={classes.memberContainer}>
+                        <h3>استاد</h3>
+                        <div className={classes.eachMember}>
+                            <h2>{res.owner.name}</h2>
+                            <h2>icon</h2>
                         </div>
-                    )
-                })} */}
-            </div>}
+                    </div>
+                </>}
+                {res.assistant_profiles !== null && <>
+                    {res.assistant_profiles.map((profile) => {
+                        return (
+                            <div className={classes.memberContainer} key={profile.id}>
+                                <h3>دستیار استاد</h3>
+                                <div className={classes.eachMember}>
+                                    <h2>{profile.name}</h2>
+                                    <h2>icon</h2>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </>}
+                {res.student_profiles !== null && <>
+                    {res.student_profiles.map((profile) => {
+                        return (
+                            <div className={classes.memberContainer} key={profile.id}>
+                                <h3>دانشجو</h3>
+                                <div className={classes.eachMember}>
+                                    <h2>{profile.name}</h2>
+                                    <h2>icon</h2>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </>}
+            </Card>
         </div>
     )
 }

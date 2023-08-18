@@ -44,28 +44,27 @@ export default function ChangePassword() {
     }
 
     return (
-        <div className={classes.body}>
-            <Card changePass>
+        // <div className={classes.body}>
+        <Card changePass>
             <h2>تعییر رمز عبور</h2>
-            <div className={classes.changePassInput}>
-                <label htmlFor="currentPassowrd">پسوورد کنونی</label>
-                <Input changePass innerRef={currentPassword} id="currentPassword" change={inputChnaged} />
-            </div>
-            <div className={classes.changePassInput}>
-                <label htmlFor="newPassowrd">پسوورد جدید</label>
-                <Input changePass type='password' innerRef={newPassword} id="newPassword" change={inputChnaged} />
-            </div>
-            <div className={classes.changePassInput} >
-                <label htmlFor="repeatNewPassowrd">تکرار پسوورد جدید</label>
-                <Input changePass type='password' innerRef={repeatNewPassword} id="repeatNewPassword" change={inputChnaged} />
-            </div>
+            {/* <div className={classes.changePassInput}> */}
+            {/* <label htmlFor="currentPassowrd">پسوورد کنونی</label> */}
+            <Input placeholder="پسوورد کنونی" changePass innerRef={currentPassword} id="currentPassword" change={inputChnaged} />
+            {/* </div> */}
+            {/* <div className={classes.changePassInput}> */}
+            {/* <label htmlFor="newPassowrd">پسوورد جدید</label> */}
+            <Input placeholder="پسوورد جدید" changePass type='password' innerRef={newPassword} id="newPassword" change={inputChnaged} />
+            {/* </div> */}
+            {/* <div className={classes.changePassInput} > */}
+            {/* <label htmlFor="repeatNewPassowrd">تکرار پسوورد جدید</label> */}
+            <Input placeholder="تکرار پسوورد جدید" changePass type='password' innerRef={repeatNewPassword} id="repeatNewPassword" change={inputChnaged} />
+            {/* </div> */}
 
-            {/* {res} */}
             {(error.length !== 0) && <p className={classes.error}>{error}</p>}
-            <div className={classes.btn}>
-                <Button submit click={sendRequest}>Submit</Button>
-            </div>
-            </Card>
-        </div>
+            {/* <div className={classes.btn}> */}
+            <Button submit click={sendRequest}>Submit</Button>
+            {/* </div> */}
+        </Card>
+        // </div>
     )
 }

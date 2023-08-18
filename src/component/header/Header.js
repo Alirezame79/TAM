@@ -14,15 +14,18 @@ export default function Header() {
         signOut()
     }
 
+    function profileLogoClicked() {
+        navigate('/profile');
+    }
+
 
     return (
         <div className={classes.body}>
             <img src="TamLogo.png" alt="Tam Logo" className={classes.tamLogoHeader} />
             <div className={classes.logos}>
-                
                 <BiLogOutCircle className={classes.outLogo} onClick={signoutClicked} />
                 <AiTwotoneBell className={classes.notifLogo} />
-                <BsPersonCircle className={classes.profileLogo}/>
+                <BsPersonCircle className={classes.profileLogo} onClick={profileLogoClicked} />
             </div>
         </div>
     )

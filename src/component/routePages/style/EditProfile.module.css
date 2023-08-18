@@ -1,21 +1,13 @@
 .body {
-  height: 60%;
+  height: 75%;
   width: 50%;
   margin: auto auto;
   position: fixed;
-  top: 15%;
-  right: 30%;
+  margin: auto auto;
+  top: 10%;
+  right: 0;
+  left: 0;
 }
-
-/* .main {
-  height: 29rem;
-  padding: 9%;
-  width: 26rem;
-  border: 2px solid #121285;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 6px 7px 19px -3px #7373f0bd;
-} */
 
 .profile {
   position: fixed;
@@ -37,10 +29,9 @@
 .choosePhoto {
   display: flex;
   justify-content: space-between;
- 
 }
-label{
-  padding-top:3%;
+label {
+  padding-top: 3%;
 }
 .inputPhoto {
   width: 9rem;
@@ -55,23 +46,23 @@ label{
   cursor: pointer;
 }
 
-.editProfileInput{
+.editProfileInput {
   display: flex;
   flex-direction: row-reverse;
   margin-top: 8%;
   margin-bottom: 2%;
 }
-.choosePhotoInput{
+.choosePhotoInput {
   padding-top: 6%;
 }
-input[type=file]::file-selector-button{
+input[type="file"]::file-selector-button {
   background-color: #121285;
   border: 2px solid #8282b8;
   border-radius: 10px;
   color: white;
   padding: 5% 10%;
-  
 }
-input[type=file]::file-selector-button:hover{
+
+input[type="file"]::file-selector-button:hover {
   background-color: #1919a4cf;
 }

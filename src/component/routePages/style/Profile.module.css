@@ -1,26 +1,32 @@
-/* .body {
-  border: 2px solid #ffc038;
-  box-shadow: 6px 9px 9px 1px #bcad8d;
-  height: 64%;
-  width: 50%;
+.body {
   margin: auto auto;
-  padding: 20px;
+  padding: 2% 4%;
+  height: 70%;
   position: fixed;
-  top: 22%;
-  right: 34%;
-} */
+  top: 10%;
+  right: 20%;
+  left: 0;
+  border-radius: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profileTopics {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 25px;
+}
 
 .profileImg {
-  border: 2px solid #ffc038;
-  /* padding: 14% 9%; */
   height: 9rem;
   width: 9rem;
   border-radius: 50%;
   background-position: center;
   background-size: cover;
-  position: relative;
-  right: 0;
-  top: 0;
 }
 
 .profileLinks {
@@ -28,12 +34,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 10px;
-}
-
-h3,
-h1 {
-  margin-bottom: 6%;
+  gap: 30px;
 }
 
 .profileName {
@@ -53,12 +54,12 @@ h1 {
 
 .icons {
   display: flex;
-  flex-direction: row-reverse;
-  gap: 10px;
+  align-items: center;
+  gap: 30px;
 }
 
 .Fa {
-  transform: scale(1.3);
+  transform: scale(2.5);
   margin-left: 2%;
 }
 
@@ -73,7 +74,7 @@ h1 {
 .github {
   color: #000;
 }
-.settindIcon{
+.settindIcon {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -81,15 +82,13 @@ h1 {
   top: 38px;
   left: 45px;
   width: 8%;
-    
 }
 .edit {
-  transform: scale(1.2);
+  transform: scale(1.5);
   color: #121285;
-}
-.editPass{
-  transform: scale(1.2);
-  color: #121285;
- 
 }
 
+.editPass {
+  transform: scale(1.5);
+  color: #121285;
+}

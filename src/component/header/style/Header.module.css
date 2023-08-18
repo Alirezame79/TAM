@@ -2,31 +2,33 @@
   background-color: #9fdbd1;
   display: flex;
   justify-content: space-between;
-  padding: 2.1% 0;
+  padding: 1.5% 0;
   box-shadow: 0px 2px 10px 1px #145e51b8;
   width: 80%;
+  height: 15px;
   position: fixed;
 }
-.profileLogo{
-  transform: scale(2) translateX(-35%);
-  color: #121285;
 
-}
 .logos {
   margin-right: 29px;
   display: flex;
   gap: 15px;
   justify-content: space-between;
-  width: 8%;
+  width: 7%;
+}
+
+.profileLogo {
+  transform: scale(1.5);
+  color: #121285;
 }
 
 .notifLogo {
-  transform: scale(2) translateX(-57%);
+  transform: scale(1.5);
   color: #121285;
 }
 
 .outLogo {
-  transform: scale(2) translateX(-83%);
+  transform: scale(1.5);
   color: #121285;
 }
 

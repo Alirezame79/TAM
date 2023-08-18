@@ -28,45 +28,42 @@ export default function Login() {
         setUser(user)
 
     }
-    const backImg ={
-        backgroundImage : `url(${loginImg})`
+    const backImg = {
+        backgroundImage: `url(${loginImg})`
     }
 
     return (
-        <div className={classes.container}>
+        <div className={classes.body}>
             <div className={classes.header}>
-            <img src={uniLogo} alt="guilan uni logo" className={classes.uniLable}/>
+                <img src={uniLogo} alt="guilan uni logo" className={classes.uniLable} />
                 <h2 className={classes.tamLable}>سامانه تام</h2>
                 <img src='image.jpg' alt="TAM logo" />
             </div>
             <div className={classes.fatherImg}>
-        
-            <div className={classes.img} style={backImg}></div>
-                
+                <div className={classes.img} style={backImg}></div>
             </div>
             <div className={classes.loginBox}>
                 <div className={classes.inputsLocation}>
                     <label htmlFor="username" className={classes.labelText}>نام کاربری</label>
-                    <Input innerRef={username} id="username" className={classes.myInputs} login/>
+                    <Input innerRef={username} id="username" className={classes.myInputs} login />
                 </div>
                 <div className={classes.inputsLocation}>
                     <label htmlFor="password" type='password' className={classes.labelText}>رمز عبور</label>
-                    <Input innerRef={password} id="password" className={classes.myInputs} login/>
+                    <Input innerRef={password} id="password" className={classes.myInputs} login />
                 </div>
-                {/* <FormControlLabel className={classes.fullCheckBox} control={<Checkbox className={classes.checkBox} />} label="استاد هستم" labelPlacement="start" /> */}
                 <Button loginBtn click={loginClicked}>ورود</Button>
             </div>
             <div className={classes.triangleContainer} >
-            <div className={classes.triangleUp} ></div>
-            <div className={classes.textUp} >نام کاربری شما همان شماره دانشجویی تان است</div>
-        </div>
-        <div className={classes.triangleContainer} >
-            <div className={classes.triangleDown} ></div>
-            <div className={classes.textDown} > اکر اولین بار هست که وارد سامانه میشوید و یا رمز عبور خود را تغییر ندادید رمر عبور شما کد ملی تان می باشد</div>
-        </div>
-            <div className={classes.footer}> 
-            <div className={classes.box}><p className={classes.footerText}>هدف تام ؟</p></div>
-            <div className={classes.box}><p className={classes.footerText}>چرا تام ؟</p></div>
+                <div className={classes.triangleUp} ></div>
+                <div className={classes.textUp} >نام کاربری شما همان شماره دانشجویی تان است</div>
+            </div>
+            <div className={classes.triangleContainer} >
+                <div className={classes.triangleDown} ></div>
+                <div className={classes.textDown} > اکر اولین بار هست که وارد سامانه میشوید و یا رمز عبور خود را تغییر ندادید رمر عبور شما کد ملی تان می باشد</div>
+            </div>
+            <div className={classes.footer}>
+                <div className={classes.box}><p className={classes.footerText}>هدف تام ؟</p></div>
+                <div className={classes.box}><p className={classes.footerText}>چرا تام ؟</p></div>
             </div>
 
         </div>

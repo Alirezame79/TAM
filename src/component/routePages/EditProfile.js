@@ -57,25 +57,25 @@ export default function EditProfile() {
             <Card editProfile>
                 <div className={classes.choosePhoto}>
                     <div className={classes.choosePhotoInput}>
-                    <input type="file" className={classes.input} onChange={setNewImage} />
+                        <input type="file" className={classes.input} onChange={setNewImage} />
                     </div>
                     <img src={showImage} className={classes.image} alt={'newImage'} width='150px' />
                 </div>
                 <div className={classes.editProfileInput}>
                     <label htmlFor="bio">بیوگرافی   </label>
-                    <Input innerRef={bio} id="bio" editProfile />
+                    <Input placeholder="بیوگرافی" innerRef={bio} id="bio" editProfile />
                 </div>
                 <div className={classes.editProfileInput}>
                     <label htmlFor="email">:ایمیل</label>
-                    <Input innerRef={email} id="email" editProfile />
+                    <Input placeholder="ایمیل" innerRef={email} id="email" editProfile />
                 </div>
                 <div className={classes.editProfileInput}>
                     <label htmlFor="githubLink">:گیت هاب</label>
-                    <Input innerRef={githubLink} id="githubLink" editProfile />
+                    <Input placeholder="گیت هاب" innerRef={githubLink} id="githubLink" editProfile />
                 </div>
                 <div className={classes.editProfileInput}>
                     <label htmlFor="linkedinLink">:لینکدین</label>
-                    <Input innerRef={linkedinLink} id="linkedinLink" editProfile />
+                    <Input placeholder="لینکدین" innerRef={linkedinLink} id="linkedinLink" editProfile />
                 </div>
                 <Button submit click={sendRequest}>Submit</Button>
             </Card>

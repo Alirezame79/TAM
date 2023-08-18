@@ -1,24 +1,23 @@
-.container {
+.body {
   width: 100%;
   height: 300vh;
   position: relative;
-  background-color: #DBDCFF;
+  background-color: #dbdcff;
 }
-.tamLable{
+.tamLable {
   margin-left: 2%;
   background-color: #121258;
   padding: 2% 3%;
   color: white;
   font-size: 3rem;
-
 }
-.uniLable{
+.uniLable {
   height: 60%;
   margin-left: 4%;
 }
 .header {
-  background-color: #9FDBD1;
-    margin-bottom: 2%;
+  background-color: #9fdbd1;
+  margin-bottom: 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,14 +29,12 @@
   width: 100%;
 } */
 .img {
-  
   background-repeat: no-repeat;
   margin-bottom: 8%;
   background-size: cover;
   height: 36rem;
   background-position-y: -4rem;
-  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
- 
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
 }
 /* img::after{
   content: "";
@@ -56,7 +53,7 @@
   position: absolute;
   right: 5%;
   width: 32%;
-  height: 25%;
+  height: 20%;
   background-color: #121258;
   color: white;
   margin-bottom: 5%;
@@ -64,78 +61,67 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  justify-content: space-between;
+  border-radius: 25px;
 }
-.labelText{
-  margin:  32% 0.4rem 2%; ;
+
+.labelText {
+  margin: 32% 0.4rem 2%;
 }
-.inputsLocation{
+.inputsLocation {
   display: flex;
   flex-direction: row-reverse;
-  margin-bottom: 20%;
-  margin-top: 11%;
+  margin-bottom: 5%;
   justify-content: space-between;
-  
 }
 
-.fullCheckBox{
-
-     width: 39%;
+.fullCheckBox {
+  width: 39%;
 }
 
-.textUp{
+.textUp {
   position: absolute;
   top: 47%;
   left: 36%;
-  transform: translate(200%,5%) scale(1.2);
+  transform: translate(200%, 5%) scale(1.2);
   color: white;
   text-align: center;
-
 }
 
-.textDown{
-  
+.textDown {
   position: absolute;
   top: 47%;
   left: 38%;
-  transform: translate(88%,-13%);
+  transform: translate(88%, -13%);
   color: white;
   text-align: center;
 }
 
-
-
-.triangleContainer{
+.triangleContainer {
   position: relative;
   width: 200px;
-
 }
 
-
-
-
-.triangleUp{
+.triangleUp {
   width: 0;
   height: 0;
   border-left: 9rem solid transparent;
   border-right: 9rem solid transparent;
-  border-bottom: 14rem solid  #F26768;
+  border-bottom: 14rem solid #f26768;
   margin: 24% 136% 3%;
   transform: rotate(45deg);
- 
-
 }
-.triangleDown{
+.triangleDown {
   width: 0;
   height: 0;
   border-left: 9rem solid transparent;
   border-right: 9rem solid transparent;
-  border-bottom: 14rem solid  #FFC130;
+  border-bottom: 14rem solid #ffc130;
   margin: -14% 58% 10%;
   transform: rotate(19deg);
- 
 }
-.footer{
-  background-color: #9FDBD1;
+.footer {
+  background-color: #9fdbd1;
   display: flex;
   justify-content: space-between;
   height: 20%;
@@ -143,7 +129,7 @@
   margin-top: 25%;
   margin-bottom: 3%;
 }
-.box{
+.box {
   background-color: #d1ece8;
   height: 55%;
   width: 25%;
@@ -153,8 +139,7 @@
   box-shadow: 8px 5px 10px 2px #145e51b8;
 }
 
-.footerText{
+.footerText {
   text-align: right;
   margin: 15% 11%;
-  
 }
