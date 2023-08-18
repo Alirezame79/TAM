@@ -7,15 +7,21 @@
   width: 80%;
   position: fixed;
 }
+.profileLogo{
+  transform: scale(2) translateX(-35%);
+  color: #121285;
 
+}
 .logos {
-  margin-right: 10px;
+  margin-right: 29px;
   display: flex;
   gap: 15px;
+  justify-content: space-between;
+  width: 8%;
 }
 
 .notifLogo {
-  transform: scale(2) translateX(-35%);
+  transform: scale(2) translateX(-57%);
   color: #121285;
 }
 

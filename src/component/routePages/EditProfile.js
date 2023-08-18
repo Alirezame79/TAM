@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import BaseURL from '../../fetch/BaseURL'
 import Button from '../../ui/Button'
 import useUpdateProfile from '../../fetch/useUpdateProfile'
+import Card from '../../ui/Card'
 
 export default function EditProfile() {
     let bio = useRef("");
@@ -53,10 +54,11 @@ export default function EditProfile() {
 
     return (
         <div className={classes.body}>
-            <div className={classes.main}>
+            <Card editProfile>
                 <div className={classes.choosePhoto}>
-                    <h2>Add Image:</h2>
+                    <div className={classes.choosePhotoInput}>
                     <input type="file" className={classes.input} onChange={setNewImage} />
+                    </div>
                     <img src={showImage} className={classes.image} alt={'newImage'} width='150px' />
                 </div>
                 <div className={classes.editProfileInput}>
@@ -75,8 +77,8 @@ export default function EditProfile() {
                     <label htmlFor="linkedinLink">:لینکدین</label>
                     <Input innerRef={linkedinLink} id="linkedinLink" editProfile />
                 </div>
-                <Button editProfile click={sendRequest}>Submit</Button>
-            </div>
+                <Button submit click={sendRequest}>Submit</Button>
+            </Card>
         </div>
     )
 }

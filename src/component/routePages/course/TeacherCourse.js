@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 import { useParams } from "react-router-dom";
 import useCourse from '../../../fetch/useCourse';
 import { useNavigate } from 'react-router-dom';
-
+import Card from '../../../ui/Card';
 
 export default function TeacherCourse({ id }) {
     // const { id } = useParams();
@@ -34,7 +34,7 @@ export default function TeacherCourse({ id }) {
             </div>
 
             <div className={classes.centarPage}>
-                <div className={classes.main}>
+                <Card courseInfo>
                     <h4>{course.id} : آیدی درس</h4>
                     <h4>{course.class_location} : مکان </h4>
                     <h4>   زمان : {course.class_time}</h4>
@@ -44,7 +44,7 @@ export default function TeacherCourse({ id }) {
                             {course.assistant_profiles.map((assistant) => {
                                 return <li key={assistant.id}>{assistant.name}</li>
                             })}</ul></h4>
-                </div>
+                </Card>
 
                 <div className={classes.bodyCircleBtn}>
                     <div className={classes.CircleBtn} onClick={courseMemberClicked}> <BiSolidGroup className={classes.place} /> <p className={classes.CircleBtnText}> اعضا </p></div>
