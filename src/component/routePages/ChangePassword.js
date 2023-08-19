@@ -44,15 +44,13 @@ export default function ChangePassword() {
     }
 
     return (
-      
         <Card changePass>
             <h2>تعییر رمز عبور</h2>
             <Input placeholder="پسوورد کنونی" onFocus={(e) => e.target.placeholder = ''} changePass innerRef={currentPassword} id="currentPassword" change={inputChnaged} />
             <Input placeholder="پسوورد جدید" changePass type='password' innerRef={newPassword} id="newPassword" change={inputChnaged} />
             <Input placeholder="تکرار پسوورد جدید" changePass type='password' innerRef={repeatNewPassword} id="repeatNewPassword" change={inputChnaged} />
             {(error.length !== 0) && <p className={classes.error}>{error}</p>}
-            <Button submit click={sendRequest}>Submit</Button>
+            <Button submit click={sendRequest}>مرحله بعد</Button>
         </Card>
-       
     )
 }

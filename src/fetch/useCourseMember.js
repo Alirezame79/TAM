@@ -4,8 +4,6 @@ export default function useCourseMember(id) {
     const [res, setRes] = useState(null)
 
     useEffect(() => {
-        console.log("test")
-
         fetch('http://127.0.0.1:8000/course/' + id + '/members', {
             headers: {
                 'Content-Type': 'application/json',

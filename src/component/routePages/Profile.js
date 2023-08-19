@@ -6,11 +6,16 @@ import NotFound from './NotFound'
 import { useNavigate } from 'react-router-dom';
 import { FaGithub, FaLinkedin, FaEnvelope, FaCog, FaLock } from "react-icons/fa";
 import Card from '../../ui/Card'
+import useInitial from '../../fetch/useInitial'
+import useProfile from '../../fetch/useProfile'
+import { useEffect } from 'react'
+
 export default function Profile() {
     const profile = useSelector((state) => {
         return state.profile
     })
     const navigate = useNavigate();
+    useProfile()
 
     function editProfile() {
         navigate('/profile/edit');
@@ -20,12 +25,12 @@ export default function Profile() {
         navigate('/profile/changePassword');
     }
 
-    console.log(profile)
+    // console.log(profile)
 
     return (
         <div className={classes.body}>
             <div className={classes.settindIcon}>
-                <FaCog custome onClick={editProfile} className={classes.edit} />
+                <FaCog className={classes.edit} onClick={editProfile} />
                 <FaLock className={classes.editPass} onClick={changePasswordBtnClicked} />
             </div>
 

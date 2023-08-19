@@ -6,6 +6,9 @@ import BaseURL from '../../fetch/BaseURL'
 import Button from '../../ui/Button'
 import useUpdateProfile from '../../fetch/useUpdateProfile'
 import Card from '../../ui/Card'
+import Modal from '../Portal/Modal'
+import { useDispatch } from "react-redux";
+import { setModal } from '../../store/index'
 
 export default function EditProfile() {
     let bio = useRef("");
@@ -15,9 +18,14 @@ export default function EditProfile() {
     const profile = useSelector((state) => {
         return state.profile
     })
+    const modal = useSelector((state) => {
+        return state.modal
+    })
+    const dispatch = useDispatch();
     const [file, setFile] = useState(null)
     const [showImage, setShowImage] = useState()
     const [data, setData] = useState(null)
+    // const [modal, setModal] = useState(false)
     useUpdateProfile(data)
 
     useEffect(() => {
@@ -25,12 +33,15 @@ export default function EditProfile() {
         email.current.value = profile.email
         githubLink.current.value = profile.social_github
         linkedinLink.current.value = profile.social_linkedin
-        setShowImage(BaseURL + profile.profile_image)
+        // setShowImage(BaseURL + profile.profile_image)
     }, [profile])
 
     function setNewImage(e) {
         console.log(e.target.files);
         const x = URL.createObjectURL(e.target.files[0])
+        console.log(x)
+        console.log(e.target.files[0])
+        if (x === null) return
         setShowImage(x)
         setFile(e.target.files[0]);
     }
@@ -42,43 +53,43 @@ export default function EditProfile() {
         if (file !== null) {
             form_data.append('profile_image', file, file.name);
         } else {
-            form_data.append('profile_image', BaseURL + profile.profile_image);
+            form_data.append('profile_image', null);
         }
         form_data.append('social_github', githubLink.current.value);
         form_data.append('social_linkedin', linkedinLink.current.value);
 
         setData(form_data)
+        dispatch(setModal('confirm'))
 
         console.log(file)
     }
 
     return (
-       
-            <Card editProfile>
-                <div className={classes.choosePhoto}>
-                    <div className={classes.choosePhotoInput}>
-                        <input type="file" className={classes.input} onChange={setNewImage} />
-                    </div>
-                    <img src={showImage} className={classes.image} alt={'newImage'} width='150px' />
+        <Card editProfile>
+            {modal === 'confirm' && <Modal data={data} />}
+            <div className={classes.choosePhoto}>
+                <div className={classes.choosePhotoInput}>
+                    <input type="file" className={classes.input} onChange={setNewImage} />
                 </div>
-                <div className={classes.editProfileInput}>
-                    <label htmlFor="bio">بیوگرافی   </label>
-                    <Input placeholder="بیوگرافی" innerRef={bio} id="bio" editProfile />
-                </div>
-                <div className={classes.editProfileInput}>
-                    <label htmlFor="email">ایمیل</label>
-                    <Input placeholder="ایمیل" innerRef={email} id="email" editProfile />
-                </div>
-                <div className={classes.editProfileInput}>
-                    <label htmlFor="githubLink">گیت هاب</label>
-                    <Input placeholder="گیت هاب" innerRef={githubLink} id="githubLink" editProfile />
-                </div>
-                <div className={classes.editProfileInput}>
-                    <label htmlFor="linkedinLink">لینکدین</label>
-                    <Input placeholder="لینکدین" innerRef={linkedinLink} id="linkedinLink" editProfile />
-                </div>
-                <Button submit click={sendRequest}>Submit</Button>
-            </Card>
-       
+                <img src={showImage} className={classes.image} alt={'newImage'} width='150px' />
+            </div>
+            <div className={classes.editProfileInput}>
+                <label htmlFor="bio">بیوگرافی   </label>
+                <Input placeholder="بیوگرافی" innerRef={bio} id="bio" editProfile />
+            </div>
+            <div className={classes.editProfileInput}>
+                <label htmlFor="email">ایمیل</label>
+                <Input placeholder="ایمیل" innerRef={email} id="email" editProfile />
+            </div>
+            <div className={classes.editProfileInput}>
+                <label htmlFor="githubLink">گیت هاب</label>
+                <Input placeholder="گیت هاب" innerRef={githubLink} id="githubLink" editProfile />
+            </div>
+            <div className={classes.editProfileInput}>
+                <label htmlFor="linkedinLink">لینکدین</label>
+                <Input placeholder="لینکدین" innerRef={linkedinLink} id="linkedinLink" editProfile />
+            </div>
+            <Button submit click={sendRequest}>مرحله بعد</Button>
+        </Card>
     )
 }

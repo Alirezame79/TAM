@@ -18,6 +18,7 @@ import AssistantCourse from "./component/routePages/course/AssistantCourse";
 import TeacherCourse from "./component/routePages/course/TeacherCourse";
 import ChangePassword from "./component/routePages/ChangePassword";
 import CourseMember from "./component/routePages/course/CourseMember";
+import Modal from "./component/Portal/Modal";
 // import { useSelector } from 'react-redux'
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
                     <Sidebar />
                     <div className={classes.containerBody}>
                         <Header />
+                        {/* <Modal /> */}
                         <Routes>
                             <Route path="/" element={<Profile />} />
                             <Route path="/profile" element={<Profile />} />

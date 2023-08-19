@@ -5,6 +5,7 @@ import { AssistantCoursesSlice, setAssistantCourses } from './slices/AssistantCo
 import { TeacherCoursesSlice, setTeacherCourses } from './slices/TeacherCoursesSlice'
 import { ProfileSlice, setProfile } from './slices/ProfileSlices'
 import { SelectedCourseSlice, setCourse } from './slices/SelectedCourseSlice'
+import { ModalsSlice, setModal } from './slices/ModalsSlice'
 import reset from './actions/ProfileCourseActions'
 
 const store = configureStore({
@@ -14,8 +15,9 @@ const store = configureStore({
         assistantCourses: AssistantCoursesSlice.reducer,
         teacherCourses: TeacherCoursesSlice.reducer,
         profile: ProfileSlice.reducer,
-        course: SelectedCourseSlice.reducer
+        course: SelectedCourseSlice.reducer,
+        modal: ModalsSlice.reducer
     }
 });
 
-export { store, setVerification, setStudentCourses, setAssistantCourses, setTeacherCourses, setProfile, setCourse, reset }
+export { store, setVerification, setStudentCourses, setAssistantCourses, setTeacherCourses, setProfile, setCourse, setModal, reset }

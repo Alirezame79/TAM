@@ -1,0 +1,35 @@
+.back {
+  background-color: rgba(85, 85, 85, 0.75);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.confirmContainer {
+  background-color: #eee;
+  position: fixed;
+  top: 25%;
+  bottom: 25%;
+  left: 25%;
+  right: 25%;
+  padding: 5%;
+
+  border: 2px solid #ffc130;
+  border-radius: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.confirmBtnContainer {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 15px;
+}

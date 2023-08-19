@@ -1,5 +1,7 @@
+import { useNavigate } from 'react-router-dom';
 
 export default function useUpdateProfile(data) {
+    const navigate = useNavigate();
 
     if (data === null) return
 
@@ -12,7 +14,10 @@ export default function useUpdateProfile(data) {
         }
     }).then((response) => {
         console.log(response)
-        return response.json()
+        if (response.status === 200) {
+            navigate('/profile');
+            return response.json()
+        }
     }).then((data) => {
         console.log(data)
     })
