@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { setModal } from '../../store/index'
 import useUpdateProfile from '../../fetch/useUpdateProfile';
 import { useState } from 'react';
-
+import Card from '../../ui/Card'
 function Confirm({ data }) {
     const dispatch = useDispatch();
     const [sendRequest, setSendRequest] = useState(null)
@@ -23,13 +23,13 @@ function Confirm({ data }) {
     }
 
     return (
-        <div className={classes.confirmContainer}>
+        <Card confirm>
             <h2>آیا اطمینان دارید که اطلاعات وارد شده به پروفایلتان اعمال شود؟</h2>
             <div className={classes.confirmBtnContainer}>
-                <Button click={acceptPortalClicked}>تایید</Button>
-                <Button click={closePortalClicked}>انصراف</Button>
+                <Button click={acceptPortalClicked} accept>تایید</Button>
+                <Button click={closePortalClicked} cancle>انصراف</Button>
             </div>
-        </div>
+        </Card>
     )
 }
 

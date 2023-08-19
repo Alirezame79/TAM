@@ -29,7 +29,7 @@ export default function EditProfile() {
     // useUpdateProfile(data)
 
     useEffect(() => {
-        bio.current.value = profile.bio
+        // bio.current.value = profile.bio error midad baraye textarea
         email.current.value = profile.email
         githubLink.current.value = profile.social_github
         linkedinLink.current.value = profile.social_linkedin
@@ -67,6 +67,7 @@ export default function EditProfile() {
 
     return (
         <Card editProfile>
+            <h2 className={classes.title}>تغییرات پروفایل</h2>
             {modal === 'edit-profile' && <ConfirmEditProfileModal data={data} />}
             <div className={classes.choosePhoto}>
                 <div className={classes.choosePhotoInput}>
@@ -76,7 +77,8 @@ export default function EditProfile() {
             </div>
             <div className={classes.editProfileInput}>
                 <label htmlFor="bio">بیوگرافی   </label>
-                <Input placeholder="بیوگرافی" innerRef={bio} id="bio" editProfile />
+                {/* <textarea id="bio" cols="40" rows="5" className={classes.inputEditProfile} defaultValue={profile.bio} />  */}
+                <Input  innerRef={bio}   editProfileBio defultValueText = {profile.bio}/>
             </div>
             <div className={classes.editProfileInput}>
                 <label htmlFor="email">ایمیل</label>

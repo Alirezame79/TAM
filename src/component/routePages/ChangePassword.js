@@ -46,9 +46,18 @@ export default function ChangePassword() {
     return (
         <Card changePass>
             <h2>تعییر رمز عبور</h2>
-            <Input placeholder="پسوورد کنونی" onFocus={(e) => e.target.placeholder = ''} changePass innerRef={currentPassword} id="currentPassword" change={inputChnaged} />
-            <Input placeholder="پسوورد جدید" changePass type='password' innerRef={newPassword} id="newPassword" change={inputChnaged} />
-            <Input placeholder="تکرار پسوورد جدید" changePass type='password' innerRef={repeatNewPassword} id="repeatNewPassword" change={inputChnaged} />
+            <div className={classes.changePassInput}>
+                <label htmlFor="bio">پسوورد کنونی </label>
+                <Input changePass innerRef={currentPassword} id="currentPassword" change={inputChnaged} />
+           </div>
+           <div className={classes.changePassInput}>
+                <label htmlFor="bio">پسوورد جدید</label>
+                <Input  changePass type='password' innerRef={newPassword} id="newPassword" change={inputChnaged} />
+            </div>
+            <div className={classes.changePassInput}>
+                <label htmlFor="bio">تکرار پسوورد جدید</label>
+                <Input changePass type='password' innerRef={repeatNewPassword} id="repeatNewPassword" change={inputChnaged} />
+            </div>
             {(error.length !== 0) && <p className={classes.error}>{error}</p>}
             <Button submit click={sendRequest}>مرحله بعد</Button>
         </Card>
