@@ -13,44 +13,50 @@ export default function CourseMember() {
     // console.log(res)
 
     return (
-        <div className={classes.body}>
-            <Card>
-                {res.owner !== null && <>
-                    <div className={classes.memberContainer}>
-                        <h3>استاد</h3>
-                        <div className={classes.eachMember}>
-                            <h2>{res.owner.name}</h2>
-                            <h2>icon</h2>
+        
+            <Card courseMember>
+                <Card members>
+                    {res.owner !== null && <>
+                        <div className={classes.memberContainer}>
+                            <h3>استاد</h3>
+                            <div className={classes.eachMember}>
+                                <h2>{res.owner.name}</h2>
+                                <h2>icon</h2>
+                            </div>
                         </div>
-                    </div>
-                </>}
-                {res.assistant_profiles !== null && <>
-                    {res.assistant_profiles.map((profile) => {
-                        return (
-                            <div className={classes.memberContainer} key={profile.id}>
-                                <h3>دستیار استاد</h3>
-                                <div className={classes.eachMember}>
-                                    <h2>{profile.name}</h2>
-                                    <h2>icon</h2>
+                    </>}
+                </Card>
+                <Card members>
+                    {res.assistant_profiles !== null && <>
+                        {res.assistant_profiles.map((profile) => {
+                            return (
+                                <div className={classes.memberContainer} key={profile.id}>
+                                    <h3>دستیار استاد</h3>
+                                    <div className={classes.eachMember}>
+                                        <h2>{profile.name}</h2>
+                                        <h2>icon</h2>
+                                    </div>
                                 </div>
-                            </div>
-                        )
-                    })}
-                </>}
-                {res.student_profiles !== null && <>
-                    {res.student_profiles.map((profile) => {
-                        return (
-                            <div className={classes.memberContainer} key={profile.id}>
-                                <h3>دانشجو</h3>
-                                <div className={classes.eachMember}>
-                                    <h2>{profile.name}</h2>
-                                    <h2>icon</h2>
+                            )
+                        })}
+                    </>}
+                </Card>
+                <Card members>
+                    {res.student_profiles !== null && <>
+                        {res.student_profiles.map((profile) => {
+                            return (
+                                <div className={classes.memberContainer} key={profile.id}>
+                                    <h3>دانشجو</h3>
+                                    <div className={classes.eachMember}>
+                                        <h2>{profile.name}</h2>
+                                        <h2>icon</h2>
+                                    </div>
                                 </div>
-                            </div>
-                        )
-                    })}
-                </>}
+                            )
+                        })}
+                    </>}
+                </Card>
             </Card>
-        </div>
+        
     )
 }

@@ -1,3 +1,19 @@
+.loginStyle{
+  position: fixed;
+  right: 22%;
+  top: 20%;
+  width: 50%;
+  height: 55%;
+  background-color: #121258;
+  color: white;
+  padding: 65px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-radius: 25px;
+  margin: auto;
+}
 .profileStyle {
   border: 2px solid #121285;
   box-shadow: 6px 9px 9px 1px #bcad8d;
@@ -32,14 +48,15 @@
 .courseStyle {
   text-align: right;
   border: 2px solid #9fdbd1;
-  padding: 25px ;
+  padding: 30px;
   box-shadow: 5px 9px 11px -2px #1e5a50;
-  height: 22%;
-  width: 20%;
+  height: 23%;
+  width: 22%;
   margin: auto auto;
   position: fixed;
   top: 42%;
   right: 24%;
+  border-radius: 11px;
 }
 
 .changePassStyle {
@@ -59,4 +76,30 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 6px 7px 19px -3px #7373f0bd;
+}
+
+.courseMemberStyle{
+  border: 2px solid #9fdbd1;
+  max-height: 50%;
+  overflow-y: auto;
+  width: 50%;
+  margin: auto auto;
+  position: fixed;
+  background-attachment: scroll;
+  top: 10%;
+  bottom: 0;
+  right: 22%;
+  left: 0;
+  padding: 60px 65px;
+  border-radius: 20px;
+}
+.membersStyle{
+  border: 2px solid #121285;
+  height: auto;
+  width: 85%;
+  margin: auto auto;
+  padding: 10px 47px;
+  border-radius: 15px;
+  margin-bottom: 5%;
+
 }
