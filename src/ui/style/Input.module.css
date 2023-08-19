@@ -1,15 +1,16 @@
 .inputLogin {
   background-color: #d1ece8;
-  width: 59%;
-  height: 2rem;
+  width: 38%;
+  height: 5px;
+  right: 31%;
   border: 3px solid #697d7a;
-  margin-bottom: 5%;
   color: #0d0d34c2;
   text-align: left;
-  padding: 2% 2%;
+  padding: 20px;
   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
-  position: absolute;
-  left: 8%;
+  position: fixed;
+  border-radius: 20px;
+
 }
 
 .inputLogin:focus {
@@ -38,10 +39,7 @@
   text-align: right;
 }
 
-.inputChangePass::placeholder:focus{
-  
 
-}
 
 .inputEditProfileBio {
   height: 0.6rem;

@@ -63,7 +63,10 @@ h4 {
   margin: auto auto;
   position: fixed;
   left: 3%;
-  top: 35%;
+  top: 30%;
+}
+.bodyCircleBtn:last-child{
+  justify-content: center;
 }
 .CircleBtn {
   box-shadow: 3px 2px 6px -1px #726262;
@@ -72,8 +75,8 @@ h4 {
   border: 2px solid #7e2b2b;
   background-color: #f26768;
   border-radius: 57%;
-  height: 9rem;
-  width: 9rem;
+  height: 8rem;
+  width: 8rem;
   margin: 3%;
   align-items: center;
   cursor: pointer;
@@ -92,5 +95,5 @@ h4 {
 }
 .place1 {
   transform: scale(1.3);
-  padding-right: 25px;
+  padding-right: 15px;
 }
