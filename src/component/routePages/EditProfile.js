@@ -6,9 +6,9 @@ import BaseURL from '../../fetch/BaseURL'
 import Button from '../../ui/Button'
 import useUpdateProfile from '../../fetch/useUpdateProfile'
 import Card from '../../ui/Card'
-import Modal from '../Portal/Modal'
 import { useDispatch } from "react-redux";
 import { setModal } from '../../store/index'
+import ConfirmEditProfileModal from '../Portal/ConfirmEditProfileModal'
 
 export default function EditProfile() {
     let bio = useRef("");
@@ -26,14 +26,15 @@ export default function EditProfile() {
     const [showImage, setShowImage] = useState()
     const [data, setData] = useState(null)
     // const [modal, setModal] = useState(false)
-    useUpdateProfile(data)
+    // useUpdateProfile(data)
 
     useEffect(() => {
         bio.current.value = profile.bio
         email.current.value = profile.email
         githubLink.current.value = profile.social_github
         linkedinLink.current.value = profile.social_linkedin
-        // setShowImage(BaseURL + profile.profile_image)
+        setShowImage(BaseURL + profile.profile_image)
+        dispatch(setModal(''))
     }, [profile])
 
     function setNewImage(e) {
@@ -59,14 +60,14 @@ export default function EditProfile() {
         form_data.append('social_linkedin', linkedinLink.current.value);
 
         setData(form_data)
-        dispatch(setModal('confirm'))
+        dispatch(setModal('edit-profile'))
 
         console.log(file)
     }
 
     return (
         <Card editProfile>
-            {modal === 'confirm' && <Modal data={data} />}
+            {modal === 'edit-profile' && <ConfirmEditProfileModal data={data} />}
             <div className={classes.choosePhoto}>
                 <div className={classes.choosePhotoInput}>
                     <input type="file" className={classes.input} onChange={setNewImage} />

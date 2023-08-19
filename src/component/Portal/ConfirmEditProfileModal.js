@@ -1,3 +1,6 @@
+import ReactDom from 'react-dom'
+import Back from './Back'
+import { useSelector } from 'react-redux'
 import Button from '../../ui/Button'
 import classes from './style/Style.module.css'
 import { useDispatch } from "react-redux";
@@ -5,12 +8,13 @@ import { setModal } from '../../store/index'
 import useUpdateProfile from '../../fetch/useUpdateProfile';
 import { useState } from 'react';
 
-export default function Confirm({ data }) {
+function Confirm({ data }) {
     const dispatch = useDispatch();
     const [sendRequest, setSendRequest] = useState(null)
     useUpdateProfile(sendRequest)
 
     function acceptPortalClicked() {
+        // dispatch(setModal(null))
         setSendRequest(data)
     }
 
@@ -20,11 +24,22 @@ export default function Confirm({ data }) {
 
     return (
         <div className={classes.confirmContainer}>
-            <h2>آیا از اعمال تغییرات اطمینان دارید؟</h2>
+            <h2>آیا اطمینان دارید که اطلاعات وارد شده به پروفایلتان اعمال شود؟</h2>
             <div className={classes.confirmBtnContainer}>
                 <Button click={acceptPortalClicked}>تایید</Button>
                 <Button click={closePortalClicked}>انصراف</Button>
             </div>
         </div>
+    )
+}
+
+export default function ConfirmEditProfileModal({ data }) {
+
+    return ReactDom.createPortal(
+        <>
+            <Back></Back>
+            <Confirm data={data}></Confirm>
+        </>
+        , document.querySelector('.modal-container')
     )
 }

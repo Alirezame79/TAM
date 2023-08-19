@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setStudentCourses, setAssistantCourses, setTeacherCourses, setProfile } from '../store/index'
+import { setProfile } from '../store/index'
 
 export default function useProfile() {
     const dispatch = useDispatch();
