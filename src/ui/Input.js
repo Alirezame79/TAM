@@ -4,7 +4,7 @@ export default function Input({ type, placeholder, innerRef, change, login, edit
     let selectInput;
     if (login) selectInput = classes.inputLogin;
     if (editProfile) selectInput = classes.inputEditProfile;
-    if (changePass) selectInput = classes.inputEditProfile;
+    if (changePass) selectInput = classes.inputChangePass;
 
     if (editProfileBio) {
         return (
