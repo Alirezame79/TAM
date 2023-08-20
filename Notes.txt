@@ -18,3 +18,11 @@ FaUserMinus,FaUserPlus // CourseSetting
 
 FaUserGraduate, FaUserTie ,  FaUser , FaUserEdit//courseMember
     
+
+
+
+
+    /* <div className={classes.minusPlusIcon}>
+                                <FaMinus/>
+                                <FaPlus/>
+                            </div> */

@@ -3,8 +3,9 @@ import useCourseSetting from "../../../fetch/useCourseSetting";
 import Card from "../../../ui/Card";
 import classes from './style/CourseSetting.module.css'
 import Input from '../../../ui/Input';
-import { FaUserMinus, FaUserPlus } from "react-icons/fa";
+import { FaUserMinus, FaUserPlus , FaMinus,FaPlus} from "react-icons/fa";
 import { useEffect, useRef } from "react";
+import Button from '../../../ui/Button'
 
 export default function CourseSetting() {
     const { id } = useParams();
@@ -40,33 +41,53 @@ export default function CourseSetting() {
                     <label htmlFor="Class Time">زمان کلاس</label>
                     <Input innerRef={classTime} id="Class Time" courseSetting />
                 </div>
-
-                <div className={classes.courseSettingInput}>
-                    <label htmlFor="Group Capacity"> تعداد اعضا گروه</label>
-                    <Input innerRef={groupCapacity} id="Group Capacity" courseSetting />
-                </div>
-
-                <div className={classes.courseSettingInput}>
-                    <label htmlFor="Projects Phase "> تعداد فاز های پروژه</label>
-                    <Input innerRef={projectPhase} id="Projects Phase " courseSetting />
-                </div>
             </div>
-            <Card assistants>
-                <div className={classes.addDeletAssistant}>
-                    <h3 >: دستیاران </h3>
-                    <div className={classes.addDeletAssistantIcon}>
-                        <FaUserMinus className={classes.minusIcon} />
-                        <FaUserPlus />
+            <div className={classes.groupOfInputs}>
+                <div className={classes.haveCounterInputs}>
+                    <div className={classes.courseSettingInput}>
+                        <label htmlFor="Group Capacity"> تعداد اعضا گروه</label>
+                        <Input innerRef={groupCapacity} id="Group Capacity"  haveCounterInputs >
+                            {/* <div className={classes.minusPlusIcon}>
+                                <FaMinus/>
+                                <FaPlus/>
+                            </div> */}
+                        </Input>
+                        <div className={classes.minusPlusIcon}>
+                                <FaMinus/>
+                                <FaPlus/>
+                            </div>
+                    </div>
+
+                    <div className={classes.courseSettingInput}>
+                        <label htmlFor="Projects Phase "> تعداد فازهای پروژه</label>
+                        <Input innerRef={projectPhase} id="Projects Phase "  haveCounterInputs>
+                            {/* <div className={classes.minusPlusIcon}>
+                                <FaMinus/>
+                                <FaPlus/>
+                            </div> */}
+                        </Input>
+                        <div className={classes.minusPlusIcon}>
+                                <FaMinus/>
+                                <FaPlus/>
+                            </div>
                     </div>
                 </div>
-                {res.assistant_profiles.map((profile) => {
-                    return (
-                        <h4 className={classes.assistants} key={profile} >{profile}</h4>
-                    )
-                })}
-            </Card>
-
-
+                <Card assistants>
+                    <div className={classes.addDeletAssistant}>
+                        <h3 >: دستیاران </h3>
+                        <div className={classes.addDeletAssistantIcon}>
+                            <FaUserMinus className={classes.minusIcon} />
+                            <FaUserPlus />
+                        </div>
+                    </div>
+                    {res.assistant_profiles.map((profile) => {
+                        return (
+                            <h4 className={classes.assistants} key={profile} >{profile}</h4>
+                        )
+                    })}
+                </Card>
+            </div>
+            <Button submit >مرحله بعد</Button>
         </Card>
     )
 }
