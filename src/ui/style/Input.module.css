@@ -1,3 +1,7 @@
+.inputDiv{
+  width: 80%;
+}
+
 .inputLogin {
   background-color: #d1ece8;
   width: 38%;
@@ -18,7 +22,7 @@
   border: 3px solid #7a6d6d;
 }
 
-.inputEditProfile ,.inputChangePass {
+.inputEditProfile ,.inputChangePass , .inputEditProfileBio{
   background-color: #d1ece8;
   width: 80%;
   height: 0.8rem;
@@ -30,20 +34,23 @@
   border-radius: 15px;
 }
 
-.inputEditProfile:focus , .inputChangePass:focus{
+.inputEditProfile:focus , .inputChangePass:focus , .inputEditProfileBio:focus{
   background-color: white;
   border: 3px solid #7a6d6d;
 }
+
+ .inputChangePass{
+    width: 70%;
+ }
 
 .inputChangePass::placeholder{
   text-align: right;
 }
 
+ .editProfileBio{
+  width: 80%;
+ }
 
-
-.inputEditProfileBio {
-  height: 0.6rem;
+.inputEditProfileBio{
+  text-align: right;
 }
-
-
-
