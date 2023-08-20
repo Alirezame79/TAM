@@ -1,6 +1,6 @@
 .body {
   margin: auto auto;
-  padding: 30px 60px;;
+  padding: 30px 60px;
   height: 70%;
   position: fixed;
   top: 10%;
@@ -24,7 +24,8 @@
   width: 9rem;
   border-radius: 50%;
   background-position: center;
-  background-size: cover;
+  /* background-size: cover; */
+  object-fit: cover;
 }
 
 .profileLinks {

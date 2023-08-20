@@ -36,8 +36,8 @@ export default function AssistantCourse({ id }) {
             <div className={classes.centarPage}>
                 <Card courseInfo>
                     <h4>{course.id} : آیدی درس</h4>
-                    <h4>{course.class_location} : مکان </h4>
                     <h4>   زمان : {course.class_time}</h4>
+                    <h4>{course.class_location} : مکان </h4>
                     <h4> {course.exam_time} : امتحان</h4>
                     <h4> :دستیاران
                         <ul>

@@ -1,6 +1,9 @@
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { setModal } from '../store/index'
 
 export default function useUpdateProfile(data) {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
 
     if (data === null) return
@@ -16,6 +19,7 @@ export default function useUpdateProfile(data) {
         console.log(response)
         if (response.status === 200) {
             navigate('/profile');
+            dispatch(setModal(null))
             return response.json()
         }
     }).then((data) => {

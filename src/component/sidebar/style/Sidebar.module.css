@@ -32,10 +32,6 @@
   background-color: #aaa;
 }
 
-.studentCourses {
-  margin-top: 3%;
-}
-
 .courseIcon {
   display: flex;
   flex-direction: row;
@@ -64,6 +60,8 @@
   transform: scale(1.2);
 }
 
-.assistantCourses {
-  margin-top: 25px;
+.studentCourses,
+.assistantCourses,
+.teacherCourses {
+  margin-top: 5%;
 }

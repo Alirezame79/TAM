@@ -12,6 +12,7 @@ import Course from './component/routePages/course/Course'
 import useInitial from "./fetch/useInitial";
 import NotFound from "./component/routePages/NotFound";
 import EditProfile from "./component/routePages/EditProfile";
+import { useSelector } from 'react-redux'
 import PermissionDenied from "./component/routePages/PermissionDenied";
 import StudentCourse from "./component/routePages/course/StudentCourse";
 import AssistantCourse from "./component/routePages/course/AssistantCourse";
@@ -19,11 +20,15 @@ import TeacherCourse from "./component/routePages/course/TeacherCourse";
 import ChangePassword from "./component/routePages/ChangePassword";
 import CourseMember from "./component/routePages/course/CourseMember";
 import CourseSetting from "./component/routePages/course/CourseSetting";
+import ConfirmChangePasswordModal from "./component/Portal/ConfirmChangePasswordModal";
 // import { useSelector } from 'react-redux'
 
 function App() {
     const isAuthenticated = useIsAuthenticated()
     const dispatch = useDispatch()
+    const modal = useSelector((state) => {
+        return state.modal
+    })
     useInitial()
 
     if (!isAuthenticated()) {
@@ -35,6 +40,7 @@ function App() {
         localStorage.setItem('login', '1');
         return (
             <>
+                {/* {modal === 'change-password' && <ConfirmChangePasswordModal data={''} />} */}
                 <div className={classes.mainBody}>
                     <Sidebar />
                     <div className={classes.containerBody}>

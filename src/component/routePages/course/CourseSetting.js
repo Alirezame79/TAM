@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import useCourseSetting from "../../../fetch/useCourseSetting";
 import Card from "../../../ui/Card";
+import classes from './style/CourseSetting.module.css'
 
 export default function CourseSetting() {
     const { id } = useParams();

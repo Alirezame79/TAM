@@ -1,4 +1,4 @@
-.loginStyle{
+.loginStyle {
   position: fixed;
   right: 22%;
   top: 20%;
@@ -14,6 +14,7 @@
   border-radius: 25px;
   margin: auto;
 }
+
 .profileStyle {
   border: 2px solid #121285;
   box-shadow: 6px 9px 9px 1px #bcad8d;
@@ -78,7 +79,7 @@
   box-shadow: 6px 7px 19px -3px #7373f0bd;
 }
 
-.courseMemberStyle{
+.courseMemberStyle {
   border: 2px solid #9fdbd1;
   max-height: 65%;
   overflow-y: auto;
@@ -94,17 +95,17 @@
   border-radius: 20px;
   box-shadow: 6px 7px 19px -3px #31685f;
 }
-.membersStyle{
-  border: 2px solid #0303aa;
-    height: auto;
-    background-color: #121285;
-    width: 85%;
-    color: white;
-    margin: auto auto;
-    padding: 10px 47px;
-    border-radius: 15px;
-    margin-bottom: 3%;
 
+.membersStyle {
+  border: 2px solid #0303aa;
+  height: auto;
+  background-color: #121285;
+  width: 90%;
+  color: white;
+  margin: auto auto;
+  padding: 10px 40px;
+  border-radius: 15px;
+  margin-bottom: 1%;
 }
 
 .confirmStyle {

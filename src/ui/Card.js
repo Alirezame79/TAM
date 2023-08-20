@@ -1,6 +1,6 @@
 import classes from './style/Card.module.css';
 
-function Card({ children, profile, editProfile, courseInfo, changePass,login,courseMember,members,confirm }) {
+function Card({ children, profile, editProfile, courseInfo, changePass, login, courseMember, members, confirm }) {
     let cardStyle;
     if (login) cardStyle = classes.loginStyle;
     if (profile) cardStyle = classes.profileStyle;
@@ -10,6 +10,7 @@ function Card({ children, profile, editProfile, courseInfo, changePass,login,cou
     if (courseMember) cardStyle = classes.courseMemberStyle;
     if (members) cardStyle = classes.membersStyle;
     if (confirm) cardStyle = classes.confirmStyle;
+
     return (
         <div className={cardStyle}>{children}</div>
     );

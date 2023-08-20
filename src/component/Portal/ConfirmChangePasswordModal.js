@@ -1,18 +1,17 @@
 import ReactDom from 'react-dom'
-import Back from './Back'
-import { useSelector } from 'react-redux'
+import Card from '../../ui/Card'
 import Button from '../../ui/Button'
 import classes from './style/Style.module.css'
+import Back from './Back'
 import { useDispatch } from "react-redux";
 import { setModal } from '../../store/index'
-import useUpdateProfile from '../../fetch/useUpdateProfile';
 import { useState } from 'react';
-import Card from '../../ui/Card'
+import useChangePassword from '../../fetch/useChangePassword'
 
 function Confirm({ data }) {
     const dispatch = useDispatch();
     const [sendRequest, setSendRequest] = useState(null)
-    useUpdateProfile(sendRequest)
+    useChangePassword(sendRequest)
 
     function acceptPortalClicked() {
         setSendRequest(data)
@@ -24,7 +23,7 @@ function Confirm({ data }) {
 
     return (
         <Card confirm>
-            <h2>آیا اطمینان دارید که اطلاعات وارد شده به پروفایلتان اعمال شود؟</h2>
+            <h2>آیا از تغییر رمزعبور خود اطمینان دارید؟</h2>
             <div className={classes.confirmBtnContainer}>
                 <Button click={acceptPortalClicked} accept>تایید</Button>
                 <Button click={closePortalClicked} cancle>انصراف</Button>
@@ -33,7 +32,7 @@ function Confirm({ data }) {
     )
 }
 
-export default function ConfirmEditProfileModal({ data }) {
+export default function ConfirmChangePasswordModal({ data }) {
 
     return ReactDom.createPortal(
         <>

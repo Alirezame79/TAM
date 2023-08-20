@@ -1,17 +1,20 @@
-.title{
+.title {
   text-align: center;
 }
+
 .profile {
   position: fixed;
   right: 22%;
   display: flex;
 }
+
 .image {
   object-fit: cover;
   border-radius: 50%;
   width: 6rem;
   height: 6rem;
 }
+
 .name {
   margin-top: 12%;
   margin-right: 6%;
@@ -23,6 +26,7 @@
   justify-content: space-between;
   margin-top: 6%;
 }
+
 label {
   padding-top: 15px;
 }
@@ -32,11 +36,13 @@ label {
   flex-direction: row-reverse;
   justify-content: space-between;
   margin-top: 7%;
- 
+  text-align: right;
 }
+
 .choosePhotoInput {
   padding-top: 25px;
 }
+
 input[type="file"]::file-selector-button {
   background-color: #121285;
   border: 2px solid #8282b8;

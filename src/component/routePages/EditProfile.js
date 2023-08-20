@@ -29,12 +29,12 @@ export default function EditProfile() {
     // useUpdateProfile(data)
 
     useEffect(() => {
-        // bio.current.value = profile.bio error midad baraye textarea
+        bio.current.value = profile.bio
         email.current.value = profile.email
         githubLink.current.value = profile.social_github
         linkedinLink.current.value = profile.social_linkedin
         setShowImage(BaseURL + profile.profile_image)
-        dispatch(setModal(''))
+        // dispatch(setModal(''))
     }, [profile])
 
     function setNewImage(e) {
@@ -54,7 +54,7 @@ export default function EditProfile() {
         if (file !== null) {
             form_data.append('profile_image', file, file.name);
         } else {
-            form_data.append('profile_image', null);
+            form_data.append('profile_image', "");
         }
         form_data.append('social_github', githubLink.current.value);
         form_data.append('social_linkedin', linkedinLink.current.value);
@@ -66,33 +66,35 @@ export default function EditProfile() {
     }
 
     return (
-        <Card editProfile>
-            <h2 className={classes.title}>تغییرات پروفایل</h2>
+        <>
             {modal === 'edit-profile' && <ConfirmEditProfileModal data={data} />}
-            <div className={classes.choosePhoto}>
-                <div className={classes.choosePhotoInput}>
-                    <input type="file" className={classes.input} onChange={setNewImage} />
+            <Card editProfile>
+                <h2 className={classes.title}>ویرایش پروفایل</h2>
+                <div className={classes.choosePhoto}>
+                    <div className={classes.choosePhotoInput}>
+                        <input type="file" className={classes.input} onChange={setNewImage} />
+                    </div>
+                    <img src={showImage} className={classes.image} alt={'newImage'} width='150px' />
                 </div>
-                <img src={showImage} className={classes.image} alt={'newImage'} width='150px' />
-            </div>
-            <div className={classes.editProfileInput}>
-                <label htmlFor="bio">بیوگرافی   </label>
-                {/* <textarea id="bio" cols="40" rows="5" className={classes.inputEditProfile} defaultValue={profile.bio} />  */}
-                <Input  innerRef={bio}   editProfileBio defultValueText = {profile.bio}/>
-            </div>
-            <div className={classes.editProfileInput}>
-                <label htmlFor="email">ایمیل</label>
-                <Input placeholder="ایمیل" innerRef={email} id="email" editProfile />
-            </div>
-            <div className={classes.editProfileInput}>
-                <label htmlFor="githubLink">گیت هاب</label>
-                <Input placeholder="گیت هاب" innerRef={githubLink} id="githubLink" editProfile />
-            </div>
-            <div className={classes.editProfileInput}>
-                <label htmlFor="linkedinLink">لینکدین</label>
-                <Input placeholder="لینکدین" innerRef={linkedinLink} id="linkedinLink" editProfile />
-            </div>
-            <Button submit click={sendRequest}>مرحله بعد</Button>
-        </Card>
+                <div className={classes.editProfileInput}>
+                    <label htmlFor="bio">بیوگرافی   </label>
+                    {/* <textarea id="bio" cols="40" rows="5" className={classes.inputEditProfile} defaultValue={profile.bio} />  */}
+                    <Input innerRef={bio} editProfileBio defultValueText={profile.bio} />
+                </div>
+                <div className={classes.editProfileInput}>
+                    <label htmlFor="email">ایمیل</label>
+                    <Input placeholder="ایمیل" innerRef={email} id="email" editProfile />
+                </div>
+                <div className={classes.editProfileInput}>
+                    <label htmlFor="githubLink">گیت هاب</label>
+                    <Input placeholder="گیت هاب" innerRef={githubLink} id="githubLink" editProfile />
+                </div>
+                <div className={classes.editProfileInput}>
+                    <label htmlFor="linkedinLink">لینکدین</label>
+                    <Input placeholder="لینکدین" innerRef={linkedinLink} id="linkedinLink" editProfile />
+                </div>
+                <Button submit click={sendRequest}>مرحله بعد</Button>
+            </Card>
+        </>
     )
 }
