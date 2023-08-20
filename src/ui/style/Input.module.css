@@ -22,7 +22,7 @@
   border: 3px solid #7a6d6d;
 }
 
-.inputEditProfile ,.inputChangePass , .inputEditProfileBio{
+.inputEditProfile ,.inputChangePass , .inputEditProfileBio , .inputCourseSetting{
   background-color: #d1ece8;
   width: 80%;
   height: 0.8rem;
@@ -34,7 +34,7 @@
   border-radius: 15px;
 }
 
-.inputEditProfile:focus , .inputChangePass:focus , .inputEditProfileBio:focus{
+.inputEditProfile:focus , .inputChangePass:focus , .inputEditProfileBio:focus, .inputCourseSetting:focus{
   background-color: white;
   border: 3px solid #7a6d6d;
 }
@@ -47,10 +47,19 @@
   text-align: right;
 }
 
- .editProfileBio{
-  width: 80%;
- }
+ 
 
 .inputEditProfileBio{
   text-align: right;
+  height: 2rem;
+}
+
+.inputCourseSetting{
+  text-align: right;
+  padding: 15px 22px;
+  width: 78%;
+}
+
+.inputCourseSetting::placeholder{
+  color: #0d0d34c2;
 }
