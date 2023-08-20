@@ -25,8 +25,6 @@ export default function EditProfile() {
     const [file, setFile] = useState(null)
     const [showImage, setShowImage] = useState()
     const [data, setData] = useState(null)
-    // const [modal, setModal] = useState(false)
-    // useUpdateProfile(data)
 
     useEffect(() => {
         bio.current.value = profile.bio
@@ -34,8 +32,7 @@ export default function EditProfile() {
         githubLink.current.value = profile.social_github
         linkedinLink.current.value = profile.social_linkedin
         setShowImage(BaseURL + profile.profile_image)
-        // dispatch(setModal(''))
-    }, [profile])
+    }, [])
 
     function setNewImage(e) {
         console.log(e.target.files);

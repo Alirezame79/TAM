@@ -26,8 +26,8 @@ function Confirm({ data }) {
         <Card confirm>
             <h2>آیا اطمینان دارید که اطلاعات وارد شده به پروفایلتان اعمال شود؟</h2>
             <div className={classes.confirmBtnContainer}>
-                <Button click={acceptPortalClicked} accept>تایید</Button>
                 <Button click={closePortalClicked} cancle>انصراف</Button>
+                <Button click={acceptPortalClicked} accept>تایید</Button>
             </div>
         </Card>
     )

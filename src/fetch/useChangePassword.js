@@ -21,7 +21,7 @@ export default function useChangePassword(data) {
             navigate('/profile');
             dispatch(setModal(null))
         } else if (response.status === 400) {
-            dispatch(setModal(null))
+            dispatch(setModal("change-password-alert"))
         }
         return response.json();
     }).then((data) => {

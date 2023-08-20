@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from 'react-redux'
 import { setModal } from '../../store/index'
 import ConfirmChangePasswordModal from '../Portal/ConfirmChangePasswordModal'
+import AlertChangePasswordModal from '../Portal/AlertChangePasswordModal'
 
 export default function ChangePassword() {
     let currentPassword = useRef('')
@@ -18,36 +19,24 @@ export default function ChangePassword() {
     })
     const [data, setData] = useState(null)
     const [error, setError] = useState('')
-    const [errorVisibility, setErrorVisibility] = useState(false)
     const dispatch = useDispatch();
 
     // useChangePassword(data);
 
     function sendRequest() {
-        if (!checkNewPassword()) {
-            setErrorVisibility(true)
-            setError('پسوورد های جدید تفاوت دارند')
-            return
-        }
-
         if (currentPassword.current.value === '' || newPassword.current.value === '' || repeatNewPassword.current.value === '') {
-            setErrorVisibility(true)
             setError('تمام فیلدها را پر کنید')
             return
         }
 
         let passwords = {
             old_password: currentPassword.current.value,
-            new_password: newPassword.current.value
+            new_password: newPassword.current.value,
+            confirm_password: repeatNewPassword.current.value
         }
 
         setData(passwords);
-        dispatch(setModal('change-password'))
-    }
-
-    function checkNewPassword() {
-        if (newPassword.current.value === repeatNewPassword.current.value) return true
-        return false
+        dispatch(setModal('change-password-alert'))
     }
 
     function inputChnaged() {
@@ -58,6 +47,7 @@ export default function ChangePassword() {
     return (
         <>
             {modal === 'change-password' && <ConfirmChangePasswordModal data={data} />}
+            {modal === 'change-password-alert' && <AlertChangePasswordModal />}
             <Card changePass>
                 <h2>تغییر رمزعبور</h2>
                 <div className={classes.changePassInput}>
