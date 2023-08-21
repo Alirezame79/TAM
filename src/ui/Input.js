@@ -1,6 +1,6 @@
 import classes from './style/Input.module.css';
 
-export default function Input({ children, courseSetting,defultValueText, type, placeholder, innerRef, change, login, editProfile, editProfileBio, changePass,haveCounterInputs }) {
+export default function Input({ children, courseSetting, defultValueText, type, placeholder, innerRef, change, login, editProfile, editProfileBio, changePass, haveCounterInputs }) {
     let selectInput;
     if (login) selectInput = classes.inputLogin;
     if (editProfile) selectInput = classes.inputEditProfile;

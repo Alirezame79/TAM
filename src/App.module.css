@@ -8,7 +8,6 @@
 .mainBody {
   display: flex;
   position: relative;
-  
 }
 
 .containerBody {
@@ -17,7 +16,7 @@
   flex-direction: column;
   width: 80%;
   height: 100vh;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(255, 234, 195);
 }
 
 .miniCourseContainer {

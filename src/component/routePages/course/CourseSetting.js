@@ -3,7 +3,7 @@ import useCourseSetting from "../../../fetch/useCourseSetting";
 import Card from "../../../ui/Card";
 import classes from './style/CourseSetting.module.css'
 import Input from '../../../ui/Input';
-import { FaUserMinus, FaUserPlus , FaMinus,FaPlus} from "react-icons/fa";
+import { FaUserMinus, FaUserPlus, FaMinus, FaPlus } from "react-icons/fa";
 import { useEffect, useRef } from "react";
 import Button from '../../../ui/Button'
 
@@ -46,30 +46,30 @@ export default function CourseSetting() {
                 <div className={classes.haveCounterInputs}>
                     <div className={classes.courseSettingInput}>
                         <label htmlFor="Group Capacity"> تعداد اعضا گروه</label>
-                        <Input innerRef={groupCapacity} id="Group Capacity"  haveCounterInputs >
+                        <Input type='number' innerRef={groupCapacity} id="Group Capacity" haveCounterInputs >
                             {/* <div className={classes.minusPlusIcon}>
-                                <FaMinus/>
-                                <FaPlus/>
+                                <FaMinus />
+                                <FaPlus />
                             </div> */}
                         </Input>
                         <div className={classes.minusPlusIcon}>
-                                <FaMinus/>
-                                <FaPlus/>
-                            </div>
+                            <FaMinus />
+                            <FaPlus />
+                        </div>
                     </div>
 
                     <div className={classes.courseSettingInput}>
                         <label htmlFor="Projects Phase "> تعداد فازهای پروژه</label>
-                        <Input innerRef={projectPhase} id="Projects Phase "  haveCounterInputs>
+                        <Input innerRef={projectPhase} id="Projects Phase " haveCounterInputs>
                             {/* <div className={classes.minusPlusIcon}>
                                 <FaMinus/>
                                 <FaPlus/>
                             </div> */}
                         </Input>
                         <div className={classes.minusPlusIcon}>
-                                <FaMinus/>
-                                <FaPlus/>
-                            </div>
+                            <FaMinus />
+                            <FaPlus />
+                        </div>
                     </div>
                 </div>
                 <Card assistants>
