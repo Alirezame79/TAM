@@ -42,7 +42,6 @@ export default function CourseSetting() {
             <Input innerRef={classTime} id="Class Time" courseSetting />
           </div>
         </div>
-        {/* <div className={classes.groupOfInputs}> */}
         <div className={classes.haveCounterInputs}>
           <div className={classes.courseSettingInput}>
             <label htmlFor="Group Capacity"> تعداد اعضا گروه</label>
@@ -64,10 +63,9 @@ export default function CourseSetting() {
             />
           </div>
         </div>
-
-        {/* </div> */}
         <Button submit>مرحله بعد</Button>
       </Card>
+
       <Card assistants>
         <h2 className={classes.title}> لیست دستیاران </h2>
         <div className={classes.addDeletAssistant}>

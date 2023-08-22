@@ -2,6 +2,9 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setModal } from "../store/index";
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function useChangePassword(data) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -20,9 +23,30 @@ export default function useChangePassword(data) {
       console.log(response);
       if (response.status === 200) {
         navigate("/profile");
+        toast.success('رمزعبور با موفقیت تغییر کرد', {
+          position: toast.POSITION.TOP_LEFT, autoClose: 5000
+        })
         dispatch(setModal(null));
       } else if (response.status === 400) {
-        dispatch(setModal("change-password-alert"));
+        toast.error('رمزعبور واردشده، استاندارد های لازم را دارا نیست. لطفا رمزعبور دیگری را امتحان کنید', {
+          position: toast.POSITION.TOP_LEFT, autoClose: 5000
+        })
+        dispatch(setModal(null));
+      } else if (response.status === 401) {
+        toast.error('رمزعبور فعلی نادرست است', {
+          position: toast.POSITION.TOP_LEFT, autoClose: 5000
+        })
+        dispatch(setModal(null));
+      } else if (response.status === 409) {
+        toast.error('رمزعبورهای فعلی و جدید یکسان هستند', {
+          position: toast.POSITION.TOP_LEFT, autoClose: 5000
+        })
+        dispatch(setModal(null));
+      } else if (response.status === 410) {
+        toast.error('رمزعبورهای جدید یکسان نیستند', {
+          position: toast.POSITION.TOP_LEFT, autoClose: 5000
+        })
+        dispatch(setModal(null));
       }
       return response.json();
     })

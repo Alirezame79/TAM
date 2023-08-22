@@ -9,6 +9,7 @@ import Card from "../../ui/Card";
 import { useDispatch } from "react-redux";
 import { setModal } from "../../store/index";
 import ConfirmEditProfileModal from "../Portal/ConfirmEditProfileModal";
+import useProfile from "../../fetch/useProfile";
 
 export default function EditProfile() {
   let bio = useRef("");
@@ -25,6 +26,7 @@ export default function EditProfile() {
   const [file, setFile] = useState(null);
   const [showImage, setShowImage] = useState();
   const [data, setData] = useState(null);
+  useProfile();
 
   useEffect(() => {
     bio.current.value = profile.bio;
@@ -32,7 +34,7 @@ export default function EditProfile() {
     githubLink.current.value = profile.social_github;
     linkedinLink.current.value = profile.social_linkedin;
     setShowImage(BaseURL + profile.profile_image);
-  }, []);
+  }, [profile]);
 
   function setNewImage(e) {
     console.log(e.target.files);
@@ -71,6 +73,7 @@ export default function EditProfile() {
           <div className={classes.choosePhotoInput}>
             <input
               type="file"
+              accept="image/*"
               className={classes.input}
               onChange={setNewImage}
             />

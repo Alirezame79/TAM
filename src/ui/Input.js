@@ -1,7 +1,6 @@
 import classes from "./style/Input.module.css";
 
 export default function Input({
-  children,
   courseSetting,
   defultValueText,
   type = "text",
@@ -22,6 +21,7 @@ export default function Input({
   if (courseSetting) selectInput = classes.inputCourseSetting;
   if (haveCounterInputs) selectInput = classes.inputhaveCounterInputs;
   if (addDeletAssistant) selectInput = classes.inputAddDeletAssistant;
+
   if (editProfileBio) {
     return (
       <textarea

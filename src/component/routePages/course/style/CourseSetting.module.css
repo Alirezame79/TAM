@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  /* width: 80%; */
   margin: auto auto;
   position: fixed;
   top: 10%;
@@ -50,6 +51,7 @@
 }
 .haveCounterInputs {
   display: flex;
+  flex-direction: row-reverse;
   width: 100%;
   position: relative;
   margin-top: 5%;

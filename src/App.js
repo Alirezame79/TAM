@@ -22,6 +22,8 @@ import CourseMember from "./component/routePages/course/CourseMember";
 import CourseSetting from "./component/routePages/course/CourseSetting";
 import ConfirmChangePasswordModal from "./component/Portal/ConfirmChangePasswordModal";
 // import { useSelector } from 'react-redux'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const isAuthenticated = useIsAuthenticated();
@@ -34,12 +36,17 @@ function App() {
   if (!isAuthenticated()) {
     localStorage.setItem("login", "0");
     dispatch(reset());
-    return <Login />;
+    return (
+      <>
+        <ToastContainer />
+        <Login />;
+      </>
+    )
   } else {
     localStorage.setItem("login", "1");
     return (
       <>
-        {/* {modal === 'change-password' && <ConfirmChangePasswordModal data={''} />} */}
+        <ToastContainer />
         <div className={classes.mainBody}>
           <Sidebar />
           <div className={classes.containerBody}>

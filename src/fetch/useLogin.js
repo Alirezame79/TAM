@@ -10,6 +10,9 @@ import {
 } from "../store/index";
 // import { useNavigate } from 'react-router-dom';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const useLogin = (user) => {
   const signIn = useSignIn();
   const dispatch = useDispatch();
@@ -34,6 +37,9 @@ const useLogin = (user) => {
         return response.json();
       } else {
         console.log(response.statusText);
+        toast.error('نام کاربری یا رمزعبور نادرست است', {
+          position: toast.POSITION.TOP_LEFT, autoClose: 5000
+        })
         return;
       }
     })
@@ -64,7 +70,16 @@ const useLogin = (user) => {
       })
         .then((response) => {
           console.log(response);
-          return response.json();
+          if (response.status === 200) {
+            toast.info('کاربر با موفقیت وارد شد', {
+              position: toast.POSITION.TOP_LEFT, autoClose: 5000
+            })
+            return response.json();
+          } else {
+            toast.error('مشکلی در دریافت اطلاعات کاربر وجود دارد. لطفا مجددا اقدام کنید', {
+              position: toast.POSITION.TOP_LEFT, autoClose: 5000
+            })
+          }
         })
         .then((data) => {
           console.log(data);

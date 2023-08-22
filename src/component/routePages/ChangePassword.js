@@ -8,7 +8,10 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { setModal } from "../../store/index";
 import ConfirmChangePasswordModal from "../Portal/ConfirmChangePasswordModal";
-import AlertChangePasswordModal from "../Portal/AlertChangePasswordModal";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function ChangePassword() {
   let currentPassword = useRef("");
@@ -18,7 +21,6 @@ export default function ChangePassword() {
     return state.modal;
   });
   const [data, setData] = useState(null);
-  const [error, setError] = useState("");
   const dispatch = useDispatch();
 
   // useChangePassword(data);
@@ -29,7 +31,9 @@ export default function ChangePassword() {
       newPassword.current.value === "" ||
       repeatNewPassword.current.value === ""
     ) {
-      setError("تمام فیلدها را پر کنید");
+      toast.error('تمام فیلدها را پر کنید', {
+        position: toast.POSITION.TOP_LEFT, autoClose: 5000
+      })
       return;
     }
 
@@ -40,11 +44,10 @@ export default function ChangePassword() {
     };
 
     setData(passwords);
-    dispatch(setModal("change-password-alert"));
+    dispatch(setModal("change-password"));
   }
 
   function inputChnaged() {
-    setError(" ");
     setData(null);
   }
 
@@ -53,7 +56,7 @@ export default function ChangePassword() {
       {modal === "change-password" && (
         <ConfirmChangePasswordModal data={data} />
       )}
-      {modal === "change-password-alert" && <AlertChangePasswordModal />}
+
       <Card changePass>
         <h2 className={classes.title}>تغییر رمزعبور</h2>
         <div className={classes.changePassInput}>
@@ -85,7 +88,6 @@ export default function ChangePassword() {
             change={inputChnaged}
           />
         </div>
-        {error.length !== 0 && <p className={classes.error}>{error}</p>}
         <Button submit click={sendRequest}>
           مرحله بعد
         </Button>
