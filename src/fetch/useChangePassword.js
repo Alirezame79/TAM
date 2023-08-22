@@ -5,11 +5,11 @@ import { setModal } from "../store/index";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function useChangePassword(data) {
+export default function useChangePassword(data, flag) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  if (data === null) return;
+  if (data === null || flag === undefined) return;
 
   fetch("http://127.0.0.1:8000/change-password/", {
     method: "POST",
@@ -24,7 +24,8 @@ export default function useChangePassword(data) {
       if (response.status === 200) {
         navigate("/profile");
         toast.success('رمزعبور با موفقیت تغییر کرد', {
-          position: toast.POSITION.TOP_LEFT, autoClose: 5000
+          position: toast.POSITION.TOP_LEFT,
+          autoClose: 5000
         })
         dispatch(setModal(null));
       } else if (response.status === 400) {

@@ -8,7 +8,7 @@ import useUpdateProfile from "../../fetch/useUpdateProfile";
 import Card from "../../ui/Card";
 import { useDispatch } from "react-redux";
 import { setModal } from "../../store/index";
-import ConfirmEditProfileModal from "../Portal/ConfirmEditProfileModal";
+import ConfirmProfileModal from "../Portal/ConfirmProfileModal";
 import useProfile from "../../fetch/useProfile";
 
 export default function EditProfile() {
@@ -34,7 +34,7 @@ export default function EditProfile() {
     githubLink.current.value = profile.social_github;
     linkedinLink.current.value = profile.social_linkedin;
     setShowImage(BaseURL + profile.profile_image);
-  }, [profile]);
+  }, []);
 
   function setNewImage(e) {
     console.log(e.target.files);
@@ -59,14 +59,14 @@ export default function EditProfile() {
     form_data.append("social_linkedin", linkedinLink.current.value);
 
     setData(form_data);
-    dispatch(setModal("edit-profile"));
+    dispatch(setModal("confirm-profile"));
 
     console.log(file);
   }
 
   return (
     <>
-      {modal === "edit-profile" && <ConfirmEditProfileModal data={data} />}
+      {modal === "confirm-profile" && <ConfirmProfileModal data={data} editProfile />}
       <Card editProfile>
         <h2 className={classes.title}>ویرایش پروفایل</h2>
         <div className={classes.choosePhoto}>

@@ -3,11 +3,10 @@ import { useRef, useState } from "react";
 import Button from "../../ui/Button";
 import Card from "../../ui/Card";
 import classes from "./style/ChangePassword.module.css";
-import useChangePassword from "../../fetch/useChangePassword";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { setModal } from "../../store/index";
-import ConfirmChangePasswordModal from "../Portal/ConfirmChangePasswordModal";
+import ConfirmProfileModal from "../Portal/ConfirmProfileModal";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -31,7 +30,7 @@ export default function ChangePassword() {
       newPassword.current.value === "" ||
       repeatNewPassword.current.value === ""
     ) {
-      toast.error('تمام فیلدها را پر کنید', {
+      toast('تمام فیلدها را پر کنید', {
         position: toast.POSITION.TOP_LEFT, autoClose: 5000
       })
       return;
@@ -44,7 +43,7 @@ export default function ChangePassword() {
     };
 
     setData(passwords);
-    dispatch(setModal("change-password"));
+    dispatch(setModal("confirm-profile"));
   }
 
   function inputChnaged() {
@@ -53,8 +52,8 @@ export default function ChangePassword() {
 
   return (
     <>
-      {modal === "change-password" && (
-        <ConfirmChangePasswordModal data={data} />
+      {modal === "confirm-profile" && (
+        <ConfirmProfileModal data={data} changePassword />
       )}
 
       <Card changePass>

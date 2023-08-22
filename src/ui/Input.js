@@ -40,6 +40,7 @@ export default function Input({
         placeholder={placeholder}
         type={type}
         ref={innerRef}
+        min={1}
         onChange={change}
       />
     );

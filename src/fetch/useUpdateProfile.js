@@ -5,11 +5,11 @@ import { setModal } from "../store/index";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function useUpdateProfile(data) {
+export default function useUpdateProfile(data, flag) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  if (data === null) return;
+  if (data === null || flag === undefined) return;
 
   fetch("http://127.0.0.1:8000/update-profile/", {
     method: "POST",

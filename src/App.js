@@ -20,7 +20,6 @@ import TeacherCourse from "./component/routePages/course/TeacherCourse";
 import ChangePassword from "./component/routePages/ChangePassword";
 import CourseMember from "./component/routePages/course/CourseMember";
 import CourseSetting from "./component/routePages/course/CourseSetting";
-import ConfirmChangePasswordModal from "./component/Portal/ConfirmChangePasswordModal";
 // import { useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -38,7 +37,16 @@ function App() {
     dispatch(reset());
     return (
       <>
-        <ToastContainer />
+        <ToastContainer
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={true}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark" />
         <Login />;
       </>
     )

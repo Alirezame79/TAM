@@ -1,15 +1,24 @@
 import { useParams } from "react-router-dom";
-import useCourseSetting from "../../../fetch/useCourseSetting";
+import useGetCourseSetting from "../../../fetch/useGetCourseSetting";
 import Card from "../../../ui/Card";
 import classes from "./style/CourseSetting.module.css";
 import Input from "../../../ui/Input";
 import { FaUserMinus, FaUserPlus, FaMinus, FaPlus } from "react-icons/fa";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "../../../ui/Button";
+import ConfirmCourseSettingModal from "../../Portal/ConfirmCourseSettingModal";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setModal } from "../../../store/index";
 
 export default function CourseSetting() {
   const { id } = useParams();
-  const { res } = useCourseSetting(id);
+  const { res } = useGetCourseSetting(id);
+  const [data, setData] = useState()
+  const dispatch = useDispatch()
+  const modal = useSelector((state) => {
+    return state.modal;
+  });
   let classLocation = useRef("");
   let classTime = useRef("");
   let groupCapacity = useRef("");
@@ -27,8 +36,22 @@ export default function CourseSetting() {
 
   console.log(res);
 
+  function editCourseDataClicked() {
+    let courseSetting = {
+      class_time: classTime.current.value,
+      class_location: classLocation.current.value,
+      group_capacity: groupCapacity.current.value,
+      projects_phase: projectPhase.current.value
+    }
+
+    setData(courseSetting)
+    dispatch(setModal("confirm-course-setting"));
+
+  }
+
   return (
     <div className={classes.content}>
+      {modal === "confirm-course-setting" && <ConfirmCourseSettingModal data={data} editProfile />}
       <Card courseSetting>
         <h2 className={classes.title}>ویرایش درس</h2>
         <div className={classes.Inputs}>
@@ -63,7 +86,7 @@ export default function CourseSetting() {
             />
           </div>
         </div>
-        <Button submit>مرحله بعد</Button>
+        <Button submit click={editCourseDataClicked}>مرحله بعد</Button>
       </Card>
 
       <Card assistants>

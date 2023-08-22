@@ -1,17 +1,22 @@
 import ReactDom from "react-dom";
-import Card from "../../ui/Card";
+import Back from "./Back";
 import Button from "../../ui/Button";
 import classes from "./style/Style.module.css";
-import Back from "./Back";
 import { useDispatch } from "react-redux";
 import { setModal } from "../../store/index";
+import useUpdateProfile from "../../fetch/useUpdateProfile";
 import { useState } from "react";
+import Card from "../../ui/Card";
 import useChangePassword from "../../fetch/useChangePassword";
 
-function Confirm({ data }) {
+function Confirm({ data, editProfile, changePassword }) {
   const dispatch = useDispatch();
   const [sendRequest, setSendRequest] = useState(null);
-  useChangePassword(sendRequest);
+
+  console.log(data, editProfile, changePassword)
+
+  useUpdateProfile(sendRequest, editProfile);
+  useChangePassword(sendRequest, changePassword);
 
   function acceptPortalClicked() {
     setSendRequest(data);
@@ -23,7 +28,8 @@ function Confirm({ data }) {
 
   return (
     <Card confirm>
-      <h2>آیا از تغییر رمزعبور خود اطمینان دارید؟</h2>
+      {editProfile && <h2>آیا اطمینان دارید که اطلاعات وارد شده به پروفایلتان اعمال شود؟</h2>}
+      {changePassword && <h2>آیا از تغییر رمزعبور خود اطمینان دارید؟</h2>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -36,11 +42,12 @@ function Confirm({ data }) {
   );
 }
 
-export default function ConfirmChangePasswordModal({ data }) {
+export default function ConfirmProfileModal({ data, editProfile, changePassword }) {
   return ReactDom.createPortal(
     <>
       <Back></Back>
-      <Confirm data={data}></Confirm>
+      {editProfile && <Confirm data={data} editProfile></Confirm>}
+      {changePassword && <Confirm data={data} changePassword></Confirm>}
     </>,
     document.querySelector(".modal-container")
   );
