@@ -2,8 +2,9 @@
   width: 100%;
   height: 100%;
   position: fixed;
-  background: linear-gradient(to right, #0f0c29ac, #302b63c1, #24243ee4),url(../imglog_auto_x2.jpg) 0px -25px/cover;
-   
+  background: linear-gradient(to right, #0f0c29ac, #302b63c1, #24243ee4),
+    url(../imglog_auto_x2.jpg) 0px -25px / cover;
+
   background-color: #dbdcff;
 }
 .tamLable {
@@ -17,15 +18,15 @@
 }
 .uniLable {
   height: 8%;
-    margin: auto auto;
-    position: fixed;
-    top: 1%;
-    left: 2%;
-  
-    background-color: white;
-    border-radius: 8px;
+  margin: auto auto;
+  position: fixed;
+  top: 1%;
+  left: 2%;
+
+  background-color: white;
+  border-radius: 8px;
 }
-.tamLogo{
+.tamLogo {
   height: 8%;
   margin: auto auto;
   position: fixed;
@@ -33,7 +34,6 @@
   right: 2%;
 }
 .header {
- 
   margin-bottom: 2%;
   display: flex;
   justify-content: space-between;
@@ -49,10 +49,6 @@
 }
 .inputsLocation {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row-revere;
   justify-content: space-between;
 }
-
-
-
-

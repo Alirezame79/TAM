@@ -1,14 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const VerificationSlice = createSlice({
-    name: "verification",
-    initialState: false,
-    reducers: {
-        setVerification(state, action) {
-            return action.payload;
-        }
-    }
+  name: "verification",
+  initialState: false,
+  reducers: {
+    setVerification(state, action) {
+      return action.payload;
+    },
+  },
 });
 
-export { VerificationSlice }
-export const { setVerification } = VerificationSlice.actions
+export { VerificationSlice };
+export const { setVerification } = VerificationSlice.actions;

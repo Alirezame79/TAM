@@ -7,10 +7,10 @@
   padding: 20px;
   position: relative;
 }
-.body{
+.body {
   display: flex;
 }
-.centarPage{
+.centarPage {
   height: 60%;
   width: 50%;
   margin: auto auto;
@@ -18,19 +18,17 @@
   position: relative;
 }
 
-
 .main {
-
-     text-align: right;
-    border: 2px solid #9fdbd1;
-    padding: 2% 2% 2%;
-    box-shadow: 5px 9px 11px -2px #1e5a50;
-    height: 25%;
-    width: 23%;
-    margin: auto auto;
-    position: fixed;
-    top: 42%;
-    right: 22%;
+  text-align: right;
+  border: 2px solid #9fdbd1;
+  padding: 2% 2% 2%;
+  box-shadow: 5px 9px 11px -2px #1e5a50;
+  height: 25%;
+  width: 23%;
+  margin: auto auto;
+  position: fixed;
+  top: 42%;
+  right: 22%;
 }
 
 li {
@@ -39,7 +37,6 @@ li {
   padding-left: 5%;
 }
 .name {
-
   background-color: #ffcf5d;
   border: 2px solid #f8b005;
   padding: 1% 5% 0%;
@@ -52,19 +49,19 @@ li {
   top: 15.2%;
   right: 23%;
 }
-h1{
+h1 {
   text-align: center;
 }
 .teacher {
   display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    height: 10%;
-    width: 34%;
-    margin: auto auto;
-    position: fixed;
-    left: 1%;
-    top: 17.2%;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  height: 10%;
+  width: 34%;
+  margin: auto auto;
+  position: fixed;
+  left: 1%;
+  top: 17.2%;
 }
 h4 {
   margin-bottom: 4%;
@@ -80,7 +77,6 @@ h4 {
   position: fixed;
   left: 3%;
   top: 34.2%;
-
 }
 .CircleBtn {
   box-shadow: 3px 2px 6px -1px #726262;

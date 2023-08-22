@@ -1,5 +1,5 @@
-import { createAction } from "@reduxjs/toolkit"
+import { createAction } from "@reduxjs/toolkit";
 
-const reset = createAction("app/reset")
+const reset = createAction("app/reset");
 
 export default reset;

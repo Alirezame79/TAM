@@ -11,8 +11,8 @@
 .image {
   object-fit: cover;
   border-radius: 50%;
-  width: 6rem;
-  height: 6rem;
+  width: 5.5rem;
+  height: 5.5rem;
 }
 
 .name {
@@ -24,18 +24,15 @@
 .choosePhoto {
   display: flex;
   justify-content: space-between;
-
-}
-
-label {
-  padding-top: 15px;
+  position: relative;
+  bottom: 1%;
 }
 
 .editProfileInput {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   justify-content: space-between;
- 
+
   text-align: right;
 }
 

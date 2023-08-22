@@ -1,8 +1,5 @@
-import classes from './style/Style.module.css'
+import classes from "./style/Style.module.css";
 
 export default function Back() {
-
-    return (
-        <div className={classes.back}></div>
-    )
+  return <div className={classes.back}></div>;
 }

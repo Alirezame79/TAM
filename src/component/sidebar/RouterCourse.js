@@ -1,13 +1,12 @@
-import classes from './style/RouterCourse.module.css';
-
+import classes from "./style/RouterCourse.module.css";
 
 function RouterCourse({ student, teacher, assistant, course }) {
-   let courseStyle;
-   if (teacher) courseStyle = classes.routerCourseClass + ' ' + classes.teacher;
-   if (assistant) courseStyle = classes.routerCourseClass + ' ' + classes.assistant;
-   if (student) courseStyle = classes.routerCourseClass + ' ' + classes.student;
+  let courseStyle;
+  if (teacher) courseStyle = classes.routerCourseClass + " " + classes.teacher;
+  if (assistant)
+    courseStyle = classes.routerCourseClass + " " + classes.assistant;
+  if (student) courseStyle = classes.routerCourseClass + " " + classes.student;
 
-
-   return <h4 className={courseStyle}>{course.name || "نام درس"}</h4>
+  return <h4 className={courseStyle}>{course.name || "نام درس"}</h4>;
 }
 export default RouterCourse;
