@@ -13,23 +13,31 @@ export default function Input({
   changePass,
   haveCounterInputs,
   addDeletAssistant,
+  addMemberOfGroup,
+  creatGroup,
+  groupDiscription,
 }) {
   let selectInput;
+  let textareaInput;
   if (login) selectInput = classes.inputLogin;
   if (editProfile) selectInput = classes.inputEditProfile;
   if (changePass) selectInput = classes.inputChangePass;
   if (courseSetting) selectInput = classes.inputCourseSetting;
   if (haveCounterInputs) selectInput = classes.inputhaveCounterInputs;
   if (addDeletAssistant) selectInput = classes.inputAddDeletAssistant;
+  if (addMemberOfGroup) selectInput = classes.inputAddMemberOfGroup;
+  if (creatGroup) selectInput = classes.inputcreatGroup;
+  if (editProfileBio) textareaInput = classes.inputEditProfileBio;
+  if (groupDiscription) textareaInput = classes.inputGroupDiscription;
 
-  if (editProfileBio) {
+  if (editProfileBio || groupDiscription) {
     return (
       <textarea
         id="bio"
         cols="40"
         rows="5"
         ref={innerRef}
-        className={classes.inputEditProfileBio}
+        className={textareaInput}
         defaultValue={defultValueText}
       />
     );

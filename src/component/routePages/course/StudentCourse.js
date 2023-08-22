@@ -26,6 +26,9 @@ export default function StudentCourse({ id }) {
   function courseMemberClicked() {
     navigate("members/");
   }
+  function creatGroupClicked() {
+    navigate("creatGroup/");
+  }
 
   return (
     <div className={classes.container}>
@@ -61,10 +64,10 @@ export default function StudentCourse({ id }) {
             <BiSolidGroup className={classes.place} />{" "}
             <p className={classes.CircleBtnText}> اعضا </p>
           </div>
-          <div className={classes.CircleBtn}>
+          <div className={classes.CircleBtn} onClick={creatGroupClicked}>
             {" "}
             <FaUsers className={classes.place1} />{" "}
-            <p className={classes.CircleBtnText}> لیست گروه ها</p>
+            <p className={classes.CircleBtnText} > لیست گروه ها</p>
           </div>
           <div className={classes.CircleBtn}>
             {" "}

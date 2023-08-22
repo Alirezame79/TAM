@@ -13,6 +13,8 @@ function Card({
   confirm,
   courseSetting,
   assistants,
+  creatGroup,
+  addMemberOfGroup,
 }) {
   let cardStyle;
   if (login) cardStyle = classes.loginStyle;
@@ -26,6 +28,8 @@ function Card({
   if (courseSetting) cardStyle = classes.courseSettingStyle;
   if (assistants) cardStyle = classes.assistantsStyle;
   if (alert) cardStyle = classes.alertStyle;
+  if (creatGroup) cardStyle = classes.creatGroupStyle;
+  if (addMemberOfGroup) cardStyle = classes.addMemberOfGroupStyle;
   return <div className={cardStyle}>{children}</div>;
 }
 

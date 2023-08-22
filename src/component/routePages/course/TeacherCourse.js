@@ -31,6 +31,7 @@ export default function TeacherCourse({ id }) {
   function courseSettingClicked() {
     navigate("setting/");
   }
+  
 
   return (
     <div className={classes.container}>

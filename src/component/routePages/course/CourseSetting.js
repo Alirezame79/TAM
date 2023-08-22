@@ -14,8 +14,8 @@ import { setModal } from "../../../store/index";
 export default function CourseSetting() {
   const { id } = useParams();
   const { res } = useGetCourseSetting(id);
-  const [data, setData] = useState()
-  const dispatch = useDispatch()
+  const [data, setData] = useState();
+  const dispatch = useDispatch();
   const modal = useSelector((state) => {
     return state.modal;
   });
@@ -41,33 +41,41 @@ export default function CourseSetting() {
       class_time: classTime.current.value,
       class_location: classLocation.current.value,
       group_capacity: groupCapacity.current.value,
-      projects_phase: projectPhase.current.value
-    }
+      projects_phase: projectPhase.current.value,
+    };
 
-    setData(courseSetting)
+    setData(courseSetting);
     dispatch(setModal("confirm-course-setting"));
-
   }
 
   return (
     <div className={classes.content}>
-      {modal === "confirm-course-setting" && <ConfirmCourseSettingModal data={data} editProfile />}
+      {modal === "confirm-course-setting" && (
+        <ConfirmCourseSettingModal data={data} editProfile />
+      )}
       <Card courseSetting>
         <h2 className={classes.title}>ویرایش درس</h2>
         <div className={classes.Inputs}>
           <div className={classes.courseSettingInput}>
-            <label htmlFor="Class Location">مکان کلاس</label>
+            <label htmlFor="Class Location" className={classes.labels}>
+              مکان کلاس
+            </label>
             <Input innerRef={classLocation} id="Class Location" courseSetting />
           </div>
 
           <div className={classes.courseSettingInput}>
-            <label htmlFor="Class Time">زمان کلاس</label>
+            <label htmlFor="Class Time" className={classes.labels}>
+              زمان کلاس
+            </label>
             <Input innerRef={classTime} id="Class Time" courseSetting />
           </div>
         </div>
         <div className={classes.haveCounterInputs}>
           <div className={classes.courseSettingInput}>
-            <label htmlFor="Group Capacity"> تعداد اعضا گروه</label>
+            <label htmlFor="Group Capacity" className={classes.numberLabels}>
+              {" "}
+              تعداد اعضا گروه
+            </label>
             <Input
               type="number"
               innerRef={groupCapacity}
@@ -77,7 +85,10 @@ export default function CourseSetting() {
           </div>
 
           <div className={classes.courseSettingInput}>
-            <label htmlFor="Projects Phase "> تعداد فازهای پروژه</label>
+            <label htmlFor="Projects Phase " className={classes.numberLabels}>
+              {" "}
+              تعداد فازهای پروژه
+            </label>
             <Input
               type="number"
               innerRef={projectPhase}
@@ -86,25 +97,28 @@ export default function CourseSetting() {
             />
           </div>
         </div>
-        <Button submit click={editCourseDataClicked}>مرحله بعد</Button>
+        <Button submit click={editCourseDataClicked}>
+          مرحله بعد
+        </Button>
       </Card>
 
       <Card assistants>
         <h2 className={classes.title}> لیست دستیاران </h2>
-        <div className={classes.addDeletAssistant}>
-          <Input addDeletAssistant />
-          <div className={classes.addDeletAssistantIcon}>
-            {/* <FaUserMinus className={classes.minusIcon} /> */}
-            <FaUserPlus />
-          </div>
-        </div>
+
         {res.assistant_profiles.map((profile) => {
           return (
-            <h4 className={classes.assistants} key={profile}>
-              {profile}
-            </h4>
+            <div className={classes.addDeletAssistant}>
+              <h4 className={classes.assistants} key={profile}>
+                {profile}
+              </h4>
+              <FaUserMinus className={classes.deletAssistantIcon} />
+            </div>
           );
         })}
+        <div className={classes.addDeletAssistant}>
+          <Input addDeletAssistant />
+          <FaUserPlus className={classes.addAssistantIcon} />
+        </div>
       </Card>
     </div>
   );
