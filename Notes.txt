@@ -10,19 +10,3 @@ Local Storage {
     Login => 0, 1
 }
 
-
-
-import { IconName } from "react-icons/fa";
-
-FaUserMinus,FaUserPlus // CourseSetting
-
-FaUserGraduate, FaUserTie ,  FaUser , FaUserEdit//courseMember
-    
-
-
-
-
-    /* <div className={classes.minusPlusIcon}>
-                                <FaMinus/>
-                                <FaPlus/>
-                            </div> */

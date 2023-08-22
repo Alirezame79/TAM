@@ -1,61 +1,63 @@
-.Inputs{
-    position: relative;
-   top: 5%;
-}
-.courseSettingInput{
-    display: flex;
+.content {
+  display: flex;
   flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: auto auto;
+  position: fixed;
+  top: 10%;
+  right: 20%;
+  left: 0;
+  bottom: 1%;
+}
+.Inputs {
+  position: relative;
+  top: 5%;
+}
+.courseSettingInput {
+  display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   text-align: right;
   margin-bottom: 5%;
 }
-.title{
-    text-align: center;
-    font-weight:400;
+.title {
+  text-align: center;
+  font-weight: 400;
 }
-
-.minusPlusIcon{
-    display: flex;
-    flex-direction: column-reverse;
-    transform: scale(0.8);
-    color: #0d0d34c2;
-    position: relative;
-    left: 15%;
-    bottom: 13%;
-
+.minusPlusIcon {
+  display: flex;
+  flex-direction: column-reverse;
+  transform: scale(0.8);
+  color: #0d0d34c2;
+  position: relative;
+  left: 15%;
+  bottom: 13%;
 }
-
 .assistants {
-    padding-bottom: 1%;
-    padding-right: 2%;
-    font-weight:400;
+  padding-bottom: 1%;
+  padding-right: 2%;
+  font-weight: 400;
 }
-
-
-.addDeletAssistant{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    margin-bottom: 2%;
-
+.addDeletAssistant {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: 13% 2% 13% 5%;
 }
-.addDeletAssistantIcon{
-    transform: scale(1.3);
-    width: 17%
+.addDeletAssistantIcon {
+  margin-top: 5%;
+  transform: scale(1.3);
 }
-.minusIcon{
-    padding-right: 10px;
-   
+.haveCounterInputs {
+  display: flex;
+  width: 100%;
+  position: relative;
+  margin-top: 5%;
+  justify-content: space-evenly;
 }
-.haveCounterInputs{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-}
-.groupOfInputs{
-    display: flex;
-    flex-direction: row-reverse;
-    position: relative;
-  
-    gap: 20px;
+.groupOfInputs {
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+  gap: 20px;
 }

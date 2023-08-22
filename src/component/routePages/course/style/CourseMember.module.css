@@ -6,23 +6,19 @@
   margin: 2px;
   padding: 15px 0px;
   border-radius: 15px;
-  
 }
-.role{
+.role {
   display: flex;
   flex-direction: row;
   position: relative;
- 
+
   justify-content: right;
-  
 }
 .eachMember {
-  
   gap: 25px;
   text-align: center;
 }
-.roleIcon{
+.roleIcon {
   padding-left: 15px;
   transform: scale(1.5);
-
 }
