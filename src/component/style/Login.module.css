@@ -45,10 +45,14 @@
 }
 
 .labelText {
-  margin-top: 5%;
+  position: relative;
+  right: 8%;
+  padding-bottom: 17px;
 }
 .inputsLocation {
   display: flex;
-  flex-direction: row-revere;
+  flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  width: 100%;
 }

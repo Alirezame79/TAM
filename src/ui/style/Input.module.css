@@ -4,15 +4,15 @@
 
 .inputLogin {
   background-color: #d1ece8;
-  width: 38%;
+  width: 80%;
+  left: 8%;
   height: 5px;
-  right: 31%;
   border: 3px solid #697d7a;
   color: #0d0d34c2;
   text-align: left;
   padding: 20px;
   box-shadow: 1px 4px 9px 0px rgba(0, 0, 0, 0.3);
-  position: fixed;
+  position: relative;
   border-radius: 20px;
 }
 
@@ -25,7 +25,10 @@
 .inputChangePass,
 .inputEditProfileBio,
 .inputCourseSetting,
-.inputAddDeletAssistant {
+.inputAddDeletAssistant,
+.inputAddMemberOfGroup,
+.inputcreatGroup,
+.inputGroupDiscription {
   background-color: #d1ece8;
   width: 80%;
   height: 0.8rem;
@@ -39,30 +42,59 @@
 .inputAddDeletAssistant {
   width: 50%;
 }
+.inputAddMemberOfGroup {
+  width: 75%;
+}
 
 .inputEditProfile:focus,
 .inputChangePass:focus,
 .inputEditProfileBio:focus,
 .inputCourseSetting:focus,
 .inputhaveCounterInputs:focus,
-.inputAddDeletAssistant:focus {
+.inputAddDeletAssistant:focus,
+.inputAddMemberOfGroup:focus,
+.inputcreatGroup:focus,
+.inputGroupDiscription :focus {
   background-color: white;
   border: 3px solid #7a6d6d;
 }
 
 .inputChangePass {
   width: 65%;
+  position: relative;
+  left: 12%;
+}
+.inputEditProfile {
+  position: relative;
+  left: 6%;
 }
 
 .inputEditProfileBio {
   text-align: right;
   height: 2rem;
+  position: relative;
+  left: 6%;
 }
-
+.inputGroupDiscription {
+  text-align: right;
+  height: 2rem;
+  position: relative;
+  left: 5%;
+}
+.inputcreatGroup {
+  text-align: right;
+  padding: 15px 22px;
+  width: 78%;
+  position: relative;
+  left: 5%;
+}
 .inputCourseSetting {
   text-align: right;
   padding: 15px 22px;
   width: 78%;
+
+  position: relative;
+  left: 6%;
 }
 
 .inputCourseSetting::placeholder,

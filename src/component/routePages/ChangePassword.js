@@ -8,9 +8,8 @@ import { useSelector } from "react-redux";
 import { setModal } from "../../store/index";
 import ConfirmProfileModal from "../Portal/ConfirmProfileModal";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ChangePassword() {
   let currentPassword = useRef("");
@@ -30,9 +29,10 @@ export default function ChangePassword() {
       newPassword.current.value === "" ||
       repeatNewPassword.current.value === ""
     ) {
-      toast('تمام فیلدها را پر کنید', {
-        position: toast.POSITION.TOP_LEFT, autoClose: 5000
-      })
+      toast("تمام فیلدها را پر کنید", {
+        position: toast.POSITION.TOP_LEFT,
+        autoClose: 5000,
+      });
       return;
     }
 
@@ -59,7 +59,9 @@ export default function ChangePassword() {
       <Card changePass>
         <h2 className={classes.title}>تغییر رمزعبور</h2>
         <div className={classes.changePassInput}>
-          <label htmlFor="bio">پسوورد کنونی </label>
+          <label htmlFor="bio" className={classes.labels}>
+            پسوورد کنونی{" "}
+          </label>
           <Input
             changePass
             innerRef={currentPassword}
@@ -68,7 +70,9 @@ export default function ChangePassword() {
           />
         </div>
         <div className={classes.changePassInput}>
-          <label htmlFor="bio">پسوورد جدید</label>
+          <label htmlFor="bio" className={classes.labels}>
+            پسوورد جدید
+          </label>
           <Input
             changePass
             type="password"
@@ -78,7 +82,9 @@ export default function ChangePassword() {
           />
         </div>
         <div className={classes.changePassInput}>
-          <label htmlFor="bio">تکرار پسوورد جدید</label>
+          <label htmlFor="bio" className={classes.labels}>
+            تکرار پسوورد جدید
+          </label>
           <Input
             changePass
             type="password"
