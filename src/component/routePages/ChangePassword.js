@@ -21,15 +21,13 @@ export default function ChangePassword() {
   const [data, setData] = useState(null);
   const dispatch = useDispatch();
 
-  // useChangePassword(data);
-
   function sendRequest() {
     if (
       currentPassword.current.value === "" ||
       newPassword.current.value === "" ||
       repeatNewPassword.current.value === ""
     ) {
-      toast("تمام فیلدها را پر کنید", {
+      toast.error("تمام فیلدها را پر کنید", {
         position: toast.POSITION.TOP_LEFT,
         autoClose: 5000,
       });
@@ -44,10 +42,6 @@ export default function ChangePassword() {
 
     setData(passwords);
     dispatch(setModal("confirm-profile"));
-  }
-
-  function inputChnaged() {
-    setData(null);
   }
 
   return (
@@ -66,7 +60,6 @@ export default function ChangePassword() {
             changePass
             innerRef={currentPassword}
             id="currentPassword"
-            change={inputChnaged}
           />
         </div>
         <div className={classes.changePassInput}>
@@ -78,7 +71,6 @@ export default function ChangePassword() {
             type="password"
             innerRef={newPassword}
             id="newPassword"
-            change={inputChnaged}
           />
         </div>
         <div className={classes.changePassInput}>
@@ -90,7 +82,6 @@ export default function ChangePassword() {
             type="password"
             innerRef={repeatNewPassword}
             id="repeatNewPassword"
-            change={inputChnaged}
           />
         </div>
         <Button submit click={sendRequest}>

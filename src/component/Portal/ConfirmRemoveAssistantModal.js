@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { setModal } from "../../store/index";
 import { useState } from "react";
 import Card from "../../ui/Card";
-import useEditCourseSetting from "../../fetch/useEditCourseSetting";
+import useRemoveAssistant from "../../fetch/useRemoveAssistant";
 
 function Confirm({ data, courseId }) {
     const dispatch = useDispatch();
@@ -14,10 +14,13 @@ function Confirm({ data, courseId }) {
 
     console.log(data)
 
-    useEditCourseSetting(sendRequest, courseId);
+    useRemoveAssistant(sendRequest, data, courseId);
 
     function acceptPortalClicked() {
-        setSendRequest(data);
+        let oldAssistant = {
+            assistant_id: data.id
+        }
+        setSendRequest(oldAssistant);
     }
 
     function closePortalClicked() {
@@ -26,7 +29,7 @@ function Confirm({ data, courseId }) {
 
     return (
         <Card confirm>
-            <h2>آیا از اعمال تغییرات درس اطمینان دارید؟</h2>
+            <h2>آیا میخواهید {data.name} را از دستیاران این درس حذف کنید؟</h2>
             <div className={classes.confirmBtnContainer}>
                 <Button click={closePortalClicked} cancle>
                     انصراف
@@ -39,11 +42,11 @@ function Confirm({ data, courseId }) {
     );
 }
 
-export default function ConfirmCourseSettingModal({ data, courseId }) {
+export default function ConfirmRemoveAssistantModal({ oldAssistant, courseId }) {
     return ReactDom.createPortal(
         <>
             <Back></Back>
-            <Confirm data={data} courseId={courseId}></Confirm>
+            <Confirm data={oldAssistant} courseId={courseId}></Confirm>
         </>,
         document.querySelector(".modal-container")
     );

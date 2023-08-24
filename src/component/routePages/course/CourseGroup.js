@@ -1,9 +1,10 @@
-import classes from "./style/CreatGroup.module.css";
+import classes from "./style/CourseGroup.module.css";
 import Button from "../../../ui/Button";
 import Input from "../../../ui/Input";
 import { FaUserPlus } from "react-icons/fa";
+import Card from "../../../ui/Card";
 
-function CreatGroup() {
+function CourseGroup() {
   return (
     <div className={classes.content}>
       <Card creatGroup>
@@ -34,4 +35,4 @@ function CreatGroup() {
   );
 }
 
-export default CreatGroup;
+export default CourseGroup;

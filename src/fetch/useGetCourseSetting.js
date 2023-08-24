@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setAssistantList, setCourseSetting } from '../store/index'
 
 export default function useCourseSetting(id) {
-  const [res, setRes] = useState(null);
+  const dispatch = useDispatch()
 
   useEffect(() => {
     fetch("http://127.0.0.1:8000/course/" + id + "/setting", {
@@ -16,9 +18,9 @@ export default function useCourseSetting(id) {
       })
       .then((data) => {
         console.log(data);
-        setRes(data);
+        dispatch(setCourseSetting(data))
+        dispatch(setAssistantList(data.assistant_profiles))
       });
   }, [id]);
 
-  return { res };
 }

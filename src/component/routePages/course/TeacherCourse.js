@@ -15,7 +15,6 @@ import { useNavigate } from "react-router-dom";
 import Card from "../../../ui/Card";
 
 export default function TeacherCourse({ id }) {
-  // const { id } = useParams();
   useCourse(id);
   const course = useSelector((state) => {
     return state.course;
@@ -31,7 +30,11 @@ export default function TeacherCourse({ id }) {
   function courseSettingClicked() {
     navigate("setting/");
   }
-  
+
+  function courseGroupClicked() {
+    navigate("group/");
+  }
+
 
   return (
     <div className={classes.container}>
@@ -67,7 +70,7 @@ export default function TeacherCourse({ id }) {
             <BiSolidGroup className={classes.place} />{" "}
             <p className={classes.CircleBtnText}> اعضا </p>
           </div>
-          <div className={classes.CircleBtn}>
+          <div className={classes.CircleBtn} onClick={courseGroupClicked}>
             {" "}
             <FaUsers className={classes.place1} />{" "}
             <p className={classes.CircleBtnText}> لیست گروه ها</p>

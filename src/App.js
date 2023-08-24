@@ -23,6 +23,7 @@ import CourseSetting from "./component/routePages/course/CourseSetting";
 // import { useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CourseGroup from "./component/routePages/course/CourseGroup";
 
 function App() {
   const isAuthenticated = useIsAuthenticated();
@@ -38,6 +39,7 @@ function App() {
     return (
       <>
         <ToastContainer
+          position="top-left"
           autoClose={5000}
           hideProgressBar={true}
           newestOnTop={false}
@@ -54,7 +56,17 @@ function App() {
     localStorage.setItem("login", "1");
     return (
       <>
-        <ToastContainer />
+        <ToastContainer
+          position="top-left"
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={true}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark" />
         <div className={classes.mainBody}>
           <Sidebar />
           <div className={classes.containerBody}>
@@ -65,11 +77,9 @@ function App() {
               <Route path="/course/:id" element={<Course />} />
               <Route path="/course/:id/members" element={<CourseMember />} />
               <Route path="/course/:id/setting" element={<CourseSetting />} />
+              <Route path="/course/:id/group" element={<CourseGroup />} />
               <Route path="/profile/edit" element={<EditProfile />} />
-              <Route
-                path="/profile/changePassword"
-                element={<ChangePassword />}
-              />
+              <Route path="/profile/changePassword" element={<ChangePassword />} />
               <Route path="/permissionDenied" element={<PermissionDenied />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

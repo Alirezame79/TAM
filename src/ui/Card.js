@@ -30,6 +30,7 @@ function Card({
   if (alert) cardStyle = classes.alertStyle;
   if (creatGroup) cardStyle = classes.creatGroupStyle;
   if (addMemberOfGroup) cardStyle = classes.addMemberOfGroupStyle;
+
   return <div className={cardStyle}>{children}</div>;
 }
 
