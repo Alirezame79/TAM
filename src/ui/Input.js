@@ -16,6 +16,7 @@ export default function Input({
   addMemberOfGroup,
   creatGroup,
   groupDiscription,
+  readOnly
 }) {
   let selectInput;
   let textareaInput;
@@ -50,6 +51,7 @@ export default function Input({
         ref={innerRef}
         min={1}
         onChange={change}
+        readOnly={readOnly}
       />
     );
   }

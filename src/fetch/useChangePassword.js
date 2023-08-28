@@ -4,6 +4,7 @@ import { setModal } from "../store/index";
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import BASEURL from "./BaseURL";
 
 export default function useChangePassword(data, flag) {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ export default function useChangePassword(data, flag) {
 
   if (data === null || flag === undefined) return;
 
-  fetch("http://127.0.0.1:8000/change-password/", {
+  fetch(BASEURL + "change-password/", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {

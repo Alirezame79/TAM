@@ -2,22 +2,23 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from "react-router-dom";
-import { setModal, setAssistantList } from '../store';
+import { useNavigate, useParams } from "react-router-dom";
+import { setModal, setGroupList } from '../store';
 import BASEURL from './BaseURL';
 
-export default function useRemoveAssistant(oldAssistant, user, id) {
+export default function useRemoveGroup(data) {
+    const { id } = useParams()
     const dispatch = useDispatch()
-    const assistantList = useSelector((state) => {
-        return state.assistantList;
+    const groupList = useSelector((state) => {
+        return state.groupList;
     })
 
     useEffect(() => {
-        if (oldAssistant === null) return
+        if (data === null) return
 
-        fetch(BASEURL + "course/" + id + "/remove-assistant/", {
+        fetch(BASEURL + "course/" + id + "/remove-group/", {
             method: "POST",
-            body: JSON.stringify(oldAssistant),
+            body: JSON.stringify(data),
             headers: {
                 "Content-Type": "application/json",
                 Authorization: "Bearer " + localStorage.getItem("token"),
@@ -27,10 +28,16 @@ export default function useRemoveAssistant(oldAssistant, user, id) {
                 console.log(response);
                 if (response.status === 200) {
                     console.log("Ok user")
-                    toast.success('دستیار با موفقیت حذف شد.')
-                    let list = [...assistantList]
-                    list.shift(user)
-                    dispatch(setAssistantList(list))
+                    toast.success('گروه با موفقیت حذف شد.')
+                    let list = [...groupList]
+                    for (const x of list) {
+                        console.log(x)
+                        if (x.id === data.id) {
+                            list.shift(x)
+                            break
+                        }
+                    }
+                    dispatch(setGroupList(list))
                 } else if (response.status === 403) {
                     console.log("Permission Denied")
                     toast.error('کاربر مورد نظر اجازه تغییر اطلاعات این درس را ندارد')
@@ -44,6 +51,6 @@ export default function useRemoveAssistant(oldAssistant, user, id) {
             .then((data) => {
                 console.log(data);
             });
-    }, [oldAssistant, id])
+    }, [data, id])
 
 }

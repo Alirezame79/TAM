@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { setModal } from "../store/index";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import BASEURL from "./BaseURL";
 
 export default function useUpdateProfile(data, flag) {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ export default function useUpdateProfile(data, flag) {
 
   if (data === null || flag === undefined) return;
 
-  fetch("http://127.0.0.1:8000/update-profile/", {
+  fetch(BASEURL + "update-profile/", {
     method: "POST",
     body: data,
     headers: {
@@ -22,14 +23,10 @@ export default function useUpdateProfile(data, flag) {
       console.log(response);
       if (response.status === 200) {
         navigate("/profile");
-        toast.success('پروفایل با موفقیت ویرایش شد', {
-          position: toast.POSITION.TOP_LEFT, autoClose: 5000
-        })
+        toast.success('پروفایل با موفقیت ویرایش شد')
         dispatch(setModal(null));
       } else {
-        toast.error('مشکلی رخ داده است', {
-          position: toast.POSITION.TOP_LEFT, autoClose: 5000
-        })
+        toast.error('مشکلی رخ داده است')
         dispatch(setModal(null));
       }
       return response.json();

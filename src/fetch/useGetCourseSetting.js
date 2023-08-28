@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setAssistantList, setCourseSetting } from '../store/index'
+import BASEURL from "./BaseURL";
 
 export default function useCourseSetting(id) {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/course/" + id + "/setting", {
+    fetch(BASEURL + "course/" + id + "/setting", {
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + localStorage.getItem("token"),

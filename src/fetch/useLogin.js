@@ -12,6 +12,7 @@ import {
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import BASEURL from "./BaseURL";
 
 const useLogin = (user) => {
   const signIn = useSignIn();
@@ -24,7 +25,7 @@ const useLogin = (user) => {
     return; // Because it's empty and caused error
   }
 
-  fetch("http://127.0.0.1:8000/login/", {
+  fetch(BASEURL + "login/", {
     method: "POST",
     body: JSON.stringify(user),
     headers: {
@@ -62,7 +63,7 @@ const useLogin = (user) => {
 
       console.log(data.access);
 
-      fetch("http://127.0.0.1:8000/user-profile-courses/", {
+      fetch(BASEURL + "user-profile-courses/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: "Bearer " + data.access,

@@ -6,13 +6,14 @@ import {
   setProfile,
 } from "../store/index";
 import { useIsAuthenticated } from "react-auth-kit";
+import BASEURL from "./BaseURL";
 
 const useInitial = () => {
   const dispatch = useDispatch();
   const isAuthenticated = useIsAuthenticated();
 
   if (isAuthenticated()) {
-    fetch("http://127.0.0.1:8000/user-profile-courses/", {
+    fetch(BASEURL + "user-profile-courses/", {
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + localStorage.getItem("token"),

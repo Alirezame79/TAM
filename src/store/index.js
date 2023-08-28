@@ -9,6 +9,7 @@ import { ModalsSlice, setModal } from "./slices/ModalsSlice";
 import { CheckAssistantSlice, setAssistant } from './slices/CheckAssistantSlice'
 import { CourseSettingSlice, setCourseSetting } from './slices/CourseSettingSlice'
 import { AssistantListSlice, setAssistantList } from './slices/AssistantListSlice'
+import { GroupListSlice, setGroupList } from './slices/GroupListSlice'
 import reset from "./actions/ProfileCourseActions";
 
 const store = configureStore({
@@ -23,6 +24,7 @@ const store = configureStore({
     checkAssistant: CheckAssistantSlice.reducer,
     courseSetting: CourseSettingSlice.reducer,
     assistantList: AssistantListSlice.reducer,
+    groupList: GroupListSlice.reducer,
   },
 });
 
@@ -38,5 +40,6 @@ export {
   setAssistant,
   setCourseSetting,
   setAssistantList,
+  setGroupList,
   reset,
 };

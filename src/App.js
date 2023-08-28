@@ -23,7 +23,7 @@ import CourseSetting from "./component/routePages/course/CourseSetting";
 // import { useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import CourseGroup from "./component/routePages/course/CourseGroup";
+import Group from "./component/routePages/course/Group";
 
 function App() {
   const isAuthenticated = useIsAuthenticated();
@@ -77,7 +77,7 @@ function App() {
               <Route path="/course/:id" element={<Course />} />
               <Route path="/course/:id/members" element={<CourseMember />} />
               <Route path="/course/:id/setting" element={<CourseSetting />} />
-              <Route path="/course/:id/group" element={<CourseGroup />} />
+              <Route path="/course/:id/group" element={<Group />} />
               <Route path="/profile/edit" element={<EditProfile />} />
               <Route path="/profile/changePassword" element={<ChangePassword />} />
               <Route path="/permissionDenied" element={<PermissionDenied />} />

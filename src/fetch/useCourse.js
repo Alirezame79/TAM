@@ -1,14 +1,9 @@
 import { useDispatch } from "react-redux";
-import {
-  setStudentCourses,
-  setAssistantCourses,
-  setTeacherCourses,
-  setProfile,
-  setCourse,
-} from "../store/index";
+import { setCourse } from "../store/index";
 import { useIsAuthenticated } from "react-auth-kit";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import BASEURL from "./BaseURL";
 
 export default function useCourse(id) {
   const dispatch = useDispatch();
@@ -17,7 +12,7 @@ export default function useCourse(id) {
 
   useEffect(() => {
     if (isAuthenticated()) {
-      fetch("http://127.0.0.1:8000/course/" + id + "/", {
+      fetch(BASEURL + "course/" + id + "/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: "Bearer " + localStorage.getItem("token"),
@@ -37,4 +32,5 @@ export default function useCourse(id) {
         });
     }
   }, [id]);
+
 }

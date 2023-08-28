@@ -27,28 +27,33 @@ export default function AssistantCourse({ id }) {
     navigate("members/");
   }
 
+  function courseGroupClicked() {
+    navigate("group/");
+  }
+
   return (
     <div className={classes.container}>
       <div className={classes.name}>
-        <h1> {course.name} </h1>
+        <h1> {course.course.name} </h1>
       </div>
 
       <div className={classes.teacher}>
         <img alt={"profile"} />
-        <h2>{course.owner.name} : استاد درس</h2>
+        <h2>{course.course.owner.name} : استاد درس</h2>
       </div>
 
       <div className={classes.centarPage}>
         <Card courseInfo>
-          <h4>{course.id} : آیدی درس</h4>
-          <h4> زمان : {course.class_time}</h4>
-          <h4>{course.class_location} : مکان </h4>
-          <h4> {course.exam_time} : امتحان</h4>
+          <h4>{course.course.id} : آیدی درس</h4>
+          <h4> زمان : {course.course.class_time}</h4>
+          <h4>{course.course.class_location} : مکان </h4>
+          <h4> {course.course.exam_time} : امتحان</h4>
+          <h4> : ظرفیت گروه {course.course.group_capacity}نفر </h4>
           <h4>
             {" "}
             :دستیاران
             <ul>
-              {course.assistant_profiles.map((assistant) => {
+              {course.course.assistant_profiles.map((assistant) => {
                 return <li key={assistant.id}>{assistant.name}</li>;
               })}
             </ul>
@@ -61,11 +66,11 @@ export default function AssistantCourse({ id }) {
             <BiSolidGroup className={classes.place} />{" "}
             <p className={classes.CircleBtnText}> اعضا </p>
           </div>
-          <div className={classes.CircleBtn}>
+          {course.group_status === 1 && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
             {" "}
             <FaUsers className={classes.place1} />{" "}
-            <p className={classes.CircleBtnText}> لیست گروه ها</p>
-          </div>
+            <p className={classes.CircleBtnText}>مشاهده گروه‌ها</p>
+          </div>}
           <div className={classes.CircleBtn}>
             {" "}
             <FaLaptopCode className={classes.place} />{" "}

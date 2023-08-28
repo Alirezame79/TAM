@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { setModal, setAssistantList } from '../store';
 import useGetCourseSetting from './useGetCourseSetting';
+import BASEURL from './BaseURL';
 
 export default function useAddAssistant(newAssistant, user, id) {
     const dispatch = useDispatch()
@@ -15,7 +16,7 @@ export default function useAddAssistant(newAssistant, user, id) {
     useEffect(() => {
         if (newAssistant === null) return
 
-        fetch("http://127.0.0.1:8000/course/" + id + "/add-assistant/", {
+        fetch(BASEURL + "course/" + id + "/add-assistant/", {
             method: "POST",
             body: JSON.stringify(newAssistant),
             headers: {

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import BASEURL from "./BaseURL";
 
 export default function useCourseMember(id) {
   const [res, setRes] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/course/" + id + "/members", {
+    fetch(BASEURL + "course/" + id + "/members", {
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + localStorage.getItem("token"),

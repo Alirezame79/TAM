@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setProfile } from "../store/index";
+import BASEURL from "./BaseURL";
 
 export default function useProfile() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/update-profile/", {
+    fetch(BASEURL + "update-profile/", {
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + localStorage.getItem("token"),

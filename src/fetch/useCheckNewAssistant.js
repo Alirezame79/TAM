@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch } from 'react-redux';
 import { setAssistant, setModal } from '../store';
+import BASEURL from './BaseURL';
 
 export default function useCheckNewAssistant(newAssistant, id) {
     const dispatch = useDispatch()
@@ -10,7 +11,7 @@ export default function useCheckNewAssistant(newAssistant, id) {
     useEffect(() => {
         if (newAssistant === null) return
 
-        fetch("http://127.0.0.1:8000/course/" + id + "/check-assistant/", {
+        fetch(BASEURL + "course/" + id + "/check-assistant/", {
             method: "POST",
             body: JSON.stringify(newAssistant),
             headers: {

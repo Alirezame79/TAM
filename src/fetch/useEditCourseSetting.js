@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { setModal } from "../store/index";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import BASEURL from "./BaseURL";
 
 
 export default function useEditCourseSetting(data, id) {
@@ -11,7 +12,7 @@ export default function useEditCourseSetting(data, id) {
 
     if (data === null) return
 
-    fetch("http://127.0.0.1:8000/course/" + id + "/setting/", {
+    fetch(BASEURL + "course/" + id + "/setting/", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
