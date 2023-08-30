@@ -84,7 +84,8 @@
   box-shadow: 6px 7px 19px -3px #31685f;
 }
 
-.membersStyle {
+.membersStyle,
+.groupsOfGroupListStyle {
   border: 2px solid #0303aa;
   height: auto;
   width: 90%;
@@ -92,6 +93,13 @@
   padding: 22px 40px;
   border-radius: 15px;
   margin-bottom: 1%;
+}
+.groupsOfGroupListStyle {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding: 40px 49px;
 }
 
 .confirmStyle,
@@ -117,7 +125,7 @@
 .creatGroupStyle {
   width: 40%;
   position: relative;
-  height: 80%;
+  height: 87%;
   padding: 25px 60px;
   border: 2px solid #121285;
   border-radius: 25px;
@@ -147,5 +155,29 @@
   width: 40%;
 }
 .addMemberOfGroupStyle {
-  height: 20%;
+  height: auto;
+}
+
+.groupViweDescriptionStyle {
+  border: 2px solid #9fdbd1;
+  box-shadow: 6px 7px 19px -3px #31685f;
+  width: 24%;
+  height: 25%;
+  position: relative;
+
+  top: 9%;
+  padding-top: 9%;
+  margin: auto;
+}
+
+.groupViweMemberStyle {
+  border: 2px solid #9fdbd1;
+  box-shadow: 6px 7px 19px -3px #31685f;
+  padding-top: 3%;
+  padding-right: 5%;
+  position: relative;
+  margin: auto;
+  height: 85%;
+  top: 12%;
+  width: 30%;
 }

@@ -16,6 +16,7 @@
   flex-direction: column;
   width: 80%;
   height: 100vh;
+  /* background: url(./images/backgroundImg7.jpg) 0px -25px / cover ; */
   background-color: rgb(240 234 244);
   /* rgb(255, 234, 195); */
 }

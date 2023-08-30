@@ -1,0 +1,29 @@
+.deletIcon {
+  display: flex;
+  color: #121285;
+  transform: scale(1.2);
+  position: relative;
+  right: 0%;
+}
+.textOfGroupList {
+  padding: 6% 7% 7% 0%;
+}
+.parts1,
+.parts2 {
+  position: relative;
+
+  width: 34%;
+  margin: auto;
+}
+.parts1 {
+  right: 6%;
+}
+.parts2 {
+  right: 12%;
+}
+.title {
+  font-size: 1.4rem;
+}
+.membersOfGroups {
+  padding: 6% 7% 0% 0%;
+}

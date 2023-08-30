@@ -16,7 +16,8 @@ export default function Input({
   addMemberOfGroup,
   creatGroup,
   groupDiscription,
-  readOnly
+  readOnly,
+  editGroup,
 }) {
   let selectInput;
   let textareaInput;
@@ -28,6 +29,7 @@ export default function Input({
   if (addDeletAssistant) selectInput = classes.inputAddDeletAssistant;
   if (addMemberOfGroup) selectInput = classes.inputAddMemberOfGroup;
   if (creatGroup) selectInput = classes.inputcreatGroup;
+  if (editGroup) selectInput = classes.inputcreatGroup;
   if (editProfileBio) textareaInput = classes.inputEditProfileBio;
   if (groupDiscription) textareaInput = classes.inputGroupDiscription;
 
