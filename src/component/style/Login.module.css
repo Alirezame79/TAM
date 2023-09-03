@@ -11,10 +11,10 @@
   padding: 10px 20px;
   color: white;
   font-size: 3rem;
-  position: fixed;
+  position: relative;
   margin: auto auto;
   top: 1%;
-  left: 47%;
+
 }
 .uniLable {
   height: 8%;
@@ -55,4 +55,28 @@
   justify-content: space-between;
   position: relative;
   width: 100%;
+/*   
+ max-width: ; */
+}
+
+@media(  max-width:600px ) and (min-width :300px ){
+  .body{
+    background: linear-gradient(to right, #0f0c29ac, #302b63c1, #24243ee4),
+    url(../imglog_auto_x2.jpg) 30% 0px / cover;  
+  }
+  
+  .tamLable {
+    font-size: 2rem;
+  }
+}
+
+@media(  max-width:1025px ) and (min-width :700px ){
+  .body{
+    background: linear-gradient(to right, #0f0c29ac, #302b63c1, #24243ee4),
+    url(../imglog_auto_x2.jpg) 30% 0px / cover;  
+  }
+  
+  .tamLable {
+    font-size: 3rem;
+  }
 }

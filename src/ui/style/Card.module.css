@@ -52,7 +52,7 @@
   border: 2px solid #9fdbd1;
   padding: 30px;
   box-shadow: 5px 9px 11px -2px #1e5a50;
-  height: 23%;
+  height: 25%;
   width: 22%;
   margin: auto auto;
   position: fixed;
@@ -180,4 +180,88 @@
   height: 85%;
   top: 12%;
   width: 30%;
+}
+/* jast login */
+@media (max-width: 600px) and (min-width: 300px) {
+  .loginStyle {
+    right: 11%;
+    top: 22%;
+    width: 58%;
+    height: 42%;
+  }
+}
+@media (max-width: 600px) and (min-width: 400px) {
+  .loginStyle {
+    right: 13%;
+  }
+}
+
+@media (max-width: 1025px) and (min-width: 700px) {
+  .loginStyle {
+    right: 16%;
+    top: 25%;
+    width: 58%;
+    height: 37%;
+  }
+}
+/* another cards */
+
+@media (max-width: 550px) and (min-width: 300px) {
+  .editProfileStyle,
+  .changePassStyle {
+    width: 70%;
+
+    border: none;
+    box-shadow: none;
+    top: 6%;
+    /* padding: 25px 35px; */
+    margin: auto;
+    height: 85%;
+    right: 0;
+    left: 0;
+  }
+  .changePassStyle {
+    height: 65%;
+    top: 0%;
+    bottom: 6%;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 600px) {
+  .editProfileStyle,
+  .changePassStyle {
+    width: 70%;
+    border: none;
+    box-shadow: none;
+    top: 2%;
+    margin: auto;
+    height: 80%;
+    right: 0;
+    left: 0;
+  }
+  .changePassStyle {
+    height: 65%;
+    top: 0%;
+    bottom: 6%;
+  }
+}
+
+@media (max-width: 550px) and (min-width: 300px) and(  max-height:950px ) and (min-height: 750px) {
+}
+
+@media (width: 1024px) and (height: 600px) {
+  .editProfileStyle {
+    height: 75%;
+    padding: 25px 60px;
+    width: 40%;
+    margin: auto auto;
+    position: fixed;
+    top: 4%;
+  }
+  .loginStyle {
+    right: 16%;
+    top: 25%;
+    width: 58%;
+    height: 50%;
+  }
 }

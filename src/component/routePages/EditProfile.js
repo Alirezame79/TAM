@@ -76,7 +76,7 @@ export default function EditProfile() {
             <input
               type="file"
               accept="image/*"
-              className={classes.input}
+              className={classes.inputImg}
               onChange={setNewImage}
             />
           </div>
@@ -113,7 +113,7 @@ export default function EditProfile() {
         </div>
         <div className={classes.editProfileInput}>
           <label htmlFor="linkedinLink" className={classes.labels}>
-            لینکدین
+            لینکدینI
           </label>
           <Input
             placeholder="لینکدین"
