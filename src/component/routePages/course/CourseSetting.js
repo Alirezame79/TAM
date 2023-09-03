@@ -39,7 +39,7 @@ export default function CourseSetting() {
   let projectPhase = useRef("");
   let newAssistant = useRef("");
 
-  useGetCourseSetting(id);
+  useGetCourseSetting(id)
   useCheckNewAssistant(checkNewAssistant, id)
   // useRemoveAssistant(removeAssistant, id)
 

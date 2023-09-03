@@ -2,32 +2,66 @@ import classes from "./style/DetailGroup.module.css";
 import Input from "../../../../ui/Input";
 import { FaUserPlus, FaTrashAlt, FaCog, FaUserMinus } from "react-icons/fa";
 import Card from "../../../../ui/Card";
-import { useParams } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import useDetailGroup from "../../../../fetch/useDetailGroup";
+import { useDispatch, useSelector } from "react-redux";
+import { setModal } from "../../../../store";
+import ConfirmRemoveGroupModal from "../../../Portal/ConfirmRemoveGroupModal";
+import ConfirmNewMemberModal from "../../../Portal/ConfirmNewMemberModal";
+import EditGroup from "./EditGroup";
+import useCheckNewMember from "../../../../fetch/useCheckNewMember";
 
 export default function CreateGroup() {
   const { id } = useParams();
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const [groupData, setGroupData] = useState(null)
+  const modal = useSelector((state) => {
+    return state.modal;
+  });
+  const addNewMember = useRef()
+  const [checkAddMember, setCheckAddMember] = useState(null)
   const { data } = useDetailGroup(id);
-  const groupName = useRef("");
-  const groupDescription = useRef("");
-
-  // useEffect(() => {
-  //     if (data === undefined) return
-  //     groupName.current.value = data.group.name;
-  //     groupDescription.current.value = data.group.description;
-  // }, [data])
+  useCheckNewMember(checkAddMember)
 
   if (data === undefined) return;
   console.log(data);
 
+  function deleteGroupClicked() {
+    const groupMiniData = {
+      id: data.group.id,
+      name: data.group.name,
+    };
+    setGroupData(groupMiniData);
+    dispatch(setModal("confirm-remove-group"));
+  }
+
+  function editGroupClicked() {
+    navigate("/course/" + id + "/group/edit")
+  }
+
+  function addMemberClicked() {
+    let member = {
+      student_id: addNewMember
+    }
+    setCheckAddMember(member)
+  }
+
   return (
+    <>
+    {modal === "confirm-remove-group" && (
+      <ConfirmRemoveGroupModal data={groupData} role='owner' />
+    )}
+    {modal === "check-group-member" && (
+      <ConfirmNewMemberModal data={addNewMember} courseId={id} />
+    )}
     <div className={classes.content}>
       <Card detailGroup>
         <h2 className={classes.title}>اطلاعات گروه</h2>
         <div className={classes.icons}>
-          <FaCog className={classes.icon} />
-          <FaTrashAlt className={classes.icon} />
+          <FaCog className={classes.icon} onClick={editGroupClicked} />
+          <FaTrashAlt className={classes.icon} onClick={deleteGroupClicked} />
         </div>
         <div className={classes.detailGroupSubjects}>
           <h2>: نام گروه</h2>
@@ -56,22 +90,19 @@ export default function CreateGroup() {
         <h2 className={classes.title}> اعضا گروه</h2>
         {data.group.members.map((member) => {
           return (
-            <div className={classes.member}>
-              <h3 key={member.id}>{member.name} </h3>
+            <div className={classes.member} key={member.id}>
+              <h3>{member.name} </h3>
               <FaUserMinus className={classes.addMemberOfGroupIcon} />
             </div>
           );
         })}
-        {/* <div className={classes.member}>
-                    <h3>کتایون غمگسار</h3>
-                    <FaUserMinus className={classes.addMemberOfGroupIcon}/>
-                </div> */}
 
         <div className={classes.addMemberOfGroup}>
-          <Input addMemberOfGroup />
-          <FaUserPlus className={classes.addMemberOfGroupIcon} />
+          <Input innerRef={addNewMember} addMemberOfGroup />
+          <FaUserPlus className={classes.addMemberOfGroupIcon} onClick={addMemberClicked} />
         </div>
       </Card>
     </div>
+    </>
   );
 }

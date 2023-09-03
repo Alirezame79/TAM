@@ -26,7 +26,7 @@ export default function GroupList() {
   return (
     <>
       {modal === "confirm-remove-group" && (
-        <ConfirmRemoveGroupModal data={groupData} />
+        <ConfirmRemoveGroupModal data={groupData} role='managers' />
       )}
       <Card groupList>
         {groupList.map((group) => {

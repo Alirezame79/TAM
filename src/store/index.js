@@ -10,6 +10,7 @@ import { CheckAssistantSlice, setAssistant } from './slices/CheckAssistantSlice'
 import { CourseSettingSlice, setCourseSetting } from './slices/CourseSettingSlice'
 import { AssistantListSlice, setAssistantList } from './slices/AssistantListSlice'
 import { GroupListSlice, setGroupList } from './slices/GroupListSlice'
+import { CheckMemberSlice, setMember } from './slices/CheckMemberSlice'
 import reset from "./actions/ProfileCourseActions";
 
 const store = configureStore({
@@ -25,6 +26,7 @@ const store = configureStore({
     courseSetting: CourseSettingSlice.reducer,
     assistantList: AssistantListSlice.reducer,
     groupList: GroupListSlice.reducer,
+    checkMember: CheckMemberSlice.reducer,
   },
 });
 
@@ -41,5 +43,6 @@ export {
   setCourseSetting,
   setAssistantList,
   setGroupList,
+  setMember,
   reset,
 };

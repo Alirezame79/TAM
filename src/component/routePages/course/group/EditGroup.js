@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import useDetailGroup from "../../../../fetch/useDetailGroup";
 
-export default function CreateGroup() {
+export default function EditGroup() {
   const { id } = useParams();
   const { data } = useDetailGroup(id);
   const groupName = useRef("");

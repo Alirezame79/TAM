@@ -69,14 +69,6 @@ export default function CreateGroup() {
           ساخت گروه
         </Button>
       </Card>
-
-      {/* <Card addMemberOfGroup>
-                <h2 className={classes.title}> اضافه کردن اعضا گروه</h2>
-                <div className={classes.addMemberOfGroup}>
-                    <Input addMemberOfGroup />
-                    <FaUserPlus className={classes.addMemberOfGroupIcon} />
-                </div>
-            </Card> */}
     </div>
   );
 }

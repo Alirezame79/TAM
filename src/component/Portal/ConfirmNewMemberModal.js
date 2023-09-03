@@ -2,25 +2,29 @@ import ReactDom from "react-dom";
 import Back from "./Back";
 import Button from "../../ui/Button";
 import classes from "./style/Style.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setModal } from "../../store/index";
 import { useState } from "react";
 import Card from "../../ui/Card";
-import useRemoveGroup from "../../fetch/useRemoveGroup";
+import useAddAssistant from "../../fetch/useAddAssistant";
 
-function Confirm({ data, role }) {
+function Confirm({ data, courseId }) {
     const dispatch = useDispatch();
     const [sendRequest, setSendRequest] = useState(null);
+    const checkMember = useSelector((state) => {
+        return state.checkMember;
+    })
 
     console.log(data)
+    console.log(checkMember)
 
-    useRemoveGroup(sendRequest, role);
+    // useAddMember(sendRequest, data, courseId);
 
     function acceptPortalClicked() {
-        let group = {
-            id: data.id
+        const newAssistant = {
+            student_id: data.id
         }
-        setSendRequest(group);
+        setSendRequest(newAssistant);
     }
 
     function closePortalClicked() {
@@ -29,7 +33,7 @@ function Confirm({ data, role }) {
 
     return (
         <Card confirm>
-            <h2>آیا میخواهید گروه {data.name} را حذف کنید؟</h2>
+            <h2>آیا میخواهید {} را به دستیاران این درس اضافه کنید؟</h2>
             <div className={classes.confirmBtnContainer}>
                 <Button click={closePortalClicked} cancle>
                     انصراف
@@ -42,11 +46,11 @@ function Confirm({ data, role }) {
     );
 }
 
-export default function ConfirmRemoveGroupModal({ data, role }) {
+export default function CheckNewMemberModal({ memberId, courseId }) {
     return ReactDom.createPortal(
         <>
             <Back></Back>
-            <Confirm data={data} role={role} ></Confirm>
+            <Confirm data={memberId} courseId={courseId}></Confirm>
         </>,
         document.querySelector(".modal-container")
     );
