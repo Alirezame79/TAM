@@ -65,3 +65,9 @@
 .teacherCourses {
   margin-top: 5%;
 }
+
+@media(  max-width:1000px ) and (min-width :300px ){
+  .container{
+    display: none;
+  }
+}

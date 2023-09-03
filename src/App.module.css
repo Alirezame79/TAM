@@ -11,11 +11,12 @@
 }
 
 .containerBody {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 80%;
   height: 100vh;
+  /* background: url(./images/backgroundImg7.jpg) 0px -25px / cover ; */
   background-color: rgb(240 234 244);
   /* rgb(255, 234, 195); */
 }
@@ -25,4 +26,13 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 25px;
+}
+
+
+@media(  max-width:1024px ) and (min-width :300px ){
+  .containerBody {
+  
+    width: 100%;
+   
+  }
 }

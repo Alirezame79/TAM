@@ -5,7 +5,7 @@
 .inputLogin {
   background-color: #d1ece8;
   width: 80%;
-  left: 8%;
+  margin: auto;
   height: 5px;
   border: 3px solid #697d7a;
   color: #0d0d34c2;
@@ -130,4 +130,43 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 2px;
   color: #121285;
   background-color: #121285;
+}
+
+@media (max-width: 420px) and (min-width: 300px) {
+  .inputLogin {
+    padding: 17px;
+    height: 0px;
+  }
+}
+
+/* another cards */
+
+@media (max-width: 550px) and (min-width: 300px) {
+  .inputEditProfile,
+  .inputEditProfileBio,
+  .inputChangePass {
+    width: 95%;
+    height: 17px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 600px) {
+  .inputEditProfile,
+  .inputEditProfileBio,
+  .inputChangePass {
+    width: 80%;
+    height: 37px;
+  }
+}
+
+@media (width: 1024px) and (height: 600px) {
+  .inputEditProfile,
+  .inputEditProfileBio {
+    width: 80%;
+    height: 16px;
+  }
+  .inputChangePass {
+    width: 80%;
+    height: 21px;
+  }
 }

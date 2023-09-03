@@ -15,6 +15,12 @@ function Card({
   assistants,
   creatGroup,
   addMemberOfGroup,
+  groupViweDescription,
+  groupViweMember,
+  detailGroup,
+  editGroup,
+  groupList,
+  groupsOfGroupList,
 }) {
   let cardStyle;
   if (login) cardStyle = classes.loginStyle;
@@ -29,7 +35,13 @@ function Card({
   if (assistants) cardStyle = classes.assistantsStyle;
   if (alert) cardStyle = classes.alertStyle;
   if (creatGroup) cardStyle = classes.creatGroupStyle;
+  if (editGroup) cardStyle = classes.creatGroupStyle;
+  if (detailGroup) cardStyle = classes.creatGroupStyle;
   if (addMemberOfGroup) cardStyle = classes.addMemberOfGroupStyle;
+  if (groupViweDescription) cardStyle = classes.groupViweDescriptionStyle;
+  if (groupViweMember) cardStyle = classes.groupViweMemberStyle;
+  if (groupList) cardStyle = classes.courseMemberStyle;
+  if (groupsOfGroupList) cardStyle = classes.groupsOfGroupListStyle;
 
   return <div className={cardStyle}>{children}</div>;
 }

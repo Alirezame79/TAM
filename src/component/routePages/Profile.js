@@ -36,9 +36,9 @@ export default function Profile() {
   return (
     <div className={classes.body}>
       <div className={classes.settindIcon}>
-        <FaCog className={classes.edit} onClick={editProfile} />
+        <FaCog className={classes.edits} onClick={editProfile} />
         <FaLock
-          className={classes.editPass}
+          className={classes.edits}
           onClick={changePasswordBtnClicked}
         />
       </div>
@@ -49,9 +49,9 @@ export default function Profile() {
           alt={"profile"}
           className={classes.profileImg}
         />
-        <h1>{profile.name || "نام"}</h1>
-        <h2>بیوگرافی: {profile.bio}</h2>
-        <h2> {profile.id} : شماره دانشجویی</h2>
+        <h1 className={classes.nameText}>{profile.name || "نام"}</h1>
+        <h2 className={classes.text}>بیوگرافی: {profile.bio}</h2>
+        <h2 className={classes.text}> {profile.id} : شماره دانشجویی</h2>
       </div>
 
       <div className={classes.profileLinks}>
