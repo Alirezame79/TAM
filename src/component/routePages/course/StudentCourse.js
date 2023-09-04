@@ -37,7 +37,7 @@ export default function StudentCourse({ id }) {
 
       <div className={classes.teacher}>
         <img alt={"profile"} />
-        <h2>{course.course.owner.name} : استاد درس</h2>
+        <h2>  استاد درس : {course.course.owner.name}</h2>
       </div>
 
       <div className={classes.centarPage}>

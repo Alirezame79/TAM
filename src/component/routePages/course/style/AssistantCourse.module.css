@@ -59,7 +59,7 @@ h4 {
   flex-flow: row wrap;
   align-items: center;
   height: 10%;
-  width: 38%;
+  width: 42%;
   margin: auto auto;
   position: fixed;
   left: 3%;
@@ -93,4 +93,215 @@ h4 {
 .place1 {
   transform: scale(1.3);
   padding-right: 25px;
+}
+
+@media (max-width: 1300px) and (min-width: 1024px) {
+  .bodyCircleBtn {
+    top: 25%;
+  }
+}
+
+@media (max-width: 550px) and (min-width: 355px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 89%;
+    margin: 0;
+    position: relative;
+    top: 4%;
+  }
+
+  .name {
+    padding: 8px 60px;
+    width: 33%;
+    position: relative;
+    left: 13%;
+    right: 0;
+    top: 1%;
+    margin: 0 auto;
+  }
+
+  .teacher {
+    height: 50px;
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0%;
+    margin: 14% auto 0%;
+  }
+  .centarPage {
+    height: 67%;
+    width: 87%;
+    display: flex;
+    flex-direction: column;
+    margin: 4% auto;
+    padding: 20px;
+  }
+  .bodyCircleBtn {
+    justify-content: center;
+    flex-direction: row-reverse;
+    height: 40%;
+    width: 110%;
+    margin-right: 23%;
+    position: relative;
+    padding-right: 11px;
+    left: -10px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .CircleBtn {
+    height: 5rem;
+    width: 5rem;
+    margin: 3%;
+  }
+
+  .place {
+    padding-right: 10px;
+    transform: scale(1.2);
+  }
+
+  .CircleBtnText {
+    padding-right: 8px;
+    font-size: small;
+  }
+}
+@media (max-width: 355px) and (min-width: 300px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 89%;
+    margin: 0;
+    position: relative;
+    top: 4%;
+  }
+
+  .name {
+    padding: 8px 60px;
+    width: 38%;
+    position: relative;
+    left: 13%;
+    right: 0;
+    top: 1%;
+    margin: 0 auto;
+  }
+
+  .teacher {
+    height: 50px;
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0%;
+    margin: 14% auto 0%;
+    font-size: small;
+  }
+  .centarPage {
+    height: 67%;
+    width: 87%;
+    display: flex;
+    flex-direction: column;
+    margin: 4% -2%;
+    padding: 20px;
+  }
+  .bodyCircleBtn {
+    justify-content: center;
+    flex-direction: row-reverse;
+    height: 40%;
+    width: 305px;
+    margin-right: 23%;
+    position: relative;
+    padding-right: 11px;
+    left: -30px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .CircleBtn {
+    height: 5rem;
+    width: 5rem;
+    margin: 3%;
+  }
+
+  .place {
+    padding-right: 10px;
+    transform: scale(1.2);
+  }
+
+  .CircleBtnText {
+    padding-right: 8px;
+    font-size: small;
+  }
+}
+
+@media (max-width: 1025px) and (min-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 89%;
+    margin: 0;
+    position: relative;
+    top: 7%;
+  }
+
+  .name {
+    padding: 8px 60px;
+    width: 52%;
+    position: relative;
+    left: 0%;
+    right: 0;
+    top: 1%;
+    margin: 0 auto;
+  }
+
+  .teacher {
+    height: 50px;
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0%;
+    margin: 14% auto 0%;
+  }
+  .centarPage {
+    height: 67%;
+    width: 87%;
+    display: flex;
+    flex-direction: column;
+    margin: 7% 7%;
+    padding: 20px;
+  }
+  .bodyCircleBtn {
+    justify-content: center;
+    flex-direction: row-reverse;
+    height: 23%;
+    width: 500px;
+    margin-right: 23%;
+    position: relative;
+    padding-right: 11px;
+    left: 0;
+    top: 0;
+    margin: 11% auto;
+    right: 0;
+    bottom: 0;
+  }
+
+  .CircleBtn {
+    height: 6rem;
+    width: 6rem;
+    margin: 3%;
+  }
+
+  .place {
+    padding-right: 14px;
+    transform: scale(1.2);
+  }
+
+  .CircleBtnText {
+    padding-right: 8px;
+    font-size: small;
+  }
 }
