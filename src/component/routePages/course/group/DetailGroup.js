@@ -6,11 +6,15 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import useDetailGroup from "../../../../fetch/useDetailGroup";
 import { useDispatch, useSelector } from "react-redux";
-import { setModal } from "../../../../store";
+import { setMember, setMembersList, setModal } from "../../../../store";
 import ConfirmRemoveGroupModal from "../../../Portal/ConfirmRemoveGroupModal";
 import ConfirmNewMemberModal from "../../../Portal/ConfirmNewMemberModal";
 import EditGroup from "./EditGroup";
-import useCheckNewMember from "../../../../fetch/useCheckNewMember";
+import useCheckGroupNewMember from "../../../../fetch/useCheckGroupNewMember";
+import useRemoveGroupMember from "../../../../fetch/useRemoveGroupMember";
+import ConfirmRemoveMember from "../../../Portal/ConfirmRemoveMember";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function CreateGroup() {
   const { id } = useParams();
@@ -22,8 +26,14 @@ export default function CreateGroup() {
   });
   const addNewMember = useRef()
   const [checkAddMember, setCheckAddMember] = useState(null)
+  const [removeMember, setRemoveMember] = useState(null)
   const { data } = useDetailGroup(id);
-  useCheckNewMember(checkAddMember)
+  const membersList = useSelector((state) => {
+    return state.membersList;
+  }) 
+
+  useCheckGroupNewMember(checkAddMember)
+  // useRemoveGroupMember(removeMember)
 
   if (data === undefined) return;
   console.log(data);
@@ -43,8 +53,9 @@ export default function CreateGroup() {
 
   function addMemberClicked() {
     let member = {
-      student_id: addNewMember
+      student_id: addNewMember.current.value
     }
+    addNewMember.current.value = ""
     setCheckAddMember(member)
   }
 
@@ -54,7 +65,10 @@ export default function CreateGroup() {
       <ConfirmRemoveGroupModal data={groupData} role='owner' />
     )}
     {modal === "check-group-member" && (
-      <ConfirmNewMemberModal data={addNewMember} courseId={id} />
+      <ConfirmNewMemberModal/>
+    )}
+    {modal === "confirm-remove-member" && (
+      <ConfirmRemoveMember user={removeMember} />
     )}
     <div className={classes.content}>
       <Card detailGroup>
@@ -88,11 +102,16 @@ export default function CreateGroup() {
 
       <Card addMemberOfGroup>
         <h2 className={classes.title}> اعضا گروه</h2>
-        {data.group.members.map((member) => {
+        {membersList.map((member) => {
           return (
             <div className={classes.member} key={member.id}>
               <h3>{member.name} </h3>
-              <FaUserMinus className={classes.addMemberOfGroupIcon} />
+              <FaUserMinus className={classes.addMemberOfGroupIcon} onClick={
+                function removeMemberClicked() {
+                  dispatch(setModal("confirm-remove-member"))
+                  setRemoveMember(member)
+                }
+              } />
             </div>
           );
         })}

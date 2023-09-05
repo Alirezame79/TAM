@@ -7,21 +7,19 @@ import { setModal } from "../../store/index";
 import { useState } from "react";
 import Card from "../../ui/Card";
 import useAddGroupMember from "../../fetch/useAddGroupMember";
+import useRemoveGroupMember from "../../fetch/useRemoveGroupMember";
 
-function Confirm() {
+function Confirm({user}) {
     const dispatch = useDispatch();
     const [sendRequest, setSendRequest] = useState(null);
-    const checkMember = useSelector((state) => {
-        return state.checkMember;
-    })
 
-    console.log(checkMember)
+    console.log(user)
 
-    useAddGroupMember(sendRequest, checkMember);
+    useRemoveGroupMember(sendRequest, user);
 
     function acceptPortalClicked() {
         const newMember = {
-            student_id: checkMember.id
+            student_id: user.id
         }
         setSendRequest(newMember);
     }
@@ -32,7 +30,7 @@ function Confirm() {
 
     return (
         <Card confirm>
-            <h2>آیا میخواهید {checkMember.name} را به گروه خود اضافه کنید؟</h2>
+            <h2>آیا میخواهید {user.name} را از گروه خارج کنید؟</h2>
             <div className={classes.confirmBtnContainer}>
                 <Button click={closePortalClicked} cancle>
                     انصراف
@@ -45,11 +43,11 @@ function Confirm() {
     );
 }
 
-export default function CheckNewMemberModal() {
+export default function ConfirmRemoveMember({user}) {
     return ReactDom.createPortal(
         <>
             <Back></Back>
-            <Confirm></Confirm>
+            <Confirm user={user}></Confirm>
         </>,
         document.querySelector(".modal-container")
     );

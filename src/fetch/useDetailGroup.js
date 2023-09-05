@@ -2,11 +2,15 @@ import BASEURL from "./BaseURL";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setMembersList } from "../store";
 
-export default function useDetailGroup(id) {
+export default function useDetailGroup() {
+    const {id} = useParams()
     const [data, setData] = useState()
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     useEffect(() => {
         fetch(BASEURL + "course/" + id + "/group-detail/", {
@@ -18,7 +22,7 @@ export default function useDetailGroup(id) {
             .then((response) => {
                 console.log(response);
                 if (response.status === 200) {
-                    console.log("create group 200")
+                    console.log("200")
                 } else if (response.status === 403) {
                     navigate("/permissionDenied")
                 } else {
@@ -28,6 +32,9 @@ export default function useDetailGroup(id) {
             })
             .then((data) => {
                 console.log(data);
+                if (data.group_status === 1) {
+                    dispatch(setMembersList(data.group.members))
+                }
                 setData(data)
             });
     }, [id])
