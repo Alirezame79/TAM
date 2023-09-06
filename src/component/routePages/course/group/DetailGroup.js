@@ -92,7 +92,7 @@ export default function CreateGroup() {
         </div>
         <div className={classes.detailGroupSubjects}>
           <h2>:حداکثر ظرفیت گروه ها </h2>
-          <h3 className={classes.info}>5 </h3>
+          <h3 className={classes.info}>{data.course.group_capacity}</h3>
         </div>
         <div className={classes.detailGroupSubjects}>
           <h2>: توضیجات</h2>

@@ -7,7 +7,7 @@ export default function useCourseSetting(id) {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    fetch(BASEURL + "course/" + id + "/setting", {
+    fetch(BASEURL + "course/" + id + "/update-course/", {
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + localStorage.getItem("token"),

@@ -3,14 +3,18 @@ import Button from "../../../../ui/Button";
 import Input from "../../../../ui/Input";
 import Card from "../../../../ui/Card";
 import { useParams } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import useDetailGroup from "../../../../fetch/useDetailGroup";
+import useUpdateGroup from "../../../../fetch/useUpdateGroup";
 
 export default function EditGroup() {
   const { id } = useParams();
   const { data } = useDetailGroup(id);
   const groupName = useRef("");
   const groupDescription = useRef("");
+  const [updatedData, setUpdatedData] = useState(null)
+  
+  useUpdateGroup(updatedData)
 
   useEffect(() => {
     if (data === undefined) return;
@@ -20,6 +24,15 @@ export default function EditGroup() {
 
   if (data === undefined) return;
   console.log(data);
+
+  function updateGroupClicked() {
+    let data = {
+      name: groupName.current.value,
+      description: groupDescription.current.value
+    }
+
+    setUpdatedData(data)
+  }
 
   return (
     <div className={classes.content}>
@@ -51,7 +64,7 @@ export default function EditGroup() {
           <label htmlFor="discription">توضیجات</label>
           <Input groupDiscription innerRef={groupDescription} />
         </div>
-        <Button submit>ویرایش اطلاعات گروه</Button>
+        <Button submit click={updateGroupClicked}>ویرایش اطلاعات گروه</Button>
       </Card>
     </div>
   );
