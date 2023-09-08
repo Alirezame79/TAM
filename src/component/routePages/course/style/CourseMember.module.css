@@ -35,3 +35,15 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #4848aa;
 }
+
+@media (max-width: 550px) and (min-width: 300px) {
+  .roleIcon {
+    transform: scale(1.2);
+  }
+  .roleTitle {
+    font-size: 22px;
+  }
+  .name {
+    font-size: 17px;
+  }
+}

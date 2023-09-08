@@ -75,6 +75,7 @@
   margin: auto auto;
   position: fixed;
   background-attachment: scroll;
+  overflow-x: clip;
   top: 9%;
   bottom: 0;
   right: 22%;
@@ -181,6 +182,65 @@
   top: 12%;
   width: 30%;
 }
+
+.studentProjectStyle {
+  width: 40%;
+  position: relative;
+  height: 75%;
+  padding: 42px 60px;
+  border: 2px solid #121285;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 6px 7px 19px -3px #7373f0bd;
+  margin: auto auto;
+  top: 5%;
+}
+
+.teacherProjectStyle {
+  width: 40%;
+  position: relative;
+  height: 75%;
+  padding: 42px 60px;
+  border: 2px solid #121285;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 6px 7px 19px -3px #7373f0bd;
+  margin: auto auto;
+  top: 5%;
+}
+.projectListStyle {
+  border: 2px solid #9fdbd1;
+  max-height: 65%;
+  overflow-y: auto;
+  width: 30%;
+  margin: auto auto;
+  position: fixed;
+  background-attachment: scroll;
+  top: 9%;
+  bottom: 0;
+  right: 22%;
+  left: 0;
+  padding: 60px 52px;
+  border-radius: 20px;
+  box-shadow: 6px 7px 19px -3px #31685f;
+}
+.projectListItemStyle {
+  border: 2px solid #0303aa;
+  height: auto;
+  width: 80%;
+  margin: auto auto;
+  padding: 22px 40px;
+  border-radius: 15px;
+  margin-bottom: 1%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
 /* jast login */
 @media (max-width: 600px) and (min-width: 300px) {
   .loginStyle {
@@ -234,6 +294,41 @@
     top: 0;
     right: 0;
     bottom: 8%;
+  }
+  .courseMemberStyle {
+    border: none;
+    max-height: 72%;
+    overflow: hidden;
+    width: 100%;
+    bottom: 0;
+    right: 0%;
+    position: relative;
+    border-radius: 20px;
+    margin: 0 auto;
+    box-shadow: none;
+    padding: 0px 0px;
+  }
+
+  .membersStyle {
+    width: 65%;
+
+    padding: 22px 29px;
+    position: relative;
+    right: 0;
+    left: 0;
+    margin-bottom: 9%;
+  }
+}
+@media (max-width: 1000px) and (min-width: 600px) {
+  .courseMemberStyle {
+    top: 4%;
+    right: 0%;
+  }
+
+  .membersStyle {
+    padding: 22px 18px;
+
+    margin-bottom: 7%;
   }
 }
 
