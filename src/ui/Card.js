@@ -21,6 +21,10 @@ function Card({
   editGroup,
   groupList,
   groupsOfGroupList,
+  studentProject,
+  teacherProject,
+  projectList,
+  projectListItem,
 }) {
   let cardStyle;
   if (login) cardStyle = classes.loginStyle;
@@ -42,6 +46,10 @@ function Card({
   if (groupViweMember) cardStyle = classes.groupViweMemberStyle;
   if (groupList) cardStyle = classes.courseMemberStyle;
   if (groupsOfGroupList) cardStyle = classes.groupsOfGroupListStyle;
+  if (studentProject) cardStyle = classes.studentProjectStyle;
+  if (teacherProject) cardStyle = classes.teacherProjectStyle;
+  if (projectList) cardStyle = classes.projectListStyle;
+  if (projectListItem) cardStyle = classes.projectListItemStyle;
 
   return <div className={cardStyle}>{children}</div>;
 }
