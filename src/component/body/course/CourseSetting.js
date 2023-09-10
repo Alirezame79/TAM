@@ -6,14 +6,14 @@ import Input from "../../../ui/Input";
 import { FaUserMinus, FaUserPlus, FaMinus, FaPlus } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
 import Button from "../../../ui/Button";
-import ConfirmCourseSettingModal from "../../Portal/ConfirmCourseSettingModal";
+import ConfirmCourseSettingModal from "../../portal/ConfirmCourseSettingModal";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setModal } from "../../../store/index";
-import CheckNewAssistantModal from "../../Portal/CheckNewAssistantModal";
+import CheckNewAssistantModal from "../../portal/CheckNewAssistantModal";
 import useCheckNewAssistant from "../../../fetch/useCheckNewAssistant";
 import useRemoveAssistant from "../../../fetch/useRemoveAssistant";
-import ConfirmRemoveAssistantModal from "../../Portal/ConfirmRemoveAssistantModal";
+import ConfirmRemoveAssistantModal from "../../portal/ConfirmRemoveAssistantModal";
 
 export default function CourseSetting() {
   const { id } = useParams();

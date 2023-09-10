@@ -7,12 +7,12 @@ import { useEffect, useRef, useState } from "react";
 import useDetailGroup from "../../../../fetch/useDetailGroup";
 import { useDispatch, useSelector } from "react-redux";
 import { setMember, setMembersList, setModal } from "../../../../store";
-import ConfirmRemoveGroupModal from "../../../Portal/ConfirmRemoveGroupModal";
-import ConfirmNewMemberModal from "../../../Portal/ConfirmNewMemberModal";
+import ConfirmRemoveGroupModal from "../../../portal/ConfirmRemoveGroupModal";
+import ConfirmNewMemberModal from "../../../portal/ConfirmNewMemberModal";
 import EditGroup from "./EditGroup";
 import useCheckGroupNewMember from "../../../../fetch/useCheckGroupNewMember";
 import useRemoveGroupMember from "../../../../fetch/useRemoveGroupMember";
-import ConfirmRemoveMember from "../../../Portal/ConfirmRemoveMember";
+import ConfirmRemoveMember from "../../../portal/ConfirmRemoveMember";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

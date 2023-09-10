@@ -1,4 +1,4 @@
-import classes from "./style/AssistantCourse.module.css";
+import classes from "./style/StudentCourse.module.css";
 import { BiSolidGroup } from "react-icons/bi";
 import {
   FaCalendarAlt,
@@ -8,12 +8,11 @@ import {
 } from "react-icons/fa";
 import { FaBookOpenReader, FaLaptopCode } from "react-icons/fa6";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 import useCourse from "../../../fetch/useCourse";
 import { useNavigate } from "react-router-dom";
 import Card from "../../../ui/Card";
 
-export default function AssistantCourse({ id }) {
+export default function StudentCourse({ id }) {
   // const { id } = useParams();
   useCourse(id);
   const course = useSelector((state) => {
@@ -26,20 +25,24 @@ export default function AssistantCourse({ id }) {
   function courseMemberClicked() {
     navigate("members/");
   }
-
+  
   function courseGroupClicked() {
     navigate("group/");
+  }
+
+  function projectClicked() {
+    navigate("project/")
   }
 
   return (
     <div className={classes.container}>
       <div className={classes.name}>
-        <h1> {course.course.name} </h1>
+        <h1>{course.course.name}</h1>
       </div>
 
       <div className={classes.teacher}>
         <img alt={"profile"} />
-        <h2>{course.course.owner.name} : استاد درس</h2>
+        <h2>  استاد درس : {course.course.owner.name}</h2>
       </div>
 
       <div className={classes.centarPage}>
@@ -54,7 +57,7 @@ export default function AssistantCourse({ id }) {
             :دستیاران
             <ul>
               {course.course.assistant_profiles.map((assistant) => {
-                return <li key={assistant.id}>{assistant.name}</li>;
+                return <li key={assistant.id}>{assistant.name}</li>
               })}
             </ul>
           </h4>
@@ -66,15 +69,22 @@ export default function AssistantCourse({ id }) {
             <BiSolidGroup className={classes.place} />{" "}
             <p className={classes.CircleBtnText}> اعضا </p>
           </div>
-          {course.group_status === 1 && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
+
+          {(course.group_status === 2 || course.group_status === 3) && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
             {" "}
-            <FaUsers className={classes.place1} />{" "}
-            <p className={classes.CircleBtnText}>مشاهده گروه‌ها</p>
+            <FaUsers className={classes.place} />{" "}
+            <p className={classes.CircleBtnText} >گروه من</p>
           </div>}
-          <div className={classes.CircleBtn}>
+          {course.group_status === 4 && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
+            {" "}
+            <FaUsers className={classes.place} />{" "}
+            <p className={classes.CircleBtnText} >ساخت گروه</p>
+          </div>}
+
+          <div className={classes.CircleBtn} onClick={projectClicked}>
             {" "}
             <FaLaptopCode className={classes.place} />{" "}
-            <p className={classes.CircleBtnText}> پروژه ها </p>
+            <p className={classes.CircleBtnText}>لیست پروژه ها </p>
           </div>
           <div className={classes.CircleBtn}>
             {" "}

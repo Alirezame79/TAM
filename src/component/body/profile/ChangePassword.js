@@ -1,12 +1,12 @@
-import Input from "../../ui/Input";
+import Input from "../../../ui/Input";
 import { useRef, useState } from "react";
-import Button from "../../ui/Button";
-import Card from "../../ui/Card";
+import Button from "../../../ui/Button";
+import Card from "../../../ui/Card";
 import classes from "./style/ChangePassword.module.css";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { setModal } from "../../store/index";
-import ConfirmProfileModal from "../Portal/ConfirmProfileModal";
+import { setModal } from "../../../store/index";
+import ConfirmProfileModal from "../../portal/ConfirmProfileModal";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

@@ -1,15 +1,15 @@
-import Input from "../../ui/Input";
+import Input from "../../../ui/Input";
 import { useEffect, useRef, useState } from "react";
 import classes from "./style/EditProfile.module.css";
 import { useSelector } from "react-redux";
-import BaseURL from "../../fetch/BaseURL";
-import Button from "../../ui/Button";
-import useUpdateProfile from "../../fetch/useUpdateProfile";
-import Card from "../../ui/Card";
+import BaseURL from "../../../fetch/BaseURL";
+import Button from "../../../ui/Button";
+import useUpdateProfile from "../../../fetch/useUpdateProfile";
+import Card from "../../../ui/Card";
 import { useDispatch } from "react-redux";
-import { setModal } from "../../store/index";
-import ConfirmProfileModal from "../Portal/ConfirmProfileModal";
-import useProfile from "../../fetch/useProfile";
+import { setModal } from "../../../store/index";
+import ConfirmProfileModal from "../../portal/ConfirmProfileModal";
+import useProfile from "../../../fetch/useProfile";
 
 export default function EditProfile() {
   let bio = useRef("");

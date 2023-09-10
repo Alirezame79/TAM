@@ -7,17 +7,21 @@ import { setModal } from "../../store/index";
 import { useState } from "react";
 import Card from "../../ui/Card";
 import useCreateGroup from "../../fetch/useCreateGroup";
+import useLeaveGroup from "../../fetch/useLeaveGroup";
 
-function Confirm({ data, id }) {
+function Confirm({ data}) {
     const dispatch = useDispatch();
     const [sendRequest, setSendRequest] = useState(null);
 
     console.log(data)
 
-    useCreateGroup(sendRequest, id);
+    useLeaveGroup(sendRequest);
 
     function acceptPortalClicked() {
-        setSendRequest(data);
+        const requestData = {
+            group_id: data
+        }
+        setSendRequest(requestData);
     }
 
     function closePortalClicked() {
@@ -26,7 +30,7 @@ function Confirm({ data, id }) {
 
     return (
         <Card confirm>
-            <h2>آیا از ساخت گروه اطمینان دارید؟</h2>
+            <h2>آیا میخواهید گروه را ترک کنید؟</h2>
             <div className={classes.confirmBtnContainer}>
                 <Button click={closePortalClicked} cancle>
                     انصراف
@@ -39,11 +43,11 @@ function Confirm({ data, id }) {
     );
 }
 
-export default function ConfirmCreateGroupModal({ data, courseId }) {
+export default function ConfirmLeaveGroupModal({ data}) {
     return ReactDom.createPortal(
         <>
             <Back></Back>
-            <Confirm data={data} id={courseId}></Confirm>
+            <Confirm data={data}></Confirm>
         </>,
         document.querySelector(".modal-container")
     );

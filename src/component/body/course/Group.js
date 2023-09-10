@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import useCheckCreateGroup from "../../../fetch/useCheckGroup";
+import useCheckGroup from "../../../fetch/useCheckGroup";
 import Card from "../../../ui/Card";
 import CreateGroup from "./group/CreateGroup";
 import GroupList from "./group/GroupList";
@@ -9,7 +9,7 @@ import GroupView from "./group/GroupView";
 
 export default function Group() {
   const { id } = useParams();
-  const { data } = useCheckCreateGroup(id);
+  const { data } = useCheckGroup(id);
 
   if (data === undefined) return
   console.log(data)

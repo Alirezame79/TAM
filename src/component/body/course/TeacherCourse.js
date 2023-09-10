@@ -1,19 +1,20 @@
-import classes from "./style/StudentCourse.module.css";
+import classes from "./style/TeacherCourse.module.css";
 import { BiSolidGroup } from "react-icons/bi";
 import {
   FaCalendarAlt,
   FaFileAlt,
   FaUsers,
+  FaEdit,
   FaFileSignature,
 } from "react-icons/fa";
-import { FaBookOpenReader, FaLaptopCode } from "react-icons/fa6";
+import { FaLaptopCode, FaBookOpenReader } from "react-icons/fa6";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import useCourse from "../../../fetch/useCourse";
 import { useNavigate } from "react-router-dom";
 import Card from "../../../ui/Card";
 
-export default function StudentCourse({ id }) {
-  // const { id } = useParams();
+export default function TeacherCourse({ id }) {
   useCourse(id);
   const course = useSelector((state) => {
     return state.course;
@@ -25,9 +26,19 @@ export default function StudentCourse({ id }) {
   function courseMemberClicked() {
     navigate("members/");
   }
+
+  function courseSettingClicked() {
+    navigate("setting/");
+  }
+
   function courseGroupClicked() {
     navigate("group/");
   }
+
+  function projectClicked() {
+    navigate("project/");
+  }
+
 
   return (
     <div className={classes.container}>
@@ -37,7 +48,7 @@ export default function StudentCourse({ id }) {
 
       <div className={classes.teacher}>
         <img alt={"profile"} />
-        <h2>  استاد درس : {course.course.owner.name}</h2>
+        <h2>{course.course.owner.name} : استاد درس</h2>
       </div>
 
       <div className={classes.centarPage}>
@@ -52,11 +63,12 @@ export default function StudentCourse({ id }) {
             :دستیاران
             <ul>
               {course.course.assistant_profiles.map((assistant) => {
-                return <li key={assistant.id}>{assistant.name}</li>
+                return <li key={assistant.id}>{assistant.name}</li>;
               })}
             </ul>
           </h4>
         </Card>
+
 
         <div className={classes.bodyCircleBtn}>
           <div className={classes.CircleBtn} onClick={courseMemberClicked}>
@@ -64,22 +76,20 @@ export default function StudentCourse({ id }) {
             <BiSolidGroup className={classes.place} />{" "}
             <p className={classes.CircleBtnText}> اعضا </p>
           </div>
-
-          {(course.group_status === 2 || course.group_status === 3) && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
+          {course.group_status === 1 && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
             {" "}
-            <FaUsers className={classes.place} />{" "}
-            <p className={classes.CircleBtnText} >گروه من</p>
+            <FaUsers className={classes.place1} />{" "}
+            <p className={classes.CircleBtnText}>مشاهده گروه‌ها</p>
           </div>}
-          {course.group_status === 4 && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
-            {" "}
-            <FaUsers className={classes.place} />{" "}
-            <p className={classes.CircleBtnText} >ساخت گروه</p>
-          </div>}
-
-          <div className={classes.CircleBtn}>
+          <div className={classes.CircleBtn} onClick={projectClicked}>
             {" "}
             <FaLaptopCode className={classes.place} />{" "}
-            <p className={classes.CircleBtnText}> پروژه ها </p>
+            <p className={classes.CircleBtnText}> تنظیمات پروژه</p>
+          </div>
+          <div className={classes.CircleBtn} onClick={courseSettingClicked}>
+            {" "}
+            <FaEdit className={classes.place1} />{" "}
+            <p className={classes.CircleBtnText}> ویرایش درس </p>
           </div>
           <div className={classes.CircleBtn}>
             {" "}

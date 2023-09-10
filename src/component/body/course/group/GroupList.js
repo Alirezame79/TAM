@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import useGroupList from "../../../../fetch/useGroupList";
 import { setModal } from "../../../../store";
 import Card from "../../../../ui/Card";
-import ConfirmRemoveGroupModal from "../../../Portal/ConfirmRemoveGroupModal";
+import ConfirmRemoveGroupModal from "../../../portal/ConfirmRemoveGroupModal";
 import { FaTrashAlt } from "react-icons/fa";
 
 export default function GroupList() {

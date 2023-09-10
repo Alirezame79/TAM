@@ -1,7 +1,9 @@
-import classes from "./project/style/StudentProject.module.css";
-import Card from "../../../ui/Card";
-import Button from "./../../../ui/Button";
+import classes from "./style/StudentProject.module.css";
+import Card from "../../../../ui/Card";
+import Button from "./../../../../ui/Button";
+
 export default function StudentProject() {
+  
   return (
     <Card studentProject>
       <h2 className={classes.title}>ارسال پروژه</h2>

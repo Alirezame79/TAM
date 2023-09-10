@@ -63,7 +63,7 @@ const useLogin = (user) => {
 
       console.log(data.access);
 
-      fetch(BASEURL + "user-profile-courses/", {
+      fetch(BASEURL + "initialize/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: "Bearer " + data.access,

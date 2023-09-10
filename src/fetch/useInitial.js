@@ -13,14 +13,14 @@ const useInitial = () => {
   const isAuthenticated = useIsAuthenticated();
 
   if (isAuthenticated()) {
-    fetch(BASEURL + "user-profile-courses/", {
+    fetch(BASEURL + "initialize/", {
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + localStorage.getItem("token"),
       },
     })
       .then((response) => {
-        // console.log(response)
+        console.log(response)
         return response.json();
       })
       .then((data) => {

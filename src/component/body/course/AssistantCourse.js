@@ -1,20 +1,20 @@
-import classes from "./style/TeacherCourse.module.css";
+import classes from "./style/AssistantCourse.module.css";
 import { BiSolidGroup } from "react-icons/bi";
 import {
   FaCalendarAlt,
   FaFileAlt,
   FaUsers,
-  FaEdit,
   FaFileSignature,
 } from "react-icons/fa";
-import { FaLaptopCode, FaBookOpenReader } from "react-icons/fa6";
+import { FaBookOpenReader, FaLaptopCode } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import useCourse from "../../../fetch/useCourse";
 import { useNavigate } from "react-router-dom";
 import Card from "../../../ui/Card";
 
-export default function TeacherCourse({ id }) {
+export default function AssistantCourse({ id }) {
+  // const { id } = useParams();
   useCourse(id);
   const course = useSelector((state) => {
     return state.course;
@@ -27,19 +27,18 @@ export default function TeacherCourse({ id }) {
     navigate("members/");
   }
 
-  function courseSettingClicked() {
-    navigate("setting/");
-  }
-
   function courseGroupClicked() {
     navigate("group/");
   }
 
+  function projectClicked() {
+    navigate("project/")
+  }
 
   return (
     <div className={classes.container}>
       <div className={classes.name}>
-        <h1>{course.course.name}</h1>
+        <h1> {course.course.name} </h1>
       </div>
 
       <div className={classes.teacher}>
@@ -65,7 +64,6 @@ export default function TeacherCourse({ id }) {
           </h4>
         </Card>
 
-
         <div className={classes.bodyCircleBtn}>
           <div className={classes.CircleBtn} onClick={courseMemberClicked}>
             {" "}
@@ -77,15 +75,10 @@ export default function TeacherCourse({ id }) {
             <FaUsers className={classes.place1} />{" "}
             <p className={classes.CircleBtnText}>مشاهده گروه‌ها</p>
           </div>}
-          <div className={classes.CircleBtn}>
+          <div className={classes.CircleBtn} onClick={projectClicked}>
             {" "}
             <FaLaptopCode className={classes.place} />{" "}
-            <p className={classes.CircleBtnText}> پروژه ها </p>
-          </div>
-          <div className={classes.CircleBtn} onClick={courseSettingClicked}>
-            {" "}
-            <FaEdit className={classes.place1} />{" "}
-            <p className={classes.CircleBtnText}> ویرایش درس </p>
+            <p className={classes.CircleBtnText}> پروژه </p>
           </div>
           <div className={classes.CircleBtn}>
             {" "}

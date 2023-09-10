@@ -9,7 +9,7 @@ import { useRef, useState } from "react";
 import useCreateGroup from "../../../../fetch/useCreateGroup";
 import { useDispatch, useSelector } from "react-redux";
 import { setModal } from "../../../../store";
-import ConfirmCreateGroupModal from "../../../Portal/ConfirmCreateGroupModal";
+import ConfirmCreateGroupModal from "../../../portal/ConfirmCreateGroupModal";
 
 export default function CreateGroup() {
   const { id } = useParams();
