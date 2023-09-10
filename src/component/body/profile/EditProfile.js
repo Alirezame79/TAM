@@ -4,12 +4,11 @@ import classes from "./style/EditProfile.module.css";
 import { useSelector } from "react-redux";
 import BaseURL from "../../../fetch/BaseURL";
 import Button from "../../../ui/Button";
-import useUpdateProfile from "../../../fetch/useUpdateProfile";
 import Card from "../../../ui/Card";
 import { useDispatch } from "react-redux";
 import { setModal } from "../../../store/index";
-import ConfirmProfileModal from "../../portal/ConfirmProfileModal";
 import useProfile from "../../../fetch/useProfile";
+import Modal from "../../portal/Modal";
 
 export default function EditProfile() {
   let bio = useRef("");
@@ -47,28 +46,27 @@ export default function EditProfile() {
   }
 
   function sendRequest() {
-    let form_data = new FormData();
-    form_data.append("email", email.current.value);
-    form_data.append("bio", bio.current.value);
+    let requestData = new FormData();
+    requestData.append("email", email.current.value);
+    requestData.append("bio", bio.current.value);
     if (file !== null) {
-      form_data.append("profile_image", file, file.name);
+      requestData.append("profile_image", file, file.name);
     } else {
-      form_data.append("profile_image", "");
+      requestData.append("profile_image", "");
     }
-    form_data.append("social_github", githubLink.current.value);
-    form_data.append("social_linkedin", linkedinLink.current.value);
+    requestData.append("social_github", githubLink.current.value);
+    requestData.append("social_linkedin", linkedinLink.current.value);
 
-    setData(form_data);
-    dispatch(setModal("confirm-profile"));
+    setData(requestData);
+    dispatch(setModal("edit-user-profile"));
 
-    console.log(file);
+    // console.log(file);
   }
 
   return (
     <>
-      {modal === "confirm-profile" && (
-        <ConfirmProfileModal data={data} editProfile />
-      )}
+      {modal === "edit-user-profile" && <Modal data={data} editProfile />}
+      
       <Card editProfile>
         <h2 className={classes.title}>ویرایش پروفایل</h2>
         <div className={classes.choosePhoto}>

@@ -9,7 +9,7 @@ import { useRef, useState } from "react";
 import useCreateGroup from "../../../../fetch/useCreateGroup";
 import { useDispatch, useSelector } from "react-redux";
 import { setModal } from "../../../../store";
-import ConfirmCreateGroupModal from "../../../portal/ConfirmCreateGroupModal";
+import Modal from "../../../portal/Modal";
 
 export default function CreateGroup() {
   const { id } = useParams();
@@ -33,42 +33,43 @@ export default function CreateGroup() {
     };
     setGroupData(group);
 
-    dispatch(setModal("confirm-create-group"));
+    dispatch(setModal("create-new-group"));
   }
 
   return (
-    <div className={classes.content}>
-      {modal === "confirm-create-group" && (
-        <ConfirmCreateGroupModal data={groupData} courseId={id} />
-      )}
-      <Card creatGroup>
-        <h2 className={classes.title}>ساخت گروه</h2>
-        <div className={classes.creatGroupInput}>
-          <label htmlFor="Group name">نام گروه</label>
-          <Input id="Group name" creatGroup innerRef={name} />
-        </div>
-        <div className={classes.creatGroupInput}>
-          <label htmlFor="Course Name">نام درس </label>
-          <Input id="Course Name" placeholder={data.name} creatGroup readOnly />
-        </div>
-        <div className={classes.creatGroupInput}>
-          <label htmlFor="master">استاد</label>
-          <Input
-            id="master"
-            creatGroup
-            placeholder={data.owner.name}
-            readOnly
-          />
-        </div>
-        <div className={classes.creatGroupInput}>
-          <label htmlFor="discription">توضیجات</label>
-          <Input groupDiscription innerRef={description} />
-        </div>
-        <Button submit click={createGroupClicked}>
-          {" "}
-          ساخت گروه
-        </Button>
-      </Card>
-    </div>
+    <>
+      {modal === "create-new-group" && <Modal data={groupData} createGroup/>}
+
+      <div className={classes.content}>
+        <Card creatGroup>
+          <h2 className={classes.title}>ساخت گروه</h2>
+          <div className={classes.creatGroupInput}>
+            <label htmlFor="Group name">نام گروه</label>
+            <Input id="Group name" creatGroup innerRef={name} />
+          </div>
+          <div className={classes.creatGroupInput}>
+            <label htmlFor="Course Name">نام درس </label>
+            <Input id="Course Name" placeholder={data.name} creatGroup readOnly />
+          </div>
+          <div className={classes.creatGroupInput}>
+            <label htmlFor="master">استاد</label>
+            <Input
+              id="master"
+              creatGroup
+              placeholder={data.owner.name}
+              readOnly
+            />
+          </div>
+          <div className={classes.creatGroupInput}>
+            <label htmlFor="discription">توضیجات</label>
+            <Input groupDiscription innerRef={description} />
+          </div>
+          <Button submit click={createGroupClicked}>
+            {" "}
+            ساخت گروه
+          </Button>
+        </Card>
+      </div>
+    </>
   );
 }

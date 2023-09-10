@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setModal } from "../store/index";
 import { toast } from 'react-toastify';
@@ -6,13 +6,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import BASEURL from "./BaseURL";
 
 
-export default function useEditCourseSetting(data, id) {
+export default function useEditCourseSetting(data) {
+    const {id} = useParams();
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     if (data === null) return
 
-    fetch(BASEURL + "course/" + id + "/setting/", {
+    fetch(BASEURL + "course/" + id + "/update-course/", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {

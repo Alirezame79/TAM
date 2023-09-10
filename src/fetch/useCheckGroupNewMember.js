@@ -13,6 +13,7 @@ export default function useCheckNewMember(studentId) {
     
     useEffect(() => {
         if (studentId === null) return
+        console.log(studentId)
         
         fetch(BASEURL + "course/" + id + "/check-group-member/", {
             method: "POST",
@@ -26,7 +27,7 @@ export default function useCheckNewMember(studentId) {
                 console.log(response);
                 if (response.status === 200) {
                     console.log("Ok user")
-                    dispatch(setModal("check-group-member"));
+                    dispatch(setModal("add-group-member"));
                 } else if (response.status === 409) {
                     console.log("Conflict")
                     toast.error('دانشجوی مورد نظر، در حال حاضر عضو گروه می‌باشد.')

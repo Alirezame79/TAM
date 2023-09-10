@@ -1,8 +1,6 @@
 import classes from "./style/Profile.module.css";
 import { useSelector } from "react-redux";
 import BaseURL from "../../../fetch/BaseURL";
-import Button from "../../../ui/Button";
-import NotFound from "../other/NotFound";
 import { useNavigate } from "react-router-dom";
 import {
   FaGithub,
@@ -11,10 +9,6 @@ import {
   FaCog,
   FaLock,
 } from "react-icons/fa";
-import Card from "../../../ui/Card";
-import useInitial from "../../../fetch/useInitial";
-import useProfile from "../../../fetch/useProfile";
-import { useEffect } from "react";
 
 export default function Profile() {
   const profile = useSelector((state) => {

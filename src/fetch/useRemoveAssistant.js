@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { setModal, setAssistantList } from '../store';
 import BASEURL from './BaseURL';
 
-export default function useRemoveAssistant(oldAssistant, user, id) {
+export default function useRemoveAssistant(oldAssistant, user) {
+    const {id} = useParams();
     const dispatch = useDispatch()
     const assistantList = useSelector((state) => {
         return state.assistantList;

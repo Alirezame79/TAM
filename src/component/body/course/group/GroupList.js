@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 import useGroupList from "../../../../fetch/useGroupList";
 import { setModal } from "../../../../store";
 import Card from "../../../../ui/Card";
-import ConfirmRemoveGroupModal from "../../../portal/ConfirmRemoveGroupModal";
 import { FaTrashAlt } from "react-icons/fa";
+import Modal from "../../../portal/Modal";
 
 export default function GroupList() {
   const { id } = useParams();
@@ -25,9 +25,8 @@ export default function GroupList() {
 
   return (
     <>
-      {modal === "confirm-remove-group" && (
-        <ConfirmRemoveGroupModal data={groupData} role='managers' />
-      )}
+      {modal === "remove-group" && <Modal data={groupData} role='managers' removeGroup/>}
+
       <Card groupList>
         {groupList.map((group) => {
           return (
@@ -39,8 +38,9 @@ export default function GroupList() {
                     id: group.id,
                     name: group.name,
                   };
+                  console.log(miniData)
                   setGroupData(miniData);
-                  dispatch(setModal("confirm-remove-group"));
+                  dispatch(setModal("remove-group"));
                 }}
               ></FaTrashAlt>
               <div className={classes.parts1}>

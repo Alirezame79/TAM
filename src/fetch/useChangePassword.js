@@ -6,11 +6,11 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import BASEURL from "./BaseURL";
 
-export default function useChangePassword(data, flag) {
+export default function useChangePassword(data) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  if (data === null || flag === undefined) return;
+  if (data === null) return;
 
   fetch(BASEURL + "change-password/", {
     method: "POST",

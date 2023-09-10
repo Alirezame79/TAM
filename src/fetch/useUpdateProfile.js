@@ -9,7 +9,7 @@ export default function useUpdateProfile(data, flag) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  if (data === null || flag === undefined) return;
+  if (data === null) return;
 
   fetch(BASEURL + "update-profile/", {
     method: "POST",
@@ -24,11 +24,10 @@ export default function useUpdateProfile(data, flag) {
       if (response.status === 200) {
         navigate("/profile");
         toast.success('پروفایل با موفقیت ویرایش شد')
-        dispatch(setModal(null));
       } else {
         toast.error('مشکلی رخ داده است')
-        dispatch(setModal(null));
       }
+      dispatch(setModal(null));
       return response.json();
     })
     .then((data) => {

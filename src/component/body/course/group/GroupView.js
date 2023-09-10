@@ -2,19 +2,15 @@ import classes from "./style/GroupView.module.css";
 import Card from "../../../../ui/Card";
 import  Button from "../../../../ui/Button";
 import { useParams } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
 import useDetailGroup from "../../../../fetch/useDetailGroup";
 import { useDispatch, useSelector } from "react-redux";
-import ConfirmLeaveGroupModal from "../../../portal/ConfirmLeaveGroupModal";
 import { setModal } from "../../../../store";
+import Modal from "../../../portal/Modal";
 
 export default function GroupView() {
   const { id } = useParams();
   const { data } = useDetailGroup(id);
   const dispatch = useDispatch()
-  const groupName = useRef("");
-  const groupDescription = useRef("");
-  const [modalData, setModalData] = useState(null)
   const modal = useSelector((state) => {
     return state.modal;
   });
@@ -23,14 +19,13 @@ export default function GroupView() {
   console.log(data);
 
   function leaveGroupClicked() {
-    dispatch(setModal("confirm-leave-group"))
+    dispatch(setModal("leave-group"))
   }
 
   return (
     <>
-      {modal === "confirm-leave-group" && (
-      <ConfirmLeaveGroupModal data={data.group.id}/>
-      )}
+      {modal === "leave-group" && <Modal data={data.group.id} leaveGroup/>}
+
       <div className={classes.content}>
         <div className={classes.groupName}>
           <h1 className={classes.groupNameText}>{data.group.name} </h1>
@@ -38,7 +33,7 @@ export default function GroupView() {
         <div className={classes.groupView}>
           <Card groupViweDescription>
             <p className={classes.descriptionText}>
-              {data.group.description || "jkbhbhbjbjngvbrbobogb"}
+              {data.group.description || "Description"}
             </p>
           </Card>
 

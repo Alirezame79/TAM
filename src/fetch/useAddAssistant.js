@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { setModal, setAssistantList } from '../store';
 import useGetCourseSetting from './useGetCourseSetting';
 import BASEURL from './BaseURL';
 
-export default function useAddAssistant(newAssistant, user, id) {
+export default function useAddAssistant(newAssistant, user) {
+    const {id} = useParams()
     const dispatch = useDispatch()
     const assistantList = useSelector((state) => {
         return state.assistantList;
@@ -45,6 +46,6 @@ export default function useAddAssistant(newAssistant, user, id) {
             .then((data) => {
                 console.log(data);
             });
-    }, [newAssistant, id])
+    }, [newAssistant, user, id])
 
 }
