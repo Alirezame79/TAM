@@ -25,7 +25,7 @@ function Card({
   teacherProject,
   projectList,
   projectListItem,
-  viweProject,
+  viewProject,
 }) {
   let cardStyle;
   if (login) cardStyle = classes.loginStyle;
