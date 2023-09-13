@@ -1,10 +1,10 @@
-import classes from "./style/ViweProject.module.css";
+import classes from "./style/ViewProject.module.css";
 import Card from "../../../../ui/Card";
 import { FaFileDownload } from "react-icons/fa";
 
-export default function ViweProject() {
+export default function ViewProject() {
   return (
-    <Card viweProject>
+    <Card viewProject>
       <h2 className={classes.title}> پروژه شما</h2>
       <Card projectListItem>
         <h3>نام فایل آپلود شده</h3>

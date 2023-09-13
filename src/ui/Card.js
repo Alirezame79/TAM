@@ -51,7 +51,7 @@ function Card({
   if (teacherProject) cardStyle = classes.teacherProjectStyle;
   if (projectList) cardStyle = classes.projectListStyle;
   if (projectListItem) cardStyle = classes.projectListItemStyle;
-  if (viweProject) cardStyle = classes.viweProjectStyle;
+  if (viewProject) cardStyle = classes.viewProjectStyle;
   return <div className={cardStyle}>{children}</div>;
 }
 
