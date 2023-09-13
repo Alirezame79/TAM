@@ -27,3 +27,34 @@
 .membersOfGroups {
   padding: 6% 7% 0% 0%;
 }
+@media (max-width: 550px) and (min-width: 300px) {
+  .parts1,
+  .parts2 {
+    right: 0;
+    width: 100%;
+  }
+  .textOfGroupList {
+    font-size: 1rem;
+  }
+  .title {
+    font-size: 1.2rem;
+  }
+  .deletIcon {
+    transform: scale(1);
+    right: 15px;
+    bottom: 13px;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 600px) {
+  .textOfGroupList {
+    font-size: 1rem;
+  }
+  .title {
+    font-size: 1.2rem;
+  }
+}
+@media (width: 1024px) and (height: 1366px) {
+}
+@media (max-width: 1023px) and (min-width: 1000px) {
+}

@@ -1,12 +1,11 @@
-import classes from "./style/TeacherProject.module.css";
+import classes from "./style/ManageProject.module.css";
 import Card from "../../../../ui/Card";
-import Button from "./../../../../ui/Button";
+import Button from "../../../../ui/Button";
 import Input from "../../../../ui/Input";
 import SwitchInput from "../../../../ui/SwitchInput";
 import { FaFileAlt } from "react-icons/fa";
 
-export default function TeacherProject() {
-  
+export default function ManageProject() {
   return (
     <Card teacherProject>
       <h2 className={classes.title}>مدیریت پروژه</h2>

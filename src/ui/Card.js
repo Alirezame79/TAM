@@ -21,10 +21,11 @@ function Card({
   editGroup,
   groupList,
   groupsOfGroupList,
-  studentProject,
+  uploadProject,
   teacherProject,
   projectList,
   projectListItem,
+  viweProject,
 }) {
   let cardStyle;
   if (login) cardStyle = classes.loginStyle;
@@ -46,11 +47,11 @@ function Card({
   if (groupViweMember) cardStyle = classes.groupViweMemberStyle;
   if (groupList) cardStyle = classes.courseMemberStyle;
   if (groupsOfGroupList) cardStyle = classes.groupsOfGroupListStyle;
-  if (studentProject) cardStyle = classes.studentProjectStyle;
+  if (uploadProject) cardStyle = classes.uploadProjectStyle;
   if (teacherProject) cardStyle = classes.teacherProjectStyle;
   if (projectList) cardStyle = classes.projectListStyle;
   if (projectListItem) cardStyle = classes.projectListItemStyle;
-
+  if (viweProject) cardStyle = classes.viweProjectStyle;
   return <div className={cardStyle}>{children}</div>;
 }
 

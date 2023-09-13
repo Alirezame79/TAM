@@ -12,3 +12,9 @@ input[type="file"]::file-selector-button {
 input[type="file"]::file-selector-button:hover {
   background-color: #1919a4cf;
 }
+
+@media (max-width: 1000px) and (min-width: 600px) {
+  .content {
+    height: 100%;
+  }
+}
