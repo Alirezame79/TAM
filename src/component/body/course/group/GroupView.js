@@ -46,7 +46,7 @@ export default function GroupView() {
             })}
           </Card>
         </div>
-        <Button click={leaveGroupClicked}>Leave Group</Button>
+        <Button remove click={leaveGroupClicked}>Leave Group</Button>
       </div>
     </>
   );

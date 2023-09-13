@@ -18,7 +18,19 @@
   text-align: center;
   position: relative;
 }
-
+.remove {
+  border: 2px solid #7e2b2b;
+  background-color: #f26768;
+  padding: 13px 0px;
+  font-weight: bolder;
+  font-size: 1rem;
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: 15%;
+}
 .loginBtn:hover {
   background-color: #ffcd57;
 }
@@ -100,7 +112,8 @@
 /* another cards */
 
 @media (max-width: 550px) and (min-width: 300px) {
-  .submit {
+  .remove {
+    top: 0;
   }
 }
 
@@ -111,6 +124,9 @@
     width: 100%;
     margin-top: 6%;
     margin-bottom: 3%;
+  }
+  .remove {
+    top: 0;
   }
 }
 
@@ -124,5 +140,9 @@
     width: 100%;
     margin-top: 3%;
     margin-bottom: 3%;
+  }
+  .remove {
+    margin-top: 2%;
+    top: 0;
   }
 }

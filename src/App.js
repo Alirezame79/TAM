@@ -22,8 +22,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Group from "./component/body/course/Group";
 import EditGroup from "./component/body/course/group/EditGroup";
 import ProjectList from './component/body/course/project/ProjectList'
-import TeacherProject from './component/body/course/project/TeacherProject'
-import StudentProject from './component/body/course/project/StudentProject'
+import ManageProject from './component/body/course/project/ManageProject'
+import UploadProject from './component/body/course/project/UploadProject'
 
 function App() {
   const isAuthenticated = useIsAuthenticated();
@@ -81,7 +81,7 @@ function App() {
               <Route path="/course/:id/setting" element={<CourseSetting />} />
               <Route path="/course/:id/group" element={<Group />} />
               <Route path="/course/:id/group/edit" element={<EditGroup />} />
-              <Route path="/course/:id/project" element={<StudentProject />} />
+              <Route path="/course/:id/project" element={<UploadProject />} />
               <Route path="/permissionDenied" element={<PermissionDenied />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

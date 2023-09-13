@@ -3,7 +3,6 @@ import Card from "../../../../ui/Card";
 import { FaFileDownload } from "react-icons/fa";
 
 export default function ProjectList() {
-  
   return (
     <Card projectList>
       <h2 className={classes.title}>لیست پروژه ها</h2>

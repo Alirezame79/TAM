@@ -6,7 +6,7 @@
   height: 68%;
   margin: auto auto;
   position: fixed;
-  top: 18%;
+  top: 13%;
   left: 5%;
 }
 .groupName {
@@ -14,7 +14,7 @@
   box-shadow: 0px 2px 10px 1px #145e51b8;
   width: 100%;
   height: 11%;
-  padding-top: 2%;
+  padding-top: 1%;
 
   position: relative;
 }
@@ -50,4 +50,93 @@
 .nameOfMembers {
   padding-bottom: 5%;
   padding-right: 7%;
+}
+
+@media (max-width: 550px) and (min-width: 300px) {
+  .content {
+    flex-direction: column;
+    width: 100%;
+    height: 77%;
+    margin: 17% auto;
+    position: relative;
+    justify-content: start;
+    top: 0%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+  .groupName {
+    width: 86%;
+    height: 49px;
+    padding-top: 2%;
+    /* position: relative; */
+    margin: 0 auto;
+    font-size: 15px;
+  }
+  .groupView {
+    flex-direction: column-reverse;
+    height: 55%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 600px) {
+  .content {
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* width: 80%; */
+    height: 85%;
+    gap: 25px;
+    margin: auto auto;
+    position: fixed;
+    top: 5%;
+    right: 0%;
+    left: 0;
+    bottom: 0%;
+  }
+  .groupName {
+    width: 100%;
+    height: 49px;
+    padding-top: 2%;
+    /* position: relative; */
+    margin: 0 auto;
+    font-size: 15px;
+  }
+  .groupView {
+    flex-direction: column-reverse;
+    height: 55%;
+    margin: 0;
+  }
+}
+@media (width: 1024px) and (height: 1366px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* width: 80%; */
+    gap: 25px;
+    margin: auto auto;
+    position: fixed;
+    top: 10%;
+    right: 20%;
+    left: 0;
+    bottom: 1%;
+  }
+}
+@media (max-width: 1023px) and (min-width: 1000px) {
+  .content {
+    right: 0;
+  }
+}
+
+@media (width: 1024px) and (height: 600px) {
+  .content {
+    height: 78%;
+  }
+  .groupName {
+    height: 55px;
+    padding-top: 5px;
+  }
+  .groupView {
+  }
 }

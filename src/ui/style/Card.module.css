@@ -101,6 +101,7 @@
   justify-content: space-between;
   flex-direction: row-reverse;
   padding: 40px 49px;
+  right: 4%;
 }
 
 .confirmStyle,
@@ -136,6 +137,19 @@
   box-shadow: 6px 7px 19px -3px #7373f0bd;
   margin: auto auto;
 }
+.viewProjectStyle {
+  width: 40%;
+  position: relative;
+  height: 50%;
+  padding: 25px 60px;
+  border: 2px solid #121285;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 6px 7px 19px -3px #7373f0bd;
+  margin: auto auto;
+}
 .assistantsStyle,
 .addMemberOfGroupStyle {
   position: relative;
@@ -152,9 +166,6 @@
   width: 24%;
 }
 
-.creatGroupStyle {
-  width: 40%;
-}
 .addMemberOfGroupStyle {
   height: auto;
 }
@@ -183,7 +194,7 @@
   width: 30%;
 }
 
-.studentProjectStyle {
+.uploadProjectStyle {
   width: 40%;
   position: relative;
   height: 75%;
@@ -318,6 +329,66 @@
     left: 0;
     margin-bottom: 9%;
   }
+  .courseSettingStyle {
+    width: 84%;
+    position: relative;
+    height: 42%;
+    padding: 0px 0px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: none;
+    margin: 0 auto;
+  }
+  .uploadProjectStyle {
+    width: 84%;
+    position: relative;
+    height: 45%;
+    padding: 0px 0px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: none;
+    margin: 0 auto;
+  }
+  .creatGroupStyle {
+    width: 84%;
+    position: relative;
+    height: 57%;
+    padding: 0px 0px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: none;
+    margin: 0 auto;
+  }
+  .addMemberOfGroupStyle {
+    width: 70%;
+  }
+  .groupsOfGroupListStyle {
+    width: 50%;
+    flex-direction: column;
+    right: 0;
+  }
+  .groupViweMemberStyle {
+    padding-bottom: 4%;
+    margin: auto;
+    height: auto;
+    top: 0%;
+    width: 70%;
+    margin-bottom: 0;
+  }
+  .groupViweDescriptionStyle {
+    width: 70%;
+    top: 0;
+  }
+  .assistantsStyle {
+    height: auto;
+    width: 70%;
+  }
 }
 @media (max-width: 1000px) and (min-width: 600px) {
   .courseMemberStyle {
@@ -329,6 +400,47 @@
     padding: 22px 18px;
 
     margin-bottom: 7%;
+  }
+  .creatGroupStyle {
+    width: 55%;
+
+    height: 55%;
+  }
+  .addMemberOfGroupStyle {
+    width: 62%;
+  }
+  .groupViweMemberStyle {
+    padding-bottom: 4%;
+    margin: auto;
+    height: auto;
+    top: 0%;
+    width: 70%;
+  }
+  .groupViweDescriptionStyle {
+    width: 70%;
+    top: 0;
+  }
+  .assistantsStyle {
+    height: auto;
+    width: 55%;
+  }
+  .courseSettingStyle {
+    width: 50%;
+    position: relative;
+    height: 60%;
+    padding: 25px 60px;
+    border: 2px solid #121285;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 6px 7px 19px -3px #7373f0bd;
+    margin: auto auto;
+  }
+  .uploadProjectStyle {
+    width: 55%;
+    top: 0;
+    height: 55%;
   }
 }
 
@@ -358,9 +470,13 @@
     right: 0;
     bottom: 8%;
   }
-}
+  .groupsOfGroupListStyle {
+    right: 7%;
+  }
 
-@media (max-width: 550px) and (min-width: 300px) and(  max-height:950px ) and (min-height: 750px) {
+  .courseMemberStyle {
+    max-height: 55%;
+  }
 }
 
 @media (width: 1024px) and (height: 600px) {
@@ -377,5 +493,54 @@
     top: 25%;
     width: 58%;
     height: 50%;
+  }
+  .creatGroupStyle {
+    width: 37%;
+    height: 83%;
+    top: 2%;
+  }
+  .uploadProjectStyle {
+    width: 37%;
+    height: 70%;
+    top: 6%;
+  }
+  .addMemberOfGroupStyle {
+    width: 25%;
+  }
+  .groupViweMemberStyle {
+    padding-bottom: 4%;
+    margin: auto;
+    height: auto;
+    top: 0%;
+    width: 35%;
+  }
+  .groupViweDescriptionStyle {
+    width: 35%;
+    top: 0;
+  }
+  .courseSettingStyle {
+    width: 37%;
+
+    height: 77%;
+  }
+
+  .assistantsStyle {
+    height: auto;
+  }
+}
+@media (width: 1024px) and (height: 1366px) {
+  .creatGroupStyle {
+    width: 55%;
+    height: 50%;
+  }
+  .addMemberOfGroupStyle {
+    width: 45%;
+  }
+  .groupViweMemberStyle {
+    padding-bottom: 4%;
+    margin: auto;
+    height: auto;
+    top: 0%;
+    width: 35%;
   }
 }
