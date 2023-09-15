@@ -1,9 +1,10 @@
 import BASEURL from "./BaseURL";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 
-export default function useCheckGroup(id) {
+export default function useCheckGroup() {
+    const { id } = useParams();
     const navigate = useNavigate()
     const [data, setData] = useState()
 

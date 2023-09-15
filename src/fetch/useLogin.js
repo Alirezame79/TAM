@@ -1,13 +1,6 @@
-import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setToken } from "../store/index";
 import { useSignIn } from "react-auth-kit";
-import {
-  setStudentCourses,
-  setAssistantCourses,
-  setTeacherCourses,
-  setProfile,
-} from "../store/index";
+import { setStudentCourses, setAssistantCourses, setTeacherCourses, setProfile } from "../store/index";
 // import { useNavigate } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
@@ -38,9 +31,7 @@ const useLogin = (user) => {
         return response.json();
       } else {
         console.log(response.statusText);
-        toast.error('نام کاربری یا رمزعبور نادرست است', {
-          position: toast.POSITION.TOP_LEFT, autoClose: 5000
-        })
+        toast.error('نام کاربری یا رمزعبور نادرست است')
         return;
       }
     })

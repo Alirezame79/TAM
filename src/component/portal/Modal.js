@@ -16,6 +16,7 @@ import useRemoveGroup from '../../fetch/useRemoveGroup';
 import useRemoveGroupMember from '../../fetch/useRemoveGroupMember';
 import useAddGroupMember from '../../fetch/useAddGroupMember';
 import useLeaveGroup from '../../fetch/useLeaveGroup';
+import useUpdateGroup from '../../fetch/useUpdateGroup';
 
 function EditProfile({data}) {
     const dispatch = useDispatch();
@@ -35,7 +36,7 @@ function EditProfile({data}) {
   
     return (
       <Card confirm>
-        <h2>آیا اطمینان دارید که اطلاعات وارد شده به پروفایلتان اعمال شود؟</h2>
+        <h3>آیا اطمینان دارید که اطلاعات وارد شده به پروفایلتان اعمال شود؟</h3>
         <div className={classes.confirmBtnContainer}>
           <Button click={closePortalClicked} cancle>
             انصراف
@@ -209,6 +210,37 @@ function CreateGroup({data}) {
     );
 }
 
+function EditGroup({data}) {
+    const dispatch = useDispatch();
+    const [sendRequest, setSendRequest] = useState(null);
+
+    console.log(data)
+
+    useUpdateGroup(sendRequest)
+
+    function acceptPortalClicked() {
+        setSendRequest(data);
+    }
+
+    function closePortalClicked() {
+        dispatch(setModal(null));
+    }
+
+    return (
+        <Card confirm>
+            <h2>آیا از ویرایش اطلاعات گروه اطمینان دارید؟</h2>
+            <div className={classes.confirmBtnContainer}>
+                <Button click={closePortalClicked} cancle>
+                    انصراف
+                </Button>
+                <Button click={acceptPortalClicked} accept>
+                    تایید
+                </Button>
+            </div>
+        </Card>
+    );
+}
+
 function RemoveGroup({data, role}) {
     const dispatch = useDispatch();
     const [sendRequest, setSendRequest] = useState(null);
@@ -354,7 +386,7 @@ export default function Modal(
         editProfile, changePassword, 
         courseSetting, 
         addAssistant, removeAssistant, 
-        createGroup, removeGroup, 
+        createGroup, editGroup, removeGroup, 
         removeMember, addMember, leaveGroup}
     ){
 
@@ -371,6 +403,7 @@ export default function Modal(
             {removeAssistant && <RemoveAssistant data={data}></RemoveAssistant>}
 
             {createGroup && <CreateGroup data={data}></CreateGroup>}
+            {editGroup && <EditGroup data={data}></EditGroup>}
             {removeGroup && <RemoveGroup data={data} role={role}></RemoveGroup>}
 
             {removeMember && <RemoveMember data={data}></RemoveMember>}

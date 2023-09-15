@@ -1,12 +1,17 @@
-.main {
-  border: 2px solid red;
-  margin: 52% 86%;
-  height: 13rem;
-  width: 29rem;
-  padding-top: 19%;
+.container {
+  position: relative;
+  top: 15%;
+  right: 0;
+  left: 0;
 }
-.error {
-  color: red;
+
+.title {
   text-align: center;
-  font-size: -webkit-xxx-large;
+  padding-bottom: 10px;
+}
+
+.miniTitle {
+  text-align: center;
+  padding-bottom: 10px;
+  color: #f00;
 }

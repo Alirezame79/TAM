@@ -41,8 +41,7 @@ export default function StudentCourse({ id }) {
       </div>
 
       <div className={classes.teacher}>
-        <img alt={"profile"} />
-        <h2>  استاد درس : {course.course.owner.name}</h2>
+        <h2>  استاد : {course.course.owner.name}</h2>
       </div>
 
       <div className={classes.centarPage}>
@@ -70,12 +69,12 @@ export default function StudentCourse({ id }) {
             <p className={classes.CircleBtnText}> اعضا </p>
           </div>
 
-          {(course.group_status === 2 || course.group_status === 3) && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
+          {(course.group_status === 3 || course.group_status === 4) && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
             {" "}
             <FaUsers className={classes.place} />{" "}
             <p className={classes.CircleBtnText} >گروه من</p>
           </div>}
-          {course.group_status === 4 && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
+          {course.group_status === 5 && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
             {" "}
             <FaUsers className={classes.place} />{" "}
             <p className={classes.CircleBtnText} >ساخت گروه</p>
@@ -84,7 +83,7 @@ export default function StudentCourse({ id }) {
           <div className={classes.CircleBtn} onClick={projectClicked}>
             {" "}
             <FaLaptopCode className={classes.place} />{" "}
-            <p className={classes.CircleBtnText}>لیست پروژه ها </p>
+            <p className={classes.CircleBtnText}> پروژه </p>
           </div>
           <div className={classes.CircleBtn}>
             {" "}

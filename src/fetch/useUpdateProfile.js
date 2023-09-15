@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setModal } from "../store/index";
+import { setModal, setProfile } from "../store/index";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import BASEURL from "./BaseURL";
 
-export default function useUpdateProfile(data, flag) {
+export default function useUpdateProfile(data) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -31,6 +31,9 @@ export default function useUpdateProfile(data, flag) {
       return response.json();
     })
     .then((data) => {
+      if (data.id !== undefined) {
+        dispatch(setProfile(data))
+      }
       console.log(data);
     });
 }

@@ -12,6 +12,10 @@ import { AssistantListSlice, setAssistantList } from './slices/AssistantListSlic
 import { GroupListSlice, setGroupList } from './slices/GroupListSlice'
 import { CheckMemberSlice, setMember } from './slices/CheckMemberSlice'
 import { MembersListSlice, setMembersList } from './slices/MembersListSlice'
+import { ProjectSlice, setProject } from './slices/ProjectSlice'
+import { ProjectListSlice, setProjectList } from './slices/ProjectListSlice'
+import { MoreProjectDataSlice, setProjectData } from './slices/MoreProjectDataSlice'
+import { StudentProjectSlice, setStudentProject } from './slices/StudentProjectSlice'
 import reset from "./actions/ProfileCourseActions";
 
 const store = configureStore({
@@ -29,6 +33,10 @@ const store = configureStore({
     groupList: GroupListSlice.reducer,
     checkMember: CheckMemberSlice.reducer,
     membersList: MembersListSlice.reducer, 
+    project: ProjectSlice.reducer,
+    projectList: ProjectListSlice.reducer,
+    projectData: MoreProjectDataSlice.reducer,
+    studentProject: StudentProjectSlice.reducer,
   },
 });
 
@@ -47,5 +55,9 @@ export {
   setGroupList,
   setMember,
   setMembersList,
+  setProject,
+  setProjectList,
+  setProjectData,
+  setStudentProject,
   reset,
 };

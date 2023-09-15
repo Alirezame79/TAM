@@ -9,14 +9,13 @@ import { FaTrashAlt } from "react-icons/fa";
 import Modal from "../../../portal/Modal";
 
 export default function GroupList() {
-  const { id } = useParams();
-  useGroupList(id);
   const modal = useSelector((state) => {
     return state.modal;
   });
   const groupList = useSelector((state) => {
     return state.groupList;
   });
+  useGroupList();
   const dispatch = useDispatch();
   const [groupData, setGroupData] = useState(null);
 

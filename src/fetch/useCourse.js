@@ -1,36 +1,33 @@
 import { useDispatch } from "react-redux";
 import { setCourse } from "../store/index";
-import { useIsAuthenticated } from "react-auth-kit";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import BASEURL from "./BaseURL";
 
-export default function useCourse(id) {
+export default function useCourse() {
+  const {id} = useParams();
   const dispatch = useDispatch();
-  const isAuthenticated = useIsAuthenticated();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isAuthenticated()) {
-      fetch(BASEURL + "course/" + id + "/", {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
+    fetch(BASEURL + "course/" + id + "/", {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    })
+      .then((response) => {
+        console.log(response);
+        if (response.status === 403) {
+          navigate("/permissionDenied");
+          return;
+        }
+        return response.json();
       })
-        .then((response) => {
-          console.log(response);
-          if (response.status === 403) {
-            navigate("/permissionDenied");
-            return;
-          }
-          return response.json();
-        })
-        .then((data) => {
-          console.log(data);
-          dispatch(setCourse(data));
-        });
-    }
+      .then((data) => {
+        console.log(data);
+        dispatch(setCourse(data));
+      });
   }, [id]);
 
 }

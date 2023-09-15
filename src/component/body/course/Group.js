@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom";
 import useCheckGroup from "../../../fetch/useCheckGroup";
 import Card from "../../../ui/Card";
 import CreateGroup from "./group/CreateGroup";
@@ -8,19 +7,18 @@ import GroupView from "./group/GroupView";
 
 
 export default function Group() {
-  const { id } = useParams();
-  const { data } = useCheckGroup(id);
+  const { data } = useCheckGroup();
 
   if (data === undefined) return
   console.log(data)
 
-  if (data.group_status === 1) {
+  if (data.group_status === 1 || data.group_status === 2) {
     return <GroupList />
-  } else if (data.group_status === 2) {
-    return <DetailGroup />
   } else if (data.group_status === 3) {
-    return <GroupView />
+    return <DetailGroup />
   } else if (data.group_status === 4) {
+    return <GroupView />
+  } else if (data.group_status === 5) {
     return <CreateGroup />
   } else {
     return (

@@ -1,8 +1,6 @@
 import classes from "./style/Login.module.css";
-import Input from "../ui/Input";
-import Button from "../ui/Button";
-import { Checkbox, FormControlLabel } from "@mui/material";
-import { blue, pink } from "@mui/material/colors";
+import Input from "../../ui/Input";
+import Button from "../../ui/Button";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import {
@@ -10,16 +8,19 @@ import {
   setAssistantCourses,
   setTeacherCourses,
   setProfile,
-} from "../store/index";
+} from "../../store/index";
 import axios from "axios";
-import useLogin from "../fetch/useLogin";
+import useLogin from "../../fetch/useLogin";
 import { useSignIn } from "react-auth-kit";
-import uniLogo from "./navbar-logo.png";
-import Card from "../ui/Card";
+import Card from "../../ui/Card";
+import BASEURL from "../../fetch/BaseURL";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function Login() {
   const username = useRef("");
   const password = useRef("");
+  const navigate = useNavigate()
   const [user, setUser] = useState({});
   useLogin(user);
 
@@ -32,10 +33,15 @@ export default function Login() {
     setUser(user);
   }
 
+  function forgetPasswordBtnclicked() {
+    // navigate("/forget-password")
+    toast.error("این بخش هنوز پیاده سازی نشده است")
+  }
+
   return (
     <div className={classes.body}>
       <div className={classes.header}>
-        <img src={uniLogo} alt="guilan uni logo" className={classes.uniLable} />
+        <img src={BASEURL + "static/images/statics/uni-logo.png"} alt="guilan uni logo" className={classes.uniLable} />
         <h2 className={classes.tamLable}>سامانه تام</h2>
         <img src="image.jpg" alt="TAM logo" className={classes.tamLogo} />
       </div>
@@ -60,6 +66,8 @@ export default function Login() {
         <Button loginBtn click={loginClicked}>
           ورود
         </Button>
+
+        <p className={classes.forgerPasswordBtn} onClick={forgetPasswordBtnclicked}><i>رمزعبورم را فراموش کرده ام</i></p>
       </Card>
     </div>
   );

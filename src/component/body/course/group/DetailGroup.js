@@ -9,12 +9,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { setMembersList, setModal } from "../../../../store";
 import useCheckGroupNewMember from "../../../../fetch/useCheckGroupNewMember";
 import Modal from "../../../portal/Modal";
+import EditGroup from "./EditGroup";
 
 export default function CreateGroup() {
   const { id } = useParams();
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [groupData, setGroupData] = useState(null)
+  const [editGroupPage, setEditGroupPage] = useState(false)
   const modal = useSelector((state) => {
     return state.modal;
   });
@@ -42,7 +44,7 @@ export default function CreateGroup() {
   }
 
   function editGroupClicked() {
-    navigate("/course/" + id + "/group/edit")
+    setEditGroupPage(true)
   }
 
   function addMemberClicked() {
@@ -53,64 +55,68 @@ export default function CreateGroup() {
     setCheckAddMember(member)
   }
 
-  return (
-    <>
-      {modal === "remove-group" && <Modal data={groupData} role='owner' removeGroup/>}
-      {modal === "remove-group-member" && <Modal data={removeMember} removeMember/>}
-      {modal === "add-group-member" && <Modal addMember/>}
-
-      <div className={classes.content}>
-        <Card detailGroup>
-          <h2 className={classes.title}>اطلاعات گروه</h2>
-          <div className={classes.icons}>
-            <FaCog className={classes.icon} onClick={editGroupClicked} />
-            <FaTrashAlt className={classes.icon} onClick={deleteGroupClicked} />
-          </div>
-          <div className={classes.detailGroupSubjects}>
-            <h2>: نام گروه</h2>
-            <h3 className={classes.info}> {data.group.name} </h3>
-          </div>
-          <div className={classes.detailGroupSubjects}>
-            <h2>: نام درس</h2>
-            <h3 className={classes.info}>{data.course.name} </h3>
-          </div>
-
-          <div className={classes.detailGroupSubjects}>
-            <h2>: استاد</h2>
-            <h3 className={classes.info}> {data.course.owner.name} </h3>
-          </div>
-          <div className={classes.detailGroupSubjects}>
-            <h2>:حداکثر ظرفیت گروه ها </h2>
-            <h3 className={classes.info}>{data.course.group_capacity}</h3>
-          </div>
-          <div className={classes.detailGroupSubjects}>
-            <h2>: توضیجات</h2>
-            <h3 className={classes.info}>{data.group.description} </h3>
-          </div>
-        </Card>
-
-        <Card addMemberOfGroup>
-          <h2 className={classes.title}> اعضا گروه</h2>
-          {membersList.map((member) => {
-            return (
-              <div className={classes.member} key={member.id}>
-                <h3>{member.name} </h3>
-                <FaUserMinus className={classes.addMemberOfGroupIcon} onClick={
-                  function removeMemberClicked() {
-                    dispatch(setModal("remove-group-member"))
-                    setRemoveMember(member)
-                  }
-                } />
-              </div>
-            );
-          })}
-
-          <div className={classes.addMemberOfGroup}>
-            <Input innerRef={addNewMember} addMemberOfGroup />
-            <FaUserPlus className={classes.addMemberOfGroupIcon} onClick={addMemberClicked} />
-          </div>
-        </Card>
-      </div>
-    </>
-  );
+  if (editGroupPage) {
+    return <EditGroup />
+  } else {
+    return (
+      <>
+        {modal === "remove-group" && <Modal data={groupData} role='owner' removeGroup/>}
+        {modal === "remove-group-member" && <Modal data={removeMember} removeMember/>}
+        {modal === "add-group-member" && <Modal addMember/>}
+  
+        <div className={classes.content}>
+          <Card detailGroup>
+            <h2 className={classes.title}>اطلاعات گروه</h2>
+            <div className={classes.icons}>
+              <FaCog className={classes.icon} onClick={editGroupClicked} />
+              <FaTrashAlt className={classes.icon} onClick={deleteGroupClicked} />
+            </div>
+            <div className={classes.detailGroupSubjects}>
+              <h2>: نام گروه</h2>
+              <h3 className={classes.info}> {data.group.name} </h3>
+            </div>
+            <div className={classes.detailGroupSubjects}>
+              <h2>: نام درس</h2>
+              <h3 className={classes.info}>{data.course.name} </h3>
+            </div>
+  
+            <div className={classes.detailGroupSubjects}>
+              <h2>: استاد</h2>
+              <h3 className={classes.info}> {data.course.owner.name} </h3>
+            </div>
+            <div className={classes.detailGroupSubjects}>
+              <h2>:حداکثر ظرفیت گروه ها </h2>
+              <h3 className={classes.info}>{data.course.group_capacity}</h3>
+            </div>
+            <div className={classes.detailGroupSubjects}>
+              <h2>: توضیجات</h2>
+              <h3 className={classes.info}>{data.group.description} </h3>
+            </div>
+          </Card>
+  
+          <Card addMemberOfGroup>
+            <h2 className={classes.title}> اعضا گروه</h2>
+            {membersList.map((member) => {
+              return (
+                <div className={classes.member} key={member.id}>
+                  <h3>{member.name} </h3>
+                  <FaUserMinus className={classes.addMemberOfGroupIcon} onClick={
+                    function removeMemberClicked() {
+                      dispatch(setModal("remove-group-member"))
+                      setRemoveMember(member)
+                    }
+                  } />
+                </div>
+              );
+            })}
+  
+            <div className={classes.addMemberOfGroup}>
+              <Input innerRef={addNewMember} addMemberOfGroup />
+              <FaUserPlus className={classes.addMemberOfGroupIcon} onClick={addMemberClicked} />
+            </div>
+          </Card>
+        </div>
+      </>
+    );
+  }
 }

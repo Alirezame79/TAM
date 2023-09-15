@@ -3,7 +3,7 @@
   height: 100%;
   position: fixed;
   background: linear-gradient(to right, #0f0c29ac, #302b63c1, #24243ee4),
-    url(../imglog_auto_x2.jpg) 0px -25px / cover;
+    url(http://127.0.0.1:8000/static/images/statics/logo-background.jpg) 0px -25px / cover;
 
   background-color: #dbdcff;
 }
@@ -59,10 +59,16 @@
  max-width: ; */
 }
 
+.forgerPasswordBtn {
+  color: rgb(0, 110, 255);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 @media(  max-width:600px ) and (min-width :300px ){
   .body{
-    background: linear-gradient(to right, #0f0c29ac, #302b63c1, #24243ee4),
-    url(../imglog_auto_x2.jpg) 30% 0px / cover;  
+    /* background: linear-gradient(to right, #0f0c29ac, #302b63c1, #24243ee4),
+    url(../imglog_auto_x2.jpg) 30% 0px / cover;   */
   }
   
   .tamLable {
@@ -72,8 +78,8 @@
 
 @media(  max-width:1025px ) and (min-width :700px ){
   .body{
-    background: linear-gradient(to right, #0f0c29ac, #302b63c1, #24243ee4),
-    url(../imglog_auto_x2.jpg) 30% 0px / cover;  
+    /* background: linear-gradient(to right, #0f0c29ac, #302b63c1, #24243ee4),
+    url(../imglog_auto_x2.jpg) 30% 0px / cover;   */
   }
   
   .tamLable {

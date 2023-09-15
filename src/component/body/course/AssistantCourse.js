@@ -42,8 +42,7 @@ export default function AssistantCourse({ id }) {
       </div>
 
       <div className={classes.teacher}>
-        <img alt={"profile"} />
-        <h2>{course.course.owner.name} : استاد درس</h2>
+        <h2> استاد: {course.course.owner.name}</h2>
       </div>
 
       <div className={classes.centarPage}>
@@ -70,7 +69,7 @@ export default function AssistantCourse({ id }) {
             <BiSolidGroup className={classes.place} />{" "}
             <p className={classes.CircleBtnText}> اعضا </p>
           </div>
-          {course.group_status === 1 && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
+          {course.group_status === 2 && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
             {" "}
             <FaUsers className={classes.place1} />{" "}
             <p className={classes.CircleBtnText}>مشاهده گروه‌ها</p>
@@ -78,7 +77,7 @@ export default function AssistantCourse({ id }) {
           <div className={classes.CircleBtn} onClick={projectClicked}>
             {" "}
             <FaLaptopCode className={classes.place} />{" "}
-            <p className={classes.CircleBtnText}> پروژه </p>
+            <p className={classes.CircleBtnText}>لیست پروژه ها </p>
           </div>
           <div className={classes.CircleBtn}>
             {" "}
