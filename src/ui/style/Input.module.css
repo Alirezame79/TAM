@@ -24,6 +24,7 @@
 .inputEditProfile,
 .inputChangePass,
 .inputEditProfileBio,
+.inputManageProjectDescription,
 .inputCourseSetting,
 .inputAddDeletAssistant,
 .inputAddMemberOfGroup,
@@ -40,7 +41,8 @@
   border-radius: 15px;
 }
 .inputAddDeletAssistant {
-  width: 50%;
+  width: 74%;
+  text-align: center;
 }
 .inputAddMemberOfGroup {
   width: 75%;
@@ -49,6 +51,7 @@
 .inputEditProfile:focus,
 .inputChangePass:focus,
 .inputEditProfileBio:focus,
+.inputManageProjectDescription:focus,
 .inputCourseSetting:focus,
 .inputhaveCounterInputs:focus,
 .inputAddDeletAssistant:focus,
@@ -69,7 +72,8 @@
   left: 6%;
 }
 
-.inputEditProfileBio {
+.inputEditProfileBio,
+.inputManageProjectDescription {
   text-align: right;
   height: 2rem;
   position: relative;
@@ -148,6 +152,10 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 95%;
     height: 17px;
   }
+  .inputManageProjectDescription {
+    width: 70%;
+    height: 17px;
+  }
 
   .inputCourseSetting {
     width: 73%;
@@ -170,7 +178,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 @media (width: 1024px) and (height: 600px) {
   .inputEditProfile,
-  .inputEditProfileBio {
+  .inputEditProfileBio,
+  .inputManageProjectDescription {
     width: 80%;
     height: 16px;
   }

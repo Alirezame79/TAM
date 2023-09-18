@@ -20,7 +20,7 @@ import { toast } from "react-toastify";
 export default function Login() {
   const username = useRef("");
   const password = useRef("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [user, setUser] = useState({});
   useLogin(user);
 
@@ -35,13 +35,17 @@ export default function Login() {
 
   function forgetPasswordBtnclicked() {
     // navigate("/forget-password")
-    toast.error("این بخش هنوز پیاده سازی نشده است")
+    toast.error("این بخش هنوز پیاده سازی نشده است");
   }
 
   return (
     <div className={classes.body}>
       <div className={classes.header}>
-        <img src={BASEURL + "static/images/statics/uni-logo.png"} alt="guilan uni logo" className={classes.uniLable} />
+        <img
+          src={BASEURL + "static/images/statics/uni-logo.png"}
+          alt="guilan uni logo"
+          className={classes.uniLable}
+        />
         <h2 className={classes.tamLable}>سامانه تام</h2>
         <img src="image.jpg" alt="TAM logo" className={classes.tamLogo} />
       </div>
@@ -67,7 +71,12 @@ export default function Login() {
           ورود
         </Button>
 
-        <p className={classes.forgerPasswordBtn} onClick={forgetPasswordBtnclicked}><i>رمزعبورم را فراموش کرده ام</i></p>
+        <p
+          className={classes.forgerPasswordBtn}
+          onClick={forgetPasswordBtnclicked}
+        >
+          <i>رمزعبورم را فراموش کرده ام</i>
+        </p>
       </Card>
     </div>
   );

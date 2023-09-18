@@ -25,13 +25,13 @@ export default function StudentCourse({ id }) {
   function courseMemberClicked() {
     navigate("members/");
   }
-  
+
   function courseGroupClicked() {
     navigate("group/");
   }
 
   function projectClicked() {
-    navigate("project/")
+    navigate("project/");
   }
 
   return (
@@ -41,22 +41,22 @@ export default function StudentCourse({ id }) {
       </div>
 
       <div className={classes.teacher}>
-        <h2>  استاد : {course.course.owner.name}</h2>
+        <h2> استاد : {course.course.owner.name}</h2>
       </div>
 
       <div className={classes.centarPage}>
         <Card courseInfo>
           <h4>{course.course.id} : آیدی درس</h4>
           <h4> زمان : {course.course.class_time}</h4>
-          <h4>{course.course.class_location} : مکان </h4>
+          <h4> مکان : {course.course.class_location} </h4>
           <h4> {course.course.exam_time} : امتحان</h4>
-          <h4> : ظرفیت گروه {course.course.group_capacity}نفر </h4>
+          <h4> {course.course.group_capacity} ظرفیت گروه : نفر </h4>
           <h4>
             {" "}
             :دستیاران
             <ul>
               {course.course.assistant_profiles.map((assistant) => {
-                return <li key={assistant.id}>{assistant.name}</li>
+                return <li key={assistant.id}>{assistant.name}</li>;
               })}
             </ul>
           </h4>
@@ -69,16 +69,20 @@ export default function StudentCourse({ id }) {
             <p className={classes.CircleBtnText}> اعضا </p>
           </div>
 
-          {(course.group_status === 3 || course.group_status === 4) && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
-            {" "}
-            <FaUsers className={classes.place} />{" "}
-            <p className={classes.CircleBtnText} >گروه من</p>
-          </div>}
-          {course.group_status === 5 && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
-            {" "}
-            <FaUsers className={classes.place} />{" "}
-            <p className={classes.CircleBtnText} >ساخت گروه</p>
-          </div>}
+          {(course.group_status === 3 || course.group_status === 4) && (
+            <div className={classes.CircleBtn} onClick={courseGroupClicked}>
+              {" "}
+              <FaUsers className={classes.place1} />{" "}
+              <p className={classes.CircleBtnText}>گروه من</p>
+            </div>
+          )}
+          {course.group_status === 5 && (
+            <div className={classes.CircleBtn} onClick={courseGroupClicked}>
+              {" "}
+              <FaUsers className={classes.place1} />{" "}
+              <p className={classes.CircleBtnText1}>ساخت گروه</p>
+            </div>
+          )}
 
           <div className={classes.CircleBtn} onClick={projectClicked}>
             {" "}

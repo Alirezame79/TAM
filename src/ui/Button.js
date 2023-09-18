@@ -1,6 +1,15 @@
 import classes from "./style/Button.module.css";
 
-function Button({ children, click, loginBtn, submit, accept, cancle, ok, remove }) {
+function Button({
+  children,
+  click,
+  loginBtn,
+  submit,
+  accept,
+  cancle,
+  ok,
+  remove,
+}) {
   let btnClasses = classes.btn;
   if (loginBtn) btnClasses = btnClasses + " " + classes.loginBtn;
   if (submit) btnClasses = btnClasses + " " + classes.submit;

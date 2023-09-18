@@ -16,7 +16,8 @@ export default function CourseMember() {
 
   return (
     <Card courseMember>
-    
+      <h2 className={classes.title}>اعضا درس</h2>
+
       <Card members>
         <div className={classes.role}>
           <h2 className={classes.roleTitle}>استاد</h2>
@@ -56,7 +57,7 @@ export default function CourseMember() {
           <h2 className={classes.roleTitle}>دانشجویان</h2>
           <FaUserGraduate className={classes.roleIcon} />
         </div>
-        
+
         {res.student_profiles !== null && (
           <>
             {res.student_profiles.map((profile) => {

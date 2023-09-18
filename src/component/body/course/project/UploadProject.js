@@ -4,8 +4,7 @@ import Button from "../../../../ui/Button";
 import useGetStudentProject from "../../../../fetch/useGetStudentProject";
 
 export default function UploadProject() {
-
-  useGetStudentProject()
+  useGetStudentProject();
 
   return (
     <Card uploadProject>

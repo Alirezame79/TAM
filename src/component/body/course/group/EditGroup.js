@@ -13,14 +13,14 @@ import Modal from "../../../portal/Modal";
 export default function EditGroup() {
   const { id } = useParams();
   const { data } = useDetailGroup(id);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const modal = useSelector((state) => {
     return state.modal;
-  })
+  });
   const groupName = useRef("");
   const groupDescription = useRef("");
-  const [updatedData, setUpdatedData] = useState(null)
-  
+  const [updatedData, setUpdatedData] = useState(null);
+
   useEffect(() => {
     if (data === undefined) return;
     groupName.current.value = data.group.name;
@@ -33,16 +33,16 @@ export default function EditGroup() {
   function updateGroupClicked() {
     let data = {
       name: groupName.current.value,
-      description: groupDescription.current.value
-    }
+      description: groupDescription.current.value,
+    };
 
-    setUpdatedData(data)
-    dispatch(setModal("edit-group"))
+    setUpdatedData(data);
+    dispatch(setModal("edit-group"));
   }
 
   return (
     <>
-      {modal === "edit-group" && <Modal data={updatedData} editGroup/>}
+      {modal === "edit-group" && <Modal data={updatedData} editGroup />}
       <div className={classes.content}>
         <Card editGroup>
           <h2 className={classes.title}>ویرایش اطلاعات گروه</h2>
@@ -72,7 +72,9 @@ export default function EditGroup() {
             <label htmlFor="discription">توضیجات</label>
             <Input groupDiscription innerRef={groupDescription} />
           </div>
-          <Button submit click={updateGroupClicked}>ویرایش اطلاعات گروه</Button>
+          <Button submit click={updateGroupClicked}>
+            ویرایش اطلاعات گروه
+          </Button>
         </Card>
       </div>
     </>

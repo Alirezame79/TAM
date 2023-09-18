@@ -32,7 +32,7 @@ export default function AssistantCourse({ id }) {
   }
 
   function projectClicked() {
-    navigate("project/")
+    navigate("project/");
   }
 
   return (
@@ -49,9 +49,9 @@ export default function AssistantCourse({ id }) {
         <Card courseInfo>
           <h4>{course.course.id} : آیدی درس</h4>
           <h4> زمان : {course.course.class_time}</h4>
-          <h4>{course.course.class_location} : مکان </h4>
+          <h4> مکان : {course.course.class_location} </h4>
           <h4> {course.course.exam_time} : امتحان</h4>
-          <h4> : ظرفیت گروه {course.course.group_capacity}نفر </h4>
+          <h4> {course.course.group_capacity} ظرفیت گروه : نفر </h4>
           <h4>
             {" "}
             :دستیاران
@@ -69,15 +69,17 @@ export default function AssistantCourse({ id }) {
             <BiSolidGroup className={classes.place} />{" "}
             <p className={classes.CircleBtnText}> اعضا </p>
           </div>
-          {course.group_status === 2 && <div className={classes.CircleBtn} onClick={courseGroupClicked}>
-            {" "}
-            <FaUsers className={classes.place1} />{" "}
-            <p className={classes.CircleBtnText}>مشاهده گروه‌ها</p>
-          </div>}
+          {course.group_status === 2 && (
+            <div className={classes.CircleBtn} onClick={courseGroupClicked}>
+              {" "}
+              <FaUsers className={classes.place1} />{" "}
+              <p className={classes.CircleBtnText1}>مشاهده گروه‌ها</p>
+            </div>
+          )}
           <div className={classes.CircleBtn} onClick={projectClicked}>
             {" "}
             <FaLaptopCode className={classes.place} />{" "}
-            <p className={classes.CircleBtnText}>لیست پروژه ها </p>
+            <p className={classes.CircleBtnText1}>لیست پروژه ها </p>
           </div>
           <div className={classes.CircleBtn}>
             {" "}

@@ -22,7 +22,7 @@ function Card({
   groupList,
   groupsOfGroupList,
   uploadProject,
-  teacherProject,
+  manageProject,
   projectList,
   projectListItem,
   viewProject,
@@ -48,7 +48,7 @@ function Card({
   if (groupList) cardStyle = classes.courseMemberStyle;
   if (groupsOfGroupList) cardStyle = classes.groupsOfGroupListStyle;
   if (uploadProject) cardStyle = classes.uploadProjectStyle;
-  if (teacherProject) cardStyle = classes.teacherProjectStyle;
+  if (manageProject) cardStyle = classes.manageProjectStyle;
   if (projectList) cardStyle = classes.projectListStyle;
   if (projectListItem) cardStyle = classes.projectListItemStyle;
   if (viewProject) cardStyle = classes.viewProjectStyle;

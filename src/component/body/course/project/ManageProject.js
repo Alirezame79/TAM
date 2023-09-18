@@ -15,23 +15,23 @@ import ProjectList from "./ProjectList";
 
 export default function ManageProject() {
   const [checkboxCheck, setCheckboxCheck] = useState(false);
-  const [file, setFile] = useState(null)
-  const [data, setData] = useState(null)
-  const descriptionInput = useRef("")
-  const [projectListPage, setProjectListPage] = useState(false)
-  const navigate = useNavigate()
+  const [file, setFile] = useState(null);
+  const [data, setData] = useState(null);
+  const descriptionInput = useRef("");
+  const [projectListPage, setProjectListPage] = useState(false);
+  const navigate = useNavigate();
   const project = useSelector((state) => {
     return state.project;
-  })
+  });
   useGetUpdateProject();
-  usePostUpdateProject(data)
+  usePostUpdateProject(data);
 
   useEffect(() => {
-    descriptionInput.current.value = project.description
-    setCheckboxCheck(project.status)
-  }, [project])
+    descriptionInput.current.value = project.description;
+    setCheckboxCheck(project.status);
+  }, [project]);
 
-  console.log(project)
+  console.log(project);
 
   function handleCheckBox() {
     setCheckboxCheck(!checkboxCheck);
@@ -47,56 +47,68 @@ export default function ManageProject() {
   }
 
   function submitProjectClicked() {
-    let requestData = new FormData()
-    requestData.append('name', "Project Name")
+    let requestData = new FormData();
+    requestData.append("name", "Project Name");
     if (file !== null) {
-      requestData.append('project_file', file, file.name)
+      requestData.append("project_file", file, file.name);
     } else {
-      requestData.append('project_file', '')
+      requestData.append("project_file", "");
     }
-    requestData.append('description', descriptionInput.current.value)
+    requestData.append("description", descriptionInput.current.value);
     if (checkboxCheck) {
-      requestData.append('status', 1)
-    }else {
-      requestData.append('status', 0)
+      requestData.append("status", 1);
+    } else {
+      requestData.append("status", 0);
     }
 
-    console.log(requestData)
-    setData(requestData)
+    console.log(requestData);
+    setData(requestData);
   }
 
   function projectListBtnClicked() {
-    setProjectListPage(true)
+    setProjectListPage(true);
   }
 
   if (projectListPage) {
-    return <ProjectList />
+    return <ProjectList />;
   } else {
     return (
-      <Card teacherProject>
+      <Card manageProject>
         <h2 className={classes.title}>مدیریت پروژه</h2>
-        <FaFileAlt className={classes.icon} onClick={projectListBtnClicked}/>
-  
+        <FaFileAlt className={classes.icon} onClick={projectListBtnClicked} />
+
         <h3> : آپلود صورت پروژه</h3>
-        <input type="file" onChange={getFileHandler}/>
-  
-        {project.project_file !== null && <a href={BASEURL + project.project_file} target="_blank" rel="noreferrer">دانلود فایل آپلود شده</a>}
-  
+        <input type="file" onChange={getFileHandler} />
+
+        {project.project_file !== null && (
+          <a
+            href={BASEURL + project.project_file}
+            target="_blank"
+            rel="noreferrer"
+          >
+            دانلود فایل آپلود شده
+          </a>
+        )}
+
         <div className={classes.descriptionInput}>
           <label htmlFor="bio" className={classes.label}>
             : توضیحات
           </label>
-          <Input editProfileBio innerRef={descriptionInput}/>
+          <Input manageProjectDescription innerRef={descriptionInput} />
         </div>
-  
+
         <div className={classes.enable}>
-          <Checkbox 
-            label='وضعیت فعالسازی'
+          <Checkbox
+            className={classes.checkboxLabel}
+            label="وضعیت فعالسازی"
             value={checkboxCheck}
-            onChange={handleCheckBox}/>
+            onChange={handleCheckBox}
+          />
         </div>
-  
-        <Button submit click={submitProjectClicked}>ثبت پروژه</Button>
+
+        <Button submit click={submitProjectClicked}>
+          ثبت پروژه
+        </Button>
       </Card>
     );
   }

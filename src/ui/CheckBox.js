@@ -1,11 +1,12 @@
-
+import classes from "./style/CheckBox.module.css";
 
 export default function Checkbox({ label, value, onChange }) {
+  return (
+    <label className={classes.container}>
+      <input type="checkbox" checked={value} onChange={onChange} />
 
-    return (
-        <label>
-            <input type="checkbox" checked={value} onChange={onChange} />
-            {label}
-        </label>
-    );
+      <span className={classes.checkmark}></span>
+      {label}
+    </label>
+  );
 }
