@@ -15,8 +15,8 @@ import Modal from "../../portal/Modal";
 export default function CourseSetting() {
   const { id } = useParams();
   const [data, setData] = useState(null);
-  const [checkNewAssistant, setCheckNewAssistant] = useState(null)
-  const [removeAssistant, setRemoveAssistant] = useState(null)
+  const [checkNewAssistant, setCheckNewAssistant] = useState(null);
+  const [removeAssistant, setRemoveAssistant] = useState(null);
   const dispatch = useDispatch();
   const modal = useSelector((state) => {
     return state.modal;
@@ -35,8 +35,8 @@ export default function CourseSetting() {
   let groupCapacity = useRef("");
   let newAssistant = useRef("");
 
-  useGetCourseSetting(id)
-  useCheckNewAssistant(checkNewAssistant, id)
+  useGetCourseSetting(id);
+  useCheckNewAssistant(checkNewAssistant, id);
 
   useEffect(() => {
     if (courseSetting === null) return;
@@ -48,7 +48,7 @@ export default function CourseSetting() {
   // if (courseSetting === null) return;
 
   console.log(courseSetting);
-  console.log(checkAssistant)
+  console.log(checkAssistant);
 
   function editCourseDataClicked() {
     let courseSetting = {
@@ -63,10 +63,14 @@ export default function CourseSetting() {
 
   return (
     <>
-      {modal === "edit-course-setting" && <Modal data={data} courseSetting/>}
-      {modal === "check-course-assistant" && <Modal data={checkAssistant} addAssistant/>}
-      {modal === "remove-course-assistant" && <Modal data={removeAssistant} removeAssistant/>}
-      
+      {modal === "edit-course-setting" && <Modal data={data} courseSetting />}
+      {modal === "check-course-assistant" && (
+        <Modal data={checkAssistant} addAssistant />
+      )}
+      {modal === "remove-course-assistant" && (
+        <Modal data={removeAssistant} removeAssistant />
+      )}
+
       <div className={classes.content}>
         <Card courseSetting>
           <h2 className={classes.title}>ویرایش درس</h2>
@@ -75,7 +79,11 @@ export default function CourseSetting() {
               <label htmlFor="Class Location" className={classes.labels}>
                 مکان کلاس
               </label>
-              <Input innerRef={classLocation} id="Class Location" courseSetting />
+              <Input
+                innerRef={classLocation}
+                id="Class Location"
+                courseSetting
+              />
             </div>
 
             <div className={classes.courseSettingInput}>
@@ -106,39 +114,46 @@ export default function CourseSetting() {
         </Card>
 
         <Card assistants>
-          {assistantList !== undefined && <>
-            <h2 className={classes.title}> لیست دستیاران </h2>
-            {assistantList.map((profile) => {
-              return (
-                <div className={classes.addDeletAssistant} key={profile.id}>
-                  <h4 className={classes.assistants}>
-                    {profile.name}
-                  </h4>
-                  <FaUserMinus className={classes.deleteAssistantIcon} onClick={
-                    function removeAssistantClicked() {
-                      setRemoveAssistant(profile)
-                      dispatch(setModal('remove-course-assistant'))
-                      console.log(removeAssistant)
-                    }} />
-                </div>
-              );
-            })}
-            <div className={classes.addDeletAssistant}>
-              <Input addDeletAssistant innerRef={newAssistant} placeholder="شماره دانشجویی دستیار جدید" />
-              <FaUserPlus className={classes.addAssistantIcon} onClick={
-                function newAssistantClicked() {
+          {assistantList !== undefined && (
+            <>
+              <h2 className={classes.title}> لیست دستیاران </h2>
+              {assistantList.map((profile) => {
+                return (
+                  <div className={classes.addDeletAssistant} key={profile.id}>
+                    <h4 className={classes.assistants}>{profile.name}</h4>
+                    <FaUserMinus
+                      className={classes.deleteAssistantIcon}
+                      onClick={function removeAssistantClicked() {
+                        setRemoveAssistant(profile);
+                        dispatch(setModal("remove-course-assistant"));
+                        console.log(removeAssistant);
+                      }}
+                    />
+                  </div>
+                );
+              })}
+              <div className={classes.addDeletAssistant}>
+                <Input
+                  addDeletAssistant
+                  innerRef={newAssistant}
+                  placeholder="شماره دانشجویی دستیار جدید"
+                />
+                <FaUserPlus
+                  className={classes.addAssistantIcon}
+                  onClick={function newAssistantClicked() {
+                    let newAssistantId = {
+                      student_id: newAssistant.current.value,
+                    };
 
-                  let newAssistantId = {
-                    student_id: newAssistant.current.value
-                  }
+                    newAssistant.current.value = "";
 
-                  newAssistant.current.value = "";
-
-                  setCheckNewAssistant(newAssistantId)
-                  console.log(checkAssistant)
-                }} />
-            </div>
-          </>}
+                    setCheckNewAssistant(newAssistantId);
+                    console.log(checkAssistant);
+                  }}
+                />
+              </div>
+            </>
+          )}
         </Card>
       </div>
     </>

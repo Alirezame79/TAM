@@ -53,11 +53,7 @@ export default function ChangePassword() {
           <label htmlFor="bio" className={classes.labels}>
             پسوورد کنونی{" "}
           </label>
-          <Input
-            changePass
-            innerRef={currentPassword}
-            id="currentPassword"
-          />
+          <Input changePass innerRef={currentPassword} id="currentPassword" />
         </div>
         <div className={classes.changePassInput}>
           <label htmlFor="bio" className={classes.labels}>

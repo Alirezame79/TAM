@@ -24,9 +24,12 @@ export default function GroupList() {
 
   return (
     <>
-      {modal === "remove-group" && <Modal data={groupData} role='managers' removeGroup/>}
+      {modal === "remove-group" && (
+        <Modal data={groupData} role="managers" removeGroup />
+      )}
 
       <Card groupList>
+        <h2 className={classes.titlePage}>لیست گروه‌ها</h2>
         {groupList.map((group) => {
           return (
             <Card groupsOfGroupList key={group.id}>
@@ -37,7 +40,7 @@ export default function GroupList() {
                     id: group.id,
                     name: group.name,
                   };
-                  console.log(miniData)
+                  console.log(miniData);
                   setGroupData(miniData);
                   dispatch(setModal("remove-group"));
                 }}

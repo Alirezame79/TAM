@@ -45,6 +45,7 @@
   right: 20%;
   left: 0;
   bottom: 1%;
+  background-color: #e5e8ff;
 }
 
 .courseStyle {
@@ -52,13 +53,14 @@
   border: 2px solid #9fdbd1;
   padding: 30px;
   box-shadow: 5px 9px 11px -2px #1e5a50;
-  height: 27%;
+  height: auto;
   width: 22%;
   margin: auto auto;
   position: fixed;
-  top: 42%;
+  top: 37%;
   right: 24%;
   border-radius: 11px;
+  background-color: #e5e8ff;
 }
 
 .changePassStyle {
@@ -71,11 +73,12 @@
   border: 2px solid #9fdbd1;
   max-height: 65%;
   overflow-y: auto;
+  overflow-x: clip;
   width: 55%;
   margin: auto auto;
   position: fixed;
   background-attachment: scroll;
-  overflow-x: clip;
+
   top: 9%;
   bottom: 0;
   right: 22%;
@@ -83,6 +86,7 @@
   padding: 60px 65px;
   border-radius: 20px;
   box-shadow: 6px 7px 19px -3px #31685f;
+  background-color: #e5e8ff;
 }
 
 .membersStyle,
@@ -94,6 +98,7 @@
   padding: 22px 40px;
   border-radius: 15px;
   margin-bottom: 1%;
+  background-color: #e5e8ff;
 }
 .groupsOfGroupListStyle {
   position: relative;
@@ -101,7 +106,8 @@
   justify-content: space-between;
   flex-direction: row-reverse;
   padding: 40px 49px;
-  right: 4%;
+  right: 1%;
+  background-color: #e5e8ff;
 }
 
 .confirmStyle,
@@ -127,7 +133,7 @@
 .creatGroupStyle {
   width: 40%;
   position: relative;
-  height: 87%;
+  height: 92%;
   padding: 25px 60px;
   border: 2px solid #121285;
   border-radius: 25px;
@@ -136,6 +142,10 @@
   justify-content: space-between;
   box-shadow: 6px 7px 19px -3px #7373f0bd;
   margin: auto auto;
+  background-color: #e5e8ff;
+}
+.courseSettingStyle {
+  height: 88%;
 }
 .viewProjectStyle {
   width: 40%;
@@ -149,6 +159,7 @@
   justify-content: space-between;
   box-shadow: 6px 7px 19px -3px #7373f0bd;
   margin: auto auto;
+  background-color: #e5e8ff;
 }
 .assistantsStyle,
 .addMemberOfGroupStyle {
@@ -160,6 +171,7 @@
   border-radius: 15px;
   padding: 25px;
   margin: auto auto;
+  background-color: #e5e8ff;
 }
 .alertStyle {
   height: 19%;
@@ -176,7 +188,7 @@
   width: 24%;
   height: 25%;
   position: relative;
-
+  background-color: #e5e8ff;
   top: 9%;
   padding-top: 9%;
   margin: auto;
@@ -192,6 +204,7 @@
   height: 85%;
   top: 12%;
   width: 30%;
+  background-color: #e5e8ff;
 }
 
 .uploadProjectStyle {
@@ -207,9 +220,10 @@
   box-shadow: 6px 7px 19px -3px #7373f0bd;
   margin: auto auto;
   top: 5%;
+  background-color: #e5e8ff;
 }
 
-.teacherProjectStyle {
+.manageProjectStyle {
   width: 40%;
   position: relative;
   height: 75%;
@@ -222,11 +236,13 @@
   box-shadow: 6px 7px 19px -3px #7373f0bd;
   margin: auto auto;
   top: 5%;
+  background-color: #e5e8ff;
 }
 .projectListStyle {
   border: 2px solid #9fdbd1;
   max-height: 65%;
   overflow-y: auto;
+  overflow-x: clip;
   width: 30%;
   margin: auto auto;
   position: fixed;
@@ -238,6 +254,7 @@
   padding: 60px 52px;
   border-radius: 20px;
   box-shadow: 6px 7px 19px -3px #31685f;
+  background-color: #e5e8ff;
 }
 .projectListItemStyle {
   border: 2px solid #0303aa;
@@ -285,7 +302,8 @@
     border: none;
     box-shadow: none;
     top: 6%;
-    /* padding: 25px 35px; */
+    background-color: #e5e8ff00;
+
     margin: auto;
     height: 85%;
     right: 0;
@@ -298,7 +316,7 @@
   }
 
   .courseStyle {
-    height: 190px;
+    height: 260px;
     width: 78%;
 
     position: relative;
@@ -318,8 +336,28 @@
     margin: 0 auto;
     box-shadow: none;
     padding: 0px 0px;
+    background-color: #e5e8ff00;
+    top: 7%;
   }
-
+  .projectListStyle {
+    top: 7%;
+    border: none;
+    max-height: 72%;
+    overflow: hidden;
+    width: 100%;
+    bottom: 0;
+    right: 0%;
+    position: relative;
+    border-radius: 20px;
+    margin: 0 auto;
+    box-shadow: none;
+    padding: 0px 0px;
+    background-color: #e5e8ff00;
+  }
+  .projectListItemStyle {
+    width: 70%;
+    font-size: 12px;
+  }
   .membersStyle {
     width: 65%;
 
@@ -340,6 +378,7 @@
     justify-content: space-between;
     box-shadow: none;
     margin: 0 auto;
+    background-color: #e5e8ff00;
   }
   .uploadProjectStyle {
     width: 84%;
@@ -352,6 +391,33 @@
     justify-content: space-between;
     box-shadow: none;
     margin: 0 auto;
+    background-color: #e5e8ff00;
+  }
+  .viewProjectStyle {
+    width: 84%;
+    position: relative;
+    height: 15%;
+    padding: 0px 0px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: none;
+    margin: 60% auto;
+    background-color: #e5e8ff00;
+  }
+  .manageProjectStyle {
+    width: 84%;
+    position: relative;
+    height: 45%;
+    padding: 0px 0px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: none;
+    margin: 8% auto;
+    background-color: #e5e8ff00;
   }
   .creatGroupStyle {
     width: 84%;
@@ -364,6 +430,7 @@
     justify-content: space-between;
     box-shadow: none;
     margin: 0 auto;
+    background-color: #e5e8ff00;
   }
   .addMemberOfGroupStyle {
     width: 70%;
@@ -389,13 +456,27 @@
     height: auto;
     width: 70%;
   }
+  .confirmStyle {
+    width: 65%;
+    margin: auto;
+    right: 0;
+    left: 0;
+  }
 }
 @media (max-width: 1000px) and (min-width: 600px) {
   .courseMemberStyle {
     top: 4%;
     right: 0%;
   }
-
+  .projectListStyle {
+    top: 4%;
+    right: 0%;
+    top: 4%;
+    right: 0%;
+    max-height: 45%;
+    overflow-y: auto;
+    width: 53%;
+  }
   .membersStyle {
     padding: 22px 18px;
 
@@ -439,30 +520,53 @@
   }
   .uploadProjectStyle {
     width: 55%;
+    top: 9%;
+    height: 28%;
+    margin: 0 auto;
+  }
+  .manageProjectStyle {
+    width: 55%;
+    top: 12%;
+    height: 28%;
+    margin: 0 auto;
+  }
+  .viewProjectStyle {
+    width: 55%;
+    top: 14%;
+    height: 19%;
+    margin: 0 auto;
+  }
+  .alertStyle,
+  .confirmStyle {
+    height: 22%;
+    width: 60%;
     top: 0;
-    height: 55%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 }
 
 @media (max-width: 1024px) and (min-width: 600px) {
   .editProfileStyle,
   .changePassStyle {
-    width: 70%;
-    border: none;
-    box-shadow: none;
-    top: 2%;
+    width: 65%;
+    top: 7%;
     margin: auto;
-    height: 80%;
+    height: 68%;
     right: 0;
     left: 0;
   }
   .changePassStyle {
     height: 65%;
-    top: 0%;
+
+    top: 10%;
+
     bottom: 6%;
   }
   .courseStyle {
-    height: 230px;
+    height: 300px;
     width: 78%;
 
     position: relative;
@@ -476,6 +580,10 @@
 
   .courseMemberStyle {
     max-height: 55%;
+  }
+  .projectListStyle {
+    max-height: 55%;
+    right: 0;
   }
 }
 
@@ -500,9 +608,22 @@
     top: 2%;
   }
   .uploadProjectStyle {
-    width: 37%;
-    height: 70%;
-    top: 6%;
+    width: 33%;
+    height: 34%;
+    top: 78px;
+    margin: 0 auto;
+  }
+  .viewProjectStyle {
+    width: 33%;
+    height: 31%;
+    top: 114px;
+    margin: 0 auto;
+  }
+  .manageProjectStyle {
+    width: 33%;
+    height: 34%;
+    top: 78px;
+    margin: 0 auto;
   }
   .addMemberOfGroupStyle {
     width: 25%;

@@ -38,7 +38,7 @@ export default function CreateGroup() {
 
   return (
     <>
-      {modal === "create-new-group" && <Modal data={groupData} createGroup/>}
+      {modal === "create-new-group" && <Modal data={groupData} createGroup />}
 
       <div className={classes.content}>
         <Card creatGroup>
@@ -49,7 +49,12 @@ export default function CreateGroup() {
           </div>
           <div className={classes.creatGroupInput}>
             <label htmlFor="Course Name">نام درس </label>
-            <Input id="Course Name" placeholder={data.name} creatGroup readOnly />
+            <Input
+              id="Course Name"
+              placeholder={data.name}
+              creatGroup
+              readOnly
+            />
           </div>
           <div className={classes.creatGroupInput}>
             <label htmlFor="master">استاد</label>

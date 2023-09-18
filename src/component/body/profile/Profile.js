@@ -31,10 +31,7 @@ export default function Profile() {
     <div className={classes.body}>
       <div className={classes.settindIcon}>
         <FaCog className={classes.edits} onClick={editProfile} />
-        <FaLock
-          className={classes.edits}
-          onClick={changePasswordBtnClicked}
-        />
+        <FaLock className={classes.edits} onClick={changePasswordBtnClicked} />
       </div>
 
       <div className={classes.profileTopics}>

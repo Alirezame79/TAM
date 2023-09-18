@@ -13,22 +13,22 @@ import EditGroup from "./EditGroup";
 
 export default function CreateGroup() {
   const { id } = useParams();
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const [groupData, setGroupData] = useState(null)
-  const [editGroupPage, setEditGroupPage] = useState(false)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [groupData, setGroupData] = useState(null);
+  const [editGroupPage, setEditGroupPage] = useState(false);
   const modal = useSelector((state) => {
     return state.modal;
   });
-  const addNewMember = useRef()
-  const [checkAddMember, setCheckAddMember] = useState(null)
-  const [removeMember, setRemoveMember] = useState(null)
+  const addNewMember = useRef();
+  const [checkAddMember, setCheckAddMember] = useState(null);
+  const [removeMember, setRemoveMember] = useState(null);
   const { data } = useDetailGroup(id);
   const membersList = useSelector((state) => {
     return state.membersList;
-  }) 
+  });
 
-  useCheckGroupNewMember(checkAddMember)
+  useCheckGroupNewMember(checkAddMember);
 
   if (data === undefined) return;
   console.log(data);
@@ -44,32 +44,39 @@ export default function CreateGroup() {
   }
 
   function editGroupClicked() {
-    setEditGroupPage(true)
+    setEditGroupPage(true);
   }
 
   function addMemberClicked() {
     let member = {
-      student_id: addNewMember.current.value
-    }
-    addNewMember.current.value = ""
-    setCheckAddMember(member)
+      student_id: addNewMember.current.value,
+    };
+    addNewMember.current.value = "";
+    setCheckAddMember(member);
   }
 
   if (editGroupPage) {
-    return <EditGroup />
+    return <EditGroup />;
   } else {
     return (
       <>
-        {modal === "remove-group" && <Modal data={groupData} role='owner' removeGroup/>}
-        {modal === "remove-group-member" && <Modal data={removeMember} removeMember/>}
-        {modal === "add-group-member" && <Modal addMember/>}
-  
+        {modal === "remove-group" && (
+          <Modal data={groupData} role="owner" removeGroup />
+        )}
+        {modal === "remove-group-member" && (
+          <Modal data={removeMember} removeMember />
+        )}
+        {modal === "add-group-member" && <Modal addMember />}
+
         <div className={classes.content}>
           <Card detailGroup>
             <h2 className={classes.title}>اطلاعات گروه</h2>
             <div className={classes.icons}>
               <FaCog className={classes.icon} onClick={editGroupClicked} />
-              <FaTrashAlt className={classes.icon} onClick={deleteGroupClicked} />
+              <FaTrashAlt
+                className={classes.icon}
+                onClick={deleteGroupClicked}
+              />
             </div>
             <div className={classes.detailGroupSubjects}>
               <h2>: نام گروه</h2>
@@ -79,7 +86,7 @@ export default function CreateGroup() {
               <h2>: نام درس</h2>
               <h3 className={classes.info}>{data.course.name} </h3>
             </div>
-  
+
             <div className={classes.detailGroupSubjects}>
               <h2>: استاد</h2>
               <h3 className={classes.info}> {data.course.owner.name} </h3>
@@ -93,26 +100,30 @@ export default function CreateGroup() {
               <h3 className={classes.info}>{data.group.description} </h3>
             </div>
           </Card>
-  
+
           <Card addMemberOfGroup>
             <h2 className={classes.title}> اعضا گروه</h2>
             {membersList.map((member) => {
               return (
                 <div className={classes.member} key={member.id}>
                   <h3>{member.name} </h3>
-                  <FaUserMinus className={classes.addMemberOfGroupIcon} onClick={
-                    function removeMemberClicked() {
-                      dispatch(setModal("remove-group-member"))
-                      setRemoveMember(member)
-                    }
-                  } />
+                  <FaUserMinus
+                    className={classes.addMemberOfGroupIcon}
+                    onClick={function removeMemberClicked() {
+                      dispatch(setModal("remove-group-member"));
+                      setRemoveMember(member);
+                    }}
+                  />
                 </div>
               );
             })}
-  
+
             <div className={classes.addMemberOfGroup}>
               <Input innerRef={addNewMember} addMemberOfGroup />
-              <FaUserPlus className={classes.addMemberOfGroupIcon} onClick={addMemberClicked} />
+              <FaUserPlus
+                className={classes.addMemberOfGroupIcon}
+                onClick={addMemberClicked}
+              />
             </div>
           </Card>
         </div>

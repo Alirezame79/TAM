@@ -18,6 +18,7 @@ export default function Input({
   groupDiscription,
   readOnly,
   editGroup,
+  manageProjectDescription,
 }) {
   let selectInput;
   let textareaInput;
@@ -31,9 +32,11 @@ export default function Input({
   if (creatGroup) selectInput = classes.inputcreatGroup;
   if (editGroup) selectInput = classes.inputcreatGroup;
   if (editProfileBio) textareaInput = classes.inputEditProfileBio;
+  if (manageProjectDescription)
+    textareaInput = classes.inputManageProjectDescription;
   if (groupDiscription) textareaInput = classes.inputGroupDiscription;
 
-  if (editProfileBio || groupDiscription) {
+  if (editProfileBio || groupDiscription || manageProjectDescription) {
     return (
       <textarea
         id="bio"

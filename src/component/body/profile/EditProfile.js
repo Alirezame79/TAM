@@ -66,7 +66,7 @@ export default function EditProfile() {
   return (
     <>
       {modal === "edit-user-profile" && <Modal data={data} editProfile />}
-      
+
       <Card editProfile>
         <h2 className={classes.title}>ویرایش پروفایل</h2>
         <div className={classes.choosePhoto}>
