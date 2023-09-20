@@ -45,6 +45,7 @@ export default function Input({
         ref={innerRef}
         className={textareaInput}
         defaultValue={defultValueText}
+        dir="rtl"
       />
     );
   } else {

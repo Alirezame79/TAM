@@ -33,7 +33,7 @@ export default function EditProfile() {
     githubLink.current.value = profile.social_github;
     linkedinLink.current.value = profile.social_linkedin;
     setShowImage(BaseURL + profile.profile_image);
-  }, []);
+  }, [profile]);
 
   function setNewImage(e) {
     console.log(e.target.files);

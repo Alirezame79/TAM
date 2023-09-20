@@ -9,7 +9,6 @@ import {
   setTeacherCourses,
   setProfile,
 } from "../../store/index";
-import axios from "axios";
 import useLogin from "../../fetch/useLogin";
 import { useSignIn } from "react-auth-kit";
 import Card from "../../ui/Card";

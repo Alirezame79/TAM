@@ -1,26 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import classes from "./style/Sidebar.module.css";
-import { useSignOut } from "react-auth-kit";
 import { Link, Navigate } from "react-router-dom";
 import RouterCourse from "./RouterCourse";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { AiOutlineCaretLeft, AiFillCaretDown } from "react-icons/ai";
-import { BsFillPersonFill, BsMortarboardFill } from "react-icons/bs";
-import { BiSolidCalendar, BiSolidGroup } from "react-icons/bi";
-import {
-  FaCalendarAlt,
-  FaCircle,
-  FaEdit,
-  FaFileAlt,
-  FaIdCard,
-  FaIdCardAlt,
-  FaStar,
-  FaUserFriends,
-  FaUserGraduate,
-  FaUsers,
-} from "react-icons/fa";
-import { FaReadme, FaBookOpenReader } from "react-icons/fa6";
+import { BsMortarboardFill } from "react-icons/bs";
+import {FaIdCard,FaStar,} from "react-icons/fa";
+import Skeleton from "react-loading-skeleton";
 
 function Sidebar() {
   const [studentCourseHeader, setStudentCourseHeader] = useState(true);
@@ -52,12 +38,18 @@ function Sidebar() {
     if (!teacherCourseHeader) setTeacherCourseHeader(true);
   }
 
-  // console.log(assistantCourses)
+  console.log(studentCourses.length)
+  console.log(assistantCourses.length)
+  console.log(teacherCourses.length)
 
   return (
     <div className={classes.container}>
       <h1 className={classes.sidebarTopic}>سامانه تام</h1>
       <div className={classes.linkContainer}>
+        {((Object.keys(teacherCourses).length 
+        + Object.keys(assistantCourses).length
+        + Object.keys(studentCourses).length) === 0)
+          && <Skeleton count={3} height={40} width={'90%'} className={classes.skeleton}/>}
         {Object.keys(studentCourses).length !== 0 && (
           <div className={classes.studentCourses}>
             <div

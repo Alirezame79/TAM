@@ -1,16 +1,13 @@
 import classes from "./style/StudentCourse.module.css";
 import { BiSolidGroup } from "react-icons/bi";
-import {
-  FaCalendarAlt,
-  FaFileAlt,
-  FaUsers,
-  FaFileSignature,
-} from "react-icons/fa";
+import {FaCalendarAlt,FaFileAlt,FaUsers,FaFileSignature,} from "react-icons/fa";
 import { FaBookOpenReader, FaLaptopCode } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import useCourse from "../../../fetch/useCourse";
 import { useNavigate } from "react-router-dom";
 import Card from "../../../ui/Card";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 export default function StudentCourse({ id }) {
   // const { id } = useParams();

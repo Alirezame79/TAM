@@ -66,6 +66,11 @@
   margin-top: 5%;
 }
 
+.skeleton {
+  margin: 20px 10px 0 10px;
+  width: 85%;
+}
+
 @media (max-width: 1000px) and (min-width: 300px) {
   .container {
     display: none;

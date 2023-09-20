@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import useMoreProjectData from "../../../../fetch/useMoreProjectData";
 import BASEURL from "../../../../fetch/BaseURL";
+import useGetAllProjectFiles from "../../../../fetch/useGetAllProjectFiles";
 
 export default function ProjectList() {
   const projectList = useSelector((state) => {
@@ -15,15 +16,22 @@ export default function ProjectList() {
     return state.projectData;
   });
   const [sendRequest, setSendRequest] = useState(null);
+  const [allFiles, setAllFiles] = useState(false)
 
   useProjectList();
   useMoreProjectData(sendRequest);
+  useGetAllProjectFiles(allFiles)
 
   // console.log(projectList)
+
+  function getAllFilesClicked() {
+    setAllFiles(true)
+  }
 
   return (
     <Card projectList>
       <h2 className={classes.title}>لیست پروژه ها</h2>
+      <h3 onClick={getAllFilesClicked}>All Files</h3>
       <Card projectListItem>
         {projectList.map((eachProject) => {
           if (projectData !== undefined && projectData.id === eachProject.id) {
