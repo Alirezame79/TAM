@@ -5,7 +5,11 @@
 
   text-align: right;
 }
-
+.downLink {
+  font-style: italic;
+  font-weight: bold;
+  color: black;
+}
 .label {
   position: relative;
   right: 9%;

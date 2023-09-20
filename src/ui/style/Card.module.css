@@ -210,8 +210,8 @@
 .uploadProjectStyle {
   width: 40%;
   position: relative;
-  height: 75%;
-  padding: 42px 60px;
+  height: 80%;
+  padding: 21px 60px;
   border: 2px solid #121285;
   border-radius: 25px;
   display: flex;
@@ -247,6 +247,9 @@
   margin: auto auto;
   position: fixed;
   background-attachment: scroll;
+  display: flex;
+  flex-direction: column;
+
   top: 9%;
   bottom: 0;
   right: 22%;
@@ -383,7 +386,7 @@
   .uploadProjectStyle {
     width: 84%;
     position: relative;
-    height: 45%;
+    height: 49%;
     padding: 0px 0px;
     border: none;
     display: flex;

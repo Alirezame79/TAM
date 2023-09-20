@@ -9,8 +9,31 @@ input[type="file"]::file-selector-button {
   padding: 10px 30px;
 }
 
-
-
+.projectDownload {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.icon {
+  color: #121285;
+  transform: scale(1.2);
+  margin-left: 20px;
+}
+.bottomSpace {
+  margin-bottom: 8px;
+}
+.rightSpace {
+  margin-right: 30px;
+}
+.titleSize {
+  font-size: 22px;
+}
+.downLink {
+  font-style: italic;
+  color: black;
+}
 input[type="file"]::file-selector-button:hover {
   background-color: #1919a4cf;
 }

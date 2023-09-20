@@ -85,6 +85,7 @@ export default function ManageProject() {
             href={BASEURL + project.project_file}
             target="_blank"
             rel="noreferrer"
+            className={classes.downLink}
           >
             دانلود فایل آپلود شده
           </a>

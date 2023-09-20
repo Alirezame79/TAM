@@ -16,27 +16,27 @@ export default function ProjectList() {
     return state.projectData;
   });
   const [sendRequest, setSendRequest] = useState(null);
-  const [allFiles, setAllFiles] = useState(false)
+  const [allFiles, setAllFiles] = useState(false);
 
   useProjectList();
   useMoreProjectData(sendRequest);
-  useGetAllProjectFiles(allFiles)
+  useGetAllProjectFiles(allFiles);
 
   // console.log(projectList)
 
   function getAllFilesClicked() {
-    setAllFiles(true)
+    setAllFiles(true);
   }
 
   return (
     <Card projectList>
       <h2 className={classes.title}>لیست پروژه ها</h2>
-      <h3 onClick={getAllFilesClicked}>All Files</h3>
-      <Card projectListItem>
-        {projectList.map((eachProject) => {
-          if (projectData !== undefined && projectData.id === eachProject.id) {
-            return (
-              <div key={projectData.id}>
+      <h3 onClick={getAllFilesClicked}>All Files</h3> {/* in baraye chie?*/}
+      {projectList.map((eachProject) => {
+        if (projectData !== undefined && projectData.id === eachProject.id) {
+          return (
+            <div key={projectData.id}>
+              <Card projectListItem>
                 <>
                   <h3>{projectData.group.name}</h3>
                   <h3>{projectData.group.creator.name}</h3>
@@ -52,11 +52,13 @@ export default function ProjectList() {
                 >
                   file
                 </a>
-              </div>
-            );
-          } else {
-            return (
-              <div key={eachProject.id} className={classes.projectListItem}>
+              </Card>
+            </div>
+          );
+        } else {
+          return (
+            <div key={eachProject.id} className={classes.projectListItem}>
+              <Card projectListItem>
                 <h3>
                   {" "}
                   گروه {eachProject.group.name} -{" "}
@@ -71,11 +73,11 @@ export default function ProjectList() {
                     setSendRequest(readyData);
                   }}
                 />
-              </div>
-            );
-          }
-        })}
-      </Card>
+              </Card>
+            </div>
+          );
+        }
+      })}
     </Card>
   );
 }

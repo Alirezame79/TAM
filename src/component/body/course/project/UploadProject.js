@@ -13,13 +13,13 @@ export default function UploadProject() {
   const project = useSelector((state) => {
     return state.studentProject;
   });
-  const [file, setFile] = useState(null)
-  const [data, setData] = useState(null)
+  const [file, setFile] = useState(null);
+  const [data, setData] = useState(null);
 
   useGetStudentProject();
-  useUploadProject(data)
+  useUploadProject(data);
 
-  console.log(project)
+  console.log(project);
 
   function getFileHandler(e) {
     console.log(e.target.files);
@@ -45,8 +45,9 @@ export default function UploadProject() {
   return (
     <Card uploadProject>
       <h2 className={classes.title}> پروژه</h2>
-      <FaFileDownload className={classes.icon} />
-      {project.project_detail !== undefined && (
+      <div className={classes.projectDownload}>
+        <FaFileDownload className={classes.icon} />
+        {project.project_detail !== undefined && (
           <a
             className={classes.downLink}
             href={BASEURL + project.project_detail.project_file}
@@ -56,31 +57,65 @@ export default function UploadProject() {
             <h3>دانلود صورت پروژه</h3>
           </a>
         )}
-      <h3>:توضیحات بروژه</h3>
-      <h4>{project.project_detail !== undefined && project.project_detail.description}</h4>
-      {project.group_detail !== undefined && 
-      <> 
-        <h3> نام گروه</h3>
-        <Input type="text" placeholder={project.group_detail.name} readOnly />
-      </>}
-      {project.group_uploaded_project !== undefined && 
-        project.group_uploaded_project.length !== 0 && 
+      </div>
+      <h3>:توضیحات پروژه</h3>
+      <h4 className={`${classes.bottomSpace} ${classes.rightSpace}`}>
+        {project.project_detail !== undefined &&
+          project.project_detail.description}
+      </h4>
+      {project.group_detail !== undefined && (
         <>
-          <h2>:آخرین فایل ارسالی</h2>
-          <h3> ارسال کننده فایل</h3>
-          <Input type="text" placeholder={project.group_uploaded_project[project.group_uploaded_project.length - 1].sender.name} readOnly />
-          <a className={classes.downLink}
-            href={BASEURL + project.group_uploaded_project[project.group_uploaded_project.length - 1].file}
-            target="_blank"
-            rel="noreferrer">
-            <h3>دانلود آخرین فایل ارسالی</h3>
-            </a>
-            </>
-      }
-      <h2>:ارسال فایل جدید</h2>
-      <input type="file" onChange={getFileHandler}/>
+          <h3>: نام گروه </h3>
+          <h4 className={`${classes.bottomSpace} ${classes.rightSpace}`}>
+            {project.group_detail.name}
+          </h4>
+          {/* <Input type="text" placeholder={project.group_detail.name} readOnly /> */}
+        </>
+      )}
+      {project.group_uploaded_project !== undefined &&
+        project.group_uploaded_project.length !== 0 && (
+          <>
+            <h2 className={`${classes.bottomSpace} ${classes.titleSize}`}>
+              :آخرین فایل ارسالی
+            </h2>
+            <h3> : ارسال کننده فایل</h3>
+            <h4 className={`${classes.bottomSpace} ${classes.rightSpace}`}>
+              {
+                project.group_uploaded_project[
+                  project.group_uploaded_project.length - 1
+                ].sender.name
+              }
+            </h4>
+            {/* <Input type="text" placeholder={project.group_uploaded_project[project.group_uploaded_project.length - 1].sender.name} readOnly /> */}
+            <div className={classes.projectDownload}>
+              <FaFileDownload className={classes.icon} />
+              <a
+                className={classes.downLink}
+                href={
+                  BASEURL +
+                  project.group_uploaded_project[
+                    project.group_uploaded_project.length - 1
+                  ].file
+                }
+                target="_blank"
+                rel="noreferrer"
+              >
+                <h3 className={classes.bottomSpace}>
+                  دانلود آخرین فایل ارسالی
+                </h3>
+              </a>
+            </div>
+          </>
+        )}
+      <h2 className={`${classes.bottomSpace} ${classes.titleSize}`}>
+        {" "}
+        :ارسال فایل جدید
+      </h2>
+      <input type="file" onChange={getFileHandler} />
 
-      <Button submit click={sendProjectClicked}>ارسال پروژه</Button>
+      <Button submit click={sendProjectClicked}>
+        ارسال پروژه
+      </Button>
     </Card>
   );
 }
