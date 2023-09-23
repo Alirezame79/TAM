@@ -77,7 +77,7 @@ export default function CourseSetting() {
           <div className={classes.Inputs}>
             <div className={classes.courseSettingInput}>
               <label htmlFor="Class Location" className={classes.labels}>
-                مکان کلاس
+                مکان  تشکیل کلاس
               </label>
               <Input
                 innerRef={classLocation}
@@ -88,7 +88,7 @@ export default function CourseSetting() {
 
             <div className={classes.courseSettingInput}>
               <label htmlFor="Class Time" className={classes.labels}>
-                زمان کلاس
+                زمان تشکیل کلاس
               </label>
               <Input innerRef={classTime} id="Class Time" courseSetting />
             </div>
@@ -97,7 +97,7 @@ export default function CourseSetting() {
             <div className={classes.courseSettingInput}>
               <label htmlFor="Group Capacity" className={classes.numberLabels}>
                 {" "}
-                تعداد اعضا گروه
+                 تعداد اعضا گروه ها
               </label>
               <Input
                 type="number"
@@ -109,7 +109,7 @@ export default function CourseSetting() {
           </div>
 
           <Button submit click={editCourseDataClicked}>
-            مرحله بعد
+            ثبت تغییرات
           </Button>
         </Card>
 

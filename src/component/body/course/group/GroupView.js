@@ -28,12 +28,12 @@ export default function GroupView() {
 
       <div className={classes.content}>
         <div className={classes.groupName}>
-          <h1 className={classes.groupNameText}>گروه {data.group.name} </h1>
+          <h1 className={classes.groupNameText}>اطلاعات گروه{data.group.name} </h1>
         </div>
         <div className={classes.groupView}>
           <Card groupViweDescription>
             <p className={classes.descriptionText}>
-              {data.group.description || "Description"}
+              {data.group.description || "توضیحات"}
             </p>
           </Card>
 

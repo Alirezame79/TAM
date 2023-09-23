@@ -42,19 +42,19 @@ export default function AssistantCourse({ id }) {
       </div>
 
       <div className={classes.teacher}>
-        <h2> استاد: {course.course.owner.name}</h2>
+        <h2>  استاد درس : {course.course.owner.name}</h2>
       </div>
 
       <div className={classes.centarPage}>
         <Card courseInfo>
-          <h4>{course.course.id} : آیدی درس</h4>
-          <h4> زمان : {course.course.class_time}</h4>
-          <h4> مکان : {course.course.class_location} </h4>
-          <h4> {course.course.exam_time} : امتحان</h4>
-          <h4> {course.course.group_capacity} ظرفیت گروه : نفر </h4>
+          <h4>{course.course.id} : کد درس</h4>
+          <h4> زمان تشکیل کلاس  : {course.course.class_time}</h4>
+          <h4> مکان تشکیل کلاس  : {course.course.class_location} </h4>
+          <h4> {course.course.exam_time} : زمان امتحان درس </h4>
+          <h4> {course.course.group_capacity} ظرفیت گروه ها : نفر </h4>
           <h4>
             {" "}
-            :دستیاران
+            :دستیاران استاد
             <ul>
               {course.course.assistant_profiles.map((assistant) => {
                 return <li key={assistant.id}>{assistant.name}</li>;

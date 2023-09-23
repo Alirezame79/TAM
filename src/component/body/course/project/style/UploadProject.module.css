@@ -16,6 +16,18 @@ input[type="file"]::file-selector-button {
   align-items: center;
   margin-bottom: 8px;
 }
+.center {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-top: 45px;
+  height: 200px;
+}
+.CenterText {
+  display: flex;
+  flex-direction: column;
+  justify-content: inherit;
+}
 .icon {
   color: #121285;
   transform: scale(1.2);

@@ -3,7 +3,7 @@
   right: 22%;
   top: 20%;
   width: 50%;
-  height: 55%;
+  height: 50%;
   background-color: #121258;
   color: white;
   padding: 65px 40px;
@@ -210,8 +210,8 @@
 .uploadProjectStyle {
   width: 40%;
   position: relative;
-  height: 80%;
-  padding: 21px 60px;
+  height: 77%;
+  padding: 30px 60px;
   border: 2px solid #121285;
   border-radius: 25px;
   display: flex;
@@ -259,7 +259,8 @@
   box-shadow: 6px 7px 19px -3px #31685f;
   background-color: #e5e8ff;
 }
-.projectListItemStyle {
+.projectListItemStyle,
+.projectListItemMoreInfoStyle {
   border: 2px solid #0303aa;
   height: auto;
   width: 80%;
@@ -270,6 +271,9 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+}
+.projectListItemMoreInfoStyle {
+  flex-direction: column;
 }
 
 /* jast login */

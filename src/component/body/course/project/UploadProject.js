@@ -45,76 +45,82 @@ export default function UploadProject() {
   return (
     <Card uploadProject>
       <h2 className={classes.title}> پروژه</h2>
-      <div className={classes.projectDownload}>
-        <FaFileDownload className={classes.icon} />
-        {project.project_detail !== undefined && (
-          <a
-            className={classes.downLink}
-            href={BASEURL + project.project_detail.project_file}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <h3>دانلود صورت پروژه</h3>
-          </a>
-        )}
-      </div>
-      <h3>:توضیحات پروژه</h3>
-      <h4 className={`${classes.bottomSpace} ${classes.rightSpace}`}>
-        {project.project_detail !== undefined &&
-          project.project_detail.description}
-      </h4>
-      {project.group_detail !== undefined && (
-        <>
-          <h3>: نام گروه </h3>
-          <h4 className={`${classes.bottomSpace} ${classes.rightSpace}`}>
-            {project.group_detail.name}
-          </h4>
-          {/* <Input type="text" placeholder={project.group_detail.name} readOnly /> */}
-        </>
-      )}
-      {project.group_uploaded_project !== undefined &&
-        project.group_uploaded_project.length !== 0 && (
-          <>
-            <h2 className={`${classes.bottomSpace} ${classes.titleSize}`}>
-              :آخرین فایل ارسالی
-            </h2>
-            <h3> : ارسال کننده فایل</h3>
-            <h4 className={`${classes.bottomSpace} ${classes.rightSpace}`}>
-              {
-                project.group_uploaded_project[
-                  project.group_uploaded_project.length - 1
-                ].sender.name
-              }
-            </h4>
-            {/* <Input type="text" placeholder={project.group_uploaded_project[project.group_uploaded_project.length - 1].sender.name} readOnly /> */}
-            <div className={classes.projectDownload}>
-              <FaFileDownload className={classes.icon} />
+      <div className={classes.center}>
+        <div className={classes.CenterText}>
+          <div className={classes.projectDownload}>
+            <FaFileDownload className={classes.icon} />
+            {project.project_detail !== undefined && (
               <a
                 className={classes.downLink}
-                href={
-                  BASEURL +
-                  project.group_uploaded_project[
-                    project.group_uploaded_project.length - 1
-                  ].file
-                }
+                href={BASEURL + project.project_detail.project_file}
                 target="_blank"
                 rel="noreferrer"
               >
-                <h3 className={classes.bottomSpace}>
-                  دانلود آخرین فایل ارسالی
-                </h3>
+                <h3>دانلود صورت پروژه</h3>
               </a>
-            </div>
-          </>
-        )}
+            )}
+          </div>
+          <h3>:توضیحات پروژه</h3>
+          <h4 className={`${classes.bottomSpace} ${classes.rightSpace}`}>
+            {project.project_detail !== undefined &&
+              project.project_detail.description}
+          </h4>
+          {project.group_detail !== undefined && (
+            <>
+              <h3>: نام گروه </h3>
+              <h4 className={`${classes.bottomSpace} ${classes.rightSpace}`}>
+                {project.group_detail.name}
+              </h4>
+              {/* <Input type="text" placeholder={project.group_detail.name} readOnly /> */}
+            </>
+          )}
+        </div>
+        <div className={classes.CenterText}>
+          {project.group_uploaded_project !== undefined &&
+            project.group_uploaded_project.length !== 0 && (
+              <>
+                <h2 className={`${classes.bottomSpace} ${classes.titleSize}`}>
+                  :آخرین فایل ارسالی
+                </h2>
+                <h3> : ارسال کننده فایل</h3>
+                <h4 className={`${classes.bottomSpace} ${classes.rightSpace}`}>
+                  {
+                    project.group_uploaded_project[
+                      project.group_uploaded_project.length - 1
+                    ].sender.name
+                  }
+                </h4>
+                {/* <Input type="text" placeholder={project.group_uploaded_project[project.group_uploaded_project.length - 1].sender.name} readOnly /> */}
+                <div className={classes.projectDownload}>
+                  <FaFileDownload className={classes.icon} />
+                  <a
+                    className={classes.downLink}
+                    href={
+                      BASEURL +
+                      project.group_uploaded_project[
+                        project.group_uploaded_project.length - 1
+                      ].file
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <h3 className={classes.bottomSpace}>
+                      دانلود آخرین فایل ارسالی
+                    </h3>
+                  </a>
+                </div>
+              </>
+            )}
+        </div>
+      </div>
       <h2 className={`${classes.bottomSpace} ${classes.titleSize}`}>
         {" "}
-        :ارسال فایل جدید
+        :بارگذاری فایل جدید
       </h2>
       <input type="file" onChange={getFileHandler} />
 
       <Button submit click={sendProjectClicked}>
-        ارسال پروژه
+        ارسال فایل پروژه
       </Button>
     </Card>
   );

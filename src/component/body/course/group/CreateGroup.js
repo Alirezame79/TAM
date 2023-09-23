@@ -66,7 +66,7 @@ export default function CreateGroup() {
             />
           </div>
           <div className={classes.creatGroupInput}>
-            <label htmlFor="discription">توضیجات</label>
+            <label htmlFor="discription">توضیحات</label>
             <Input groupDiscription innerRef={description} />
           </div>
           <Button submit click={createGroupClicked}>

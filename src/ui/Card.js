@@ -26,6 +26,7 @@ function Card({
   projectList,
   projectListItem,
   viewProject,
+  projectListItemMoreInfo,
 }) {
   let cardStyle;
   if (login) cardStyle = classes.loginStyle;
@@ -51,6 +52,8 @@ function Card({
   if (manageProject) cardStyle = classes.manageProjectStyle;
   if (projectList) cardStyle = classes.projectListStyle;
   if (projectListItem) cardStyle = classes.projectListItemStyle;
+  if (projectListItemMoreInfo) cardStyle = classes.projectListItemMoreInfoStyle;
+
   if (viewProject) cardStyle = classes.viewProjectStyle;
   return <div className={cardStyle}>{children}</div>;
 }
