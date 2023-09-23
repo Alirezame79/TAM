@@ -39,7 +39,7 @@ export default function Profile() {
         />}
         <h1>{profile.name || <Skeleton width={150}/>}</h1>
         <h2 className={classes.text}>:بیوگرافی <br />{profile.bio  || <Skeleton width={'25rem'}/>}</h2>
-        <h2 className={classes.text}> : شماره دانشجویی <br />{profile.id || <Skeleton/>}</h2>
+        <h2 className={classes.text}> : نام کاربری <br />{profile.id || <Skeleton/>}</h2>
       </div>
 
       <div className={classes.profileLinks}>

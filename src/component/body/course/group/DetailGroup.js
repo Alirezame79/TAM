@@ -93,10 +93,11 @@ export default function CreateGroup() {
             </div>
             <div className={classes.detailGroupSubjects}>
               <h2>:حداکثر ظرفیت گروه ها </h2>
-              <h3 className={classes.info}>{data.course.group_capacity}</h3>
+            
+              <h3 className={classes.info}> {data.course.group_capacity} نفر</h3>
             </div>
             <div className={classes.detailGroupSubjects}>
-              <h2>: توضیجات</h2>
+              <h2>: توضیحات</h2>
               <h3 className={classes.info}>{data.group.description} </h3>
             </div>
           </Card>

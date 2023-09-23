@@ -43,7 +43,7 @@
 .addDeletAssistant {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: right;
+  justify-content: space-between;
   margin: 13% 2% 13% 5%;
   gap: 20px;
 }

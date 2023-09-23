@@ -1,14 +1,34 @@
 .icon {
   transform: scale(1.3);
   margin-top: 5px;
+  color: #121285;
 }
 .title {
   text-align: center;
   margin-bottom: 5%;
+}
+.groupName {
+  font-size: 20px;
+}
+.bottom {
+  margin-bottom: 12px;
+}
+.zipIcon {
+  margin-left: 16px;
+  margin-bottom: 23px;
+  transform: scale(1.5);
+  bottom: 12%;
+  position: relative;
+  color: #121285;
 }
 .projectListItem {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   width: 100%;
+}
+.downFile {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }

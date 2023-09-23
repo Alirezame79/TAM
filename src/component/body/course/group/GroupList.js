@@ -46,20 +46,20 @@ export default function GroupList() {
                 }}
               ></FaTrashAlt>
               <div className={classes.parts1}>
-                <h2 className={classes.title}> : نام گروه</h2>
-                <h3 className={classes.textOfGroupList}> {group.name} </h3>
-                <h2 className={classes.title}> : توضیحات گروه</h2>
-                <h3 className={classes.textOfGroupList}>
+                {/* <h2 className={classes.title}> : نام گروه</h2> */}
+                <h2 className={classes.textOfGroupList}> گروه {group.name} </h2>
+                <h3 className={classes.title}> : توضیحات گروه</h3>
+                <h4 className={classes.textOfGroupList}>
                   {" "}
                   {group.description}
-                </h3>
+                </h4>
               </div>
               <div className={classes.parts2}>
-                <h2 className={classes.title}> : سر گروه</h2>
-                <h3 className={classes.textOfGroupList}>
-                  {group.creator.name}{" "}
+                {/* <h2 className={classes.title}> : سر گروه</h2> */}
+                <h3 className={classes.creatorName } >
+                  {group.creator.name} {" "}
                 </h3>
-                <h2 className={classes.title}> : اعضا گروه</h2>
+                {/* <h2 className={classes.title}> : اعضا گروه</h2> */}
 
                 {group.members.map((member) => {
                   return (

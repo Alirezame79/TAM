@@ -111,7 +111,7 @@ export default function EditProfile() {
         </div>
         <div className={classes.editProfileInput}>
           <label htmlFor="linkedinLink" className={classes.labels}>
-            لینکدینI
+            لینکدین
           </label>
           <Input
             placeholder="لینکدین"
@@ -121,7 +121,7 @@ export default function EditProfile() {
           />
         </div>
         <Button submit click={sendRequest}>
-          مرحله بعد
+          ثبت تغییرات
         </Button>
       </Card>
     </>

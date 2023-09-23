@@ -12,6 +12,9 @@
 .textOfGroupList {
   padding: 6% 7% 7% 0%;
 }
+.creatorName{
+  font-weight: 900;
+}
 .parts1,
 .parts2 {
   position: relative;
@@ -25,9 +28,7 @@
 .parts2 {
   right: 12%;
 }
-.title {
-  font-size: 1.4rem;
-}
+
 .membersOfGroups {
   padding: 6% 7% 0% 0%;
   font-size: 1rem;

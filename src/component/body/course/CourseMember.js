@@ -20,14 +20,14 @@ export default function CourseMember() {
 
       <Card members>
         <div className={classes.role}>
-          <h2 className={classes.roleTitle}>استاد</h2>
+          <h3 className={classes.roleTitle}>استاد</h3>
           <FaUserTie className={classes.roleIcon} />
         </div>
         {res.owner !== null && (
           <>
             <div className={classes.memberContainer}>
               <div className={classes.eachMember}>
-                <h3 className={classes.name}>{res.owner.name}</h3>
+                <h4 className={classes.name}>{res.owner.name}</h4>
               </div>
             </div>
           </>
@@ -35,7 +35,7 @@ export default function CourseMember() {
       </Card>
       <Card members>
         <div className={classes.role}>
-          <h2 className={classes.roleTitle}>دستیاران استاد</h2>
+          <h3 className={classes.roleTitle}>دستیاران استاد</h3>
           <FaUserEdit className={classes.roleIcon} />
         </div>
         {res.assistant_profiles !== null && (
@@ -44,7 +44,7 @@ export default function CourseMember() {
               return (
                 <div className={classes.memberContainer} key={profile.id}>
                   <div className={classes.eachMember}>
-                    <h3 className={classes.name}>{profile.name}</h3>
+                    <h4 className={classes.name}>{profile.name}</h4>
                   </div>
                 </div>
               );
@@ -54,7 +54,7 @@ export default function CourseMember() {
       </Card>
       <Card members>
         <div className={classes.role}>
-          <h2 className={classes.roleTitle}>دانشجویان</h2>
+          <h3 className={classes.roleTitle}>دانشجویان</h3>
           <FaUserGraduate className={classes.roleIcon} />
         </div>
 
@@ -64,7 +64,7 @@ export default function CourseMember() {
               return (
                 <div className={classes.memberContainer} key={profile.id}>
                   <div className={classes.eachMember}>
-                    <h3 className={classes.name}>{profile.name}</h3>
+                    <h4 className={classes.name}>{profile.name}</h4>
                   </div>
                 </div>
               );

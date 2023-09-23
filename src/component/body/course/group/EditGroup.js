@@ -69,7 +69,7 @@ export default function EditGroup() {
             />
           </div>
           <div className={classes.editGroupInput}>
-            <label htmlFor="discription">توضیجات</label>
+            <label htmlFor="discription">توضیحات</label>
             <Input groupDiscription innerRef={groupDescription} />
           </div>
           <Button submit click={updateGroupClicked}>

@@ -3,7 +3,7 @@ import Card from "../../../../ui/Card";
 import Button from "../../../../ui/Button";
 import Input from "../../../../ui/Input";
 import SwitchInput from "../../../../ui/SwitchInput";
-import { FaFileAlt } from "react-icons/fa";
+import { FaList } from "react-icons/fa";
 import Checkbox from "../../../../ui/CheckBox";
 import { useEffect, useRef, useState } from "react";
 import useGetUpdateProject from "../../../../fetch/useGetUpdateProject";
@@ -75,9 +75,9 @@ export default function ManageProject() {
     return (
       <Card manageProject>
         <h2 className={classes.title}>مدیریت پروژه</h2>
-        <FaFileAlt className={classes.icon} onClick={projectListBtnClicked} />
+        <FaList className={classes.icon} onClick={projectListBtnClicked} />
 
-        <h3> : آپلود صورت پروژه</h3>
+        <h3>  بارگذاری صورت پروژه</h3>
         <input type="file" onChange={getFileHandler} />
 
         {project.project_file !== null && (
@@ -85,8 +85,9 @@ export default function ManageProject() {
             href={BASEURL + project.project_file}
             target="_blank"
             rel="noreferrer"
+            className={classes.downLink}
           >
-            دانلود فایل آپلود شده
+            دانلود آخرین فایل بارگذاری شده
           </a>
         )}
 
