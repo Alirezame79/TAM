@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
-import Card from "../../../ui/Card";
-import ManageProject from "./project/ManageProject";
-import useCourse from "../../../fetch/useCourse";
-import ProjectList from "./project/ProjectList";
-import UploadProject from "./project/UploadProject";
-import ViewProject from "./project/ViewProject";
+import Card from "../../../../ui/Card";
+import ManageProject from "./ManageProject";
+import useCourse from "../../../../fetch/useCourse";
+import ProjectList from "./ProjectList";
+import UploadProject from "./UploadProject";
+import ViewProject from "./ViewProject";
 
 export default function Project() {
   useCourse();

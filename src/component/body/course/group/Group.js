@@ -1,9 +1,9 @@
-import useCheckGroup from "../../../fetch/useCheckGroup";
-import Card from "../../../ui/Card";
-import CreateGroup from "./group/CreateGroup";
-import GroupList from "./group/GroupList";
-import DetailGroup from "./group/DetailGroup";
-import GroupView from "./group/GroupView";
+import useCheckGroup from "../../../../fetch/useCheckGroup";
+import Card from "../../../../ui/Card";
+import CreateGroup from "./CreateGroup";
+import GroupList from "./GroupList";
+import DetailGroup from "./DetailGroup";
+import GroupView from "./GroupView";
 
 export default function Group() {
   const { data } = useCheckGroup();

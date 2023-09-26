@@ -18,9 +18,10 @@ import CourseMember from "./component/body/course/CourseMember";
 import CourseSetting from "./component/body/course/CourseSetting";
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Group from "./component/body/course/Group";
-import Project from "./component/body/course/Project";
+import Group from "./component/body/course/group/Group";
+import Project from "./component/body/course/project/Project";
 import ForgetPassword from "./component/login/ForgetPassword";
+import Schedule from "./component/body/course/project/schedule/Schedule";
 
 function App() {
   const isAuthenticated = useIsAuthenticated();
@@ -82,6 +83,8 @@ function App() {
               <Route path="/course/:id/group" element={<Group />} />
 
               <Route path="/course/:id/project" element={<Project />} />
+              
+              <Route path="/course/:id/project/schedule" element={<Schedule />} />
 
               <Route path="/permissionDenied" element={<PermissionDenied />} />
               <Route path="*" element={<NotFound />} />
