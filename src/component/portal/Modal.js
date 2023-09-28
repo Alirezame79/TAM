@@ -35,8 +35,8 @@ function EditProfile({ data }) {
   }
 
   return (
-    <Card confirm>
-      <h3>آیا اطمینان دارید که اطلاعات وارد شده به پروفایلتان اعمال شود؟</h3>
+    <Card confirm dir="rtl">
+      <h3 className={classes.title}>آیا اطمینان دارید که اطلاعات وارد شده به پروفایلتان اعمال شود؟</h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -66,8 +66,8 @@ function ChangePassword({ data }) {
   }
 
   return (
-    <Card confirm>
-      <h2>آیا از تغییر رمزعبور خود اطمینان دارید؟</h2>
+    <Card confirm dir="rtl">
+      <h3 className={classes.title}>آیا از تغییر رمزعبور خود اطمینان دارید؟</h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -97,8 +97,8 @@ function CourseSetting({ data }) {
   }
 
   return (
-    <Card confirm>
-      <h2>آیا از اعمال تغییرات درس اطمینان دارید؟</h2>
+    <Card confirm dir="rtl">
+      <h3 className={classes.title}>آیا از اعمال تغییرات درس اطمینان دارید؟</h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -131,8 +131,8 @@ function AddAssistant({ data }) {
   }
 
   return (
-    <Card confirm>
-      <h2>آیا میخواهید {data.name} را به دستیاران این درس اضافه کنید؟</h2>
+    <Card confirm dir="rtl">
+      <h3 className={classes.title}>آیا میخواهید "{data.name}" را به دستیاران این درس اضافه کنید؟</h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -165,8 +165,8 @@ function RemoveAssistant({ data }) {
   }
 
   return (
-    <Card confirm>
-      <h2>آیا میخواهید {data.name} را از دستیاران این درس حذف کنید؟</h2>
+    <Card confirm dir="rtl">
+      <h3 className={classes.title}>آیا میخواهید "{data.name}" را از دستیاران این درس حذف کنید؟</h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -196,8 +196,8 @@ function CreateGroup({ data }) {
   }
 
   return (
-    <Card confirm>
-      <h2>آیا از ساخت گروه اطمینان دارید؟</h2>
+    <Card confirm dir="rtl">
+      <h3 className={classes.title}>آیا از ساخت گروه اطمینان دارید؟</h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -227,8 +227,8 @@ function EditGroup({ data }) {
   }
 
   return (
-    <Card confirm>
-      <h2>آیا از ویرایش اطلاعات گروه اطمینان دارید؟</h2>
+    <Card confirm dir="rtl">
+      <h3 className={classes.title}>آیا از ویرایش اطلاعات گروه اطمینان دارید؟</h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -261,8 +261,8 @@ function RemoveGroup({ data, role }) {
   }
 
   return (
-    <Card confirm>
-      <h2>آیا میخواهید گروه {data.name} را حذف کنید؟</h2>
+    <Card confirm dir="rtl">
+      <h3 className={classes.title}>آیا میخواهید گروه "{data.name}" را حذف کنید؟</h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -295,8 +295,8 @@ function RemoveMember({ data }) {
   }
 
   return (
-    <Card confirm>
-      <h2>آیا میخواهید {data.name} را از گروه خارج کنید؟</h2>
+    <Card confirm dir="rtl">
+      <h3 className={classes.title}>آیا میخواهید "{data.name}" را از گروه خارج کنید؟</h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -332,8 +332,8 @@ function AddMember({ data }) {
   }
 
   return (
-    <Card confirm>
-      <h2>آیا میخواهید {checkMember.name} را به گروه خود اضافه کنید؟</h2>
+    <Card confirm dir="rtl">
+      <h3 className={classes.title}>آیا میخواهید "{checkMember.name}" را به گروه خود اضافه کنید؟</h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -366,8 +366,8 @@ function LeaveGroup({ data }) {
   }
 
   return (
-    <Card confirm>
-      <h2>آیا میخواهید گروه را ترک کنید؟</h2>
+    <Card confirm dir="rtl">
+      <h3 className={classes.title}>آیا میخواهید گروه را ترک کنید؟</h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف

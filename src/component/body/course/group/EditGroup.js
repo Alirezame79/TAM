@@ -9,6 +9,8 @@ import useUpdateGroup from "../../../../fetch/useUpdateGroup";
 import { useDispatch, useSelector } from "react-redux";
 import { setModal } from "../../../../store";
 import Modal from "../../../portal/Modal";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function EditGroup() {
   const { id } = useParams();
@@ -31,6 +33,11 @@ export default function EditGroup() {
   console.log(data);
 
   function updateGroupClicked() {
+    if (groupName.current.value.trim() === "") {
+      toast.error('نام گروه نمیتواند خالی باشد')
+      return
+    }
+
     let data = {
       name: groupName.current.value,
       description: groupDescription.current.value,

@@ -29,9 +29,7 @@ export default function useRemoveGroupMember(studentId, user) {
                 if (response.status === 200) {
                     console.log("Ok user")
                     toast.success('عضو از این گروه اخراج شد.')
-                    let list = [...membersList]
-                    list.shift(user)
-                    dispatch(setMembersList(list))
+                    window.location.reload();
                 } else if (response.status === 403) {
                     console.log("Permission Denied")
                     toast.error('کاربر مورد نظر اجازه تغییر اطلاعات این درس را ندارد')

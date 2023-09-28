@@ -1,6 +1,7 @@
 import classes from "./style/Card.module.css";
 
 function Card({
+  dir="ltr",
   children,
   alert,
   profile,
@@ -53,9 +54,9 @@ function Card({
   if (projectList) cardStyle = classes.projectListStyle;
   if (projectListItem) cardStyle = classes.projectListItemStyle;
   if (projectListItemMoreInfo) cardStyle = classes.projectListItemMoreInfoStyle;
-
   if (viewProject) cardStyle = classes.viewProjectStyle;
-  return <div className={cardStyle}>{children}</div>;
+  
+  return <div className={cardStyle} dir={dir}>{children}</div>;
 }
 
 export default Card;

@@ -1,0 +1,53 @@
+.title {
+    text-align: center;
+}
+
+.dateContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px auto;
+    width: 50%;
+}
+
+.timeContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px auto;
+    width: 80%;
+}
+
+.periodContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px auto;
+    width: 50%;
+}
+
+.receiversRadiobuttonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.assistantRadiobuttonContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+.customRadiobuttonContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+.customReceiversNumber {
+    display: flex;
+    flex-direction: row-reverse;
+}

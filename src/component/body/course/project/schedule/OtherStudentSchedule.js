@@ -1,10 +1,10 @@
-import classes from './style/GroupOwnerSchedule.module.css'
 import { useSelector } from "react-redux";
 import Card from "../../../../../ui/Card";
 import useStudentRoundList from "../../../../../fetch/useStudentRoundList";
+import classes from './style/OtherStudentSchedule.module.css'
 
 
-export default function GroupOwnerSchedule() {
+export default function OtherStudentSchedule() {
     const roundList = useSelector((state) => {
         return state.studentRoundList;
     })

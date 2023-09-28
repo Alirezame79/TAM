@@ -1,0 +1,12 @@
+.title {
+  text-align: center;
+}
+
+.roundContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 10px;
+  background-color: orange;
+}

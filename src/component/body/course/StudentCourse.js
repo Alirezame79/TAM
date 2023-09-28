@@ -43,7 +43,7 @@ export default function StudentCourse({ id }) {
 
       <div className={classes.centarPage}>
         <Card courseInfo>
-          <h4>{course.course.id} : کد درس</h4>
+          {/* <h4>{course.course.id} : کد درس</h4> */}
           <h4>  زمان تشکیل کلاس  : {course.course.class_time}</h4>
           <h4>   مکان تشکیل کلاس   : {course.course.class_location} </h4>
           <h4> {course.course.exam_time} : زمان امتحان درس </h4>

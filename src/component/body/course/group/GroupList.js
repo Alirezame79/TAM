@@ -30,6 +30,7 @@ export default function GroupList() {
 
       <Card groupList>
         <h2 className={classes.titlePage}>لیست گروه‌ها</h2>
+        {groupList.length === 0 && <p className={classes.noGroupAlert}>گروهی وجود ندارد</p>}
         {groupList.map((group) => {
           return (
             <Card groupsOfGroupList key={group.id}>

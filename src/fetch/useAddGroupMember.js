@@ -10,9 +10,6 @@ import BASEURL from './BaseURL';
 export default function useAddGroupMember(newMember, user) {
     const {id} = useParams()
     const dispatch = useDispatch()
-    const membersList = useSelector((state) => {
-        return state.membersList;
-    })
 
     useEffect(() => {
         if (newMember === null) return
@@ -30,13 +27,13 @@ export default function useAddGroupMember(newMember, user) {
                 if (response.status === 200) {
                     console.log("Ok user")
                     toast.success('دانشجو با موفقیت به گروه اضافه شد.')
-                    let list = [...membersList]
-                    list.unshift(user)
-                    console.log(list)
-                    dispatch(setMembersList(list))
+                    window.location.reload();
                 } else if (response.status === 403) {
                     console.log("Permission Denied")
                     toast.error('کاربر مورد نظر اجازه تغییر اطلاعات این درس را ندارد')
+                } else if (response.status === 406) {
+                    console.log("Capacity is full")
+                    toast.error('ظرفیت گروه تکمیل شده است')
                 } else {
                     console.log("Error")
                     toast.error('مشکلی رخ داده است. لطفا با پشتیبانی تماس بگیرید')

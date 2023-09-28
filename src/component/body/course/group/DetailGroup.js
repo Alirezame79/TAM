@@ -3,7 +3,7 @@ import Input from "../../../../ui/Input";
 import { FaUserPlus, FaTrashAlt, FaCog, FaUserMinus } from "react-icons/fa";
 import Card from "../../../../ui/Card";
 import { useParams, useNavigate } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useDetailGroup from "../../../../fetch/useDetailGroup";
 import { useDispatch, useSelector } from "react-redux";
 import { setMembersList, setModal } from "../../../../store";
@@ -29,7 +29,7 @@ export default function CreateGroup() {
   });
 
   useCheckGroupNewMember(checkAddMember);
-
+  
   if (data === undefined) return;
   console.log(data);
   dispatch(setMembersList(data.group.members));
@@ -105,6 +105,8 @@ export default function CreateGroup() {
           <Card addMemberOfGroup>
             <h2 className={classes.title}> اعضا گروه</h2>
             {membersList.map((member) => {
+              console.log(membersList)
+
               return (
                 <div className={classes.member} key={member.id}>
                   <h3>{member.name} </h3>

@@ -91,7 +91,7 @@
   .body {
     height: 70%;
     margin: 0;
-    top: 10%;
+    top: 1rem;
     right: 0%;
     left: 2%;
   }
@@ -133,7 +133,7 @@
   }
 }
 
-@media (max-width: 550px) and (min-width: 300px) and(  max-height:950px ) and (min-height: 750px) {
+@media (max-width: 550px) and (min-width: 300px) and (max-height:950px ) and (min-height: 750px) {
   .profileLinks {
     position: relative;
 

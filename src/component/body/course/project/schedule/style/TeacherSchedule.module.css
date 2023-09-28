@@ -1,0 +1,17 @@
+.title {
+  text-align: center;
+}
+
+.roundContainer {
+  background-color: blue;
+}
+
+.roundDataContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.roundGroup {
+  background-color: orange;
+}

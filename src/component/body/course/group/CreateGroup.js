@@ -10,6 +10,8 @@ import useCreateGroup from "../../../../fetch/useCreateGroup";
 import { useDispatch, useSelector } from "react-redux";
 import { setModal } from "../../../../store";
 import Modal from "../../../portal/Modal";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function CreateGroup() {
   const { id } = useParams();
@@ -27,6 +29,11 @@ export default function CreateGroup() {
   console.log(data);
 
   function createGroupClicked() {
+    if (name.current.value.trim() === "") {
+      toast.error('نام گروه نمیتواند خالی باشد')
+      return
+    }
+
     let group = {
       name: name.current.value,
       description: description.current.value,

@@ -26,7 +26,7 @@ export default function useUploadProject(data) {
           console.log(response);
           if (response.status === 200) {
             navigate("/course/" + id);
-            toast.success('فایل بروژه ارسال شد')
+            toast.success('فایل پروژه ارسال شد')
           } else {
             toast.error('مشکلی رخ داده است')
           }

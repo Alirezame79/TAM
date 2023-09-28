@@ -30,9 +30,7 @@ export default function useAddAssistant(newAssistant, user) {
                 if (response.status === 200) {
                     console.log("Ok user")
                     toast.success('دستیار با موفقیت افزوده شد.')
-                    let list = [...assistantList]
-                    list.unshift(user)
-                    dispatch(setAssistantList(list))
+                    window.location.reload();
                 } else if (response.status === 403) {
                     console.log("Permission Denied")
                     toast.error('کاربر مورد نظر اجازه تغییر اطلاعات این درس را ندارد')
