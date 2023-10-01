@@ -1,7 +1,7 @@
 import classes from "./style/Card.module.css";
 
 function Card({
-  dir="ltr",
+  dir = "ltr",
   children,
   alert,
   profile,
@@ -21,6 +21,7 @@ function Card({
   detailGroup,
   editGroup,
   groupList,
+  groupView,
   groupsOfGroupList,
   uploadProject,
   manageProject,
@@ -28,6 +29,12 @@ function Card({
   projectListItem,
   viewProject,
   projectListItemMoreInfo,
+  teacherSchedule,
+  assistantSchedule,
+  groupOwnerSchedule,
+  studentSchedule,
+  studentRound,
+  round,
 }) {
   let cardStyle;
   if (login) cardStyle = classes.loginStyle;
@@ -42,6 +49,8 @@ function Card({
   if (assistants) cardStyle = classes.assistantsStyle;
   if (alert) cardStyle = classes.alertStyle;
   if (creatGroup) cardStyle = classes.creatGroupStyle;
+
+  if (groupView) cardStyle = classes.groupViewStyle;
   if (editGroup) cardStyle = classes.creatGroupStyle;
   if (detailGroup) cardStyle = classes.creatGroupStyle;
   if (addMemberOfGroup) cardStyle = classes.addMemberOfGroupStyle;
@@ -55,8 +64,18 @@ function Card({
   if (projectListItem) cardStyle = classes.projectListItemStyle;
   if (projectListItemMoreInfo) cardStyle = classes.projectListItemMoreInfoStyle;
   if (viewProject) cardStyle = classes.viewProjectStyle;
-  
-  return <div className={cardStyle} dir={dir}>{children}</div>;
+  if (teacherSchedule) cardStyle = classes.teacherScheduleStyle;
+  if (assistantSchedule) cardStyle = classes.assistantScheduleStyle;
+  if (groupOwnerSchedule) cardStyle = classes.groupOwnerScheduleStyle;
+  if (studentSchedule) cardStyle = classes.studentScheduleStyle;
+  if (round) cardStyle = classes.roundStyle;
+  if (studentRound) cardStyle = classes.studentRoundStyle;
+
+  return (
+    <div className={cardStyle} dir={dir}>
+      {children}
+    </div>
+  );
 }
 
 export default Card;

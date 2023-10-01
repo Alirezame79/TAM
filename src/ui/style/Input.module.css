@@ -29,7 +29,9 @@
 .inputAddDeletAssistant,
 .inputAddMemberOfGroup,
 .inputcreatGroup,
-.inputGroupDiscription {
+.inputGroupDiscription,
+.inputDate,
+.inputTime {
   background-color: #d1ece8;
   width: 80%;
   height: 0.8rem;
@@ -39,6 +41,13 @@
   padding: 15px;
   box-shadow: 1px 4px 9px 0px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
+}
+.inputDate {
+  text-align: center;
+}
+.inputTime {
+  text-align: center;
+  width: 31%;
 }
 .inputAddDeletAssistant {
   width: 74%;
@@ -57,7 +66,9 @@
 .inputAddDeletAssistant:focus,
 .inputAddMemberOfGroup:focus,
 .inputcreatGroup:focus,
-.inputGroupDiscription :focus {
+.inputGroupDiscription :focus,
+.inputDate:focus,
+.inputTime:focus {
   background-color: white;
   border: 3px solid #7a6d6d;
 }

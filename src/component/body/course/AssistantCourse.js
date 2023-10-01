@@ -42,16 +42,19 @@ export default function AssistantCourse({ id }) {
       </div>
 
       <div className={classes.teacher}>
-        <h2>  استاد درس : {course.course.owner.name}</h2>
+        <h2> استاد درس : {course.course.owner.name}</h2>
       </div>
 
       <div className={classes.centarPage}>
         <Card courseInfo>
           <h4>{course.course.id} : کد درس</h4>
-          <h4> زمان تشکیل کلاس  : {course.course.class_time}</h4>
-          <h4> مکان تشکیل کلاس  : {course.course.class_location} </h4>
+          <h4> زمان تشکیل کلاس : {course.course.class_time}</h4>
+          <h4> مکان تشکیل کلاس : {course.course.class_location} </h4>
           <h4> {course.course.exam_time} : زمان امتحان درس </h4>
-          <h4> {course.course.group_capacity} ظرفیت گروه ها : نفر </h4>
+          <div className={classes.capacity}>
+            <h4>: ظرفیت گروه ها </h4>
+            <h4 dir="rtl"> {course.course.group_capacity} نفر </h4>
+          </div>
           <h4>
             {" "}
             :دستیاران استاد
@@ -78,7 +81,7 @@ export default function AssistantCourse({ id }) {
           )}
           <div className={classes.CircleBtn} onClick={projectClicked}>
             {" "}
-            <FaLaptopCode className={classes.place} />{" "}
+            <FaLaptopCode className={classes.place1} />{" "}
             <p className={classes.CircleBtnText1}>لیست پروژه ها </p>
           </div>
           <div className={classes.CircleBtn}>

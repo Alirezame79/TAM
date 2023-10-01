@@ -29,7 +29,7 @@ export default function CreateGroup() {
   });
 
   useCheckGroupNewMember(checkAddMember);
-  
+
   if (data === undefined) return;
   console.log(data);
   dispatch(setMembersList(data.group.members));
@@ -93,8 +93,11 @@ export default function CreateGroup() {
             </div>
             <div className={classes.detailGroupSubjects}>
               <h2>:حداکثر ظرفیت گروه ها </h2>
-            
-              <h3 className={classes.info}> {data.course.group_capacity} نفر</h3>
+
+              <h3 className={classes.info} dir="rtl">
+                {" "}
+                {data.course.group_capacity} نفر
+              </h3>
             </div>
             <div className={classes.detailGroupSubjects}>
               <h2>: توضیحات</h2>
@@ -105,7 +108,7 @@ export default function CreateGroup() {
           <Card addMemberOfGroup>
             <h2 className={classes.title}> اعضا گروه</h2>
             {membersList.map((member) => {
-              console.log(membersList)
+              console.log(membersList);
 
               return (
                 <div className={classes.member} key={member.id}>

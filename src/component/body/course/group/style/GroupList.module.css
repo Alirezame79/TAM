@@ -12,7 +12,7 @@
 .textOfGroupList {
   padding: 6% 7% 7% 0%;
 }
-.creatorName{
+.creatorName {
   font-weight: 900;
 }
 .parts1,
@@ -28,7 +28,9 @@
 .parts2 {
   right: 12%;
 }
-
+.nameOfGroup {
+  margin-bottom: 20px;
+}
 .membersOfGroups {
   padding: 6% 7% 0% 0%;
   font-size: 1rem;
@@ -45,12 +47,7 @@
     right: 0;
     width: 100%;
   }
-  .textOfGroupList {
-    font-size: 1rem;
-  }
-  .title {
-    font-size: 1.2rem;
-  }
+
   .deletIcon {
     transform: scale(1);
     right: 15px;

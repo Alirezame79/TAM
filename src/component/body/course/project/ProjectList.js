@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import useMoreProjectData from "../../../../fetch/useMoreProjectData";
 import BASEURL from "../../../../fetch/BaseURL";
 import useGetAllProjectFiles from "../../../../fetch/useGetAllProjectFiles";
-
+import { IoTimeOutline } from "react-icons/io5";
 export default function ProjectList() {
   const projectList = useSelector((state) => {
     return state.projectList;
@@ -30,9 +30,14 @@ export default function ProjectList() {
 
   return (
     <Card projectList>
-      <h2 className={classes.title}>لیست پروژه ها</h2>
-      <FaFileArchive onClick={getAllFilesClicked} className={classes.zipIcon} />
-
+      <div className={classes.header}>
+        <IoTimeOutline className={classes.timeIcon} />
+        <h2 className={classes.title}>لیست پروژه ها</h2>
+        <FaFileArchive
+          onClick={getAllFilesClicked}
+          className={classes.zipIcon}
+        />
+      </div>
       {projectList.map((eachProject) => {
         if (projectData !== undefined && projectData.id === eachProject.id) {
           return (

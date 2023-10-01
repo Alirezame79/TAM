@@ -19,6 +19,8 @@ export default function Input({
   readOnly,
   editGroup,
   manageProjectDescription,
+  date,
+  time,
 }) {
   let selectInput;
   let textareaInput;
@@ -35,6 +37,8 @@ export default function Input({
   if (manageProjectDescription)
     textareaInput = classes.inputManageProjectDescription;
   if (groupDiscription) textareaInput = classes.inputGroupDiscription;
+  if (date) selectInput = classes.inputDate;
+  if (time) selectInput = classes.inputTime;
 
   if (editProfileBio || groupDiscription || manageProjectDescription) {
     return (
@@ -58,6 +62,7 @@ export default function Input({
         min={1}
         onChange={change}
         readOnly={readOnly}
+        dir="rtl"
       />
     );
   }

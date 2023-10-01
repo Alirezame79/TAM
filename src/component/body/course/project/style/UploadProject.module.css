@@ -49,9 +49,26 @@ input[type="file"]::file-selector-button {
 input[type="file"]::file-selector-button:hover {
   background-color: #1919a4cf;
 }
-
+.icon {
+  color: #121285;
+  transform: scale(1.5);
+}
 @media (max-width: 1000px) and (min-width: 600px) {
   .content {
     height: 100%;
+  }
+}
+
+@media (max-width: 550px) and (min-width: 300px) {
+  .center {
+    flex-direction: column;
+    margin: 0;
+  }
+  .uploadFile {
+    margin-top: 36%;
+  }
+  .uploadFileInput {
+    display: flex;
+    justify-content: left;
   }
 }

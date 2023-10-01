@@ -93,7 +93,12 @@ h4 {
 }
 .place1 {
   transform: scale(1.3);
-  padding-right: 25px;
+  padding-right: 14px;
+}
+.capacity {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 4px;
 }
 .CircleBtnText1 {
   text-align: center;
