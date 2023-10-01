@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import StudentCourse from "./StudentCourse";
 import AssistantCourse from "./AssistantCourse";
 import TeacherCourse from "./TeacherCourse";
+import Loading from "../../loading/Loading";
 
 export default function Course() {
   const { id } = useParams();
