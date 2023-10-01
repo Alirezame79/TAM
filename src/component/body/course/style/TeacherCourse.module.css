@@ -17,7 +17,11 @@
   padding: 20px;
   position: relative;
 }
-
+.capacity {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 4px;
+}
 li {
   list-style-type: none;
   text-align: left;

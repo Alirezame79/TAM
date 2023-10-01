@@ -30,7 +30,9 @@ export default function GroupList() {
 
       <Card groupList>
         <h2 className={classes.titlePage}>لیست گروه‌ها</h2>
-        {groupList.length === 0 && <p className={classes.noGroupAlert}>گروهی وجود ندارد</p>}
+        {groupList.length === 0 && (
+          <p className={classes.noGroupAlert}>گروهی وجود ندارد</p>
+        )}
         {groupList.map((group) => {
           return (
             <Card groupsOfGroupList key={group.id}>
@@ -48,7 +50,10 @@ export default function GroupList() {
               ></FaTrashAlt>
               <div className={classes.parts1}>
                 {/* <h2 className={classes.title}> : نام گروه</h2> */}
-                <h2 className={classes.textOfGroupList}> گروه {group.name} </h2>
+                <h2 className={classes.nameOfGroup} dir="rtl">
+                  {" "}
+                  گروه {group.name}{" "}
+                </h2>
                 <h3 className={classes.title}> : توضیحات گروه</h3>
                 <h4 className={classes.textOfGroupList}>
                   {" "}
@@ -57,9 +62,7 @@ export default function GroupList() {
               </div>
               <div className={classes.parts2}>
                 {/* <h2 className={classes.title}> : سر گروه</h2> */}
-                <h3 className={classes.creatorName } >
-                  {group.creator.name} {" "}
-                </h3>
+                <h3 className={classes.creatorName}>{group.creator.name} </h3>
                 {/* <h2 className={classes.title}> : اعضا گروه</h2> */}
 
                 {group.members.map((member) => {

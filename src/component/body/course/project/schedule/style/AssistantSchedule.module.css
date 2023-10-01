@@ -1,17 +1,31 @@
 .title {
   text-align: center;
+  margin-bottom: 35px;
 }
 
-.roundContainer {
-  background-color: blue;
-}
-
-.roundDataContainer {
+.roundDataContainer,
+.roundGroupNameContainer {
   display: flex;
   flex-direction: row-reverse;
-  gap: 10px;
 }
-
+.roundDataContainer {
+  margin-bottom: 25px;
+  justify-content: center;
+}
+.roundName {
+  margin-left: 15px;
+}
 .roundGroup {
-  background-color: orange;
+  border: 2px solid #ffcf5d;
+  padding: 7px 15px;
+  margin-left: 20px;
+  border-radius: 7px;
+  box-shadow: 4px 6px 9px -4px #cdb98a;
+}
+@media (max-width: 1100px) and (min-width: 300px) {
+  .roundGroupNameContainer {
+    overflow-x: scroll;
+    padding-bottom: 13px;
+    padding-right: 7px;
+  }
 }

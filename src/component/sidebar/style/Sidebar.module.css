@@ -82,6 +82,7 @@
     height: 10%;
     padding: 0;
     background-color: #121285;
+    display: none;
   }
 
   .sidebarTopic {

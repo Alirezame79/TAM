@@ -1,53 +1,67 @@
 .title {
-    text-align: center;
+  text-align: center;
 }
 
 .dateContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    gap: 10px;
-    margin: 10px auto;
-    width: 50%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px auto;
+  width: 50%;
 }
 
 .timeContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    gap: 10px;
-    margin: 10px auto;
-    width: 80%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 10px auto;
+  width: 100%;
 }
-
+.select {
+  border: 3px solid #697d7a;
+  border-radius: 6px;
+  width: 50px;
+  height: 31px;
+}
+.circle {
+  width: 20px;
+  border: 3px solid #697d7a;
+}
+.numTitel {
+  margin-bottom: 7px;
+}
 .periodContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    gap: 10px;
-    margin: 10px auto;
-    width: 50%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 10px auto;
+  width: 50%;
 }
 
 .receiversRadiobuttonContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .assistantRadiobuttonContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
 }
 
 .customRadiobuttonContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
 }
 
 .customReceiversNumber {
-    display: flex;
-    flex-direction: row-reverse;
+  display: flex;
+  flex-direction: row-reverse;
 }

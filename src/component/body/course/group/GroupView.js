@@ -6,6 +6,7 @@ import useDetailGroup from "../../../../fetch/useDetailGroup";
 import { useDispatch, useSelector } from "react-redux";
 import { setModal } from "../../../../store";
 import Modal from "../../../portal/Modal";
+import { BiLogOut } from "react-icons/bi";
 
 export default function GroupView() {
   const { id } = useParams();
@@ -26,34 +27,36 @@ export default function GroupView() {
     <>
       {modal === "leave-group" && <Modal data={data.group.id} leaveGroup />}
 
-      <div className={classes.content}>
+      <Card groupView>
         <div className={classes.groupName}>
-          <h1 className={classes.groupNameText}>اطلاعات گروه{data.group.name} </h1>
+          <h2 className={classes.groupNameText}>
+            اطلاعات گروه {data.group.name}{" "}
+          </h2>
+          <BiLogOut className={classes.icon} click={leaveGroupClicked}>
+            Leave Group
+          </BiLogOut>
         </div>
         <div className={classes.groupView}>
-          <Card groupViweDescription>
+          <div className={classes.groupMember}>
+            <h3 className={classes.labelOfMembers}>: اعضا گروه </h3>
+            <h4 className={classes.nameOfOwner}>{data.group.creator.name}</h4>
+
+            {data.group.members.map((member) => {
+              return (
+                <h5 className={classes.nameOfMembers} key={member.id}>
+                  {member.name}
+                </h5>
+              );
+            })}
+          </div>
+          <div>
+            <h3 className={classes.description}>: توضیحات</h3>
             <p className={classes.descriptionText}>
               {data.group.description || "توضیحات"}
             </p>
-          </Card>
-
-          <Card groupViweMember>
-            <h2 className={classes.labelOfMembers}>: سر گروه </h2>
-            <h3 className={classes.nameOfMembers}>{data.group.creator.name}</h3>
-            <h2 className={classes.labelOfMembers}>: اعضا گروه </h2>
-            {data.group.members.map((member) => {
-              return (
-                <h3 className={classes.nameOfMembers} key={member.id}>
-                  {member.name}
-                </h3>
-              );
-            })}
-          </Card>
+          </div>
         </div>
-        <Button remove click={leaveGroupClicked}>
-          Leave Group
-        </Button>
-      </div>
+      </Card>
     </>
   );
 }

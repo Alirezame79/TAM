@@ -8,7 +8,7 @@ import BASEURL from "../../../../fetch/BaseURL";
 import { FaFileDownload } from "react-icons/fa";
 import { useState } from "react";
 import useUploadProject from "../../../../fetch/useUploadProject";
-
+import { IoTimeOutline } from "react-icons/io5";
 export default function UploadProject() {
   const project = useSelector((state) => {
     return state.studentProject;
@@ -45,6 +45,7 @@ export default function UploadProject() {
   return (
     <Card uploadProject>
       <h2 className={classes.title}> پروژه</h2>
+      <IoTimeOutline className={classes.icon} />
       <div className={classes.center}>
         <div className={classes.CenterText}>
           <div className={classes.projectDownload}>
@@ -113,12 +114,17 @@ export default function UploadProject() {
             )}
         </div>
       </div>
-      <h2 className={`${classes.bottomSpace} ${classes.titleSize}`}>
-        {" "}
-        :بارگذاری فایل جدید
-      </h2>
-      <input type="file" onChange={getFileHandler} />
-
+      <div className={classes.uploadFile}>
+        <h2 className={`${classes.bottomSpace} ${classes.titleSize}`}>
+          {" "}
+          :بارگذاری فایل جدید
+        </h2>
+        <input
+          type="file"
+          onChange={getFileHandler}
+          className={classes.uploadFileInput}
+        />
+      </div>
       <Button submit click={sendProjectClicked}>
         ارسال فایل پروژه
       </Button>

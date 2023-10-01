@@ -15,6 +15,7 @@ import Card from "../../ui/Card";
 import BASEURL from "../../fetch/BaseURL";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import tamLogo from "./../../images/tam-logo.jpg";
 
 export default function Login() {
   const username = useRef("");
@@ -46,7 +47,7 @@ export default function Login() {
           className={classes.uniLable}
         />
         <h2 className={classes.tamLable}>سامانه تام</h2>
-        <img src="image.jpg" alt="TAM logo" className={classes.tamLogo} />
+        <img src={tamLogo} alt="TAM logo" className={classes.tamLogo} />
       </div>
 
       <Card login>

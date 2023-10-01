@@ -26,5 +26,9 @@
 .icon {
   color: #121285;
   transform: scale(1.5);
-  position: absolute;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+  width: 60px;
 }

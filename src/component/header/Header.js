@@ -4,6 +4,7 @@ import { BiLogOutCircle } from "react-icons/bi";
 import { useSignOut } from "react-auth-kit";
 import { useNavigate } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
+import tamLogo from "./../../images/tam-logo.jpg";
 
 export default function Header() {
   const signOut = useSignOut();
@@ -20,7 +21,7 @@ export default function Header() {
 
   return (
     <div className={classes.body}>
-      <img src="TamLogo.png" alt="Tam Logo" className={classes.tamLogoHeader} />
+      <img src={tamLogo} alt="Tam Logo" className={classes.tamLogoHeader} />
       <div className={classes.logos}>
         <BiLogOutCircle className={classes.outLogo} onClick={signoutClicked} />
         <AiTwotoneBell className={classes.notifLogo} />

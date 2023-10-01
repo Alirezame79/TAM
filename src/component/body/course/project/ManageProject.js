@@ -4,6 +4,7 @@ import Button from "../../../../ui/Button";
 import Input from "../../../../ui/Input";
 import SwitchInput from "../../../../ui/SwitchInput";
 import { FaList } from "react-icons/fa";
+import { IoTimeOutline } from "react-icons/io5";
 import Checkbox from "../../../../ui/CheckBox";
 import { useEffect, useRef, useState } from "react";
 import useGetUpdateProject from "../../../../fetch/useGetUpdateProject";
@@ -75,9 +76,11 @@ export default function ManageProject() {
     return (
       <Card manageProject>
         <h2 className={classes.title}>مدیریت پروژه</h2>
-        <FaList className={classes.icon} onClick={projectListBtnClicked} />
-
-        <h3>  بارگذاری صورت پروژه</h3>
+        <div className={classes.icons}>
+          <FaList className={classes.icon} onClick={projectListBtnClicked} />
+          <IoTimeOutline className={classes.icon} />
+        </div>
+        <h3> بارگذاری صورت پروژه</h3>
         <input type="file" onChange={getFileHandler} />
 
         {project.project_file !== null && (
