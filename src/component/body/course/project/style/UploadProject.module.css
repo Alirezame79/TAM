@@ -22,6 +22,9 @@ input[type="file"]::file-selector-button {
   justify-content: space-between;
   margin-top: 45px;
   height: 200px;
+
+  margin-bottom: 33px;
+
 }
 .CenterText {
   display: flex;

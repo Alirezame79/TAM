@@ -20,6 +20,7 @@ export default function OtherStudentSchedule() {
               <h3>{eachRound.start_time}</h3>
               <h3>تا</h3>
               <h3>{eachRound.finish_time}</h3>
+              {eachRound.selected && <h3>:)</h3>}
             </div>
             <h3> {eachRound.round_capacity} : ظرفیت باقی مانده </h3>
           </Card>

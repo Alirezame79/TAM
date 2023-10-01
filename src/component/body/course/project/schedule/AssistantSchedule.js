@@ -9,13 +9,14 @@ export default function AssistantSchedule() {
   });
   useTeacherRoundList();
 
-  console.log(roundList);
   if (roundList === undefined) return;
+  console.log(roundList.rounds_capacity);
+
   return (
     <Card assistantSchedule>
       <h2 className={classes.title}>لیست زمانبندی های پروژه</h2>
 
-      {roundList.map((eachRound) => {
+      {roundList.rounds !== undefined && roundList.rounds.map((eachRound) => {
         return (
           <Card round className={classes.roundContainer} key={eachRound.id}>
             <div className={classes.roundDataContainer}>

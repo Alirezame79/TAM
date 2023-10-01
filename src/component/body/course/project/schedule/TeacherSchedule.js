@@ -15,18 +15,18 @@ export default function TeacherSchedule() {
   useRemoveRound(deletedRound);
 
   console.log(roundList);
-  if (roundList === undefined) return;
+  if (roundList.length <= 0) return;
 
   return (
     <Card teacherSchedule>
       <h2 className={classes.title}>لیست زمانبندی های پروژه</h2>
 
-      {roundList.map((eachRound) => {
+      {roundList.rounds.map((eachRound) => {
         return (
           <Card round key={eachRound.id}>
             <FaTrashAlt
               className={classes.deletIcon}
-              click={function deleteRoundClicked() {
+              onClick={function deleteRoundClicked() {
                 console.log(eachRound.id);
                 const round = {
                   round_id: eachRound.id,
@@ -34,8 +34,7 @@ export default function TeacherSchedule() {
                 setDeletedRound(round);
               }}
             >
-              Delete
-            </FaTrashAlt>
+            </FaTrashAlt >
 
             <div className={classes.roundDataContainer}>
               <h3 className={classes.roundName}>{eachRound.round_name}</h3>

@@ -11,10 +11,11 @@ import useGetUpdateProject from "../../../../fetch/useGetUpdateProject";
 import { useSelector } from "react-redux";
 import BASEURL from "../../../../fetch/BaseURL";
 import usePostUpdateProject from "../../../../fetch/usePostUpdateProject";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ProjectList from "./ProjectList";
 
 export default function ManageProject() {
+  const {id} = useParams()
   const [checkboxCheck, setCheckboxCheck] = useState(false);
   const [file, setFile] = useState(null);
   const [data, setData] = useState(null);
@@ -70,6 +71,10 @@ export default function ManageProject() {
     setProjectListPage(true);
   }
 
+  function scheduleBtnClicked() {
+    navigate('/course/' + id + '/project/schedule/')
+  }
+
   if (projectListPage) {
     return <ProjectList />;
   } else {
@@ -78,7 +83,7 @@ export default function ManageProject() {
         <h2 className={classes.title}>مدیریت پروژه</h2>
         <div className={classes.icons}>
           <FaList className={classes.icon} onClick={projectListBtnClicked} />
-          <IoTimeOutline className={classes.icon} />
+          <IoTimeOutline className={classes.icon} onClick={scheduleBtnClicked} />
         </div>
         <h3> بارگذاری صورت پروژه</h3>
         <input type="file" onChange={getFileHandler} />

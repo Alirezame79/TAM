@@ -6,30 +6,47 @@ import CreateSchedule from "./CreateSchedule";
 import AssistantSchedule from "./AssistantSchedule";
 import GroupOwnerSchedule from "./GroupOwnerSchedule";
 import OtherStudentSchedule from "./OtherStudentSchedule";
+import useSchedule from "../../../../../fetch/useSchedule";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate, useParams } from "react-router";
+import { useEffect } from "react";
 
 
 export default function Schedule() {
-    useCourse();
-    const role = useSelector((state) => {
-      return state.course;
-    });
+  const {id} = useParams()
+  const navigate = useNavigate()
+  useSchedule();
+  const role = useSelector((state) => {
+    return state.scheduleRole;
+  });
 
+  useEffect(() => {
+    console.log(role)
+  }, [role])
+
+
+  if (role.schedule_status === 0) {
+    toast.error("پروژه ی این درس توسط استاد تعریف نشده است")
+    navigate('/course/' + id)
+  } else if (role.schedule_status === 1) {
+    return <TeacherSchedule />
+  } else if (role.schedule_status === 2) {
+    return <AssistantSchedule />
+  } else if (role.schedule_status === 3) {
     return <GroupOwnerSchedule />
-
-    // if (role.group_status === 1) {
-    //     return <GroupOwnerSchedule />
-    // }
-    //  else if (role.group_status === 2) {
-    //     return <AssistantSchedule />
-    // } else if (role.group_status === 3) {
-    //     return <GroupOwnerSchedule />
-    // } else if (role.group_status === 4 || role.group_status === 5) {
-    //     return <OtherSchedule />
-    // } else {
-    //     return (
-    //         <Card profile>
-    //             <h1>Schedule</h1>
-    //         </Card>
-    //     );
-    // }
+  } else if (role.schedule_status === 4) {
+    return <OtherStudentSchedule />
+  } else if (role.schedule_status === 5) {
+    return <CreateSchedule />
+  } else if (role.schedule_status === 6) {
+    toast.error("این بخش توسط استاد هنوز فعال نشده است")
+    navigate('/course/' + id) 
+  } else {
+    return (
+        <Card profile>
+            <h1>Schedule</h1>
+        </Card>
+    );
+  }
 }

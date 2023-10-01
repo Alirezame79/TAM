@@ -8,7 +8,12 @@ import useMoreProjectData from "../../../../fetch/useMoreProjectData";
 import BASEURL from "../../../../fetch/BaseURL";
 import useGetAllProjectFiles from "../../../../fetch/useGetAllProjectFiles";
 import { IoTimeOutline } from "react-icons/io5";
+import Schedule from "./schedule/Schedule";
+import { useNavigate, useParams } from "react-router-dom";
+
 export default function ProjectList() {
+  const {id} = useParams()
+  const navigate = useNavigate()
   const projectList = useSelector((state) => {
     return state.projectList;
   });
@@ -25,13 +30,18 @@ export default function ProjectList() {
   // console.log(projectList)
 
   function getAllFilesClicked() {
+    console.log('step 0')
     setAllFiles(true);
+  }
+
+  function scheduleBtnClicked() {
+    navigate('/course/' + id + '/project/schedule/')
   }
 
   return (
     <Card projectList>
       <div className={classes.header}>
-        <IoTimeOutline className={classes.timeIcon} />
+        <IoTimeOutline className={classes.timeIcon} onClick={scheduleBtnClicked}/>
         <h2 className={classes.title}>لیست پروژه ها</h2>
         <FaFileArchive
           onClick={getAllFilesClicked}

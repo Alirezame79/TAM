@@ -20,11 +20,11 @@ export default function useTeacherRoundList() {
         return response.json();
       })
       .then((data) => {
-        if (data.length >= 0) {
+        if (data.rounds.length >= 0) {
           console.log("accepted")
           dispatch(setTeacherRoundList(data))
         }
         console.log(data);
       });
-  }, [id]);
+  }, []);
 }

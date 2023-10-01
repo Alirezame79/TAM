@@ -9,8 +9,12 @@ import { setMembersList } from "../store";
 export default function useGetAllProjectFiles(flag) {
     const {id} = useParams()
 
+    console.log('step 0-1')
+
     useEffect(() => {
         if (flag === false) return
+
+        console.log('step 1')
 
         fetch(BASEURL + "course/" + id + "/get-all-project/", {
             headers: {
@@ -20,6 +24,7 @@ export default function useGetAllProjectFiles(flag) {
         })
             .then((response) => {
                 console.log(response);
+                console.log('step 2')
                 if (response.status === 200) {
                     console.log("200")
                 } else {
@@ -29,6 +34,7 @@ export default function useGetAllProjectFiles(flag) {
                 return response.json();
             })
             .then((data) => {
+                console.log('step 3')
                 console.log(data);
             });
     }, [id])
