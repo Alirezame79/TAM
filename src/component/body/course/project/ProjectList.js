@@ -43,10 +43,11 @@ export default function ProjectList() {
       <div className={classes.header}>
         <IoTimeOutline className={classes.timeIcon} onClick={scheduleBtnClicked}/>
         <h2 className={classes.title}>لیست پروژه ها</h2>
+        <a href={BASEURL + "/files/projects/archives/%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D8%A2%D9%BE%D9%84%D9%88%D8%AF%20%D8%B4%D8%AF%D9%87%20%D8%AF%D8%A7%D9%86%D8%B4%D8%AC%D9%88%DB%8C%D8%A7%D9%86%20%D8%AF%D8%B1%D8%B3%20%D9%85%D8%AF%D8%A7%D8%B1%20%D8%A7%D9%84%DA%A9%D8%AA%D8%B1%D9%88%D9%86%DB%8C%DA%A9%DB%8C.zip"}>
         <FaFileArchive
           onClick={getAllFilesClicked}
           className={classes.zipIcon}
-        />
+        /></a>
       </div>
       {projectList.map((eachProject) => {
         if (projectData !== undefined && projectData.id === eachProject.id) {

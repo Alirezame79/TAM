@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import reset from "../actions/ProfileCourseActions";
 
 const AssistantListSlice = createSlice({
     name: "assistantList",
@@ -7,7 +8,12 @@ const AssistantListSlice = createSlice({
         setAssistantList(state, action) {
             return action.payload;
         },
-    }
+    },
+    extraReducers(builder) {
+      builder.addCase(reset, (state, action) => {
+        return [];
+      });
+    },
 });
 
 export { AssistantListSlice };

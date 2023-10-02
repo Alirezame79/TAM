@@ -30,19 +30,7 @@ export default function useRemoveGroup(data, role) {
                 if (response.status === 200) {
                     console.log("Ok user")
                     toast.success('گروه با موفقیت حذف شد.')
-                    if (role === "owner") {
-                        navigate("/course/" + id + "/")
-                    } else if (role === "managers") {
-                        let list = [...groupList]
-                        for (const x of list) {
-                            console.log(x)
-                            if (x.id === data.id) {
-                                list.shift(x)
-                                break
-                            }
-                        }
-                        dispatch(setGroupList(list))
-                    }
+                    window.location.reload();
                 } else if (response.status === 403) {
                     console.log("Permission Denied")
                     toast.error('کاربر مورد نظر اجازه تغییر اطلاعات این درس را ندارد')

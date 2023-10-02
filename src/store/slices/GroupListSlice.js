@@ -1,3 +1,4 @@
+import reset from "../actions/ProfileCourseActions";
 import { createSlice } from "@reduxjs/toolkit";
 
 const GroupListSlice = createSlice({
@@ -7,7 +8,12 @@ const GroupListSlice = createSlice({
         setGroupList(state, action) {
             return action.payload;
         },
-    }
+    },
+    extraReducers(builder) {
+      builder.addCase(reset, (state, action) => {
+        return [];
+      });
+    },
 });
 
 export { GroupListSlice };

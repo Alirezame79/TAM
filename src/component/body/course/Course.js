@@ -13,7 +13,7 @@ import Loading from "../../loading/Loading";
 
 export default function Course() {
   const { id } = useParams();
-  const [course, setCourse] = useState();
+  const [course, setCourse] = useState("");
   const studentCourses = useSelector((state) => {
     return state.studentCourses;
   });
@@ -49,11 +49,15 @@ export default function Course() {
     setCourse("student");
   });
 
-  return (
-    <>
-      {course === "student" && <StudentCourse id={id} />}
-      {course === "assistant" && <AssistantCourse id={id} />}
-      {course === "teacher" && <TeacherCourse id={id} />}
-    </>
-  );
+  if (course === "") {
+    return <Loading />
+  } else {
+    return (
+      <>
+        {course === "student" && <StudentCourse id={id} />}
+        {course === "assistant" && <AssistantCourse id={id} />}
+        {course === "teacher" && <TeacherCourse id={id} />}
+      </>
+    );
+  }
 }

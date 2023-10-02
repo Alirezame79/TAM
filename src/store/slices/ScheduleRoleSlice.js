@@ -8,7 +8,12 @@ const ScheduleRoleSlice = createSlice({
     setScheduleRole(state, action) {
       return action.payload;
     },
-  }
+  },
+  extraReducers(builder) {
+    builder.addCase(reset, (state, action) => {
+      return {};
+    });
+  },
 });
 
 export { ScheduleRoleSlice };
