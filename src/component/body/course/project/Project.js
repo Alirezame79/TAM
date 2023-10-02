@@ -5,6 +5,7 @@ import useCourse from "../../../../fetch/useCourse";
 import ProjectList from "./ProjectList";
 import UploadProject from "./UploadProject";
 import ViewProject from "./ViewProject";
+import Loading from "../../../loading/Loading";
 
 export default function Project() {
   useCourse();
@@ -23,10 +24,6 @@ export default function Project() {
   } else if (role.group_status === 5) {
     return <ViewProject />;
   } else {
-    return (
-      <Card profile>
-        <h1>Group</h1>
-      </Card>
-    );
+    return <Loading />;
   }
 }

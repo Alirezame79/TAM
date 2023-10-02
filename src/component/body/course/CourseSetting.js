@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { setModal } from "../../../store/index";
 import useCheckNewAssistant from "../../../fetch/useCheckNewAssistant";
 import Modal from "../../portal/Modal";
+import Loading from "../../loading/Loading";
 
 export default function CourseSetting() {
   const { id } = useParams();
@@ -39,7 +40,7 @@ export default function CourseSetting() {
   useCheckNewAssistant(checkNewAssistant, id);
 
   useEffect(() => {
-    if (courseSetting === null) return;
+    if (courseSetting === null) return <Loading />;
     classLocation.current.value = courseSetting.class_location;
     classTime.current.value = courseSetting.class_time;
     groupCapacity.current.value = courseSetting.group_capacity;
@@ -77,7 +78,7 @@ export default function CourseSetting() {
           <div className={classes.Inputs}>
             <div className={classes.courseSettingInput}>
               <label htmlFor="Class Location" className={classes.labels}>
-                مکان  تشکیل کلاس
+                مکان تشکیل کلاس
               </label>
               <Input
                 innerRef={classLocation}
@@ -97,7 +98,7 @@ export default function CourseSetting() {
             <div className={classes.courseSettingInput}>
               <label htmlFor="Group Capacity" className={classes.numberLabels}>
                 {" "}
-                 تعداد اعضا گروه ها
+                تعداد اعضا گروه ها
               </label>
               <Input
                 type="number"

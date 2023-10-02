@@ -4,6 +4,7 @@
   padding-left: 20px;
   transform: scale(1.4);
   color: #121285;
+  cursor: pointer;
 }
 .title {
   text-align: center;

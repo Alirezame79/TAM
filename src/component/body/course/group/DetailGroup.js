@@ -10,6 +10,7 @@ import { setMembersList, setModal } from "../../../../store";
 import useCheckGroupNewMember from "../../../../fetch/useCheckGroupNewMember";
 import Modal from "../../../portal/Modal";
 import EditGroup from "./EditGroup";
+import Loading from "../../../loading/Loading";
 
 export default function CreateGroup() {
   const { id } = useParams();
@@ -31,6 +32,7 @@ export default function CreateGroup() {
   useCheckGroupNewMember(checkAddMember);
 
   if (data === undefined) return;
+
   console.log(data);
   dispatch(setMembersList(data.group.members));
 

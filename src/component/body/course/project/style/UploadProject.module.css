@@ -20,11 +20,10 @@ input[type="file"]::file-selector-button {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  margin-top: 45px;
+  margin-top: 12px;
   height: 200px;
 
   margin-bottom: 33px;
-
 }
 .CenterText {
   display: flex;
@@ -55,6 +54,8 @@ input[type="file"]::file-selector-button:hover {
 .icon {
   color: #121285;
   transform: scale(1.5);
+  display: flex;
+  cursor: pointer;
 }
 @media (max-width: 1000px) and (min-width: 600px) {
   .content {

@@ -26,6 +26,7 @@
 .icon {
   color: #121285;
   transform: scale(1.5);
+  cursor: pointer;
 }
 .icons {
   display: flex;

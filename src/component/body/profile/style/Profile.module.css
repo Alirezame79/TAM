@@ -85,6 +85,7 @@
 .edits {
   transform: scale(1.5);
   color: #121285;
+  cursor: pointer;
 }
 
 @media (max-width: 550px) and (min-width: 300px) {

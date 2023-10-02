@@ -4,6 +4,7 @@ import CreateGroup from "./CreateGroup";
 import GroupList from "./GroupList";
 import DetailGroup from "./DetailGroup";
 import GroupView from "./GroupView";
+import Loading from "../../../loading/Loading";
 
 export default function Group() {
   const { data } = useCheckGroup();
@@ -20,10 +21,6 @@ export default function Group() {
   } else if (data.group_status === 5) {
     return <CreateGroup />;
   } else {
-    return (
-      <Card profile>
-        <h1>Group</h1>
-      </Card>
-    );
+    return <Loading />;
   }
 }
