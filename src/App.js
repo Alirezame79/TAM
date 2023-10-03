@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./App.module.css";
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Login from "./component/login/Login";
 import Sidebar from "./component/sidebar/Sidebar";
 import { useIsAuthenticated } from "react-auth-kit";
@@ -16,8 +16,8 @@ import PermissionDenied from "./component/body/other/PermissionDenied";
 import ChangePassword from "./component/body/profile/ChangePassword";
 import CourseMember from "./component/body/course/CourseMember";
 import CourseSetting from "./component/body/course/CourseSetting";
-import { ToastContainer} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Group from "./component/body/course/group/Group";
 import Project from "./component/body/course/project/Project";
 import ForgetPassword from "./component/login/ForgetPassword";
@@ -43,14 +43,15 @@ function App() {
           pauseOnFocusLoss
           draggable
           pauseOnHover
-          theme="dark" />
-          <Routes>
-              <Route path="/" element={<Login />} />
-              <Route path="/forget-password" element={<ForgetPassword />} />
-              <Route path="*" element={<Login />} />
-          </Routes>
+          theme="dark"
+        />
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/forget-password" element={<ForgetPassword />} />
+          <Route path="*" element={<Login />} />
+        </Routes>
       </>
-    )
+    );
   } else {
     localStorage.setItem("login", "1");
     return (
@@ -65,7 +66,8 @@ function App() {
           pauseOnFocusLoss
           draggable
           pauseOnHover
-          theme="dark" />
+          theme="dark"
+        />
         <div className={classes.mainBody}>
           <Sidebar />
           <div className={classes.containerBody}>
@@ -74,7 +76,10 @@ function App() {
               <Route path="/" element={<Profile />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/profile/edit" element={<EditProfile />} />
-              <Route path="/profile/changePassword" element={<ChangePassword />} />
+              <Route
+                path="/profile/changePassword"
+                element={<ChangePassword />}
+              />
 
               <Route path="/course/:id" element={<Course />} />
               <Route path="/course/:id/members" element={<CourseMember />} />
@@ -83,8 +88,11 @@ function App() {
               <Route path="/course/:id/group" element={<Group />} />
 
               <Route path="/course/:id/project" element={<Project />} />
-              
-              <Route path="/course/:id/project/schedule" element={<Schedule />} />
+
+              <Route
+                path="/course/:id/project/schedule"
+                element={<Schedule />}
+              />
 
               <Route path="/permissionDenied" element={<PermissionDenied />} />
               <Route path="*" element={<NotFound />} />

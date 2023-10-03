@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  /* width: 80%; */
   margin: auto auto;
   position: fixed;
   top: 10%;
@@ -32,9 +31,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   text-align: right;
-  /* margin-bottom: 5%; */
   position: relative;
-  /* top: -5%; */
   bottom: 8%;
 }
 
@@ -93,7 +90,6 @@
   .content {
     flex-direction: column;
     justify-content: space-between;
-    /* width: 80%; */
     height: 85%;
     gap: 25px;
     margin: auto auto;
@@ -109,7 +105,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* width: 80%; */
     gap: 25px;
     margin: auto auto;
     position: fixed;

@@ -2,7 +2,6 @@ import classes from "./style/ManageProject.module.css";
 import Card from "../../../../ui/Card";
 import Button from "../../../../ui/Button";
 import Input from "../../../../ui/Input";
-import SwitchInput from "../../../../ui/SwitchInput";
 import { FaList } from "react-icons/fa";
 import { IoTimeOutline } from "react-icons/io5";
 import Checkbox from "../../../../ui/CheckBox";
@@ -19,31 +18,30 @@ import { setModal } from "../../../../store";
 import Modal from "../../../portal/Modal";
 
 export default function ManageProject() {
-  const {id} = useParams()
+  const { id } = useParams();
   const [checkboxCheck, setCheckboxCheck] = useState(false);
   const [file, setFile] = useState(null);
   const [data, setData] = useState(null);
   const descriptionInput = useRef("");
   const [projectListPage, setProjectListPage] = useState(false);
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const project = useSelector((state) => {
     return state.project;
   });
   const modal = useSelector((state) => {
     return state.modal;
-  })
+  });
   useGetUpdateProject();
-  
+
   console.log(project);
 
   useEffect(() => {
-    if (project === undefined || Object.keys(project).length === 0) return
+    if (project === undefined || Object.keys(project).length === 0) return;
 
     descriptionInput.current.value = project.description;
     setCheckboxCheck(project.status);
   }, [project]);
-
 
   function handleCheckBox() {
     setCheckboxCheck(!checkboxCheck);
@@ -60,18 +58,18 @@ export default function ManageProject() {
 
   function projectListBtnClicked() {
     if (project.project_file === null) {
-      toast.error("ابتدا باید پروژه ی درس ساخته شود")
-      return
+      toast.error("ابتدا باید پروژه ی درس ساخته شود");
+      return;
     }
     setProjectListPage(true);
   }
 
   function scheduleBtnClicked() {
     if (project.project_file === null) {
-      toast.error("ابتدا باید پروژه ی درس ساخته شود")
-      return
+      toast.error("ابتدا باید پروژه ی درس ساخته شود");
+      return;
     }
-    navigate('/course/' + id + '/project/schedule/')
+    navigate("/course/" + id + "/project/schedule/");
   }
 
   function submitProjectClicked() {
@@ -90,23 +88,26 @@ export default function ManageProject() {
     }
 
     console.log(requestData);
-    dispatch(setModal('manage-project'))
+    dispatch(setModal("manage-project"));
     setData(requestData);
   }
 
   if (project === undefined || Object.keys(project).length === 0) {
-    return <Loading />
+    return <Loading />;
   } else if (projectListPage) {
     return <ProjectList />;
   } else {
     return (
       <>
-        {modal === 'manage-project' && <Modal data={data} manageProject />}
+        {modal === "manage-project" && <Modal data={data} manageProject />}
         <Card manageProject>
           <h2 className={classes.title}>مدیریت پروژه</h2>
           <div className={classes.icons}>
             <FaList className={classes.icon} onClick={projectListBtnClicked} />
-            <IoTimeOutline className={classes.icon} onClick={scheduleBtnClicked} />
+            <IoTimeOutline
+              className={classes.icon}
+              onClick={scheduleBtnClicked}
+            />
           </div>
           <h3> بارگذاری صورت پروژه</h3>
           <input type="file" onChange={getFileHandler} />

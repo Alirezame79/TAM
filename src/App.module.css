@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   text-align: right;
-  font-family: 'Vazirmatn', sans-serif;
+  font-family: "Vazirmatn", sans-serif;
 }
 
 .mainBody {
@@ -16,9 +16,8 @@
   flex-direction: column;
   width: 80%;
   height: 100vh;
-  background: url(./images/backgroundImg1.avif) 0px -25px / cover ;
+  background: url(./images/backgroundImg1.avif) 0px -25px / cover;
   background-color: rgb(240 234 244);
-  /* rgb(255, 234, 195); */
 }
 
 .miniCourseContainer {

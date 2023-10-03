@@ -14,7 +14,25 @@
   border-radius: 25px;
   margin: auto;
 }
-
+.errorStyle {
+  background-color: #ffffffab;
+  position: relative;
+  height: 25%;
+  width: 39%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 45px 55px;
+  border: 4px solid red;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: right;
+  margin: auto auto;
+}
 .profileStyle {
   border: 2px solid #121285;
   box-shadow: 6px 9px 9px 1px #bcad8d;
@@ -78,7 +96,6 @@
   margin: auto auto;
   position: fixed;
   background-attachment: scroll;
-
   top: 9%;
   bottom: 0;
   right: 22%;
@@ -254,7 +271,6 @@
   background-attachment: scroll;
   display: flex;
   flex-direction: column;
-
   top: 9%;
   bottom: 0;
   right: 22%;
@@ -290,7 +306,6 @@
   margin: auto auto;
   position: fixed;
   background-attachment: scroll;
-
   top: 9%;
   bottom: 0;
   right: 22%;
@@ -344,7 +359,6 @@
   margin: auto auto;
   position: fixed;
   background-attachment: scroll;
-
   top: 9%;
   bottom: 0;
   right: 22%;
@@ -356,6 +370,7 @@
 }
 .groupOwnerScheduleStyle {
   overflow-y: hidden;
+  max-height: 70%;
 }
 /* jast login */
 @media (max-width: 600px) and (min-width: 300px) {
@@ -386,12 +401,10 @@
   .editProfileStyle,
   .changePassStyle {
     width: 70%;
-
     border: none;
     box-shadow: none;
     top: 6%;
     background-color: #e5e8ff00;
-
     margin: auto;
     height: 85%;
     right: 0;
@@ -479,7 +492,6 @@
   }
   .membersStyle {
     width: 65%;
-
     padding: 22px 29px;
     position: relative;
     right: 0;
@@ -767,12 +779,18 @@
 
 @media (width: 1024px) and (height: 600px) {
   .editProfileStyle {
-    height: 75%;
     padding: 25px 60px;
     width: 40%;
     margin: auto auto;
-    position: fixed;
-    top: 4%;
+    height: 44%;
+    position: relative;
+    top: -18%;
+  }
+  .changePassStyle {
+    height: 83%;
+    top: 19%;
+    bottom: 6%;
+    padding: 9px 60px;
   }
   .loginStyle {
     right: 16%;

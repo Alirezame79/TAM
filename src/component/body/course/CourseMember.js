@@ -4,7 +4,6 @@ import Card from "../../../ui/Card";
 import { useParams } from "react-router-dom";
 import useCourseMember from "../../../fetch/useCourseMember";
 import { FaUserGraduate, FaUserTie, FaUser, FaUserEdit } from "react-icons/fa";
-import SwitchInput from "../../../ui/SwitchInput";
 import Loading from "../../loading/Loading";
 
 export default function CourseMember() {

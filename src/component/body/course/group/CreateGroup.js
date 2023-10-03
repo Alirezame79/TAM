@@ -44,12 +44,12 @@ export default function CreateGroup() {
   }
 
   if (data === undefined) {
-    return <Loading />
+    return <Loading />;
   } else {
     return (
       <>
         {modal === "create-new-group" && <Modal data={groupData} createGroup />}
-  
+
         <div className={classes.content}>
           <Card creatGroup>
             <h2 className={classes.title}>ساخت گروه</h2>

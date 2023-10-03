@@ -53,7 +53,6 @@
 @media (max-width: 550px) and (min-width: 300px) {
   .zipIcon {
     margin-left: 22px;
-
     transform: scale(1.5);
     bottom: 9%;
   }

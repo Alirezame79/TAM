@@ -4,54 +4,56 @@ import Card from "../../../../../ui/Card";
 import useStudentRoundList from "../../../../../fetch/useStudentRoundList";
 import Buttom from "./../../../../../ui/Button";
 import { useEffect, useState } from "react";
-import Loading from '../../../../loading/Loading'
+import Loading from "../../../../loading/Loading";
 import { setModal } from "../../../../../store";
 import Modal from "../../../../portal/Modal";
 import { toast } from "react-toastify";
 
 export default function GroupOwnerSchedule() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [choose, setChoose] = useState(null);
-  const [data, setData] = useState(null)
-  const [extraData, setExtraData] = useState(null)
+  const [data, setData] = useState(null);
+  const [extraData, setExtraData] = useState(null);
   const roundList = useSelector((state) => {
     return state.studentRoundList;
   });
   const modal = useSelector((state) => {
     return state.modal;
-  })
-  const [selectedRound, setSelectedRound] = useState("")
+  });
+  const [selectedRound, setSelectedRound] = useState("");
   useStudentRoundList();
 
   useEffect(() => {
-    if (roundList === undefined || Object.keys(roundList).length === 0) return
-    
+    if (roundList === undefined || Object.keys(roundList).length === 0) return;
+
     roundList.map((eachRound) => {
       if (eachRound.selected) {
-        setSelectedRound(eachRound.id)
+        setSelectedRound(eachRound.id);
       }
-    })
-  }, [roundList, selectedRound])
+    });
+  }, [roundList, selectedRound]);
 
   function selectRoundClicked() {
     if (choose === null) {
-      toast.error("لطفا زمانبندی خود را انتخاب کنید")
-      return
+      toast.error("لطفا زمانبندی خود را انتخاب کنید");
+      return;
     }
     const roundsData = {
       pervious_round_id: selectedRound,
-      round_id: choose
-    }
-    setData(roundsData)
-    dispatch(setModal('select-round-schedule'))
+      round_id: choose,
+    };
+    setData(roundsData);
+    dispatch(setModal("select-round-schedule"));
   }
 
   if (roundList === undefined || Object.keys(roundList).length === 0) {
-    return <Loading />
+    return <Loading />;
   } else {
     return (
       <>
-        {modal === 'select-round-schedule' && <Modal data={data} extraData={extraData} selectRound />}
+        {modal === "select-round-schedule" && (
+          <Modal data={data} extraData={extraData} selectRound />
+        )}
         <Card groupOwnerSchedule>
           <h2 className={classes.title}>زمانبندی تحویل پروژه</h2>
           <div className={classes.list}>
@@ -62,7 +64,7 @@ export default function GroupOwnerSchedule() {
                   choose === eachRound.id ? (
                     <Card studentRoundSelect key={eachRound.id}>
                       <div className={classes.roundContainer}>
-                        <h3>{eachRound.round_name} </h3>
+                        <h3> : {eachRound.round_name} </h3>
                         <h3>{eachRound.start_time}</h3>
                         <h3>تا</h3>
                         <h3>{eachRound.finish_time}</h3>
@@ -78,9 +80,9 @@ export default function GroupOwnerSchedule() {
                         setChoose(eachRound.id);
                         const exData = {
                           startTime: eachRound.start_time,
-                          endTime: eachRound.finish_time
-                        }
-                        setExtraData(exData)
+                          endTime: eachRound.finish_time,
+                        };
+                        setExtraData(exData);
                       }}
                     >
                       <div className={classes.roundContainer}>
@@ -100,9 +102,9 @@ export default function GroupOwnerSchedule() {
                         setChoose(eachRound.id);
                         const exData = {
                           startTime: eachRound.start_time,
-                          endTime: eachRound.finish_time
-                        }
-                        setExtraData(exData)
+                          endTime: eachRound.finish_time,
+                        };
+                        setExtraData(exData);
                       }}
                     >
                       <div className={classes.roundContainer}>
@@ -118,7 +120,9 @@ export default function GroupOwnerSchedule() {
               );
             })}
           </div>
-          <Buttom submit click={selectRoundClicked}>ثبت زمان تحویل پروژه</Buttom>
+          <Buttom submit click={selectRoundClicked}>
+            ثبت زمان تحویل پروژه
+          </Buttom>
         </Card>
       </>
     );

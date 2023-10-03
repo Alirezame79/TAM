@@ -40,14 +40,14 @@ export default function CourseSetting() {
   useCheckNewAssistant(checkNewAssistant, id);
 
   useEffect(() => {
-    if (courseSetting === undefined || Object.keys(courseSetting).length === 0) return
+    if (courseSetting === undefined || Object.keys(courseSetting).length === 0)
+      return;
 
     classLocation.current.value = courseSetting.class_location;
     classTime.current.value = courseSetting.class_time;
     groupCapacity.current.value = courseSetting.group_capacity;
   }, [courseSetting]);
 
-  // if (courseSetting === null) return;
 
   console.log(courseSetting);
   console.log(checkAssistant);
@@ -64,7 +64,7 @@ export default function CourseSetting() {
   }
 
   if (courseSetting === undefined || Object.keys(courseSetting).length === 0) {
-    return <Loading />
+    return <Loading />;
   } else {
     return (
       <>
@@ -75,7 +75,7 @@ export default function CourseSetting() {
         {modal === "remove-course-assistant" && (
           <Modal data={removeAssistant} removeAssistant />
         )}
-  
+
         <div className={classes.content}>
           <Card courseSetting>
             <h2 className={classes.title}>ویرایش درس</h2>
@@ -90,7 +90,7 @@ export default function CourseSetting() {
                   courseSetting
                 />
               </div>
-  
+
               <div className={classes.courseSettingInput}>
                 <label htmlFor="Class Time" className={classes.labels}>
                   زمان تشکیل کلاس
@@ -100,7 +100,10 @@ export default function CourseSetting() {
             </div>
             <div className={classes.haveCounterInputs}>
               <div className={classes.courseSettingInput}>
-                <label htmlFor="Group Capacity" className={classes.numberLabels}>
+                <label
+                  htmlFor="Group Capacity"
+                  className={classes.numberLabels}
+                >
                   {" "}
                   تعداد اعضا گروه ها
                 </label>
@@ -112,12 +115,12 @@ export default function CourseSetting() {
                 />
               </div>
             </div>
-  
+
             <Button submit click={editCourseDataClicked}>
               ثبت تغییرات
             </Button>
           </Card>
-  
+
           <Card assistants>
             {assistantList !== undefined && (
               <>
@@ -149,9 +152,9 @@ export default function CourseSetting() {
                       let newAssistantId = {
                         student_id: newAssistant.current.value,
                       };
-  
+
                       newAssistant.current.value = "";
-  
+
                       setCheckNewAssistant(newAssistantId);
                       console.log(checkAssistant);
                     }}

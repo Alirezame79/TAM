@@ -12,8 +12,8 @@ import { IoTimeOutline } from "react-icons/io5";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function UploadProject() {
-  const {id} = useParams()
-  const navigate = useNavigate()
+  const { id } = useParams();
+  const navigate = useNavigate();
   const project = useSelector((state) => {
     return state.studentProject;
   });
@@ -47,14 +47,15 @@ export default function UploadProject() {
   }
 
   function scheduleBtnClicked() {
-    navigate('/course/' + id + '/project/schedule/')
+    navigate("/course/" + id + "/project/schedule/");
   }
 
   return (
     <Card uploadProject>
       <div className={classes.header}>
-      <h2 className={classes.title}> پروژه</h2>
-      <IoTimeOutline className={classes.icon} onClick={scheduleBtnClicked} /></div>
+        <h2 className={classes.title}> پروژه</h2>
+        <IoTimeOutline className={classes.icon} onClick={scheduleBtnClicked} />
+      </div>
       <div className={classes.center}>
         <div className={classes.CenterText}>
           <div className={classes.projectDownload}>

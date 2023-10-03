@@ -9,8 +9,8 @@ import useUpdateGroup from "../../../../fetch/useUpdateGroup";
 import { useDispatch, useSelector } from "react-redux";
 import { setModal } from "../../../../store";
 import Modal from "../../../portal/Modal";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Loading from "../../../loading/Loading";
 
 export default function EditGroup() {
@@ -34,8 +34,8 @@ export default function EditGroup() {
 
   function updateGroupClicked() {
     if (groupName.current.value.trim() === "") {
-      toast.error('نام گروه نمیتواند خالی باشد')
-      return
+      toast.error("نام گروه نمیتواند خالی باشد");
+      return;
     }
 
     let data = {
@@ -48,9 +48,8 @@ export default function EditGroup() {
   }
 
   if (data === undefined) {
-    return <Loading />
+    return <Loading />;
   } else {
-
     return (
       <>
         {modal === "edit-group" && <Modal data={updatedData} editGroup />}

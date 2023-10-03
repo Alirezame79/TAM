@@ -24,27 +24,28 @@ export default function GroupView() {
   }
 
   if (data === undefined) {
-    return <Loading />
+    return <Loading />;
   } else {
-
     return (
       <>
         {modal === "leave-group" && <Modal data={data.group.id} leaveGroup />}
-  
+
         <Card groupView>
           <div className={classes.groupName}>
-            <h2 className={classes.groupNameText}>
+            <h2 className={classes.groupNameText} dir="rtl">
               اطلاعات گروه {data.group.name}{" "}
             </h2>
             <div onClick={leaveGroupClicked}>
-            <BiLogOut className={classes.icon} />
+              <BiLogOut className={classes.icon} />
             </div>
           </div>
           <div className={classes.groupView}>
             <div className={classes.groupMember}>
               <h3 className={classes.labelOfMembers}>: اعضا گروه </h3>
-              <h4 className={classes.nameOfOwner}><i>{data.group.creator.name}</i></h4>
-  
+              <h4 className={classes.nameOfOwner}>
+                <i>{data.group.creator.name}</i>
+              </h4>
+
               {data.group.members.map((member) => {
                 return (
                   <h5 className={classes.nameOfMembers} key={member.id}>

@@ -39,6 +39,7 @@ function Card({
   studentRoundSelect,
   studentRounds,
   round,
+  error,
 }) {
   let cardStyle;
   if (login) cardStyle = classes.loginStyle;
@@ -53,7 +54,6 @@ function Card({
   if (assistants) cardStyle = classes.assistantsStyle;
   if (alert) cardStyle = classes.alertStyle;
   if (creatGroup) cardStyle = classes.creatGroupStyle;
-
   if (groupView) cardStyle = classes.groupViewStyle;
   if (editGroup) cardStyle = classes.creatGroupStyle;
   if (detailGroup) cardStyle = classes.creatGroupStyle;
@@ -77,6 +77,7 @@ function Card({
   if (studentRound) cardStyle = classes.studentRoundStyle;
   if (studentRoundSet) cardStyle = classes.studentRoundSetStyle;
   if (studentRoundSelect) cardStyle = classes.studentRoundSelectStyle;
+  if (error) cardStyle = classes.errorStyle;
 
   return (
     <div className={cardStyle} dir={dir} onClick={click}>

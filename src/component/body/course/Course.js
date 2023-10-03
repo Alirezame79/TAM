@@ -49,7 +49,7 @@ export default function Course() {
   });
 
   if (course === "") {
-    return <Loading />
+    return <Loading />;
   } else {
     return (
       <>

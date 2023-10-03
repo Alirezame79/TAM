@@ -26,7 +26,7 @@ export default function Schedule() {
   }, [role]);
 
   if (role === undefined || Object.keys(role).length === 0) {
-    return <Loading />
+    return <Loading />;
   } else {
     if (role.schedule_status === 0) {
       toast.error("پروژه ی این درس توسط استاد تعریف نشده است");

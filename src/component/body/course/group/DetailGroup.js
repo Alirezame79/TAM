@@ -32,7 +32,7 @@ export default function CreateGroup() {
   useCheckGroupNewMember(checkAddMember);
 
   if (data === undefined) {
-    return <Loading />
+    return <Loading />;
   }
 
   console.log(data);

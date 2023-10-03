@@ -1,6 +1,11 @@
 import classes from "./style/StudentCourse.module.css";
 import { BiSolidGroup } from "react-icons/bi";
-import {FaCalendarAlt, FaFileAlt, FaUsers, FaFileSignature} from "react-icons/fa";
+import {
+  FaCalendarAlt,
+  FaFileAlt,
+  FaUsers,
+  FaFileSignature,
+} from "react-icons/fa";
 import { FaBookOpenReader, FaLaptopCode } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import useCourse from "../../../fetch/useCourse";
@@ -46,9 +51,11 @@ export default function StudentCourse({ id }) {
 
         <div className={classes.centarPage}>
           <Card courseInfo>
-            {/* <h4>{course.course.id} : کد درس</h4> */}
             <h4> زمان تشکیل کلاس : {course.course.class_time}</h4>
-            <h4> مکان تشکیل کلاس : {course.course.class_location} </h4>
+            <h4 dir="rtl">
+              {" "}
+              مکان تشکیل کلاس : {course.course.class_location}{" "}
+            </h4>
             <h4> {course.course.exam_time} : زمان امتحان درس </h4>
             <div className={classes.capacity}>
               <h4>: ظرفیت گروه ها </h4>

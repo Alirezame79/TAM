@@ -1,13 +1,7 @@
-.container {
-  position: relative;
-  top: 15%;
-  right: 0;
-  left: 0;
-}
-
 .title {
   text-align: center;
   padding-bottom: 10px;
+  margin-top: 10%;
 }
 
 .miniTitle {

@@ -288,7 +288,11 @@ function EditGroup({ data }) {
       <h3 className={classes.title}>
         آیا از ویرایش اطلاعات گروه اطمینان دارید؟
       </h3>
-      {loading && <p><i>لطفا شکیبا باشید</i></p>}
+      {loading && (
+        <p>
+          <i>لطفا شکیبا باشید</i>
+        </p>
+      )}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -498,7 +502,9 @@ function CreateSchedule({ data }) {
 
   return (
     <Card confirm dir="rtl">
-      <h3 className={classes.title}>آیا از ساخت زمانبندی این پروژه اطمینان دارید؟</h3>
+      <h3 className={classes.title}>
+        آیا از ساخت زمانبندی این پروژه اطمینان دارید؟
+      </h3>
       {loading && <p>لطفا شکیبا باشید</p>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
@@ -536,7 +542,9 @@ function ManageProject({ data }) {
 
   return (
     <Card confirm dir="rtl">
-      <h3 className={classes.title}>آیا از تغییر اطلاعات پروژه اطمینان دارید؟</h3>
+      <h3 className={classes.title}>
+        آیا از تغییر اطلاعات پروژه اطمینان دارید؟
+      </h3>
       {loading && <p>لطفا شکیبا باشید</p>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
@@ -574,7 +582,10 @@ function DeleteRound({ data, extraData }) {
 
   return (
     <Card confirm dir="rtl">
-      <h3 className={classes.title}>آیا از حذف بازه ی زمانی {extraData.startTime} - {extraData.endTime} اطمینان دارید؟</h3>
+      <h3 className={classes.title}>
+        آیا از حذف بازه ی زمانی {extraData.startTime} - {extraData.endTime}{" "}
+        اطمینان دارید؟
+      </h3>
       {loading && <p>لطفا شکیبا باشید</p>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
@@ -612,7 +623,10 @@ function SelectRound({ data, extraData }) {
 
   return (
     <Card confirm dir="rtl">
-      <h3 className={classes.title}>آیا از انتخاب بازه ی زمانی {extraData.startTime} - {extraData.endTime} اطمینان دارید؟</h3>
+      <h3 className={classes.title}>
+        آیا از انتخاب بازه ی زمانی {extraData.startTime} - {extraData.endTime}{" "}
+        اطمینان دارید؟
+      </h3>
       {loading && <p>لطفا شکیبا باشید</p>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
@@ -625,7 +639,6 @@ function SelectRound({ data, extraData }) {
     </Card>
   );
 }
-
 
 export default function Modal({
   data,
@@ -671,9 +684,13 @@ export default function Modal({
 
       {manageProject && <ManageProject data={data}></ManageProject>}
 
-      {deleteRound && <DeleteRound data={data} extraData={extraData}></DeleteRound>}
+      {deleteRound && (
+        <DeleteRound data={data} extraData={extraData}></DeleteRound>
+      )}
 
-      {selectRound && <SelectRound data={data} extraData={extraData}></SelectRound>}
+      {selectRound && (
+        <SelectRound data={data} extraData={extraData}></SelectRound>
+      )}
     </>,
     document.querySelector(".modal-container")
   );

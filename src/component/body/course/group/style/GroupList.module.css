@@ -19,7 +19,6 @@
 .parts1,
 .parts2 {
   position: relative;
-
   width: 34%;
   margin: auto;
 }
@@ -41,13 +40,7 @@
   margin-top: 20px;
   text-align: center;
 }
-/* .scroll{
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-  background-attachment: scroll;
-  max-height: 100%;
-} */
+
 
 @media (max-width: 550px) and (min-width: 300px) {
   .parts1,

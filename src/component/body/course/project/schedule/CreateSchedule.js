@@ -6,20 +6,20 @@ import classes from "./style/CreateSchedule.module.css";
 import Button from "../../../../../ui/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { setModal } from "../../../../../store";
-import Modal from '../../../../portal/Modal'
+import Modal from "../../../../portal/Modal";
 
 export default function GroupOwnerSchedule() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const modal = useSelector((state) => {
     return state.modal;
-  })
+  });
   const startTime = useRef("");
   const endTime = useRef("");
   const date = useRef("");
   const customRecipintsNumber = useRef("");
   const [period, setPeriod] = useState(10);
   const [receiversRadioBtn, setReceiversRadioBtn] = useState("assistant");
-  const [requestData, setRequestData] = useState(null)
+  const [requestData, setRequestData] = useState(null);
 
   function logTimes() {
     console.log(startTime.current.value, "start");
@@ -38,33 +38,35 @@ export default function GroupOwnerSchedule() {
   }
 
   function createScheduleClicked() {
-    if (receiversRadioBtn === 'custom') {
+    if (receiversRadioBtn === "custom") {
       const data = {
         date: date.current.value,
         start_time: startTime.current.value,
         finish_time: endTime.current.value,
         period: period,
-        number_of_recipints: customRecipintsNumber.current.value
-      }
-      setRequestData(data)
-    } else if (receiversRadioBtn === 'assistant') {
+        number_of_recipints: customRecipintsNumber.current.value,
+      };
+      setRequestData(data);
+    } else if (receiversRadioBtn === "assistant") {
       const data = {
         date: date.current.value,
         start_time: startTime.current.value,
         finish_time: endTime.current.value,
         period: period,
-        number_of_recipints: -1
-      }
-      setRequestData(data)
+        number_of_recipints: -1,
+      };
+      setRequestData(data);
     }
 
     // setRequestData(data)
-    dispatch(setModal('create-project-schedule'))
+    dispatch(setModal("create-project-schedule"));
   }
 
   return (
     <>
-      {modal === 'create-project-schedule' && <Modal data={requestData} createSchedule/>}
+      {modal === "create-project-schedule" && (
+        <Modal data={requestData} createSchedule />
+      )}
       <Card changePass>
         <h2 className={classes.title} onClick={logTimes}>
           ساخت تایم ارائه
@@ -127,13 +129,19 @@ export default function GroupOwnerSchedule() {
           </div>
           {receiversRadioBtn === "custom" && (
             <div className={classes.customReceiversNumber}>
-              <Input type="number" haveCounterInputs innerRef={customRecipintsNumber} />
+              <Input
+                type="number"
+                haveCounterInputs
+                innerRef={customRecipintsNumber}
+              />
               <p> نفر</p>
             </div>
           )}
         </div>
 
-        <Button submit click={createScheduleClicked}>ساخت سلول های زمانبندی</Button>
+        <Button submit click={createScheduleClicked}>
+          ساخت سلول های زمانبندی
+        </Button>
       </Card>
     </>
   );

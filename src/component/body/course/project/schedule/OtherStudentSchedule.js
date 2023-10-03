@@ -16,7 +16,7 @@ export default function OtherStudentSchedule() {
         return (
           <Card studentRounds>
             <div className={classes.roundContainer}>
-              <h3>{eachRound.round_name} </h3>
+              <h3> : {eachRound.round_name} </h3>
               <h3>{eachRound.start_time}</h3>
               <h3>تا</h3>
               <h3>{eachRound.finish_time}</h3>

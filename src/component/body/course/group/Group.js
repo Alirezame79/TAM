@@ -8,11 +8,11 @@ import Loading from "../../../loading/Loading";
 
 export default function Group() {
   const { data } = useCheckGroup();
-  
+
   console.log(data);
 
   if (data === undefined) {
-    return <Loading />
+    return <Loading />;
   } else {
     if (data.group_status === 1 || data.group_status === 2) {
       return <GroupList />;

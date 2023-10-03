@@ -27,7 +27,7 @@ export default function EditProfile() {
   const [showImage, setShowImage] = useState();
   const [data, setData] = useState(null);
   useProfile();
-  
+
   useEffect(() => {
     if (Object.keys(profile).length === 0) return;
 
@@ -67,12 +67,12 @@ export default function EditProfile() {
   }
 
   if (profile === undefined || Object.keys(profile).length === 0) {
-    return <Loading />
+    return <Loading />;
   } else {
     return (
       <>
         {modal === "edit-user-profile" && <Modal data={data} editProfile />}
-  
+
         <Card editProfile>
           <h2 className={classes.title}>ویرایش پروفایل</h2>
           <div className={classes.choosePhoto}>
@@ -96,13 +96,22 @@ export default function EditProfile() {
               بیوگرافی{" "}
             </label>
             {/* <textarea id="bio" cols="40" rows="5" className={classes.inputEditProfile} defaultValue={profile.bio} />  */}
-            <Input innerRef={bio} editProfileBio defultValueText={profile.bio} />
+            <Input
+              innerRef={bio}
+              editProfileBio
+              defultValueText={profile.bio}
+            />
           </div>
           <div className={classes.editProfileInput}>
             <label htmlFor="email" className={classes.labels}>
               ایمیل
             </label>
-            <Input placeholder="ایمیل" innerRef={email} id="email" editProfile />
+            <Input
+              placeholder="ایمیل"
+              innerRef={email}
+              id="email"
+              editProfile
+            />
           </div>
           <div className={classes.editProfileInput}>
             <label htmlFor="githubLink" className={classes.labels}>

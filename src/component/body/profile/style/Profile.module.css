@@ -24,7 +24,6 @@
   width: 9rem;
   border-radius: 50%;
   background-position: center;
-  /* background-size: cover; */
   object-fit: cover;
 }
 
@@ -92,11 +91,14 @@
   .body {
     height: 70%;
     margin: auto;
-
+    padding: 30px 56px;
     right: 0%;
     left: 0%;
   }
-
+  .name {
+    text-align: right;
+    font-size: x-large;
+  }
   .profileTopics {
     left: 12%;
     position: relative;
@@ -126,6 +128,9 @@
     right: 12%;
     margin-top: 40px;
   }
+  .icons {
+    gap: 18px;
+  }
   .settindIcon {
     width: 19%;
   }
@@ -137,7 +142,6 @@
 @media (max-width: 550px) and (min-width: 300px) and (max-height: 950px) and (min-height: 750px) {
   .profileLinks {
     position: relative;
-
     bottom: 23%;
   }
 }
@@ -162,5 +166,10 @@
   .settindIcon {
     width: 10%;
     top: 13%;
+  }
+  .profileLinks {
+    width: 50%;
+    position: relative;
+    bottom: 23%;
   }
 }

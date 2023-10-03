@@ -23,7 +23,7 @@ export default function ProjectList() {
   });
   const zipProjects = useSelector((state) => {
     return state.allProjects;
-  })
+  });
   const [sendRequest, setSendRequest] = useState(null);
   const [allFiles, setAllFiles] = useState(false);
 
@@ -36,8 +36,8 @@ export default function ProjectList() {
 
   function getAllFilesClicked() {
     if (projectList.length === 0) {
-      toast.error("هیچ گروهی پروژه این درس را آپلود نکرده است")
-      return
+      toast.error("هیچ گروهی پروژه این درس را آپلود نکرده است");
+      return;
     }
     setAllFiles(true);
 
@@ -59,11 +59,13 @@ export default function ProjectList() {
         />
         <h2 className={classes.title}>لیست پروژه ها</h2>
         <FaFileArchive
-            onClick={getAllFilesClicked}
-            className={classes.zipIcon}
+          onClick={getAllFilesClicked}
+          className={classes.zipIcon}
         />
       </div>
-      {projectList.length === 0 && <p className={classes.alertTitle}>لیست خالی است</p>}
+      {projectList.length === 0 && (
+        <p className={classes.alertTitle}>لیست خالی است</p>
+      )}
       {projectList.map((eachProject) => {
         if (projectData !== undefined && projectData.id === eachProject.id) {
           return (

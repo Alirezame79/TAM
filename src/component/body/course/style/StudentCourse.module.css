@@ -85,7 +85,6 @@ h4 {
 }
 .CircleBtn:hover {
   background-color: #ffd87fe6;
-  /* #d93b3c; */
 }
 .CircleBtnText {
   text-align: center;
@@ -125,7 +124,7 @@ h4 {
     padding: 8px 60px;
     width: 47%;
     position: relative;
-    left: 7%;
+    left: 0%;
     right: 0;
     top: 1%;
     font-size: 12px;
@@ -138,7 +137,7 @@ h4 {
     position: relative;
     left: 0;
     top: 0%;
-    margin: 14% -4% 0%;
+    margin: 14% -10% 0%;
     justify-content: right;
     padding-left: 0px;
   }
@@ -201,9 +200,9 @@ h4 {
 
   .name {
     padding: 8px 60px;
-    width: 38%;
+    width: 52%;
     position: relative;
-    left: 13%;
+    left: 0;
     right: 0;
     top: 1%;
     margin: 0 auto;
@@ -215,7 +214,7 @@ h4 {
     position: relative;
     left: 0;
     top: 0%;
-    margin: 14% -4% 0%;
+    margin: 14% -17% 0%;
     font-size: small;
   }
   .centarPage {
@@ -231,10 +230,9 @@ h4 {
     flex-direction: row-reverse;
     height: 40%;
     width: 305px;
-    margin-right: 23%;
     position: relative;
     padding-right: 11px;
-    left: -30px;
+    left: -12px;
     top: 0;
     right: 0;
     bottom: 0;
@@ -259,9 +257,6 @@ h4 {
     padding-right: 8px;
     font-size: small;
   }
-}
-
-@media (max-width: 550px) and (min-width: 300px) and(  max-height:950px ) and (min-height: 750px) {
 }
 
 @media (max-width: 1025px) and (min-width: 600px) {

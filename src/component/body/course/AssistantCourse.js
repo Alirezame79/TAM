@@ -21,7 +21,7 @@ export default function AssistantCourse({ id }) {
   });
   const navigate = useNavigate();
 
-  console.log(course)
+  console.log(course);
 
   function courseMemberClicked() {
     navigate("members/");

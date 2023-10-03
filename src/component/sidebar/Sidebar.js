@@ -5,7 +5,7 @@ import RouterCourse from "./RouterCourse";
 import { useSelector } from "react-redux";
 import { AiOutlineCaretLeft, AiFillCaretDown } from "react-icons/ai";
 import { BsMortarboardFill } from "react-icons/bs";
-import {FaIdCard,FaStar,} from "react-icons/fa";
+import { FaIdCard, FaStar } from "react-icons/fa";
 import Skeleton from "react-loading-skeleton";
 
 function Sidebar() {
@@ -38,18 +38,25 @@ function Sidebar() {
     if (!teacherCourseHeader) setTeacherCourseHeader(true);
   }
 
-  console.log(studentCourses.length)
-  console.log(assistantCourses.length)
-  console.log(teacherCourses.length)
+  console.log(studentCourses.length);
+  console.log(assistantCourses.length);
+  console.log(teacherCourses.length);
 
   return (
     <div className={classes.container}>
       <h1 className={classes.sidebarTopic}>سامانه تام</h1>
       <div className={classes.linkContainer}>
-        {((Object.keys(teacherCourses).length 
-        + Object.keys(assistantCourses).length
-        + Object.keys(studentCourses).length) === 0)
-          && <Skeleton count={3} height={40} width={'90%'} className={classes.skeleton}/>}
+        {Object.keys(teacherCourses).length +
+          Object.keys(assistantCourses).length +
+          Object.keys(studentCourses).length ===
+          0 && (
+          <Skeleton
+            count={3}
+            height={40}
+            width={"90%"}
+            className={classes.skeleton}
+          />
+        )}
         {Object.keys(studentCourses).length !== 0 && (
           <div className={classes.studentCourses}>
             <div

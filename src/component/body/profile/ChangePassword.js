@@ -51,13 +51,13 @@ export default function ChangePassword() {
         <h2 className={classes.title}>تغییر رمزعبور</h2>
         <div className={classes.changePassInput}>
           <label htmlFor="bio" className={classes.labels}>
-          رمزعبور کنونی{" "}
+            رمزعبور کنونی{" "}
           </label>
           <Input changePass innerRef={currentPassword} id="currentPassword" />
         </div>
         <div className={classes.changePassInput}>
           <label htmlFor="bio" className={classes.labels}>
-          رمزعبور جدید
+            رمزعبور جدید
           </label>
           <Input
             changePass
@@ -78,7 +78,7 @@ export default function ChangePassword() {
           />
         </div>
         <Button submit click={sendRequest}>
-        ثبت تغییرات
+          ثبت تغییرات
         </Button>
       </Card>
     </>

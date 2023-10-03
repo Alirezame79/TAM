@@ -16,27 +16,28 @@ export default function AssistantSchedule() {
     <Card assistantSchedule>
       <h2 className={classes.title}>لیست زمانبندی های پروژه</h2>
 
-      {roundList.rounds !== undefined && roundList.rounds.map((eachRound) => {
-        return (
-          <Card round className={classes.roundContainer} key={eachRound.id}>
-            <div className={classes.roundDataContainer}>
-              <h3 className={classes.roundName}>{eachRound.round_name}</h3>
-              <h3>{eachRound.start_time.substring(0, 5)} </h3>
-              <h3>{eachRound.finish_time.substring(0, 5)} - </h3>
-            </div>
+      {roundList.rounds !== undefined &&
+        roundList.rounds.map((eachRound) => {
+          return (
+            <Card round className={classes.roundContainer} key={eachRound.id}>
+              <div className={classes.roundDataContainer}>
+                <h3 className={classes.roundName}>: {eachRound.round_name}</h3>
+                <h3>{eachRound.start_time.substring(0, 5)} </h3>
+                <h3>{eachRound.finish_time.substring(0, 5)} - </h3>
+              </div>
 
-            <div className={classes.roundGroupNameContainer}>
-              {eachRound.groups.map((group) => {
-                return (
-                  <div className={classes.roundGroup} key={group.id}>
-                    <h5>{group.name}</h5>
-                  </div>
-                );
-              })}
-            </div>
-          </Card>
-        );
-      })}
+              <div className={classes.roundGroupNameContainer}>
+                {eachRound.groups.map((group) => {
+                  return (
+                    <div className={classes.roundGroup} key={group.id}>
+                      <h5>{group.name}</h5>
+                    </div>
+                  );
+                })}
+              </div>
+            </Card>
+          );
+        })}
     </Card>
   );
 }

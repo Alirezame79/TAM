@@ -23,14 +23,14 @@ export default function GroupList() {
   console.log(groupList);
 
   if (groupList === undefined) {
-    return <Loading />
+    return <Loading />;
   } else {
     return (
       <>
         {modal === "remove-group" && (
           <Modal data={groupData} role="managers" removeGroup />
         )}
-  
+
         <Card groupList>
           <h2 className={classes.titlePage}>لیست گروه‌ها</h2>
           {groupList.length === 0 && (
@@ -65,9 +65,11 @@ export default function GroupList() {
                 </div>
                 <div className={classes.parts2}>
                   {/* <h2 className={classes.title}> : سر گروه</h2> */}
-                  <h3 className={classes.creatorName}><i>{group.creator.name}</i> </h3>
+                  <h3 className={classes.creatorName}>
+                    <i>{group.creator.name}</i>{" "}
+                  </h3>
                   {/* <h2 className={classes.title}> : اعضا گروه</h2> */}
-  
+
                   {group.members.map((member) => {
                     return (
                       <h3 className={classes.membersOfGroups} key={member.id}>

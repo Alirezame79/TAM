@@ -37,7 +37,6 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
-  /* border: 1px solid white; */
   cursor: pointer;
 }
 
@@ -86,7 +85,6 @@
   }
 
   .sidebarTopic {
-    /* display: none; */
     height: 1rem;
     font-size: 18px;
   }

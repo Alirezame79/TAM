@@ -2,7 +2,13 @@ import classes from "./style/Profile.module.css";
 import { useSelector } from "react-redux";
 import BaseURL from "../../../fetch/BaseURL";
 import { useNavigate } from "react-router-dom";
-import {FaGithub, FaLinkedin, FaEnvelope, FaCog, FaLock} from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaCog,
+  FaLock,
+} from "react-icons/fa";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Loading from "./../../loading/Loading";
@@ -47,7 +53,7 @@ export default function Profile() {
             />
           )}
           {/* <h1>{profile.name || <Skeleton width={150} />}</h1> */}
-          <h1>{profile.name}</h1>
+          <h1 className={classes.name}>{profile.name}</h1>
           <h2 className={classes.text}>
             :بیوگرافی <br />
             {/* {profile.bio || <Skeleton width={"25rem"} />} */}

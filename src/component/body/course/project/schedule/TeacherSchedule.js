@@ -6,18 +6,18 @@ import useRemoveRound from "../../../../../fetch/useRemoveRound";
 import { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { setModal } from "../../../../../store";
-import Modal from '../../../../portal/Modal'
+import Modal from "../../../../portal/Modal";
 
 export default function TeacherSchedule() {
   const roundList = useSelector((state) => {
     return state.teacherRoundList;
   });
   const [deletedRound, setDeletedRound] = useState(null);
-  const [roundData, setRoundData] = useState({})
-  const dispatch = useDispatch()
+  const [roundData, setRoundData] = useState({});
+  const dispatch = useDispatch();
   const modal = useSelector((state) => {
     return state.modal;
-  })
+  });
   useTeacherRoundList();
 
   console.log(roundList);
@@ -25,7 +25,9 @@ export default function TeacherSchedule() {
 
   return (
     <>
-      {modal === 'delete-round-schedule' && <Modal data={deletedRound} extraData={roundData} deleteRound />}
+      {modal === "delete-round-schedule" && (
+        <Modal data={deletedRound} extraData={roundData} deleteRound />
+      )}
       <Card teacherSchedule>
         <h2 className={classes.title}>لیست زمانبندی های پروژه</h2>
 
@@ -41,19 +43,18 @@ export default function TeacherSchedule() {
                   };
                   const roundExtraData = {
                     startTime: eachRound.start_time,
-                    endTime: eachRound.finish_time
-                  }
+                    endTime: eachRound.finish_time,
+                  };
 
                   setDeletedRound(round);
-                  setRoundData(roundExtraData)
+                  setRoundData(roundExtraData);
 
-                  dispatch(setModal('delete-round-schedule'))
+                  dispatch(setModal("delete-round-schedule"));
                 }}
-              >
-              </FaTrashAlt >
+              ></FaTrashAlt>
 
               <div className={classes.roundDataContainer}>
-                <h3 className={classes.roundName}>{eachRound.round_name}</h3>
+                <h3 className={classes.roundName}>: {eachRound.round_name}</h3>
                 <h3>{eachRound.start_time.substring(0, 5)} </h3>
                 <h3>{eachRound.finish_time.substring(0, 5)} - </h3>
               </div>
