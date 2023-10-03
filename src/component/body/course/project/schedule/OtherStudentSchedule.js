@@ -10,11 +10,11 @@ export default function OtherStudentSchedule() {
   useStudentRoundList();
 
   return (
-    <Card groupOwnerSchedule>
+    <Card studentSchedule>
       <h2 className={classes.title}>زمانبندی تحویل پروژه</h2>
       {roundList.map((eachRound) => {
         return (
-          <Card studentRound>
+          <Card studentRounds>
             <div className={classes.roundContainer}>
               <h3>{eachRound.round_name} </h3>
               <h3>{eachRound.start_time}</h3>

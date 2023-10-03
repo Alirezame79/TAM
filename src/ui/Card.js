@@ -1,6 +1,7 @@
 import classes from "./style/Card.module.css";
 
 function Card({
+  click,
   dir = "ltr",
   children,
   alert,
@@ -34,6 +35,9 @@ function Card({
   groupOwnerSchedule,
   studentSchedule,
   studentRound,
+  studentRoundSet,
+  studentRoundSelect,
+  studentRounds,
   round,
 }) {
   let cardStyle;
@@ -69,10 +73,13 @@ function Card({
   if (groupOwnerSchedule) cardStyle = classes.groupOwnerScheduleStyle;
   if (studentSchedule) cardStyle = classes.studentScheduleStyle;
   if (round) cardStyle = classes.roundStyle;
+  if (studentRounds) cardStyle = classes.studentRoundsStyle;
   if (studentRound) cardStyle = classes.studentRoundStyle;
+  if (studentRoundSet) cardStyle = classes.studentRoundSetStyle;
+  if (studentRoundSelect) cardStyle = classes.studentRoundSelectStyle;
 
   return (
-    <div className={cardStyle} dir={dir}>
+    <div className={cardStyle} dir={dir} onClick={click}>
       {children}
     </div>
   );

@@ -39,9 +39,10 @@
 }
 
 .tamLogoHeader {
-  margin: -14px 32px;
-  height: 44px;
-  width: 65px;
+  margin: -15px 26px;
+    height: 47px;
+    width: 70px;
+    border-radius: 5px;
 }
 
 @media (max-width: 1024px) and (min-width: 601px) {

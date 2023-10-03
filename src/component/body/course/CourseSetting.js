@@ -40,7 +40,8 @@ export default function CourseSetting() {
   useCheckNewAssistant(checkNewAssistant, id);
 
   useEffect(() => {
-    if (courseSetting === null) return <Loading />;
+    if (courseSetting === null) return
+
     classLocation.current.value = courseSetting.class_location;
     classTime.current.value = courseSetting.class_time;
     groupCapacity.current.value = courseSetting.group_capacity;
@@ -62,101 +63,105 @@ export default function CourseSetting() {
     dispatch(setModal("edit-course-setting"));
   }
 
-  return (
-    <>
-      {modal === "edit-course-setting" && <Modal data={data} courseSetting />}
-      {modal === "check-course-assistant" && (
-        <Modal data={checkAssistant} addAssistant />
-      )}
-      {modal === "remove-course-assistant" && (
-        <Modal data={removeAssistant} removeAssistant />
-      )}
-
-      <div className={classes.content}>
-        <Card courseSetting>
-          <h2 className={classes.title}>ویرایش درس</h2>
-          <div className={classes.Inputs}>
-            <div className={classes.courseSettingInput}>
-              <label htmlFor="Class Location" className={classes.labels}>
-                مکان تشکیل کلاس
-              </label>
-              <Input
-                innerRef={classLocation}
-                id="Class Location"
-                courseSetting
-              />
-            </div>
-
-            <div className={classes.courseSettingInput}>
-              <label htmlFor="Class Time" className={classes.labels}>
-                زمان تشکیل کلاس
-              </label>
-              <Input innerRef={classTime} id="Class Time" courseSetting />
-            </div>
-          </div>
-          <div className={classes.haveCounterInputs}>
-            <div className={classes.courseSettingInput}>
-              <label htmlFor="Group Capacity" className={classes.numberLabels}>
-                {" "}
-                تعداد اعضا گروه ها
-              </label>
-              <Input
-                type="number"
-                innerRef={groupCapacity}
-                id="Group Capacity"
-                haveCounterInputs
-              />
-            </div>
-          </div>
-
-          <Button submit click={editCourseDataClicked}>
-            ثبت تغییرات
-          </Button>
-        </Card>
-
-        <Card assistants>
-          {assistantList !== undefined && (
-            <>
-              <h2 className={classes.title}> لیست دستیاران </h2>
-              {assistantList.map((profile) => {
-                return (
-                  <div className={classes.addDeletAssistant} key={profile.id}>
-                    <h4 className={classes.assistants}>{profile.name}</h4>
-                    <FaUserMinus
-                      className={classes.deleteAssistantIcon}
-                      onClick={function removeAssistantClicked() {
-                        setRemoveAssistant(profile);
-                        dispatch(setModal("remove-course-assistant"));
-                        console.log(removeAssistant);
-                      }}
-                    />
-                  </div>
-                );
-              })}
-              <div className={classes.addDeletAssistant}>
+  if (courseSetting === null || Object.keys(courseSetting).length === 0) {
+    return <Loading />
+  } else {
+    return (
+      <>
+        {modal === "edit-course-setting" && <Modal data={data} courseSetting />}
+        {modal === "check-course-assistant" && (
+          <Modal data={checkAssistant} addAssistant />
+        )}
+        {modal === "remove-course-assistant" && (
+          <Modal data={removeAssistant} removeAssistant />
+        )}
+  
+        <div className={classes.content}>
+          <Card courseSetting>
+            <h2 className={classes.title}>ویرایش درس</h2>
+            <div className={classes.Inputs}>
+              <div className={classes.courseSettingInput}>
+                <label htmlFor="Class Location" className={classes.labels}>
+                  مکان تشکیل کلاس
+                </label>
                 <Input
-                  addDeletAssistant
-                  innerRef={newAssistant}
-                  placeholder="شماره دانشجویی دستیار جدید"
-                />
-                <FaUserPlus
-                  className={classes.addAssistantIcon}
-                  onClick={function newAssistantClicked() {
-                    let newAssistantId = {
-                      student_id: newAssistant.current.value,
-                    };
-
-                    newAssistant.current.value = "";
-
-                    setCheckNewAssistant(newAssistantId);
-                    console.log(checkAssistant);
-                  }}
+                  innerRef={classLocation}
+                  id="Class Location"
+                  courseSetting
                 />
               </div>
-            </>
-          )}
-        </Card>
-      </div>
-    </>
-  );
+  
+              <div className={classes.courseSettingInput}>
+                <label htmlFor="Class Time" className={classes.labels}>
+                  زمان تشکیل کلاس
+                </label>
+                <Input innerRef={classTime} id="Class Time" courseSetting />
+              </div>
+            </div>
+            <div className={classes.haveCounterInputs}>
+              <div className={classes.courseSettingInput}>
+                <label htmlFor="Group Capacity" className={classes.numberLabels}>
+                  {" "}
+                  تعداد اعضا گروه ها
+                </label>
+                <Input
+                  type="number"
+                  innerRef={groupCapacity}
+                  id="Group Capacity"
+                  haveCounterInputs
+                />
+              </div>
+            </div>
+  
+            <Button submit click={editCourseDataClicked}>
+              ثبت تغییرات
+            </Button>
+          </Card>
+  
+          <Card assistants>
+            {assistantList !== undefined && (
+              <>
+                <h2 className={classes.title}> لیست دستیاران </h2>
+                {assistantList.map((profile) => {
+                  return (
+                    <div className={classes.addDeletAssistant} key={profile.id}>
+                      <h4 className={classes.assistants}>{profile.name}</h4>
+                      <FaUserMinus
+                        className={classes.deleteAssistantIcon}
+                        onClick={function removeAssistantClicked() {
+                          setRemoveAssistant(profile);
+                          dispatch(setModal("remove-course-assistant"));
+                          console.log(removeAssistant);
+                        }}
+                      />
+                    </div>
+                  );
+                })}
+                <div className={classes.addDeletAssistant}>
+                  <Input
+                    addDeletAssistant
+                    innerRef={newAssistant}
+                    placeholder="شماره دانشجویی دستیار جدید"
+                  />
+                  <FaUserPlus
+                    className={classes.addAssistantIcon}
+                    onClick={function newAssistantClicked() {
+                      let newAssistantId = {
+                        student_id: newAssistant.current.value,
+                      };
+  
+                      newAssistant.current.value = "";
+  
+                      setCheckNewAssistant(newAssistantId);
+                      console.log(checkAssistant);
+                    }}
+                  />
+                </div>
+              </>
+            )}
+          </Card>
+        </div>
+      </>
+    );
+  }
 }

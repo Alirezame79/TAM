@@ -295,15 +295,14 @@ h4 {
     width: 87%;
     display: flex;
     flex-direction: column;
-    margin: 7% 7%;
+    margin: 7% 5%;
     padding: 20px;
   }
   .bodyCircleBtn {
     justify-content: center;
     flex-direction: row-reverse;
     height: 23%;
-    width: 500px;
-    margin-right: 23%;
+    width: 470px;
     position: relative;
     padding-right: 11px;
     left: 0;

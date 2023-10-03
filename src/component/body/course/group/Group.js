@@ -8,19 +8,20 @@ import Loading from "../../../loading/Loading";
 
 export default function Group() {
   const { data } = useCheckGroup();
-
-  if (data === undefined) return;
+  
   console.log(data);
 
-  if (data.group_status === 1 || data.group_status === 2) {
-    return <GroupList />;
-  } else if (data.group_status === 3) {
-    return <DetailGroup />;
-  } else if (data.group_status === 4) {
-    return <GroupView />;
-  } else if (data.group_status === 5) {
-    return <CreateGroup />;
+  if (data === undefined) {
+    return <Loading />
   } else {
-    return <Loading />;
+    if (data.group_status === 1 || data.group_status === 2) {
+      return <GroupList />;
+    } else if (data.group_status === 3) {
+      return <DetailGroup />;
+    } else if (data.group_status === 4) {
+      return <GroupView />;
+    } else if (data.group_status === 5) {
+      return <CreateGroup />;
+    }
   }
 }

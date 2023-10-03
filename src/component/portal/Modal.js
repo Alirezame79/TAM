@@ -2,7 +2,7 @@ import ReactDom from "react-dom";
 import Back from "./Back";
 import classes from "./style/Style.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useUpdateProfile from "../../fetch/useUpdateProfile";
 import { setModal } from "../../store";
 import Card from "../../ui/Card";
@@ -21,13 +21,18 @@ import useUpdateGroup from "../../fetch/useUpdateGroup";
 function EditProfile({ data }) {
   const dispatch = useDispatch();
   const [sendRequest, setSendRequest] = useState(null);
-
+  const [loading, setLoading] = useState(false);
   console.log(data);
+
+  useEffect(() => {
+    setLoading(false);
+  }, [data]);
 
   useUpdateProfile(sendRequest);
 
   function acceptPortalClicked() {
     setSendRequest(data);
+    setLoading(true);
   }
 
   function closePortalClicked() {
@@ -36,7 +41,9 @@ function EditProfile({ data }) {
 
   return (
     <Card confirm dir="rtl">
-      <h3 className={classes.title}>آیا اطمینان دارید که اطلاعات وارد شده به پروفایلتان اعمال شود؟</h3>
+      <h3 className={classes.title}>
+        آیا اطمینان دارید که اطلاعات وارد شده به پروفایلتان اعمال شود؟
+      </h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -45,6 +52,7 @@ function EditProfile({ data }) {
           تایید
         </Button>
       </div>
+      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -52,13 +60,19 @@ function EditProfile({ data }) {
 function ChangePassword({ data }) {
   const dispatch = useDispatch();
   const [sendRequest, setSendRequest] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   console.log(data);
+
+  useEffect(() => {
+    setLoading(false);
+  }, [data]);
 
   useChangePassword(sendRequest);
 
   function acceptPortalClicked() {
     setSendRequest(data);
+    setLoading(true);
   }
 
   function closePortalClicked() {
@@ -76,6 +90,7 @@ function ChangePassword({ data }) {
           تایید
         </Button>
       </div>
+      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -83,13 +98,19 @@ function ChangePassword({ data }) {
 function CourseSetting({ data }) {
   const dispatch = useDispatch();
   const [sendRequest, setSendRequest] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   console.log(data);
+
+  useEffect(() => {
+    setLoading(false);
+  }, [data]);
 
   useEditCourseSetting(sendRequest);
 
   function acceptPortalClicked() {
     setSendRequest(data);
+    setLoading(true);
   }
 
   function closePortalClicked() {
@@ -107,6 +128,7 @@ function CourseSetting({ data }) {
           تایید
         </Button>
       </div>
+      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -114,8 +136,13 @@ function CourseSetting({ data }) {
 function AddAssistant({ data }) {
   const dispatch = useDispatch();
   const [sendRequest, setSendRequest] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   console.log(data);
+
+  useEffect(() => {
+    setLoading(false);
+  }, [data]);
 
   useAddAssistant(sendRequest, data);
 
@@ -124,6 +151,7 @@ function AddAssistant({ data }) {
       student_id: data.id,
     };
     setSendRequest(newAssistant);
+    setLoading(true);
   }
 
   function closePortalClicked() {
@@ -132,7 +160,9 @@ function AddAssistant({ data }) {
 
   return (
     <Card confirm dir="rtl">
-      <h3 className={classes.title}>آیا میخواهید "{data.name}" را به دستیاران این درس اضافه کنید؟</h3>
+      <h3 className={classes.title}>
+        آیا میخواهید "{data.name}" را به دستیاران این درس اضافه کنید؟
+      </h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -141,6 +171,7 @@ function AddAssistant({ data }) {
           تایید
         </Button>
       </div>
+      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -148,8 +179,13 @@ function AddAssistant({ data }) {
 function RemoveAssistant({ data }) {
   const dispatch = useDispatch();
   const [sendRequest, setSendRequest] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   console.log(data);
+
+  useEffect(() => {
+    setLoading(false);
+  }, [data]);
 
   useRemoveAssistant(sendRequest, data);
 
@@ -158,6 +194,7 @@ function RemoveAssistant({ data }) {
       assistant_id: data.id,
     };
     setSendRequest(oldAssistant);
+    setLoading(true);
   }
 
   function closePortalClicked() {
@@ -166,7 +203,9 @@ function RemoveAssistant({ data }) {
 
   return (
     <Card confirm dir="rtl">
-      <h3 className={classes.title}>آیا میخواهید "{data.name}" را از دستیاران این درس حذف کنید؟</h3>
+      <h3 className={classes.title}>
+        آیا میخواهید "{data.name}" را از دستیاران این درس حذف کنید؟
+      </h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -175,6 +214,7 @@ function RemoveAssistant({ data }) {
           تایید
         </Button>
       </div>
+      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -182,13 +222,19 @@ function RemoveAssistant({ data }) {
 function CreateGroup({ data }) {
   const dispatch = useDispatch();
   const [sendRequest, setSendRequest] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   console.log(data);
+
+  useEffect(() => {
+    setLoading(false);
+  }, [data]);
 
   useCreateGroup(sendRequest);
 
   function acceptPortalClicked() {
     setSendRequest(data);
+    setLoading(true);
   }
 
   function closePortalClicked() {
@@ -206,6 +252,7 @@ function CreateGroup({ data }) {
           تایید
         </Button>
       </div>
+      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -213,13 +260,19 @@ function CreateGroup({ data }) {
 function EditGroup({ data }) {
   const dispatch = useDispatch();
   const [sendRequest, setSendRequest] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   console.log(data);
+
+  useEffect(() => {
+    setLoading(false);
+  }, [data]);
 
   useUpdateGroup(sendRequest);
 
   function acceptPortalClicked() {
     setSendRequest(data);
+    setLoading(true);
   }
 
   function closePortalClicked() {
@@ -228,7 +281,9 @@ function EditGroup({ data }) {
 
   return (
     <Card confirm dir="rtl">
-      <h3 className={classes.title}>آیا از ویرایش اطلاعات گروه اطمینان دارید؟</h3>
+      <h3 className={classes.title}>
+        آیا از ویرایش اطلاعات گروه اطمینان دارید؟
+      </h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -237,6 +292,7 @@ function EditGroup({ data }) {
           تایید
         </Button>
       </div>
+      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -244,8 +300,13 @@ function EditGroup({ data }) {
 function RemoveGroup({ data, role }) {
   const dispatch = useDispatch();
   const [sendRequest, setSendRequest] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   console.log(data);
+
+  useEffect(() => {
+    setLoading(false);
+  }, [data]);
 
   useRemoveGroup(sendRequest, role);
 
@@ -254,6 +315,7 @@ function RemoveGroup({ data, role }) {
       id: data.id,
     };
     setSendRequest(group);
+    setLoading(true);
   }
 
   function closePortalClicked() {
@@ -262,7 +324,9 @@ function RemoveGroup({ data, role }) {
 
   return (
     <Card confirm dir="rtl">
-      <h3 className={classes.title}>آیا میخواهید گروه "{data.name}" را حذف کنید؟</h3>
+      <h3 className={classes.title}>
+        آیا میخواهید گروه "{data.name}" را حذف کنید؟
+      </h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -270,7 +334,8 @@ function RemoveGroup({ data, role }) {
         <Button click={acceptPortalClicked} accept>
           تایید
         </Button>
-      </div>
+      </div>{" "}
+      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -278,8 +343,13 @@ function RemoveGroup({ data, role }) {
 function RemoveMember({ data }) {
   const dispatch = useDispatch();
   const [sendRequest, setSendRequest] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   console.log(data);
+
+  useEffect(() => {
+    setLoading(false);
+  }, [data]);
 
   useRemoveGroupMember(sendRequest, data);
 
@@ -288,6 +358,7 @@ function RemoveMember({ data }) {
       student_id: data.id,
     };
     setSendRequest(newMember);
+    setLoading(true);
   }
 
   function closePortalClicked() {
@@ -296,7 +367,9 @@ function RemoveMember({ data }) {
 
   return (
     <Card confirm dir="rtl">
-      <h3 className={classes.title}>آیا میخواهید "{data.name}" را از گروه خارج کنید؟</h3>
+      <h3 className={classes.title}>
+        آیا میخواهید "{data.name}" را از گروه خارج کنید؟
+      </h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -304,7 +377,8 @@ function RemoveMember({ data }) {
         <Button click={acceptPortalClicked} accept>
           تایید
         </Button>
-      </div>
+      </div>{" "}
+      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -312,9 +386,14 @@ function RemoveMember({ data }) {
 function AddMember({ data }) {
   const dispatch = useDispatch();
   const [sendRequest, setSendRequest] = useState(null);
+  const [loading, setLoading] = useState(false);
   const checkMember = useSelector((state) => {
     return state.checkMember;
   });
+
+  useEffect(() => {
+    setLoading(false);
+  }, [data]);
 
   console.log(checkMember);
 
@@ -325,6 +404,7 @@ function AddMember({ data }) {
       student_id: checkMember.id,
     };
     setSendRequest(newMember);
+    setLoading(true);
   }
 
   function closePortalClicked() {
@@ -333,7 +413,9 @@ function AddMember({ data }) {
 
   return (
     <Card confirm dir="rtl">
-      <h3 className={classes.title}>آیا میخواهید "{checkMember.name}" را به گروه خود اضافه کنید؟</h3>
+      <h3 className={classes.title}>
+        آیا میخواهید "{checkMember.name}" را به گروه خود اضافه کنید؟
+      </h3>
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -341,7 +423,8 @@ function AddMember({ data }) {
         <Button click={acceptPortalClicked} accept>
           تایید
         </Button>
-      </div>
+      </div>{" "}
+      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -349,8 +432,13 @@ function AddMember({ data }) {
 function LeaveGroup({ data }) {
   const dispatch = useDispatch();
   const [sendRequest, setSendRequest] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   console.log(data);
+
+  useEffect(() => {
+    setLoading(false);
+  }, [data]);
 
   useLeaveGroup(sendRequest);
 
@@ -359,6 +447,7 @@ function LeaveGroup({ data }) {
       group_id: data,
     };
     setSendRequest(requestData);
+    setLoading(true);
   }
 
   function closePortalClicked() {
@@ -375,7 +464,8 @@ function LeaveGroup({ data }) {
         <Button click={acceptPortalClicked} accept>
           تایید
         </Button>
-      </div>
+      </div>{" "}
+      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
