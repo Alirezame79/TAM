@@ -11,6 +11,7 @@ import { setModal } from "../../../../store";
 import Modal from "../../../portal/Modal";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loading from "../../../loading/Loading";
 
 export default function EditGroup() {
   const { id } = useParams();
@@ -29,7 +30,6 @@ export default function EditGroup() {
     groupDescription.current.value = data.group.description;
   }, [data]);
 
-  if (data === undefined) return;
   console.log(data);
 
   function updateGroupClicked() {
@@ -47,43 +47,48 @@ export default function EditGroup() {
     dispatch(setModal("edit-group"));
   }
 
-  return (
-    <>
-      {modal === "edit-group" && <Modal data={updatedData} editGroup />}
-      <div className={classes.content}>
-        <Card editGroup>
-          <h2 className={classes.title}>ویرایش اطلاعات گروه</h2>
-          <div className={classes.editGroupInput}>
-            <label htmlFor="Group name">نام گروه</label>
-            <Input id="Group name" editGroup innerRef={groupName} />
-          </div>
-          <div className={classes.editGroupInput}>
-            <label htmlFor="Course Name">نام درس </label>
-            <Input
-              id="Course Name"
-              placeholder={data.course.name}
-              editGroup
-              readOnly
-            />
-          </div>
-          <div className={classes.editGroupInput}>
-            <label htmlFor="master">استاد</label>
-            <Input
-              id="master"
-              editGroup
-              placeholder={data.course.owner.name}
-              readOnly
-            />
-          </div>
-          <div className={classes.editGroupInput}>
-            <label htmlFor="discription">توضیحات</label>
-            <Input groupDiscription innerRef={groupDescription} />
-          </div>
-          <Button submit click={updateGroupClicked}>
-            ویرایش اطلاعات گروه
-          </Button>
-        </Card>
-      </div>
-    </>
-  );
+  if (data === undefined) {
+    return <Loading />
+  } else {
+
+    return (
+      <>
+        {modal === "edit-group" && <Modal data={updatedData} editGroup />}
+        <div className={classes.content}>
+          <Card editGroup>
+            <h2 className={classes.title}>ویرایش اطلاعات گروه</h2>
+            <div className={classes.editGroupInput}>
+              <label htmlFor="Group name">نام گروه</label>
+              <Input id="Group name" editGroup innerRef={groupName} />
+            </div>
+            <div className={classes.editGroupInput}>
+              <label htmlFor="Course Name">نام درس </label>
+              <Input
+                id="Course Name"
+                placeholder={data.course.name}
+                editGroup
+                readOnly
+              />
+            </div>
+            <div className={classes.editGroupInput}>
+              <label htmlFor="master">استاد</label>
+              <Input
+                id="master"
+                editGroup
+                placeholder={data.course.owner.name}
+                readOnly
+              />
+            </div>
+            <div className={classes.editGroupInput}>
+              <label htmlFor="discription">توضیحات</label>
+              <Input groupDiscription innerRef={groupDescription} />
+            </div>
+            <Button submit click={updateGroupClicked}>
+              ویرایش اطلاعات گروه
+            </Button>
+          </Card>
+        </div>
+      </>
+    );
+  }
 }

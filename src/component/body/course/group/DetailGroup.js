@@ -31,7 +31,9 @@ export default function CreateGroup() {
 
   useCheckGroupNewMember(checkAddMember);
 
-  if (data === undefined) return;
+  if (data === undefined) {
+    return <Loading />
+  }
 
   console.log(data);
   dispatch(setMembersList(data.group.members));

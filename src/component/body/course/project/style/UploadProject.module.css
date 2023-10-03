@@ -8,6 +8,10 @@ input[type="file"]::file-selector-button {
   color: white;
   padding: 10px 30px;
 }
+.uploadFile {
+  display: flex;
+  flex-direction: column;
+}
 
 .projectDownload {
   display: flex;

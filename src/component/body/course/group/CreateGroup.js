@@ -12,6 +12,7 @@ import { setModal } from "../../../../store";
 import Modal from "../../../portal/Modal";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loading from "../../../loading/Loading";
 
 export default function CreateGroup() {
   const { id } = useParams();
@@ -25,7 +26,6 @@ export default function CreateGroup() {
   const [groupData, setGroupData] = useState(null);
   // useCreateGroup(id, groupData)
 
-  if (data === undefined) return;
   console.log(data);
 
   function createGroupClicked() {
@@ -43,45 +43,49 @@ export default function CreateGroup() {
     dispatch(setModal("create-new-group"));
   }
 
-  return (
-    <>
-      {modal === "create-new-group" && <Modal data={groupData} createGroup />}
-
-      <div className={classes.content}>
-        <Card creatGroup>
-          <h2 className={classes.title}>ساخت گروه</h2>
-          <div className={classes.creatGroupInput}>
-            <label htmlFor="Group name">نام گروه</label>
-            <Input id="Group name" creatGroup innerRef={name} />
-          </div>
-          <div className={classes.creatGroupInput}>
-            <label htmlFor="Course Name">نام درس </label>
-            <Input
-              id="Course Name"
-              placeholder={data.name}
-              creatGroup
-              readOnly
-            />
-          </div>
-          <div className={classes.creatGroupInput}>
-            <label htmlFor="master">استاد</label>
-            <Input
-              id="master"
-              creatGroup
-              placeholder={data.owner.name}
-              readOnly
-            />
-          </div>
-          <div className={classes.creatGroupInput}>
-            <label htmlFor="discription">توضیحات</label>
-            <Input groupDiscription innerRef={description} />
-          </div>
-          <Button submit click={createGroupClicked}>
-            {" "}
-            ساخت گروه
-          </Button>
-        </Card>
-      </div>
-    </>
-  );
+  if (data === undefined) {
+    return <Loading />
+  } else {
+    return (
+      <>
+        {modal === "create-new-group" && <Modal data={groupData} createGroup />}
+  
+        <div className={classes.content}>
+          <Card creatGroup>
+            <h2 className={classes.title}>ساخت گروه</h2>
+            <div className={classes.creatGroupInput}>
+              <label htmlFor="Group name">نام گروه</label>
+              <Input id="Group name" creatGroup innerRef={name} />
+            </div>
+            <div className={classes.creatGroupInput}>
+              <label htmlFor="Course Name">نام درس </label>
+              <Input
+                id="Course Name"
+                placeholder={data.name}
+                creatGroup
+                readOnly
+              />
+            </div>
+            <div className={classes.creatGroupInput}>
+              <label htmlFor="master">استاد</label>
+              <Input
+                id="master"
+                creatGroup
+                placeholder={data.owner.name}
+                readOnly
+              />
+            </div>
+            <div className={classes.creatGroupInput}>
+              <label htmlFor="discription">توضیحات</label>
+              <Input groupDiscription innerRef={description} />
+            </div>
+            <Button submit click={createGroupClicked}>
+              {" "}
+              ساخت گروه
+            </Button>
+          </Card>
+        </div>
+      </>
+    );
+  }
 }

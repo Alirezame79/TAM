@@ -12,8 +12,8 @@ import Schedule from "./schedule/Schedule";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function ProjectList() {
-  const {id} = useParams()
-  const navigate = useNavigate()
+  const { id } = useParams();
+  const navigate = useNavigate();
   const projectList = useSelector((state) => {
     return state.projectList;
   });
@@ -30,24 +30,33 @@ export default function ProjectList() {
   // console.log(projectList)
 
   function getAllFilesClicked() {
-    console.log('step 0')
+    console.log("step 0");
     setAllFiles(true);
   }
 
   function scheduleBtnClicked() {
-    navigate('/course/' + id + '/project/schedule/')
+    navigate("/course/" + id + "/project/schedule/");
   }
 
   return (
     <Card projectList>
       <div className={classes.header}>
-        <IoTimeOutline className={classes.timeIcon} onClick={scheduleBtnClicked}/>
+        <IoTimeOutline
+          className={classes.timeIcon}
+          onClick={scheduleBtnClicked}
+        />
         <h2 className={classes.title}>لیست پروژه ها</h2>
-        <a href={BASEURL + "/files/projects/archives/%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D8%A2%D9%BE%D9%84%D9%88%D8%AF%20%D8%B4%D8%AF%D9%87%20%D8%AF%D8%A7%D9%86%D8%B4%D8%AC%D9%88%DB%8C%D8%A7%D9%86%20%D8%AF%D8%B1%D8%B3%20%D9%85%D8%AF%D8%A7%D8%B1%20%D8%A7%D9%84%DA%A9%D8%AA%D8%B1%D9%88%D9%86%DB%8C%DA%A9%DB%8C.zip"}>
-        <FaFileArchive
-          onClick={getAllFilesClicked}
-          className={classes.zipIcon}
-        /></a>
+        <a
+          href={
+            BASEURL +
+            "/files/projects/archives/%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D8%A2%D9%BE%D9%84%D9%88%D8%AF%20%D8%B4%D8%AF%D9%87%20%D8%AF%D8%A7%D9%86%D8%B4%D8%AC%D9%88%DB%8C%D8%A7%D9%86%20%D8%AF%D8%B1%D8%B3%20%D9%85%D8%AF%D8%A7%D8%B1%20%D8%A7%D9%84%DA%A9%D8%AA%D8%B1%D9%88%D9%86%DB%8C%DA%A9%DB%8C.zip"
+          }
+        >
+          <FaFileArchive
+            onClick={getAllFilesClicked}
+            className={classes.zipIcon}
+          />
+        </a>
       </div>
       {projectList.map((eachProject) => {
         if (projectData !== undefined && projectData.id === eachProject.id) {
@@ -55,9 +64,8 @@ export default function ProjectList() {
             <div key={projectData.id}>
               <Card projectListItemMoreInfo>
                 <div className={`${classes.downFile} ${classes.bottom}`}>
-                  <h3 className={classes.groupName}>
-                    {" "}
-                    گروه {projectData.group.name}{" "}
+                  <h3 className={classes.groupName} dir="rtl">
+                    گروه {projectData.group.name}
                   </h3>
 
                   <a
@@ -85,7 +93,7 @@ export default function ProjectList() {
           return (
             <div key={eachProject.id} className={classes.projectListItem}>
               <Card projectListItem>
-                <h3>
+                <h3 dir="rtl">
                   {" "}
                   گروه {eachProject.group.name} -{" "}
                   {eachProject.group.creator.name}{" "}

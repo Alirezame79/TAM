@@ -63,9 +63,7 @@ const useLogin = (user) => {
         .then((response) => {
           console.log(response);
           if (response.status === 200) {
-            toast.info('کاربر با موفقیت وارد شد', {
-              position: toast.POSITION.TOP_LEFT, autoClose: 5000
-            })
+            toast.info('کاربر با موفقیت وارد شد')
             return response.json();
           } else {
             toast.error('مشکلی در دریافت اطلاعات کاربر وجود دارد. لطفا مجددا اقدام کنید', {

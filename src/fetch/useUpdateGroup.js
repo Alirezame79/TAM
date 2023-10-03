@@ -30,6 +30,7 @@ export default function useUpdateGroup(updatedData) {
                     console.log("Ok user")
                     toast.success('اطلاعات گروه بروزرسانی شد.')
                     navigate('/course/' + id)
+                    dispatch(setModal(""))
                 // } 
                 // else if (response.status === 403) {
                 //     console.log("Permission Denied")

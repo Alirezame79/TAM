@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <div className={classes.body}>
-      <img src={BASEURL + 'static/images/statics/tam-logo.jpg'} alt="Tam Logo" className={classes.tamLogoHeader} />
+      <img src={BASEURL + 'static/images/statics/tam-logo2.jpg'} alt="Tam Logo" className={classes.tamLogoHeader} />
       <div className={classes.logos}>
         <BiLogOutCircle className={classes.outLogo} onClick={signoutClicked} />
         <AiTwotoneBell className={classes.notifLogo} />

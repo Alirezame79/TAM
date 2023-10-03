@@ -73,7 +73,9 @@
   .body {
     background-position: 30% 0px;
   }
-
+  .inputsLocation {
+    margin-bottom: 20px;
+  }
   .tamLable {
     font-size: 2rem;
   }

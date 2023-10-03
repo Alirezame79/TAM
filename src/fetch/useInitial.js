@@ -1,10 +1,5 @@
 import { useDispatch } from "react-redux";
-import {
-  setStudentCourses,
-  setAssistantCourses,
-  setTeacherCourses,
-  setProfile,
-} from "../store/index";
+import {setStudentCourses, setAssistantCourses, setTeacherCourses, setProfile} from "../store/index";
 import { useIsAuthenticated } from "react-auth-kit";
 import BASEURL from "./BaseURL";
 

@@ -114,8 +114,8 @@
 .alertStyle {
   background-color: #eee;
   position: fixed;
-  height: 22%;
-  width: 27%;
+  height: 30%;
+  width: 28%;
   top: 35%;
   bottom: 25%;
   left: 24%;
@@ -301,7 +301,10 @@
   background-color: #e5e8ff;
 }
 .roundStyle,
-.studentRoundStyle {
+.studentRoundStyle,
+.studentRoundSetStyle,
+.studentRoundSelectStyle,
+.studentRoundsStyle {
   border: 2px solid #0303aa;
   height: auto;
   width: 80%;
@@ -313,8 +316,23 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.studentRoundStyle {
+
+.studentRoundStyle,
+.studentRoundSetStyle,
+.studentRoundSelectStyle {
   flex-direction: row-reverse;
+  cursor: pointer;
+}
+.studentRoundSetStyle:hover,
+.studentRoundStyle:hover {
+  background-color: #eff1fe;
+}
+.studentRoundSetStyle {
+  border: 2px solid #ffc038;
+}
+.studentRoundSelectStyle {
+  border: 4px solid #12a500;
+  background-color: #eff1fe;
 }
 .groupOwnerScheduleStyle,
 .studentScheduleStyle {
@@ -335,6 +353,9 @@
   border-radius: 20px;
   box-shadow: 6px 7px 19px -3px #31685f;
   background-color: #e5e8ff;
+}
+.groupOwnerScheduleStyle {
+  overflow-y: hidden;
 }
 /* jast login */
 @media (max-width: 600px) and (min-width: 300px) {
@@ -422,6 +443,7 @@
     background-color: #e5e8ff00;
   }
   .groupOwnerScheduleStyle,
+  .studentScheduleStyle,
   .teacherScheduleStyle,
   .assistantScheduleStyle {
     top: 7%;
@@ -441,12 +463,18 @@
   .projectListItemStyle,
   .projectListItemMoreInfoStyle,
   .roundStyle,
-  .studentRoundStyle {
+  .studentRoundStyle,
+  .studentRoundSelectStyle,
+  .studentRoundSetStyle,
+  .studentRoundsStyle {
     width: 70%;
     font-size: 12px;
   }
 
-  .studentRoundStyle {
+  .studentRoundStyle,
+  .studentRoundSelectStyle,
+  .studentRoundSetStyle,
+  .studentRoundsStyle {
     flex-direction: column;
   }
   .membersStyle {
@@ -554,6 +582,9 @@
   }
   .confirmStyle {
     width: 60%;
+    height: 40%;
+    padding: 25px 55px;
+
     margin: auto;
     right: 0;
     left: 0;
@@ -571,9 +602,10 @@
     right: 0%;
     max-height: 45%;
     overflow-y: auto;
-    width: 53%;
+    width: 63%;
   }
   .groupOwnerScheduleStyle,
+  .studentScheduleStyle,
   .teacherScheduleStyle,
   .assistantScheduleStyle {
     top: 4%;
@@ -595,7 +627,7 @@
   .creatGroupStyle {
     width: 55%;
 
-    height: 55%;
+    height: 65%;
   }
   .groupViewStyle {
     width: 55%;
@@ -661,6 +693,13 @@
     right: 0;
     margin: auto;
   }
+  .studentRoundStyle,
+  .studentRoundSelectStyle,
+  .studentRoundSetStyle,
+  .studentRoundsStyle {
+    flex-direction: column;
+    width: 75%;
+  }
 }
 
 @media (max-width: 1024px) and (min-width: 600px) {
@@ -669,9 +708,18 @@
     width: 65%;
     top: 7%;
     margin: auto;
-    height: 68%;
+    height: 75%;
     right: 0;
     left: 0;
+  }
+  .projectListItemMoreInfoStyle {
+    width: 75%;
+  }
+  .projectListItemStyle {
+    padding: 22px 29px;
+  }
+  .groupsOfGroupListStyle {
+    flex-direction: column;
   }
   .changePassStyle {
     height: 65%;
@@ -701,6 +749,15 @@
     right: 0;
   }
   .groupOwnerScheduleStyle,
+  .studentScheduleStyle {
+    max-height: 60%;
+    right: 0;
+    width: 65%;
+    overflow-y: hidden;
+  }
+  .studentScheduleStyle {
+    overflow: auto;
+  }
   .teacherScheduleStyle,
   .assistantScheduleStyle {
     max-height: 55%;

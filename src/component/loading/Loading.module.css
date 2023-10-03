@@ -10,7 +10,8 @@
   height: 140px;
   margin: auto;
 }
-.back {
+.back,
+.loginBack {
   background-color: #0d0d347d;
   position: relative;
   display: flex;
@@ -20,6 +21,9 @@
   bottom: 0;
   left: 0;
   right: 0;
+}
+.loginBack {
+  position: fixed;
 }
 @media (max-width: 1024px) {
   .back {
