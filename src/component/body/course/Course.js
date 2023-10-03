@@ -1,5 +1,4 @@
 import classes from "./style/Course.module.css";
-import useCourse from "../../../fetch/useCourse";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { BiSolidGroup } from "react-icons/bi";

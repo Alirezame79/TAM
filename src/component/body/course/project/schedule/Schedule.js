@@ -25,23 +25,25 @@ export default function Schedule() {
     console.log(role);
   }, [role]);
 
-  if (role.schedule_status === 0) {
-    toast.error("پروژه ی این درس توسط استاد تعریف نشده است");
-    navigate("/course/" + id);
-  } else if (role.schedule_status === 1) {
-    return <TeacherSchedule />;
-  } else if (role.schedule_status === 2) {
-    return <AssistantSchedule />;
-  } else if (role.schedule_status === 3) {
-    return <GroupOwnerSchedule />;
-  } else if (role.schedule_status === 4) {
-    return <OtherStudentSchedule />;
-  } else if (role.schedule_status === 5) {
-    return <CreateSchedule />;
-  } else if (role.schedule_status === 6) {
-    toast.error("این بخش توسط استاد هنوز فعال نشده است");
-    navigate("/course/" + id);
+  if (role === undefined || Object.keys(role).length === 0) {
+    return <Loading />
   } else {
-    return <Loading />;
+    if (role.schedule_status === 0) {
+      toast.error("پروژه ی این درس توسط استاد تعریف نشده است");
+      navigate("/course/" + id + "/project/");
+    } else if (role.schedule_status === 1) {
+      return <TeacherSchedule />;
+    } else if (role.schedule_status === 2) {
+      return <AssistantSchedule />;
+    } else if (role.schedule_status === 3) {
+      return <GroupOwnerSchedule />;
+    } else if (role.schedule_status === 4) {
+      return <OtherStudentSchedule />;
+    } else if (role.schedule_status === 5) {
+      return <CreateSchedule />;
+    } else if (role.schedule_status === 6) {
+      toast.error("این بخش توسط استاد هنوز فعال نشده است");
+      navigate("/course/" + id);
+    }
   }
 }

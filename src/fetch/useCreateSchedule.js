@@ -1,18 +1,22 @@
-import { useEffect } from "react";
 import BASEURL from "./BaseURL";
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setProject } from "../store";
+import { setModal } from "../store";
 
-export default function useGetUpdateProject() {
+export default function useCreateSchedule(data) {
     const {id} = useParams()
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
     useEffect(() => {
-        fetch(BASEURL + "course/" + id + "/update-project/", {
+        if (data === null) return
+
+        fetch(BASEURL + "course/" + id + "/create-schedule/", {
+            method: "POST",
+            body: JSON.stringify(data),
             headers: {
                 "Content-Type": "application/json",
                 Authorization: "Bearer " + localStorage.getItem("token"),
@@ -21,18 +25,18 @@ export default function useGetUpdateProject() {
             .then((response) => {
                 console.log(response);
                 if (response.status === 200) {
-                    console.log("ok")
+                    navigate("/course/" + id + "/project/");
+                    toast.success('زمانبندی با موفقیت ساخته شد')
                 } else if (response.status === 403) {
-                    toast.error("کاربر موردنظر به این صفحه دسترسی ندارد.")
-                    navigate('/course/' + id)
+                    toast.error('کاربر مورد نظر اجازه ساخت گروه را ندارد')
+                } else {
+                    toast.error('مشکلی رخ داده است. لطفا با پشتیبانی تماس بگیرید')
                 }
+                dispatch(setModal(null))
                 return response.json();
             })
             .then((data) => {
-                if (data.status !== undefined) {
-                    dispatch(setProject(data))
-                }
                 console.log(data);
             });
-    }, [id])
+    }, [id, data])
 }

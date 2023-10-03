@@ -40,7 +40,7 @@ export default function CourseSetting() {
   useCheckNewAssistant(checkNewAssistant, id);
 
   useEffect(() => {
-    if (courseSetting === null) return
+    if (courseSetting === undefined || Object.keys(courseSetting).length === 0) return
 
     classLocation.current.value = courseSetting.class_location;
     classTime.current.value = courseSetting.class_time;
@@ -63,7 +63,7 @@ export default function CourseSetting() {
     dispatch(setModal("edit-course-setting"));
   }
 
-  if (courseSetting === null || Object.keys(courseSetting).length === 0) {
+  if (courseSetting === undefined || Object.keys(courseSetting).length === 0) {
     return <Loading />
   } else {
     return (

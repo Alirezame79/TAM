@@ -114,7 +114,7 @@
 .alertStyle {
   background-color: #eee;
   position: fixed;
-  height: 30%;
+  height: 25%;
   width: 28%;
   top: 35%;
   bottom: 25%;
@@ -328,7 +328,7 @@
   background-color: #eff1fe;
 }
 .studentRoundSetStyle {
-  border: 2px solid #ffc038;
+  border: 4px solid #ffc038;
 }
 .studentRoundSelectStyle {
   border: 4px solid #12a500;

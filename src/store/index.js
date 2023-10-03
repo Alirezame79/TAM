@@ -18,6 +18,7 @@ import { StudentProjectSlice, setStudentProject } from './slices/StudentProjectS
 import { TeacherRoundListSlice, setTeacherRoundList } from './slices/TeacherRoundListSlice'
 import { StudentRoundListSlice, setStudentRoundList } from './slices/StudentRoundListSlice'
 import { ScheduleRoleSlice, setScheduleRole } from './slices/ScheduleRoleSlice'
+import { AllProjectsSlice, setAllProjects } from './slices/AllProjectsSlice'
 import reset from "./actions/ProfileCourseActions";
 
 const store = configureStore({
@@ -41,6 +42,7 @@ const store = configureStore({
     teacherRoundList: TeacherRoundListSlice.reducer,
     studentRoundList: StudentRoundListSlice.reducer,
     scheduleRole: ScheduleRoleSlice.reducer,
+    allProjects: AllProjectsSlice.reducer,
   },
 });
 
@@ -65,5 +67,6 @@ export {
   setTeacherRoundList,
   setStudentRoundList,
   setScheduleRole,
+  setAllProjects,
   reset,
 };

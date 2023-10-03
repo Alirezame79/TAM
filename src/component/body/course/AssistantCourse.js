@@ -15,7 +15,6 @@ import Card from "../../../ui/Card";
 import Loading from "../../loading/Loading";
 
 export default function AssistantCourse({ id }) {
-  // const { id } = useParams();
   useCourse(id);
   const course = useSelector((state) => {
     return state.course;
@@ -23,8 +22,6 @@ export default function AssistantCourse({ id }) {
   const navigate = useNavigate();
 
   console.log(course)
-
-  // if (Object.keys(course).length === 0) return;
 
   function courseMemberClicked() {
     navigate("members/");

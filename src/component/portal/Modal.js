@@ -17,6 +17,10 @@ import useRemoveGroupMember from "../../fetch/useRemoveGroupMember";
 import useAddGroupMember from "../../fetch/useAddGroupMember";
 import useLeaveGroup from "../../fetch/useLeaveGroup";
 import useUpdateGroup from "../../fetch/useUpdateGroup";
+import useCreateSchedule from "../../fetch/useCreateSchedule";
+import usePostUpdateProject from "../../fetch/usePostUpdateProject";
+import useRemoveRound from "../../fetch/useRemoveRound";
+import useGroupOwnerSelectRound from "../../fetch/useGroupOwnerSelectRound";
 
 function EditProfile({ data }) {
   const dispatch = useDispatch();
@@ -44,6 +48,7 @@ function EditProfile({ data }) {
       <h3 className={classes.title}>
         آیا اطمینان دارید که اطلاعات وارد شده به پروفایلتان اعمال شود؟
       </h3>
+      {loading && <p>لطفا شکیبا باشید</p>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -52,7 +57,6 @@ function EditProfile({ data }) {
           تایید
         </Button>
       </div>
-      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -82,6 +86,7 @@ function ChangePassword({ data }) {
   return (
     <Card confirm dir="rtl">
       <h3 className={classes.title}>آیا از تغییر رمزعبور خود اطمینان دارید؟</h3>
+      {loading && <p>لطفا شکیبا باشید</p>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -90,7 +95,6 @@ function ChangePassword({ data }) {
           تایید
         </Button>
       </div>
-      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -120,6 +124,7 @@ function CourseSetting({ data }) {
   return (
     <Card confirm dir="rtl">
       <h3 className={classes.title}>آیا از اعمال تغییرات درس اطمینان دارید؟</h3>
+      {loading && <p>لطفا شکیبا باشید</p>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -128,7 +133,6 @@ function CourseSetting({ data }) {
           تایید
         </Button>
       </div>
-      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -163,6 +167,7 @@ function AddAssistant({ data }) {
       <h3 className={classes.title}>
         آیا میخواهید "{data.name}" را به دستیاران این درس اضافه کنید؟
       </h3>
+      {loading && <p>لطفا شکیبا باشید</p>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -171,7 +176,6 @@ function AddAssistant({ data }) {
           تایید
         </Button>
       </div>
-      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -206,6 +210,7 @@ function RemoveAssistant({ data }) {
       <h3 className={classes.title}>
         آیا میخواهید "{data.name}" را از دستیاران این درس حذف کنید؟
       </h3>
+      {loading && <p>لطفا شکیبا باشید</p>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -214,7 +219,6 @@ function RemoveAssistant({ data }) {
           تایید
         </Button>
       </div>
-      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -244,6 +248,7 @@ function CreateGroup({ data }) {
   return (
     <Card confirm dir="rtl">
       <h3 className={classes.title}>آیا از ساخت گروه اطمینان دارید؟</h3>
+      {loading && <p>لطفا شکیبا باشید</p>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -252,7 +257,6 @@ function CreateGroup({ data }) {
           تایید
         </Button>
       </div>
-      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -284,6 +288,7 @@ function EditGroup({ data }) {
       <h3 className={classes.title}>
         آیا از ویرایش اطلاعات گروه اطمینان دارید؟
       </h3>
+      {loading && <p><i>لطفا شکیبا باشید</i></p>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -292,7 +297,6 @@ function EditGroup({ data }) {
           تایید
         </Button>
       </div>
-      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -327,6 +331,7 @@ function RemoveGroup({ data, role }) {
       <h3 className={classes.title}>
         آیا میخواهید گروه "{data.name}" را حذف کنید؟
       </h3>
+      {loading && <p>لطفا شکیبا باشید</p>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -335,7 +340,6 @@ function RemoveGroup({ data, role }) {
           تایید
         </Button>
       </div>{" "}
-      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -370,6 +374,7 @@ function RemoveMember({ data }) {
       <h3 className={classes.title}>
         آیا میخواهید "{data.name}" را از گروه خارج کنید؟
       </h3>
+      {loading && <p>لطفا شکیبا باشید</p>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -378,7 +383,6 @@ function RemoveMember({ data }) {
           تایید
         </Button>
       </div>{" "}
-      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -416,6 +420,7 @@ function AddMember({ data }) {
       <h3 className={classes.title}>
         آیا میخواهید "{checkMember.name}" را به گروه خود اضافه کنید؟
       </h3>
+      {loading && <p>لطفا شکیبا باشید</p>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -424,7 +429,6 @@ function AddMember({ data }) {
           تایید
         </Button>
       </div>{" "}
-      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
@@ -457,6 +461,7 @@ function LeaveGroup({ data }) {
   return (
     <Card confirm dir="rtl">
       <h3 className={classes.title}>آیا میخواهید گروه را ترک کنید؟</h3>
+      {loading && <p>لطفا شکیبا باشید</p>}
       <div className={classes.confirmBtnContainer}>
         <Button click={closePortalClicked} cancle>
           انصراف
@@ -465,14 +470,167 @@ function LeaveGroup({ data }) {
           تایید
         </Button>
       </div>{" "}
-      {loading && <p>لطفا شکیبا باشید</p>}
     </Card>
   );
 }
 
+function CreateSchedule({ data }) {
+  const dispatch = useDispatch();
+  const [sendRequest, setSendRequest] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  console.log(data);
+
+  useEffect(() => {
+    setLoading(false);
+  }, [data]);
+
+  useCreateSchedule(sendRequest);
+
+  function acceptPortalClicked() {
+    setSendRequest(data);
+    setLoading(true);
+  }
+
+  function closePortalClicked() {
+    dispatch(setModal(null));
+  }
+
+  return (
+    <Card confirm dir="rtl">
+      <h3 className={classes.title}>آیا از ساخت زمانبندی این پروژه اطمینان دارید؟</h3>
+      {loading && <p>لطفا شکیبا باشید</p>}
+      <div className={classes.confirmBtnContainer}>
+        <Button click={closePortalClicked} cancle>
+          انصراف
+        </Button>
+        <Button click={acceptPortalClicked} accept>
+          تایید
+        </Button>
+      </div>{" "}
+    </Card>
+  );
+}
+
+function ManageProject({ data }) {
+  const dispatch = useDispatch();
+  const [sendRequest, setSendRequest] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  console.log(data);
+
+  useEffect(() => {
+    setLoading(false);
+  }, [data]);
+
+  usePostUpdateProject(sendRequest);
+
+  function acceptPortalClicked() {
+    setSendRequest(data);
+    setLoading(true);
+  }
+
+  function closePortalClicked() {
+    dispatch(setModal(null));
+  }
+
+  return (
+    <Card confirm dir="rtl">
+      <h3 className={classes.title}>آیا از تغییر اطلاعات پروژه اطمینان دارید؟</h3>
+      {loading && <p>لطفا شکیبا باشید</p>}
+      <div className={classes.confirmBtnContainer}>
+        <Button click={closePortalClicked} cancle>
+          انصراف
+        </Button>
+        <Button click={acceptPortalClicked} accept>
+          تایید
+        </Button>
+      </div>{" "}
+    </Card>
+  );
+}
+
+function DeleteRound({ data, extraData }) {
+  const dispatch = useDispatch();
+  const [sendRequest, setSendRequest] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  console.log(data);
+
+  useEffect(() => {
+    setLoading(false);
+  }, [data]);
+
+  useRemoveRound(sendRequest);
+
+  function acceptPortalClicked() {
+    setSendRequest(data);
+    setLoading(true);
+  }
+
+  function closePortalClicked() {
+    dispatch(setModal(null));
+  }
+
+  return (
+    <Card confirm dir="rtl">
+      <h3 className={classes.title}>آیا از حذف بازه ی زمانی {extraData.startTime} - {extraData.endTime} اطمینان دارید؟</h3>
+      {loading && <p>لطفا شکیبا باشید</p>}
+      <div className={classes.confirmBtnContainer}>
+        <Button click={closePortalClicked} cancle>
+          انصراف
+        </Button>
+        <Button click={acceptPortalClicked} accept>
+          تایید
+        </Button>
+      </div>{" "}
+    </Card>
+  );
+}
+
+function SelectRound({ data, extraData }) {
+  const dispatch = useDispatch();
+  const [sendRequest, setSendRequest] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  console.log(data);
+
+  useEffect(() => {
+    setLoading(false);
+  }, [data]);
+
+  useGroupOwnerSelectRound(sendRequest);
+
+  function acceptPortalClicked() {
+    setSendRequest(data);
+    setLoading(true);
+  }
+
+  function closePortalClicked() {
+    dispatch(setModal(null));
+  }
+
+  return (
+    <Card confirm dir="rtl">
+      <h3 className={classes.title}>آیا از انتخاب بازه ی زمانی {extraData.startTime} - {extraData.endTime} اطمینان دارید؟</h3>
+      {loading && <p>لطفا شکیبا باشید</p>}
+      <div className={classes.confirmBtnContainer}>
+        <Button click={closePortalClicked} cancle>
+          انصراف
+        </Button>
+        <Button click={acceptPortalClicked} accept>
+          تایید
+        </Button>
+      </div>{" "}
+    </Card>
+  );
+}
+
+
 export default function Modal({
   data,
   role,
+  extraData,
   editProfile,
   changePassword,
   courseSetting,
@@ -484,6 +642,10 @@ export default function Modal({
   removeMember,
   addMember,
   leaveGroup,
+  createSchedule,
+  manageProject,
+  deleteRound,
+  selectRound,
 }) {
   return ReactDom.createPortal(
     <>
@@ -504,6 +666,14 @@ export default function Modal({
       {removeMember && <RemoveMember data={data}></RemoveMember>}
       {addMember && <AddMember></AddMember>}
       {leaveGroup && <LeaveGroup data={data}></LeaveGroup>}
+
+      {createSchedule && <CreateSchedule data={data}></CreateSchedule>}
+
+      {manageProject && <ManageProject data={data}></ManageProject>}
+
+      {deleteRound && <DeleteRound data={data} extraData={extraData}></DeleteRound>}
+
+      {selectRound && <SelectRound data={data} extraData={extraData}></SelectRound>}
     </>,
     document.querySelector(".modal-container")
   );

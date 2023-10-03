@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setCourse } from "../store/index";
+import { reset, setCourse } from "../store/index";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import BASEURL from "./BaseURL";
@@ -10,6 +10,8 @@ export default function useCourse() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // dispatch(reset());
+
     fetch(BASEURL + "course/" + id + "/", {
       headers: {
         "Content-Type": "application/json",

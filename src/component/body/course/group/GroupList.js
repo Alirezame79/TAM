@@ -65,7 +65,7 @@ export default function GroupList() {
                 </div>
                 <div className={classes.parts2}>
                   {/* <h2 className={classes.title}> : سر گروه</h2> */}
-                  <h3 className={classes.creatorName}>{group.creator.name} </h3>
+                  <h3 className={classes.creatorName}><i>{group.creator.name}</i> </h3>
                   {/* <h2 className={classes.title}> : اعضا گروه</h2> */}
   
                   {group.members.map((member) => {

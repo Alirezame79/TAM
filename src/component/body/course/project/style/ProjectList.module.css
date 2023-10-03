@@ -4,6 +4,10 @@
   color: #121285;
   cursor: pointer;
 }
+.alertTitle {
+  text-align: center;
+  margin-top: 25px;
+}
 .title {
   text-align: center;
   margin-bottom: 5%;

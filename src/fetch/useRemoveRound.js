@@ -26,9 +26,13 @@ export default function useRemoveRound(data) {
         })
             .then((response) => {
                 console.log(response);
+                if (response.status === 200) {
+                    window.location.reload();
+                }
                 return response.json();
             })
             .then((data) => {
+                dispatch(setModal(null));
                 console.log(data);
             });
     }, [data, id])

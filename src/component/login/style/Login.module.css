@@ -3,7 +3,7 @@
   height: 100%;
   position: fixed;
   background: linear-gradient(to right, #0f0c29ac, #302b63c1, #24243ee4),
-    url(http://192.168.45.186:8000/static/images/statics/login-background.jpg)
+    url(http://127.0.0.1:8000/static/images/statics/login-background.jpg)
       0px -25px / cover;
 
   background-color: #dbdcff;

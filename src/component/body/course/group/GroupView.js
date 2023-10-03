@@ -36,14 +36,14 @@ export default function GroupView() {
             <h2 className={classes.groupNameText}>
               اطلاعات گروه {data.group.name}{" "}
             </h2>
-            <BiLogOut className={classes.icon} click={leaveGroupClicked}>
-              Leave Group
-            </BiLogOut>
+            <div onClick={leaveGroupClicked}>
+            <BiLogOut className={classes.icon} />
+            </div>
           </div>
           <div className={classes.groupView}>
             <div className={classes.groupMember}>
               <h3 className={classes.labelOfMembers}>: اعضا گروه </h3>
-              <h4 className={classes.nameOfOwner}>{data.group.creator.name}</h4>
+              <h4 className={classes.nameOfOwner}><i>{data.group.creator.name}</i></h4>
   
               {data.group.members.map((member) => {
                 return (

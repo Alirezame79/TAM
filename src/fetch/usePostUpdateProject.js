@@ -9,6 +9,7 @@ import { setModal } from "../store";
 export default function usePostUpdateProject(data) {
     const {id} = useParams()
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     useEffect(() => {
       if (data === null) return
@@ -26,15 +27,16 @@ export default function usePostUpdateProject(data) {
             console.log(response);
             if (response.status === 200) {
                 navigate('/course/' + id)
-                // toast.success('گروه با موفقیت ساخته شد')
+                toast.success('پروژه با موفقیت آپلود شد')
             } else if (response.status === 403) {
-                // toast.error('کاربر مورد نظر اجازه ساخت گروه را ندارد')
+                toast.error('کاربر مورد نظر اجازه ساخت گروه را ندارد')
             } else {
-                // toast.error('مشکلی رخ داده است. لطفا با پشتیبانی تماس بگیرید')
+                toast.error('مشکلی رخ داده است. لطفا با پشتیبانی تماس بگیرید')
             }
             return response.json();
         })
         .then((data) => {
+            dispatch(setModal(null));
             console.log(data);
         });
   }, [id, data])

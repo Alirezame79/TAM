@@ -72,7 +72,7 @@ export default function Login() {
             >
               رمز عبور
             </label>
-            <Input innerRef={password} id="password" login />
+            <Input innerRef={password} type="password" id="password" login />
           </div>
           <Button loginBtn click={loginClicked}>
             ورود
