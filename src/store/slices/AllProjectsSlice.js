@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import reset from "../actions/ProfileCourseActions";
+import clean from "../actions/CleanDataActions";
 
 const AllProjectsSlice = createSlice({
   name: "AllProjects",
@@ -10,8 +11,8 @@ const AllProjectsSlice = createSlice({
     },
   },
   extraReducers(builder) {
-    builder.addCase(reset, (state, action) => {
-      return [];
+    builder.addCase(clean, (state, action) => {
+      return {};
     });
   },
 });

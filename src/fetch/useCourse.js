@@ -3,6 +3,7 @@ import { reset, setCourse } from "../store/index";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import BASEURL from "./BaseURL";
+import clean from "../store/actions/CleanDataActions";
 
 export default function useCourse() {
   const {id} = useParams();
@@ -10,7 +11,7 @@ export default function useCourse() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // dispatch(reset());
+    dispatch(clean());
 
     fetch(BASEURL + "course/" + id + "/", {
       headers: {

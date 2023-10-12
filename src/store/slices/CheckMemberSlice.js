@@ -1,3 +1,4 @@
+import clean from "../actions/CleanDataActions";
 import reset from "../actions/ProfileCourseActions";
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -10,7 +11,7 @@ const CheckMemberSlice = createSlice({
         },
     },
     extraReducers(builder) {
-      builder.addCase(reset, (state, action) => {
+      builder.addCase(clean, (state, action) => {
         return {};
       });
     },

@@ -35,7 +35,7 @@ export default function AssistantCourse({ id }) {
     navigate("project/");
   }
 
-  if (course === undefined || Object.keys(course).length <= 0) {
+  if (course === undefined || Object.keys(course).length === 0) {
     return <Loading />;
   } else {
     return (

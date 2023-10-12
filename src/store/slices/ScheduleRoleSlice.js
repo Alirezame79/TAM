@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import reset from "../actions/ProfileCourseActions";
+import clean from "../actions/CleanDataActions";
 
 const ScheduleRoleSlice = createSlice({
   name: "scheduleRole",
@@ -10,7 +11,7 @@ const ScheduleRoleSlice = createSlice({
     },
   },
   extraReducers(builder) {
-    builder.addCase(reset, (state, action) => {
+    builder.addCase(clean, (state, action) => {
       return {};
     });
   },

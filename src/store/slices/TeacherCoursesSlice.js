@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import reset from "../actions/ProfileCourseActions";
+import clean from "../actions/CleanDataActions";
 
 const TeacherCoursesSlice = createSlice({
   name: "teacherCourses",
