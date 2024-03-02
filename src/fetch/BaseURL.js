@@ -1,2 +1,2 @@
-const BASEURL = "http:///192.168.45.186:8000/";
+const BASEURL = "https://shahrooz00.pythonanywhere.com/";
 export default BASEURL;
