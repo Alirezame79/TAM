@@ -3,7 +3,7 @@
   height: 100%;
   position: fixed;
   background: linear-gradient(to right, #0f0c29ac, #302b63c1, #24243ee4),
-    url(http://192.168.201.186:8000/static/images/statics/login-background.jpg)
+    url(https://shahrooz00.pythonanywhere.com/static/images/statics/login-background.jpg)
       0px -25px / cover;
 
   background-color: #dbdcff;
